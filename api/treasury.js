@@ -13,7 +13,7 @@ module.exports=async function handler(req,res){
     if(cash.status==='rejected')errors.push('TGA: '+cash.reason.message);
     if(debt.status==='rejected')errors.push('Debt: '+debt.reason.message);
     const records=cash.status==='fulfilled'?cash.value.rows:[];
-    const tga=records.filter(r=>String(r.account_type||'').includes('Treasury General Account')||String(r.account_type||'').includes('财政部一般账户')).filter(r=>String(r.account_type||'').includes('Closing Balance')||String(r.account_type||'').includes('期末余额')).filter(r=>String(r.table_nbr||'')==='I'&&String(r.src_line_nbr||'')==='4').filter(r=>r.close_today_bal!=null&&Number.isFinite(Number(r.close_today_bal))).sort((a,b)=>b.record_date.localeCompare(a.record_date));
+    const tga=records.filter(r=>String(r.table_nbr||'').trim().toUpperCase()==='I'&&String(r.src_line_nbr||'').trim()==='4').filter(r=>/Treasury General Account|财政部一般账户/i.test(String(r.account_type||''))&&/Closing Balance|期末余额/i.test(String(r.account_type||''))).filter(r=>r.close_today_bal!=null&&Number.isFinite(Number(r.close_today_bal))).sort((a,b)=>b.record_date.localeCompare(a.record_date));
     res.status(tga.length?200:502).json({retrieved_at:new Date().toISOString(),units:'USD millions',latest:tga[0]||null,history:tga.slice(0,30),debt_raw_records:debt.status==='fulfilled'?debt.value.rows.length:null,errors:tga.length?errors:[...errors,'No matching TGA closing balance: verify DTS source schema']});
   }catch(e){res.status(502).json({error:String(e)})}
 };
