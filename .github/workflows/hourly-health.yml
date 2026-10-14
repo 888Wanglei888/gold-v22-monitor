@@ -18,14 +18,17 @@ jobs:
           curl --fail --location --retry 2 --max-time 60 'https://gold-v22-real-data-v1.vercel.app/api/treasury' -o snapshots/treasury.json
           curl --fail --location --retry 2 --max-time 60 'https://gold-v22-real-data-v1.vercel.app/api/forecast' -o snapshots/forecast.json
           curl --fail --location --retry 2 --max-time 60 'https://gold-v22-real-data-v1.vercel.app/api/tga-identity' -o snapshots/tga-identity.json
+          curl --fail --location --retry 2 --max-time 60 'https://gold-v22-real-data-v1.vercel.app/api/horizon-backtest' -o snapshots/horizon-backtest.json
           python3 - <<'PY'
           import json
-          for name in ('treasury','forecast','tga-identity'):
+          for name in ('treasury','forecast','tga-identity','horizon-backtest'):
               data=json.load(open('snapshots/'+name+'.json'))
               if name=='treasury' and not data.get('latest'):
                   raise SystemExit('TGA latest missing')
               if name=='tga-identity' and (not data.get('latest') or not data['latest'].get('verified')):
                   raise SystemExit('TGA cash identity failed')
+              if name=='horizon-backtest' and any(data.get('results',{}).get('D+'+str(i),{}).get('models',{}).get('weekday_median',{}).get('samples',0)<20 for i in (1,3,5)):
+                  raise SystemExit('D+1/3/5 backtest insufficient')
               if name=='forecast' and len(data.get('horizons',[]))!=3:
                   raise SystemExit('Forecast horizons missing')
           print('All public endpoints passed validation including TGA cash identity')
