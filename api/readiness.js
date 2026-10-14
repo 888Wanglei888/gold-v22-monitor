@@ -1,21 +1,17 @@
-// V2.2 readiness: explicit fail-closed gate. This endpoint does NOT claim to trade.
-module.exports=async function(req,res){
+// Live validation gate: research signals remain disabled regardless of baseline score.
+module.exports=async(req,res)=>{
  res.setHeader('Cache-Control','s-maxage=300');
- const checks={
-  dts_tga:'implemented_unverified_current_deployment',
-  treasury_auction_calendar:'implemented_unverified_current_deployment',
-  tga_baseline_forecast:'implemented_unverified_current_deployment',
-  historical_vintage_store:'missing',
-  treasury_net_new_cash:'missing',
-  tax_and_spending_forecast:'missing',
-  forecast_surprise_zscore:'missing',
-  reserve_rrp_sofr_iorb:'missing',
-  gold_multi_timeframe_confirmation:'missing',
-  cot_etf_volatility_confirmation:'missing',
-  historical_point_in_time_backtest:'missing',
-  alert_delivery:'missing'
- };
- const required=['historical_vintage_store','treasury_net_new_cash','tax_and_spending_forecast','forecast_surprise_zscore','reserve_rrp_sofr_iorb','gold_multi_timeframe_confirmation','historical_point_in_time_backtest','alert_delivery'];
- const ready=required.every(x=>checks[x]==='verified_live');
- res.status(200).json({status:ready?'ready':'research_only',trade_signals_enabled:ready,automatic_trade_alerts_enabled:false,checks,warning:'No A/A+/A++ grade should be used for live trading until data integrity and point-in-time validation pass.'});
+ const origin='https://'+(process.env.VERCEL_URL||'gold-v22-real-data-v1.vercel.app');
+ const endpoints=['treasury','forecast','tga-identity','holdout-backtest','robustness-backtest'];
+ const checks={};
+ await Promise.all(endpoints.map(async name=>{
+  try{
+   const response=await fetch(origin+'/api/'+name,{signal:AbortSignal.timeout(25000)});
+   const data=await response.json();
+   const valid=response.ok&&(name==='treasury'?!!data.latest:name==='forecast'?data.horizons?.length===3:name==='tga-identity'?data.latest?.verified===true:name==='holdout-backtest'?!!data.results?.['D+5']:!!data.results?.['D+5']?.paired_improvement_95pct_moving_block_interval);
+   checks[name]={http_status:response.status,valid:!!valid,source_as_of:data.as_of||data.latest?.record_date||data.latest?.date||null,error:valid?null:data.error||data.status||'Validation failed'};
+  }catch(e){checks[name]={valid:false,error:String(e)}}
+ }));
+ const requiredMissing=['point_in_time_vintage_archive','treasury_net_new_cash_reconciled','tax_and_spending_event_model','gold_ohlc_execution_backtest','risk_adjusted_signal_validation','alert_delivery_end_to_end'];
+ res.status(200).json({status:'research_only',baseline_data_checks_passed:Object.values(checks).every(x=>x.valid),checks,missing_for_trade_ready:requiredMissing,trade_signals_enabled:false,automatic_trade_alerts_enabled:false,warning:'Passing TGA model validation is not evidence of a profitable gold strategy. No A/A+/A++ live trading signals.'});
 };
