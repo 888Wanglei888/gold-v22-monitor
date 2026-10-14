@@ -1,0 +1,35 @@
+name: Gold V2.2 hourly data health check
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Query public data endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p snapshots
+          curl --fail --location --retry 2 --max-time 60 'https://gold-v22-real-data-v1.vercel.app/api/treasury' -o snapshots/treasury.json
+          curl --fail --location --retry 2 --max-time 60 'https://gold-v22-real-data-v1.vercel.app/api/forecast' -o snapshots/forecast.json
+          python3 - <<'PY'
+          import json
+          for name in ('treasury','forecast'):
+              data=json.load(open('snapshots/'+name+'.json'))
+              if name=='treasury' and not data.get('latest'):
+                  raise SystemExit('TGA latest missing')
+              if name=='forecast' and len(data.get('horizons',[]))!=3:
+                  raise SystemExit('Forecast horizons missing')
+          print('Both public endpoints passed validation')
+          PY
+      - name: Save run snapshot as temporary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tga-snapshot-${{ github.run_id }}
+          path: snapshots/
+          retention-days: 30
