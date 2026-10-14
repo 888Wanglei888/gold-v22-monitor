@@ -1,0 +1,35 @@
+name: Validate production API
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Vercel production deployment
+        run: sleep 90
+      - name: Check production routes and record JSON
+        shell: bash
+        run: |
+          mkdir -p diagnostics
+          failed=0
+          for name in treasury forecast horizon-backtest historical-coverage full-history-backtest source-coverage readiness; do
+            echo "Checking $name"
+            status=$(curl -L -sS --retry 3 --retry-delay 5 --max-time 110 -w '%{http_code}' -o "diagnostics/$name.json" "https://gold-v22-real-data-v1.vercel.app/api/$name") || status=000
+            echo "$name HTTP $status"
+            if [ "$status" != "200" ]; then
+              failed=1
+              echo "::warning::$name HTTP $status"
+            fi
+            python3 -c 'import json,sys; x=json.load(open(sys.argv[1])); print("status:",x.get("status"),"error:",x.get("error"),"observations:",x.get("observations"))' "diagnostics/$name.json" || failed=1
+          done
+          echo "Some checks failed: $failed"
+          exit "$failed"
+      - name: Save diagnostics even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-api-diagnostics
+          path: diagnostics/
+          retention-days: 14
