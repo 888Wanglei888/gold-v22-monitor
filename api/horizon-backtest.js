@@ -43,7 +43,15 @@ module.exports=async(req,res)=>{
     }
     from??=d[i].date;to=d[i].date;
    }
-   results['D+'+h]={origin_first:from,origin_last:to,models:Object.fromEntries(Object.entries(errors).map(([name,e])=>{const n=e.length;return [name,{samples:n,mae_usd_billions:n?+(e.reduce((s,x)=>s+Math.abs(x),0)/n/1000).toFixed(3):null,rmse_usd_billions:n?+(Math.sqrt(e.reduce((s,x)=>s+x*x,0)/n)/1000).toFixed(3):null,direction_accuracy_pct:direction[name].length?+(direction[name].reduce((s,x)=>s+x,0)/direction[name].length*100).toFixed(1):null,direction_evaluated:direction[name].length}]}))};
+   const models=Object.fromEntries(Object.entries(errors).map(([name,e])=>{const n=e.length;return [name,{samples:n,mae_usd_billions:n?+(e.reduce((s,x)=>s+Math.abs(x),0)/n/1000).toFixed(3):null,rmse_usd_billions:n?+(Math.sqrt(e.reduce((s,x)=>s+x*x,0)/n)/1000).toFixed(3):null,direction_accuracy_pct:direction[name].length?+(direction[name].reduce((s,x)=>s+x,0)/direction[name].length*100).toFixed(1):null,direction_evaluated:direction[name].length}]}));
+   const base=errors.no_change,week=errors.weekday_median;
+   const improvements=base.map((e,i)=>Math.abs(e)-Math.abs(week[i]));
+   const mean=improvements.reduce((a,b)=>a+b,0)/improvements.length;
+   const variance=improvements.reduce((a,b)=>a+(b-mean)**2,0)/Math.max(1,improvements.length-1);
+   const standardError=Math.sqrt(variance/improvements.length);
+   const z=standardError?mean/standardError:null;
+   const improves=mean>0;
+   results['D+'+h]={origin_first:from,origin_last:to,models,weekday_vs_no_change:{mae_improvement_pct:+(100*mean/(base.reduce((s,x)=>s+Math.abs(x),0)/base.length)).toFixed(2),paired_mean_absolute_error_improvement_usd_billions:+(mean/1000).toFixed(3),naive_z_score:z===null?null:+z.toFixed(2),statistical_warning:'Overlapping horizons and serial correlation invalidate naive independent-sample z-score for h>1; use block bootstrap or HAC before significance claims',passes_directional_mae_gate:improves}};
   }
   res.status(200).json({status:'historical_walk_forward_baselines_only',as_of:rows.at(-1)[0],observations:rows.length,results,source:BASE,limitations:['Historical current-version DTS observations are not publication-time vintages','Horizon is next observed DTS business/report dates; holidays are handled by observed dates','Not a net-financing or tax-adjusted forecast','Not a gold price backtest, no A/A+/A++ signals','Potential DTS revisions and time-of-publication are not modeled']});
  }catch(e){res.status(502).json({error:String(e)})}
