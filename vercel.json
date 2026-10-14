@@ -1,8 +1,14 @@
 {
   "version": 2,
   "functions": {
-    "api/treasury.js": {
+    "api/dispatch.js": {
       "maxDuration": 30
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:endpoint",
+      "destination": "/api/dispatch?endpoint=:endpoint"
+    }
+  ]
 }
