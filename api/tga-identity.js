@@ -28,11 +28,11 @@ module.exports=async(req,res)=>{
    const complete=[opening,x.deposits,x.withdrawals,x.closing].every(Number.isFinite);
    if(!complete)return {...x,opening:opening??null,verified:false,reason:'Missing named total or prior-day closing balance'};
    // Withdrawal total in DTS is often signed negative.
-   const signedNet=x.withdrawals<=0?x.deposits+x.withdrawals:x.deposits-x.withdrawals;
+   const signedNet=x.deposits-Math.abs(x.withdrawals);
    const change=x.closing-opening,difference=change-signedNet;
    return {date:x.date,opening_tga_usd_millions:opening,deposits_usd_millions:x.deposits,withdrawals_raw_usd_millions:x.withdrawals,closing_tga_usd_millions:x.closing,change_tga_usd_millions:change,net_cashflow_usd_millions:signedNet,reconciliation_difference_usd_millions:difference,verified:Math.abs(difference)<=2};
   });
   const latest=days.at(-1);
-  res.status(200).json({status:latest?.verified?'tga_cash_identity_verified':'tga_cash_identity_not_verified',latest,summary:{days:days.length,passed:days.filter(x=>x.verified).length,failed:days.filter(x=>!x.verified).length},history:days.slice(-15).reverse(),source,units:'USD millions',method:'Match exact semantic account_type labels; opening balance from named row or prior report closing; deposits + signed withdrawals = closing - opening.',limitations:['This is an accounting check, not a forecasting model','No publication-time vintages','Deposits and withdrawals include debt operations; not tax-only or spending-only']});
+  res.status(200).json({status:latest?.verified?'tga_cash_identity_verified':'tga_cash_identity_not_verified',latest,summary:{days:days.length,passed:days.filter(x=>x.verified).length,failed:days.filter(x=>!x.verified).length},history:days.slice(-15).reverse(),source,units:'USD millions',method:'Match semantic account_type labels; opening balance from named row or prior report closing; deposits - absolute withdrawals = closing - opening.',limitations:['This is an accounting check, not a forecasting model','No publication-time vintages','Deposits and withdrawals include debt operations; not tax-only or spending-only']});
  }catch(e){res.status(502).json({error:String(e)})}
 };
