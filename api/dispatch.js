@@ -21,6 +21,7 @@ const handlers = Object.freeze({
   "tga-identity": require('../lib/endpoints/tga-identity.js'),
   "v22-auction-known-forecast": require('../lib/endpoints/v22-auction-known-forecast.js'),
   "v22-auction-source-audit": require('../lib/endpoints/v22-auction-source-audit.js'),
+  "v22-cashflow-line-audit": require('../lib/endpoints/v22-cashflow-line-audit.js'),
   "v22-debt-realized-audit": require('../lib/endpoints/v22-debt-realized-audit.js'),
   "v22-etf-audit": require('../lib/endpoints/v22-etf-audit.js'),
   "v22-asof-join": require('../lib/endpoints/v22-asof-join.js'),
