@@ -17,6 +17,12 @@ assert(result.scored['D+3'].overall.samples>100);
 const baseline=evaluate(tga,cash,rows,2025,[],{include_decision_forecasts:true});
 const first=baseline.research_only_decision_forecasts.find(x=>x.decision_date==='2025-04-15');
 assert(first,'Expected April synthetic decision record');
+const finalDay=tga.at(-1).date;
+const mostRecent=baseline.research_only_decision_forecasts.find(x=>x.decision_date===finalDay);
+assert(mostRecent,'Latest decision must be forecastable even though future target TGA has not occurred yet');
+assert(mostRecent.forecast_target_date>finalDay);
+assert(!baseline.scored['D+3'].overall.samples || !('actual' in mostRecent),'Ex-ante predictions must never contain outcomes');
+
 const perturb=tga.map(x=>x.date==='2025-04-15'?{...x,balance:x.balance+1000000}:x);
 const revised=evaluate(perturb,cash,rows,2025,[],{include_decision_forecasts:true});
 const same=revised.research_only_decision_forecasts.find(x=>x.decision_date===first.decision_date);
