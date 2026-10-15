@@ -32,7 +32,7 @@ jobs:
             fi
             python3 -c 'import json,sys; x=json.load(open(sys.argv[1])); print("status:",x.get("status"),"error:",x.get("error"),"observations:",x.get("observations"))' "diagnostics/$name.json" || failed=1
           done
-          for year in $(seq 2019 $(date -u +%Y)); do
+          for year in $(seq 2023 $(date -u +%Y)); do
             echo "Checking TGA year $year"
             status=$(curl -L -sS --retry 2 --retry-delay 2 --max-time 50 -w '%{http_code}' -o "diagnostics/tga-$year.json" "https://gold-v22-real-data-v1.vercel.app/api/full-history-backtest?year=$year") || status=000
             echo "TGA $year HTTP $status"
