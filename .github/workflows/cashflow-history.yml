@@ -7,6 +7,8 @@ on:
       - lib/endpoints/v22-cashflow-core.js
       - lib/endpoints/v22-fiscal-composite-core.js
       - lib/endpoints/v22-tax-calendar.js
+      - lib/endpoints/v22-fiscal-price-core.js
+      - tests/v22-fiscal-price-core.test.js
       - tests/v22-tax-calendar.test.js
       - tests/v22-fiscal-composite-core.test.js
       - .github/workflows/cashflow-history.yml
@@ -27,6 +29,7 @@ jobs:
           node tests/v22-cashflow-core.test.js
           node tests/v22-fiscal-composite-core.test.js
           node tests/v22-tax-calendar.test.js
+          node tests/v22-fiscal-price-core.test.js
       - name: Build audited 2023-present daily Treasury nondebt, tax and financing cashflows
         run: node scripts/v22-cashflow-history.js
       - uses: actions/upload-artifact@v4
@@ -61,4 +64,8 @@ jobs:
           assert j.get('status')=='dts_cashflows_2024_plus_identity_reconciled_research',j.get('error','Incomplete fiscal identity; no trade signal')
           assert j.get('identity',{}).get('count',0)>690
           assert j.get('excluded_unreconciled_year')==2023
+          a=j.get('historical_fiscal_vs_gold_price_candidate_alignment',{})
+          assert a.get('status')=='historical_fiscal_predicted_level_direction_vs_gold_price_patterns_only',a.get('error')
+          assert a.get('conservative_prior_fiscal_forecasts_found',0)>=30
+          assert a.get('trade_signals_enabled') is False
           PY
