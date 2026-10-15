@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir -p diagnostics
           failed=0
-          for name in treasury forecast horizon-backtest historical-coverage full-history-backtest source-coverage readiness; do
+          for name in treasury forecast horizon-backtest historical-coverage full-history-backtest source-coverage readiness gold-source-audit; do
             echo "Checking $name"
             status=$(curl -L -sS --retry 3 --retry-delay 5 --max-time 110 -w '%{http_code}' -o "diagnostics/$name.json" "https://gold-v22-real-data-v1.vercel.app/api/$name") || status=000
             echo "$name HTTP $status"
