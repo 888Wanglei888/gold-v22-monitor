@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T07:09:53.097248+00:00",
-  "commit": "36b478908e89ca66031bcf819a5d01a904dac1be",
+  "checked_at_utc": "2026-10-15T07:14:38.898067+00:00",
+  "commit": "0b00bba4a07ffb1a86b5c1decf016095f6f52398",
   "endpoints": {
     "v22-cot-audit": {
       "status": "cot_source_access_ok",
@@ -250,7 +250,7 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-10-15T07:09:48.460Z",
+        "as_of": "2026-10-15T07:14:30.833Z",
         "fred": [
           {
             "series": "DFII10",
@@ -348,21 +348,21 @@
           {
             "symbol": "GC=F",
             "status": "available",
-            "bars": 12384,
-            "valid_ohlc_bars": 9781,
+            "bars": 12385,
+            "valid_ohlc_bars": 9782,
             "invalid_or_missing_ohlc_bars": 2603,
             "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-10-15T06:59:41.000Z",
+            "last_date": "2026-10-15T07:04:24.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 5281,
-              "2026": 4500
+              "2026": 4501
             },
-            "complete_utc_four_hour_buckets": 2118,
+            "complete_utc_four_hour_buckets": 2117,
             "complete_utc_four_hour_per_year": {
               "2024": 0,
               "2025": 1144,
-              "2026": 974
+              "2026": 973
             },
             "exchange_session_aligned_4h_verified": false
           },
@@ -468,6 +468,26 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
+          "tga-identity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "forecast": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-source-audit": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "robustness-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-ohlc-integrity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
           "v22-cot-audit": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
@@ -476,27 +496,7 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "v22-source-audit": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-ohlc-integrity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "tga-identity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
           "holdout-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "forecast": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "robustness-backtest": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -1135,7 +1135,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-10-15T07:09:50.535Z",
+        "as_of": "2026-10-15T07:14:34.108Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -1149,7 +1149,8 @@
           "DXY": 2,
           "COT_NET": 15,
           "COT_OI": 15,
-          "TGA": 3
+          "TGA": 3,
+          "GLD_TONNES_DELTA": 3
         },
         "max_observation_age_calendar_days": {
           "DFII10": 8,
@@ -1162,7 +1163,8 @@
           "DXY": 7,
           "COT_NET": 30,
           "COT_OI": 30,
-          "TGA": 9
+          "TGA": 9,
+          "GLD_TONNES_DELTA": 9
         },
         "source_errors": {},
         "source_coverage": {
@@ -1242,16 +1244,44 @@
             "first_observation_date": "2024-01-02",
             "last_observation_date": "2026-10-13",
             "conservative_lag_calendar_days": 3
+          },
+          "GLD_TONNES_DELTA": {
+            "observations": 5508,
+            "duplicate_observation_dates_excluded": 0,
+            "first_observation_date": "2004-11-19",
+            "last_observation_date": "2026-10-14",
+            "conservative_lag_calendar_days": 3
           }
         },
         "ohlc_quality": {
-          "raw": 13002,
+          "raw": 13003,
           "missing_ohlc": 2744,
           "off_hour": 13,
-          "unclosed": 0,
+          "unclosed": 1,
           "duplicate_hours": 0,
           "nonconsecutive_groups": 0,
           "incomplete_groups": 35
+        },
+        "gld_official_holdings_source_coverage": {
+          "source": "SPDR GLD official XLSX",
+          "rows_with_date": 5714,
+          "rows_with_date_and_tonnes": 5509,
+          "missing_tonnes_rows": 205,
+          "first_date": "2004-11-18",
+          "last_date": "2026-10-14",
+          "annual": {
+            "2024": {
+              "change_days": 252
+            },
+            "2025": {
+              "change_days": 250
+            },
+            "2026": {
+              "change_days": 197
+            }
+          },
+          "holds_gold_tonnes_not_investor_net_flow": true,
+          "real_historical_archive_vintage_verified": false
         },
         "joined_feature_audit": {
           "candle_count": 2210,
@@ -1312,6 +1342,11 @@
               "joined_candles": 2210,
               "stale_rejected_candles": 0,
               "pct": 100
+            },
+            "GLD_TONNES_DELTA": {
+              "joined_candles": 2210,
+              "stale_rejected_candles": 0,
+              "pct": 100
             }
           },
           "future_time_violations": 0,
@@ -1330,7 +1365,8 @@
                 "DXY": "2024-12-31",
                 "COT_NET": "2024-12-17",
                 "COT_OI": "2024-12-17",
-                "TGA": "2024-12-30"
+                "TGA": "2024-12-30",
+                "GLD_TONNES_DELTA": "2024-12-30"
               }
             },
             {
@@ -1347,7 +1383,8 @@
                 "DXY": "2026-10-13",
                 "COT_NET": "2026-09-29",
                 "COT_OI": "2026-09-29",
-                "TGA": "2026-10-09"
+                "TGA": "2026-10-09",
+                "GLD_TONNES_DELTA": "2026-10-12"
               }
             }
           ]
@@ -1413,6 +1450,11 @@
                 "joined_candles": 1240,
                 "stale_rejected_candles": 0,
                 "pct": 100
+              },
+              "GLD_TONNES_DELTA": {
+                "joined_candles": 1240,
+                "stale_rejected_candles": 0,
+                "pct": 100
               }
             },
             "future_time_violations": 0,
@@ -1431,7 +1473,8 @@
                   "DXY": "2024-12-31",
                   "COT_NET": "2024-12-17",
                   "COT_OI": "2024-12-17",
-                  "TGA": "2024-12-30"
+                  "TGA": "2024-12-30",
+                  "GLD_TONNES_DELTA": "2024-12-30"
                 }
               },
               {
@@ -1448,7 +1491,8 @@
                   "DXY": "2025-12-29",
                   "COT_NET": "2025-12-16",
                   "COT_OI": "2025-12-16",
-                  "TGA": "2025-12-26"
+                  "TGA": "2025-12-26",
+                  "GLD_TONNES_DELTA": "2025-12-26"
                 }
               }
             ]
@@ -1513,6 +1557,11 @@
                 "joined_candles": 970,
                 "stale_rejected_candles": 0,
                 "pct": 100
+              },
+              "GLD_TONNES_DELTA": {
+                "joined_candles": 970,
+                "stale_rejected_candles": 0,
+                "pct": 100
               }
             },
             "future_time_violations": 0,
@@ -1531,7 +1580,8 @@
                   "DXY": "2025-12-31",
                   "COT_NET": "2025-12-16",
                   "COT_OI": "2025-12-16",
-                  "TGA": "2025-12-30"
+                  "TGA": "2025-12-30",
+                  "GLD_TONNES_DELTA": "2025-12-30"
                 }
               },
               {
@@ -1548,7 +1598,8 @@
                   "DXY": "2026-10-13",
                   "COT_NET": "2026-09-29",
                   "COT_OI": "2026-09-29",
-                  "TGA": "2026-10-09"
+                  "TGA": "2026-10-09",
+                  "GLD_TONNES_DELTA": "2026-10-12"
                 }
               }
             ]
@@ -1560,7 +1611,7 @@
           "TreasuryDirect auction net-new-cash and historical settlement forecast",
           "reconstructed historical DTS tax/spending model with vintages",
           "intraday release timestamps and official revisions",
-          "GLD/other gold ETF daily creation-redemption flows",
+          "ETF-wide actual dollar creations/redemptions and GLD accounting adjustments (GLD tonnes change is an inventory proxy only)",
           "specific COMEX GC contract OI/roll-adjusted tradable execution",
           "historically timestamped SRF/Fed expectations where required",
           "frozen A/A+/A++ multi-factor trade execution"
@@ -1569,6 +1620,7 @@
           "No as-of join here is proof of exact public release or original-vintage values",
           "Conservative source lag may fail for exceptional holidays or delayed reports; records need publication-calendar verification",
           "Missing or overly stale required inputs block complete-candle status, never default to passing a signal",
+          "GLD holdings tonnes change is not exact ETF net investor dollar flow; account for trust fees and creations/redemptions",
           "No weights, optimizations, profits, trades or win rate are computed",
           "Prior backtested TGA-only strategy remains excluded from V2.2"
         ]
@@ -1598,17 +1650,17 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-10-15T07:09:49.000Z",
+        "as_of": "2026-10-15T07:14:32.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
         "counts": {
-          "raw_hours": 12384,
-          "distinct_raw_timestamps": 12384,
+          "raw_hours": 12385,
+          "distinct_raw_timestamps": 12385,
           "valid_ohlc_on_hour_nonduplicated": 9768,
           "missing_or_invalid_ohlc": 2603,
           "not_exact_utc_hour": 13,
-          "unclosed_current_hour": 0,
+          "unclosed_current_hour": 1,
           "duplicate_hour": 0,
           "duplicate_timestamp": 0,
           "candidate_buckets": 2140,
