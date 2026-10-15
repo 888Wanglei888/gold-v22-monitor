@@ -1,0 +1,324 @@
+{
+  "checked_at_utc": "2026-10-15T10:46:26.376Z",
+  "github_sha": "9b960a4f91b801b02b32d2a61bba7c57dab21d54",
+  "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
+  "months_requested": 46,
+  "full_v22_fiscal_prediction_ready": false,
+  "trade_signals_enabled": false,
+  "status": "dts_cashflows_multi_year_identity_not_validated",
+  "raw_transaction_rows": 171340,
+  "tga_closing_rows": 948,
+  "cashflow_report_days": 948,
+  "faults": {
+    "invalid_today_amount": 0,
+    "bad_transaction_type": 0,
+    "non_tga_ignored": 0,
+    "non_table_ii_ignored": 0,
+    "duplicate_line_key": 0,
+    "unlabeled_possible_total_rows_excluded": 1896
+  },
+  "tga_duplicate_dates": 0,
+  "identity": {
+    "count": 947,
+    "average_absolute_identity_gap_usd_millions": 3418.417,
+    "max_absolute_identity_gap_usd_millions": 116507,
+    "within_one_billion_pct": 80.8,
+    "recent_examples": [
+      {
+        "date": "2026-10-07",
+        "reported_tga_delta": 369,
+        "reported_net_deposits_minus_withdrawals": 367,
+        "difference": 2,
+        "tax_net_proxy": 14353,
+        "customs_deposits": 267
+      },
+      {
+        "date": "2026-10-08",
+        "reported_tga_delta": 1686,
+        "reported_net_deposits_minus_withdrawals": 1689,
+        "difference": -3,
+        "tax_net_proxy": 5770,
+        "customs_deposits": 316
+      },
+      {
+        "date": "2026-10-09",
+        "reported_tga_delta": -14943,
+        "reported_net_deposits_minus_withdrawals": -14942,
+        "difference": -1,
+        "tax_net_proxy": 11307,
+        "customs_deposits": 366
+      },
+      {
+        "date": "2026-10-13",
+        "reported_tga_delta": 47688,
+        "reported_net_deposits_minus_withdrawals": 47688,
+        "difference": 0,
+        "tax_net_proxy": 31574,
+        "customs_deposits": 333
+      }
+    ]
+  },
+  "by_year": {
+    "2023": {
+      "cashflow_days": 250,
+      "tga_days": 250,
+      "identity": {
+        "count": 249,
+        "average_absolute_identity_gap_usd_millions": 12992.884,
+        "max_absolute_identity_gap_usd_millions": 116507,
+        "within_one_billion_pct": 26.9,
+        "recent_examples": [
+          {
+            "date": "2023-12-26",
+            "reported_tga_delta": 11053,
+            "reported_net_deposits_minus_withdrawals": 11052,
+            "difference": 1,
+            "tax_net_proxy": 32071,
+            "customs_deposits": 120
+          },
+          {
+            "date": "2023-12-27",
+            "reported_tga_delta": -30301,
+            "reported_net_deposits_minus_withdrawals": -30310,
+            "difference": 9,
+            "tax_net_proxy": 9275,
+            "customs_deposits": 94
+          },
+          {
+            "date": "2023-12-28",
+            "reported_tga_delta": 11909,
+            "reported_net_deposits_minus_withdrawals": 11905,
+            "difference": 4,
+            "tax_net_proxy": 17769,
+            "customs_deposits": 116
+          },
+          {
+            "date": "2023-12-29",
+            "reported_tga_delta": 43617,
+            "reported_net_deposits_minus_withdrawals": 43615,
+            "difference": 2,
+            "tax_net_proxy": 29305,
+            "customs_deposits": 182
+          }
+        ]
+      },
+      "explicit_named_tax_net_proxy_usd_billions": 3780.52,
+      "public_debt_cash_issues_usd_billions": 23066.959,
+      "public_debt_cash_redemptions_usd_billions": 0,
+      "non_debt_receipts_usd_billions": 9471.511,
+      "non_debt_withdrawals_usd_billions": 33568.909,
+      "non_debt_net_usd_billions": -24097.398
+    },
+    "2024": {
+      "cashflow_days": 251,
+      "tga_days": 251,
+      "identity": {
+        "count": 251,
+        "average_absolute_identity_gap_usd_millions": 2.88,
+        "max_absolute_identity_gap_usd_millions": 10,
+        "within_one_billion_pct": 100,
+        "recent_examples": [
+          {
+            "date": "2024-12-26",
+            "reported_tga_delta": -46340,
+            "reported_net_deposits_minus_withdrawals": -46347,
+            "difference": 7,
+            "tax_net_proxy": 16634,
+            "customs_deposits": 134
+          },
+          {
+            "date": "2024-12-27",
+            "reported_tga_delta": 31702,
+            "reported_net_deposits_minus_withdrawals": 31701,
+            "difference": 1,
+            "tax_net_proxy": 19653,
+            "customs_deposits": 76
+          },
+          {
+            "date": "2024-12-30",
+            "reported_tga_delta": 25026,
+            "reported_net_deposits_minus_withdrawals": 25021,
+            "difference": 5,
+            "tax_net_proxy": 34192,
+            "customs_deposits": 227
+          },
+          {
+            "date": "2024-12-31",
+            "reported_tga_delta": -23535,
+            "reported_net_deposits_minus_withdrawals": -23540,
+            "difference": 5,
+            "tax_net_proxy": 16849,
+            "customs_deposits": 123
+          }
+        ]
+      },
+      "explicit_named_tax_net_proxy_usd_billions": 4636.657,
+      "public_debt_cash_issues_usd_billions": 29841.122,
+      "public_debt_cash_redemptions_usd_billions": 0,
+      "non_debt_receipts_usd_billions": 5748.557,
+      "non_debt_withdrawals_usd_billions": 35636.488,
+      "non_debt_net_usd_billions": -29887.931
+    },
+    "2025": {
+      "cashflow_days": 250,
+      "tga_days": 250,
+      "identity": {
+        "count": 250,
+        "average_absolute_identity_gap_usd_millions": 2.904,
+        "max_absolute_identity_gap_usd_millions": 11,
+        "within_one_billion_pct": 100,
+        "recent_examples": [
+          {
+            "date": "2025-12-26",
+            "reported_tga_delta": 32247,
+            "reported_net_deposits_minus_withdrawals": 32244,
+            "difference": 3,
+            "tax_net_proxy": 16269,
+            "customs_deposits": 368
+          },
+          {
+            "date": "2025-12-29",
+            "reported_tga_delta": 25209,
+            "reported_net_deposits_minus_withdrawals": 25207,
+            "difference": 2,
+            "tax_net_proxy": 31577,
+            "customs_deposits": 13
+          },
+          {
+            "date": "2025-12-30",
+            "reported_tga_delta": -32587,
+            "reported_net_deposits_minus_withdrawals": -32596,
+            "difference": 9,
+            "tax_net_proxy": 11832,
+            "customs_deposits": 2
+          },
+          {
+            "date": "2025-12-31",
+            "reported_tga_delta": 46447,
+            "reported_net_deposits_minus_withdrawals": 46441,
+            "difference": 6,
+            "tax_net_proxy": 26304,
+            "customs_deposits": 936
+          }
+        ]
+      },
+      "explicit_named_tax_net_proxy_usd_billions": 4914.264,
+      "public_debt_cash_issues_usd_billions": 31089.249,
+      "public_debt_cash_redemptions_usd_billions": 0,
+      "non_debt_receipts_usd_billions": 6275.134,
+      "non_debt_withdrawals_usd_billions": 37213.48,
+      "non_debt_net_usd_billions": -30938.346
+    },
+    "2026": {
+      "cashflow_days": 197,
+      "tga_days": 197,
+      "identity": {
+        "count": 197,
+        "average_absolute_identity_gap_usd_millions": 2.863,
+        "max_absolute_identity_gap_usd_millions": 11,
+        "within_one_billion_pct": 100,
+        "recent_examples": [
+          {
+            "date": "2026-10-07",
+            "reported_tga_delta": 369,
+            "reported_net_deposits_minus_withdrawals": 367,
+            "difference": 2,
+            "tax_net_proxy": 14353,
+            "customs_deposits": 267
+          },
+          {
+            "date": "2026-10-08",
+            "reported_tga_delta": 1686,
+            "reported_net_deposits_minus_withdrawals": 1689,
+            "difference": -3,
+            "tax_net_proxy": 5770,
+            "customs_deposits": 316
+          },
+          {
+            "date": "2026-10-09",
+            "reported_tga_delta": -14943,
+            "reported_net_deposits_minus_withdrawals": -14942,
+            "difference": -1,
+            "tax_net_proxy": 11307,
+            "customs_deposits": 366
+          },
+          {
+            "date": "2026-10-13",
+            "reported_tga_delta": 47688,
+            "reported_net_deposits_minus_withdrawals": 47688,
+            "difference": 0,
+            "tax_net_proxy": 31574,
+            "customs_deposits": 333
+          }
+        ]
+      },
+      "explicit_named_tax_net_proxy_usd_billions": 4017.561,
+      "public_debt_cash_issues_usd_billions": 26290.221,
+      "public_debt_cash_redemptions_usd_billions": 0,
+      "non_debt_receipts_usd_billions": 5288.477,
+      "non_debt_withdrawals_usd_billions": 31531.421,
+      "non_debt_net_usd_billions": -26242.944
+    }
+  },
+  "exploratory_fiscal_seasonality": {
+    "tax_net_named_categories": {
+      "overall": {
+        "samples": 429,
+        "weekday_median_mae_usd_billions": 8.675,
+        "month_day_calendar_median_mae_usd_billions": 9.685,
+        "zero_mae_usd_billions": 19.657,
+        "calendar_days_with_5_or_more_prior_examples": 399
+      },
+      "by_year": {
+        "2025": {
+          "samples": 239,
+          "weekday_median_mae_usd_billions": 8.142,
+          "month_day_calendar_median_mae_usd_billions": 10.085,
+          "zero_mae_usd_billions": 19.343,
+          "calendar_days_with_5_or_more_prior_examples": 221
+        },
+        "2026": {
+          "samples": 190,
+          "weekday_median_mae_usd_billions": 9.347,
+          "month_day_calendar_median_mae_usd_billions": 9.182,
+          "zero_mae_usd_billions": 20.053,
+          "calendar_days_with_5_or_more_prior_examples": 178
+        }
+      }
+    },
+    "nondebt_net": {
+      "overall": {
+        "samples": 429,
+        "weekday_median_mae_usd_billions": 32.46,
+        "month_day_calendar_median_mae_usd_billions": 120.011,
+        "zero_mae_usd_billions": 129.8,
+        "calendar_days_with_5_or_more_prior_examples": 399
+      },
+      "by_year": {
+        "2025": {
+          "samples": 239,
+          "weekday_median_mae_usd_billions": 31.273,
+          "month_day_calendar_median_mae_usd_billions": 118.201,
+          "zero_mae_usd_billions": 124.277,
+          "calendar_days_with_5_or_more_prior_examples": 221
+        },
+        "2026": {
+          "samples": 190,
+          "weekday_median_mae_usd_billions": 33.953,
+          "month_day_calendar_median_mae_usd_billions": 122.286,
+          "zero_mae_usd_billions": 136.747,
+          "calendar_days_with_5_or_more_prior_examples": 178
+        }
+      }
+    },
+    "disclosure": "Calendar/weekday priors are fixed and one-day walk-forward, lagging training by 3 calendar days; no optimization or actual historical release vintages"
+  },
+  "limitations": [
+    "Named taxes are a partial tax proxy, customs separate, not certified entire IRS revenue",
+    "Nondebt net is TGA deposits less public debt cash issues minus TGA withdrawals less cash redemptions: it includes all non-debt changes, not pure discretionary spending",
+    "Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast",
+    "Original FiscalData source is current-version and may have revisions",
+    "Treasury auction announced issue forecasts and nondebt seasonal estimates have not yet been added for a complete future TGA forecast",
+    "GLD cashflow flow signal, gold multi-factor confirmations and execution backtest remain distinct tasks"
+  ]
+}
