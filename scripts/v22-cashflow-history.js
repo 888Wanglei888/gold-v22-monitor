@@ -2,6 +2,8 @@
 // Aggregated research statistics only; never publish 2023-present detailed raw transaction rows.
 const fs=require('node:fs');
 const {cashflowByDay,tgaByDay,reconcile}=require('../lib/endpoints/v22-cashflow-core');
+const {normalizeAnnouncements}=require('../lib/endpoints/v22-auction-core');
+const {evaluate}=require('../lib/endpoints/v22-fiscal-composite-core');
 const ROOT='https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/';
 const MS=86400000;
 const iso=t=>new Date(t).toISOString().slice(0,10);
@@ -62,9 +64,16 @@ async function main(){
   source:'US Treasury DTS II operating cash transactions + Table I TGA close',months_requested:months.length,
   full_v22_fiscal_prediction_ready:false,trade_signals_enabled:false};
  try{
-  const [monthRows,tgaYears]=await Promise.all([
+  const [monthRows,tgaYears,auctionYears]=await Promise.all([
    pool(months,5,m=>fetchRows('deposits_withdrawals_operating_cash',m.from,m.to)),
-   pool(Array.from({length:maxYear-2022},(_,i)=>2023+i),3,y=>fetchRows('operating_cash_balance',String(y)+'-01-01',String(y)+'-12-31'))
+   pool(Array.from({length:maxYear-2022},(_,i)=>2023+i),3,y=>fetchRows('operating_cash_balance',String(y)+'-01-01',String(y)+'-12-31')),
+   pool([2023,2024,2025,2026],3,async y=>{
+    const p=new URLSearchParams({filter:'auction_date:gte:'+y+'-01-01,auction_date:lte:'+y+'-12-31',sort:'auction_date','page[size]':'10000'});
+    const r=await fetch('https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query?'+p,{signal:AbortSignal.timeout(30000)});
+    if(!r.ok)throw Error('Auction '+y+' HTTP '+r.status);
+    const j=await r.json();if(Number(j.meta?.total_count)>j.data?.length||j.data?.length>=10000)throw Error('Auction history truncated '+y);
+    return j.data||[];
+   })
   ]);
   if(monthRows.some((x,i)=>x.length<200||x.length>=10000))throw Error('Month was missing or unexpectedly small');
   const raw=monthRows.flat(),cash=cashflowByDay(raw),tga=tgaByDay(tgaYears.flat()),identity_all=reconcile(cash,tga);
@@ -96,11 +105,15 @@ async function main(){
   report.debt_related_cashflow_labels=[...categoryLabels.values()].slice(0,70);
   report.raw_transaction_rows=raw.length;report.tga_closing_rows=tga.days.length;report.cashflow_report_days=cash.days.length;
   report.faults=cash.faults;report.tga_duplicate_dates=tga.duplicate_dates;report.identity=identity;report.identity_all_2023_present=identity_all;report.by_year=byYear;
+  const auction=normalizeAnnouncements(auctionYears.flat());
+  if(auction.events.length<1000||auction.faults.bad_date_order>0||auction.faults.duplicate_auction_identity>0)throw Error('Auction announcement historical source invalid');
+  report.auction_announcement_events=auction.events.length;
+  report.exploratory_partial_tga_auction_plus_fiscal_forecast=evaluate(trustedTga.days,trustedCash.days,auction.events,2025);
   report.exploratory_fiscal_seasonality={
    tax_net_named_categories:predict(trustedCash.days,'tax_net_proxy'),
    nondebt_net_unvalidated_debt_redemption_category:predict(trustedCash.days,'nondebt_net'),
    disclosure:'Calendar/weekday priors are fixed and one-day walk-forward, lagging training by 3 calendar days; no optimization or actual historical release vintages' };
-  report.limitations=['2023 year fails cashflow/TGA accounting identity and is explicitly excluded from all train/test statistics; do not silently reuse','Named taxes are a partial tax proxy, customs separate, not certified entire IRS revenue','Nondebt net cannot be treated as verified discretionary spending until Public Debt Cash Redemptions category mapping is separately confirmed','Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast','Original FiscalData source is current-version and may have revisions','Treasury auction announced issue forecasts and nondebt seasonal estimates have not yet been added for a complete future TGA forecast','GLD cashflow flow signal, gold multi-factor confirmations and execution backtest remain distinct tasks'];
+  report.limitations=['2023 year fails cashflow/TGA accounting identity and is explicitly excluded from all train/test statistics; do not silently reuse','Named taxes are a partial tax proxy, customs separate, not certified entire IRS revenue','Nondebt net cannot be treated as verified discretionary spending until Public Debt Cash Redemptions category mapping is separately confirmed','Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast','Original FiscalData source is current-version and may have revisions','Treasury auction bill announcements and lagged nondebt/other debt seasonal priors are now tested as research proxies, but coupon/TIPS/FRN announced net cash, tax date calendar, auction vintages and verified publication stamps remain missing for full V2.2 forecast','GLD cashflow flow signal, gold multi-factor confirmations and execution backtest remain distinct tasks'];
  }catch(e){report.status='multi_year_cashflow_audit_blocked';report.error=String(e)}
  fs.mkdirSync('reports',{recursive:true});fs.writeFileSync('reports/fiscal-cashflow-history-latest.json',JSON.stringify(report,null,2));
  console.log(report.status,'months',report.months_requested,'matched_days',report.identity?.count,'MAE USD millions',report.identity?.average_absolute_identity_gap_usd_millions,report.error||'');
