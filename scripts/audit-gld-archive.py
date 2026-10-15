@@ -31,6 +31,8 @@ def inspect(binary):
             date_headers=set()
             date_value_formats={}
             masked_date_samples=set()
+            first_column_a={'cells':0,'nonempty':0,'types':{},'first_nonempty_row':None,'last_nonempty_row':None,'masked_examples':set()}
+            date_header_row=None
             with z.open(path) as sheet:
                 for _,element in ET.iterparse(sheet,events=('end',)):
                     if element.tag!=X+'row':
@@ -47,10 +49,21 @@ def inspect(binary):
                             value=''.join(t.text or '' for t in cell.find(X+'is').iter(X+'t')).strip()
                         if cell.attrib.get('t')=='s' and value.isdecimal() and int(value)<len(strings):
                             value=strings[int(value)]
+                        if col=='A':
+                            first_column_a['cells']+=1
+                            typ=cell.attrib.get('t','numeric')
+                            first_column_a['types'][typ]=first_column_a['types'].get(typ,0)+1
+                            if value:
+                                first_column_a['nonempty']+=1
+                                first_column_a['first_nonempty_row']=first_column_a['first_nonempty_row'] or rows
+                                first_column_a['last_nonempty_row']=rows
+                                if len(first_column_a['masked_examples'])<6:
+                                    first_column_a['masked_examples'].add(re.sub(r'\d','#',value[:35]))
                         if not value:
                             continue
                         if rows<=20 and value.strip().lower()=='date':
                             date_headers.add(col)
+                            date_header_row=rows
                         if rows<=20 and len(value)<=80 and any(x in value.lower() for x in ('date','tonne','hold','ounce','share')):
                             hints.add(re.sub(r'\s+',' ',value))
                         if col not in ('A','B','C','D'):
@@ -67,7 +80,8 @@ def inspect(binary):
                             dates[col].append(day)
                     element.clear()
             date_cols={col:{'count':len(days),'first':str(min(days)),'last':str(max(days))} for col,days in dates.items()}
-            sheets.append({'xml_file':path,'row_count':rows,'date_header_columns':sorted(date_headers),'date_column_candidates':date_cols,'date_cell_storage_types':date_value_formats,'unparsed_date_shapes':sorted(masked_date_samples),'header_topics':sorted(hints)[:16]})
+            first_column_a['masked_examples']=sorted(first_column_a['masked_examples'])
+            sheets.append({'xml_file':path,'row_count':rows,'date_header_row':date_header_row,'first_column_a_debug':first_column_a,'date_header_columns':sorted(date_headers),'date_column_candidates':date_cols,'date_cell_storage_types':date_value_formats,'unparsed_date_shapes':sorted(masked_date_samples),'header_topics':sorted(hints)[:16]})
         return sheets
 
 def main():
