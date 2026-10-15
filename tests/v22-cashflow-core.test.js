@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict');
+const {cashflowByDay,tgaByDay,reconcile}=require('../lib/endpoints/v22-cashflow-core');
+const x=(date,transaction_type,cat,amount,line)=>({record_date:date,table_nbr:'II',account_type:'Treasury General Account (TGA)',transaction_type,transaction_catg:cat,src_line_nbr:String(line),transaction_today_amt:String(amount)});
+const rows=[x('2026-09-01','Deposits','Taxes - Withheld Individual/FICA',120,44),x('2026-09-01','Withdrawals','Taxes - Individual Tax Refunds (EFT)',10,140),x('2026-09-01','Withdrawals','Dept of Defense',50,90),x('2026-09-02','Deposits','Taxes - Withheld Individual/FICA',200,44),x('2026-09-02','Withdrawals','Dept of Defense',100,90)];
+const q=cashflowByDay(rows);assert.equal(q.days.length,2);assert.equal(q.days[0].tax_net_proxy,110);
+assert.equal(q.days[0].cashflow_net,60);assert.equal(q.days[1].cashflow_net,100);
+const tga=tgaByDay([{record_date:'2026-08-31',table_nbr:'I',src_line_nbr:'4',account_type:'Treasury General Account (TGA) Closing Balance',open_today_bal:'1000'},{record_date:'2026-09-01',table_nbr:'I',src_line_nbr:'4',account_type:'Treasury General Account (TGA) Closing Balance',open_today_bal:'1060'},{record_date:'2026-09-02',table_nbr:'I',src_line_nbr:'4',account_type:'Treasury General Account (TGA) Closing Balance',open_today_bal:'1160'}]);
+assert.equal(reconcile(q,tga).max_absolute_identity_gap_usd_millions,0);
+assert.equal(cashflowByDay([...rows,rows[0]]).faults.duplicate_line_key,1);
+console.log('Treasury cashflow exact category and day-on-day TGA identity unit tests passed');
