@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T11:36:50.044Z",
-  "github_sha": "32d7dd8763e9a86c01f97ab39a85be8dc1ec7f0e",
+  "checked_at_utc": "2026-10-15T11:41:59.021Z",
+  "github_sha": "3fd30e99192f38d765cdc6773505f03bb61372d4",
   "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
   "months_requested": 46,
   "full_v22_fiscal_prediction_ready": false,
@@ -335,6 +335,11 @@
     }
   },
   "auction_announcement_events": 1653,
+  "market_bill_issuance_history": {
+    "complete_days": 698,
+    "first": "2024-01-02",
+    "last": "2026-10-13"
+  },
   "exploratory_partial_tga_auction_plus_fiscal_forecast": {
     "history_samples": 669,
     "scored": {
@@ -345,7 +350,11 @@
           "mae_total_weekday_usd_billions": 23.888,
           "mae_auction_plus_residual_usd_billions": 19.084,
           "mae_auction_plus_split_cash_usd_billions": 19.222,
-          "mae_auction_plus_tax_calendar_usd_billions": 17.089,
+          "mae_auction_plus_tax_calendar_usd_billions": 17.084,
+          "bills_issue_fallback_samples": 429,
+          "mae_known_maturities_plus_bills_issuance_baseline_usd_billions": 20.364,
+          "mae_known_maturities_plus_bills_issuance_baseline_tax_usd_billions": 18.365,
+          "signals_with_unannounced_future_bills_days": 257,
           "mae_without_known_maturity_usd_billions": 109.829,
           "mae_without_known_issue_usd_billions": 113.741,
           "median_absolute_actual_change_usd_billions": 20.095,
@@ -365,7 +374,11 @@
             "mae_total_weekday_usd_billions": 24.002,
             "mae_auction_plus_residual_usd_billions": 17.582,
             "mae_auction_plus_split_cash_usd_billions": 17.637,
-            "mae_auction_plus_tax_calendar_usd_billions": 15.692,
+            "mae_auction_plus_tax_calendar_usd_billions": 15.688,
+            "bills_issue_fallback_samples": 239,
+            "mae_known_maturities_plus_bills_issuance_baseline_usd_billions": 18.544,
+            "mae_known_maturities_plus_bills_issuance_baseline_tax_usd_billions": 16.65,
+            "signals_with_unannounced_future_bills_days": 144,
             "mae_without_known_maturity_usd_billions": 105.416,
             "mae_without_known_issue_usd_billions": 108.035,
             "median_absolute_actual_change_usd_billions": 20.095,
@@ -384,7 +397,11 @@
             "mae_total_weekday_usd_billions": 23.744,
             "mae_auction_plus_residual_usd_billions": 20.972,
             "mae_auction_plus_split_cash_usd_billions": 21.215,
-            "mae_auction_plus_tax_calendar_usd_billions": 18.846,
+            "mae_auction_plus_tax_calendar_usd_billions": 18.841,
+            "bills_issue_fallback_samples": 190,
+            "mae_known_maturities_plus_bills_issuance_baseline_usd_billions": 22.654,
+            "mae_known_maturities_plus_bills_issuance_baseline_tax_usd_billions": 20.523,
+            "signals_with_unannounced_future_bills_days": 113,
             "mae_without_known_maturity_usd_billions": 115.38,
             "mae_without_known_issue_usd_billions": 120.919,
             "median_absolute_actual_change_usd_billions": 20.105,
@@ -408,7 +425,9 @@
             "published_issue_component_usd_billions": 220,
             "historical_maturity_component_usd_billions": 224.728,
             "residual_seasonality_component_usd_billions": -7.204,
-            "tax_calendar_adjustment_usd_billions": 171.206
+            "tax_calendar_adjustment_usd_billions": 171.65,
+            "fallback_issuance_model_prediction_usd_billions": -12.722,
+            "future_days_without_published_bill_offerings": 0
           },
           {
             "asof": "2026-09-14",
@@ -419,7 +438,9 @@
             "published_issue_component_usd_billions": 247,
             "historical_maturity_component_usd_billions": 295.929,
             "residual_seasonality_component_usd_billions": -4.676,
-            "tax_calendar_adjustment_usd_billions": 93.385
+            "tax_calendar_adjustment_usd_billions": 93.567,
+            "fallback_issuance_model_prediction_usd_billions": -55.585,
+            "future_days_without_published_bill_offerings": 0
           },
           {
             "asof": "2026-04-14",
@@ -430,7 +451,9 @@
             "published_issue_component_usd_billions": 0,
             "historical_maturity_component_usd_billions": 0,
             "residual_seasonality_component_usd_billions": -25.763,
-            "tax_calendar_adjustment_usd_billions": 169.102
+            "tax_calendar_adjustment_usd_billions": 169.335,
+            "fallback_issuance_model_prediction_usd_billions": -25.763,
+            "future_days_without_published_bill_offerings": 1
           },
           {
             "asof": "2026-06-12",
@@ -441,7 +464,9 @@
             "published_issue_component_usd_billions": 0,
             "historical_maturity_component_usd_billions": 0,
             "residual_seasonality_component_usd_billions": 17.134,
-            "tax_calendar_adjustment_usd_billions": 92.662
+            "tax_calendar_adjustment_usd_billions": 92.923,
+            "fallback_issuance_model_prediction_usd_billions": 17.134,
+            "future_days_without_published_bill_offerings": 1
           },
           {
             "asof": "2025-06-13",
@@ -452,7 +477,9 @@
             "published_issue_component_usd_billions": 0,
             "historical_maturity_component_usd_billions": 0,
             "residual_seasonality_component_usd_billions": 15.979,
-            "tax_calendar_adjustment_usd_billions": 91.397
+            "tax_calendar_adjustment_usd_billions": 91.634,
+            "fallback_issuance_model_prediction_usd_billions": 15.976,
+            "future_days_without_published_bill_offerings": 1
           }
         ]
       },
@@ -463,7 +490,11 @@
           "mae_total_weekday_usd_billions": 45.32,
           "mae_auction_plus_residual_usd_billions": 40.42,
           "mae_auction_plus_split_cash_usd_billions": 40.711,
-          "mae_auction_plus_tax_calendar_usd_billions": 34.043,
+          "mae_auction_plus_tax_calendar_usd_billions": 34.031,
+          "bills_issue_fallback_samples": 395,
+          "mae_known_maturities_plus_bills_issuance_baseline_usd_billions": 41.964,
+          "mae_known_maturities_plus_bills_issuance_baseline_tax_usd_billions": 35.575,
+          "signals_with_unannounced_future_bills_days": 395,
           "mae_without_known_maturity_usd_billions": 285.511,
           "mae_without_known_issue_usd_billions": 313.488,
           "median_absolute_actual_change_usd_billions": 34.071,
@@ -483,7 +514,11 @@
             "mae_total_weekday_usd_billions": 45.548,
             "mae_auction_plus_residual_usd_billions": 37.289,
             "mae_auction_plus_split_cash_usd_billions": 37.427,
-            "mae_auction_plus_tax_calendar_usd_billions": 31.041,
+            "mae_auction_plus_tax_calendar_usd_billions": 31.03,
+            "bills_issue_fallback_samples": 217,
+            "mae_known_maturities_plus_bills_issuance_baseline_usd_billions": 38.437,
+            "mae_known_maturities_plus_bills_issuance_baseline_tax_usd_billions": 32.178,
+            "signals_with_unannounced_future_bills_days": 217,
             "mae_without_known_maturity_usd_billions": 275.203,
             "mae_without_known_issue_usd_billions": 302.409,
             "median_absolute_actual_change_usd_billions": 34.993,
@@ -502,7 +537,11 @@
             "mae_total_weekday_usd_billions": 45.041,
             "mae_auction_plus_residual_usd_billions": 44.238,
             "mae_auction_plus_split_cash_usd_billions": 44.713,
-            "mae_auction_plus_tax_calendar_usd_billions": 37.703,
+            "mae_auction_plus_tax_calendar_usd_billions": 37.689,
+            "bills_issue_fallback_samples": 178,
+            "mae_known_maturities_plus_bills_issuance_baseline_usd_billions": 46.264,
+            "mae_known_maturities_plus_bills_issuance_baseline_tax_usd_billions": 39.716,
+            "signals_with_unannounced_future_bills_days": 178,
             "mae_without_known_maturity_usd_billions": 298.077,
             "mae_without_known_issue_usd_billions": 326.994,
             "median_absolute_actual_change_usd_billions": 33.564,
@@ -526,7 +565,9 @@
             "published_issue_component_usd_billions": 220,
             "historical_maturity_component_usd_billions": 224.728,
             "residual_seasonality_component_usd_billions": -15.596,
-            "tax_calendar_adjustment_usd_billions": 171.589
+            "tax_calendar_adjustment_usd_billions": 171.689,
+            "fallback_issuance_model_prediction_usd_billions": -21.112,
+            "future_days_without_published_bill_offerings": 2
           },
           {
             "asof": "2026-04-13",
@@ -537,7 +578,9 @@
             "published_issue_component_usd_billions": 510,
             "historical_maturity_component_usd_billions": 576.916,
             "residual_seasonality_component_usd_billions": -30.881,
-            "tax_calendar_adjustment_usd_billions": 169.102
+            "tax_calendar_adjustment_usd_billions": 169.335,
+            "fallback_issuance_model_prediction_usd_billions": -109.348,
+            "future_days_without_published_bill_offerings": 1
           },
           {
             "asof": "2025-04-14",
@@ -548,7 +591,9 @@
             "published_issue_component_usd_billions": 482,
             "historical_maturity_component_usd_billions": 559.565,
             "residual_seasonality_component_usd_billions": -33.153,
-            "tax_calendar_adjustment_usd_billions": 171.206
+            "tax_calendar_adjustment_usd_billions": 171.65,
+            "fallback_issuance_model_prediction_usd_billions": -120.378,
+            "future_days_without_published_bill_offerings": 1
           },
           {
             "asof": "2025-04-10",
@@ -559,7 +604,9 @@
             "published_issue_component_usd_billions": 220,
             "historical_maturity_component_usd_billions": 224.728,
             "residual_seasonality_component_usd_billions": 7.261,
-            "tax_calendar_adjustment_usd_billions": 171.528
+            "tax_calendar_adjustment_usd_billions": 171.67,
+            "fallback_issuance_model_prediction_usd_billions": 1.668,
+            "future_days_without_published_bill_offerings": 2
           },
           {
             "asof": "2026-04-10",
@@ -570,7 +617,9 @@
             "published_issue_component_usd_billions": 224,
             "historical_maturity_component_usd_billions": 265.22,
             "residual_seasonality_component_usd_billions": -14.752,
-            "tax_calendar_adjustment_usd_billions": 169.15
+            "tax_calendar_adjustment_usd_billions": 169.394,
+            "fallback_issuance_model_prediction_usd_billions": -56.718,
+            "future_days_without_published_bill_offerings": 2
           }
         ]
       },
@@ -581,7 +630,11 @@
           "mae_total_weekday_usd_billions": 59.224,
           "mae_auction_plus_residual_usd_billions": 145.314,
           "mae_auction_plus_split_cash_usd_billions": 147.003,
-          "mae_auction_plus_tax_calendar_usd_billions": 134.655,
+          "mae_auction_plus_tax_calendar_usd_billions": 134.637,
+          "bills_issue_fallback_samples": 362,
+          "mae_known_maturities_plus_bills_issuance_baseline_usd_billions": 61.197,
+          "mae_known_maturities_plus_bills_issuance_baseline_tax_usd_billions": 50.52,
+          "signals_with_unannounced_future_bills_days": 362,
           "mae_without_known_maturity_usd_billions": 376.017,
           "mae_without_known_issue_usd_billions": 523.632,
           "median_absolute_actual_change_usd_billions": 44.919,
@@ -601,7 +654,11 @@
             "mae_total_weekday_usd_billions": 59.843,
             "mae_auction_plus_residual_usd_billions": 138.162,
             "mae_auction_plus_split_cash_usd_billions": 139.653,
-            "mae_auction_plus_tax_calendar_usd_billions": 127.563,
+            "mae_auction_plus_tax_calendar_usd_billions": 127.547,
+            "bills_issue_fallback_samples": 196,
+            "mae_known_maturities_plus_bills_issuance_baseline_usd_billions": 55.86,
+            "mae_known_maturities_plus_bills_issuance_baseline_tax_usd_billions": 45.245,
+            "signals_with_unannounced_future_bills_days": 196,
             "mae_without_known_maturity_usd_billions": 362.133,
             "mae_without_known_issue_usd_billions": 507.267,
             "median_absolute_actual_change_usd_billions": 45.071,
@@ -620,7 +677,11 @@
             "mae_total_weekday_usd_billions": 58.492,
             "mae_auction_plus_residual_usd_billions": 153.757,
             "mae_auction_plus_split_cash_usd_billions": 155.683,
-            "mae_auction_plus_tax_calendar_usd_billions": 143.028,
+            "mae_auction_plus_tax_calendar_usd_billions": 143.008,
+            "bills_issue_fallback_samples": 166,
+            "mae_known_maturities_plus_bills_issuance_baseline_usd_billions": 67.499,
+            "mae_known_maturities_plus_bills_issuance_baseline_tax_usd_billions": 56.749,
+            "signals_with_unannounced_future_bills_days": 166,
             "mae_without_known_maturity_usd_billions": 392.409,
             "mae_without_known_issue_usd_billions": 542.955,
             "median_absolute_actual_change_usd_billions": 44.894,
@@ -644,7 +705,9 @@
             "published_issue_component_usd_billions": 224,
             "historical_maturity_component_usd_billions": 576.916,
             "residual_seasonality_component_usd_billions": -16.873,
-            "tax_calendar_adjustment_usd_billions": 169.15
+            "tax_calendar_adjustment_usd_billions": 169.394,
+            "fallback_issuance_model_prediction_usd_billions": -132.058,
+            "future_days_without_published_bill_offerings": 4
           },
           {
             "asof": "2025-04-10",
@@ -655,7 +718,9 @@
             "published_issue_component_usd_billions": 220,
             "historical_maturity_component_usd_billions": 559.565,
             "residual_seasonality_component_usd_billions": -18.66,
-            "tax_calendar_adjustment_usd_billions": 171.528
+            "tax_calendar_adjustment_usd_billions": 171.67,
+            "fallback_issuance_model_prediction_usd_billions": -128.327,
+            "future_days_without_published_bill_offerings": 4
           },
           {
             "asof": "2026-04-14",
@@ -666,7 +731,9 @@
             "published_issue_component_usd_billions": 286,
             "historical_maturity_component_usd_billions": 566.808,
             "residual_seasonality_component_usd_billions": -17.325,
-            "tax_calendar_adjustment_usd_billions": 169.102
+            "tax_calendar_adjustment_usd_billions": 169.335,
+            "fallback_issuance_model_prediction_usd_billions": -74.031,
+            "future_days_without_published_bill_offerings": 4
           },
           {
             "asof": "2025-04-08",
@@ -677,7 +744,9 @@
             "published_issue_component_usd_billions": 214,
             "historical_maturity_component_usd_billions": 467.773,
             "residual_seasonality_component_usd_billions": -18.751,
-            "tax_calendar_adjustment_usd_billions": 171.589
+            "tax_calendar_adjustment_usd_billions": 171.689,
+            "fallback_issuance_model_prediction_usd_billions": -52.24,
+            "future_days_without_published_bill_offerings": 4
           },
           {
             "asof": "2026-09-10",
@@ -688,7 +757,9 @@
             "published_issue_component_usd_billions": 247,
             "historical_maturity_component_usd_billions": 578.097,
             "residual_seasonality_component_usd_billions": -14.509,
-            "tax_calendar_adjustment_usd_billions": 93.418
+            "tax_calendar_adjustment_usd_billions": 93.593,
+            "fallback_issuance_model_prediction_usd_billions": -104.514,
+            "future_days_without_published_bill_offerings": 4
           }
         ]
       }
@@ -753,7 +824,7 @@
     "Nondebt net cannot be treated as verified discretionary spending until Public Debt Cash Redemptions category mapping is separately confirmed",
     "Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast",
     "Original FiscalData source is current-version and may have revisions",
-    "Treasury auction bill announcements and lagged nondebt/other debt seasonal priors are now tested as research proxies, but coupon/TIPS/FRN announced net cash, tax date calendar, auction vintages and verified publication stamps remain missing for full V2.2 forecast",
+    "Treasury auction bill announcements and actual DTS gross Bill historical seasonal issuance are tested with no future rows, but TIPS/FRN, tax extensions, settlement cash basis and publication vintages remain unverified",
     "GLD cashflow flow signal, gold multi-factor confirmations and execution backtest remain distinct tasks"
   ]
 }
