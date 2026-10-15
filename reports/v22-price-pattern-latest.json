@@ -1,0 +1,164 @@
+{
+  "checked_at_utc": "2026-10-15T11:48:04.528Z",
+  "github_sha": "2890fa11a016226b1d0308c6a94a03666ea4a785",
+  "source": "Yahoo continuous GC=F 1-hour research proxy",
+  "status": "closed_four_hour_price_pattern_audited",
+  "complete_v22_trade_backtest": false,
+  "trade_signals_enabled": false,
+  "ohlc": {
+    "raw_hours": 13007,
+    "closed_four_hour_candles": 2212,
+    "quality": {
+      "raw": 13007,
+      "missing_ohlc": 2743,
+      "off_hour": 13,
+      "unclosed": 1,
+      "duplicate_hours": 0,
+      "nonconsecutive_groups": 0,
+      "incomplete_groups": 34
+    },
+    "first": "2025-01-01",
+    "last": "2026-10-14"
+  },
+  "patterns": {
+    "candidate_count": 146,
+    "counts": {
+      "long_breakout": 131,
+      "short_breakout": 53,
+      "long_confirmed": 108,
+      "short_confirmed": 38,
+      "market_session_gap_excluded": 19
+    },
+    "per_year": {
+      "2025": {
+        "confirmed_breakouts": 93,
+        "long": 78,
+        "short": 15
+      },
+      "2026": {
+        "confirmed_breakouts": 53,
+        "long": 30,
+        "short": 23
+      }
+    },
+    "recent_confirmed_patterns": [
+      {
+        "direction": "long",
+        "breakout_closed_utc": "2026-08-21T10:00:00.000Z",
+        "confirmation_closed_utc": "2026-08-21T14:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-08-21T14:00:00.000Z",
+        "breakout_price": 4639.7001953125,
+        "atr_14_4h": 42.79282924107143,
+        "prior_range_high": 4612.39990234375,
+        "prior_range_low": 4378,
+        "price_only": true
+      },
+      {
+        "direction": "short",
+        "breakout_closed_utc": "2026-08-31T02:00:00.000Z",
+        "confirmation_closed_utc": "2026-08-31T06:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-08-31T06:00:00.000Z",
+        "breakout_price": 4489.60009765625,
+        "atr_14_4h": 48.471400669642854,
+        "prior_range_high": 4755,
+        "prior_range_low": 4510.5,
+        "price_only": true
+      },
+      {
+        "direction": "short",
+        "breakout_closed_utc": "2026-09-01T10:00:00.000Z",
+        "confirmation_closed_utc": "2026-09-01T14:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-09-01T14:00:00.000Z",
+        "breakout_price": 4413.7001953125,
+        "atr_14_4h": 45.114222935267854,
+        "prior_range_high": 4698,
+        "prior_range_low": 4445.60009765625,
+        "price_only": true
+      },
+      {
+        "direction": "short",
+        "breakout_closed_utc": "2026-09-02T02:00:00.000Z",
+        "confirmation_closed_utc": "2026-09-02T06:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-09-02T06:00:00.000Z",
+        "breakout_price": 4338.10009765625,
+        "atr_14_4h": 48.57139369419643,
+        "prior_range_high": 4697.7001953125,
+        "prior_range_low": 4374.10009765625,
+        "price_only": true
+      },
+      {
+        "direction": "short",
+        "breakout_closed_utc": "2026-09-24T10:00:00.000Z",
+        "confirmation_closed_utc": "2026-09-24T14:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-09-24T14:00:00.000Z",
+        "breakout_price": 4289.7001953125,
+        "atr_14_4h": 32.671421595982146,
+        "prior_range_high": 4439.7998046875,
+        "prior_range_low": 4308,
+        "price_only": true
+      },
+      {
+        "direction": "short",
+        "breakout_closed_utc": "2026-09-28T02:00:00.000Z",
+        "confirmation_closed_utc": "2026-09-28T06:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-09-28T06:00:00.000Z",
+        "breakout_price": 4249.5,
+        "atr_14_4h": 34.242885044642854,
+        "prior_range_high": 4414.10009765625,
+        "prior_range_low": 4278.2998046875,
+        "price_only": true
+      },
+      {
+        "direction": "short",
+        "breakout_closed_utc": "2026-09-28T06:00:00.000Z",
+        "confirmation_closed_utc": "2026-09-28T10:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-09-28T10:00:00.000Z",
+        "breakout_price": 4212,
+        "atr_14_4h": 38.471470424107146,
+        "prior_range_high": 4407.5,
+        "prior_range_low": 4239.2998046875,
+        "price_only": true
+      },
+      {
+        "direction": "short",
+        "breakout_closed_utc": "2026-09-28T10:00:00.000Z",
+        "confirmation_closed_utc": "2026-09-28T14:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-09-28T14:00:00.000Z",
+        "breakout_price": 4188.10009765625,
+        "atr_14_4h": 39.221470424107146,
+        "prior_range_high": 4407.5,
+        "prior_range_low": 4211.39990234375,
+        "price_only": true
+      },
+      {
+        "direction": "long",
+        "breakout_closed_utc": "2026-10-09T06:00:00.000Z",
+        "confirmation_closed_utc": "2026-10-09T10:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-10-09T10:00:00.000Z",
+        "breakout_price": 4217.89990234375,
+        "atr_14_4h": 32.664219447544646,
+        "prior_range_high": 4208,
+        "prior_range_low": 4091.199951171875,
+        "price_only": true
+      },
+      {
+        "direction": "short",
+        "breakout_closed_utc": "2026-10-14T14:00:00.000Z",
+        "confirmation_closed_utc": "2026-10-14T18:00:00.000Z",
+        "earliest_hypothetical_entry_open_utc": "2026-10-14T22:00:00.000Z",
+        "breakout_price": 4110.2998046875,
+        "atr_14_4h": 25.042759486607142,
+        "prior_range_high": 4242.2998046875,
+        "prior_range_low": 4129.2001953125,
+        "price_only": true
+      }
+    ]
+  },
+  "limitations": [
+    "These are technical price-only patterns; not A/A+/A++ verified V2.2 macro signals",
+    "Continuous Yahoo gold futures are not specific contracts, roll-adjusted or execution licensed",
+    "The original Dow daily/weekly trend still requires separately verified confirmation",
+    "4h interval anchored to America/New_York CME sessions and must be cross-checked against actual exchange breaks",
+    "No trade PnL is output because fiscal vintages, ETF flows and full strategy factor confirmations are not verified"
+  ]
+}
