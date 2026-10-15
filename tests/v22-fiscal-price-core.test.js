@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict'),{align}=require('../lib/endpoints/v22-fiscal-price-core');
+const predicted=[{decision_date:'2025-01-10',no_earlier_than_utc:'2025-01-10T23:59:59.000Z',forecast_D3_auction_plus_tax_usd_millions:-8000,forecast_D3_auction_plus_missing_issuance_baseline_tax_usd_millions:-6000,forecast_target_date:'2025-01-15',complete_auction_issuance_announcement_for_all_future_days:false}];
+const good={confirmation_closed_utc:'2025-01-11T12:00:00.000Z',direction:'long'};
+const early={confirmation_closed_utc:'2025-01-10T22:00:00.000Z',direction:'long'};
+const late={confirmation_closed_utc:'2025-01-15T12:00:00.000Z',direction:'long'};
+const all=align(predicted,[good,early,late]);
+assert.equal(all.conservative_prior_fiscal_forecasts_found,1);
+assert.equal(all.missing_or_older_than_72h,2);
+assert.equal(all.both_fiscal_models_same_direction_aligned,1);
+assert.equal(all.fiscal_revision_z_score_constructed,false);
+assert.throws(()=>align(predicted,[{confirmation_closed_utc:'invalid',direction:'long'}]));
+console.log('Fiscal forecast as-of+gold 4h strict timestamp alignment and stale forecast exclusion tests passed');
