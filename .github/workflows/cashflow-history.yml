@@ -1,0 +1,57 @@
+name: Validate multi-year Treasury cashflow identity
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/v22-cashflow-history.js
+      - lib/endpoints/v22-cashflow-core.js
+      - .github/workflows/cashflow-history.yml
+concurrency:
+  group: v22-complete-dts-cashflow-history
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  historical-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate parsers and duplicate-guard tests
+        run: |
+          node --check scripts/v22-cashflow-history.js
+          node tests/v22-cashflow-core.test.js
+      - name: Build audited 2023-present daily Treasury nondebt, tax and financing cashflows
+        run: node scripts/v22-cashflow-history.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v22-tga-cashflow-history-audit
+          path: reports/fiscal-cashflow-history-latest.json
+          retention-days: 14
+      - name: Publish only aggregated Treasury research metrics
+        if: ${{ !cancelled() }}
+        run: |
+          test -s reports/fiscal-cashflow-history-latest.json
+          cp reports/fiscal-cashflow-history-latest.json /tmp/complete-fiscal-result.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/complete-fiscal-result.json reports/fiscal-cashflow-history-latest.json
+            git add reports/fiscal-cashflow-history-latest.json
+            git commit -m "Record full 2023-present Treasury DTS cashflow accounting and no-lookahead research" || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Fail closed when full historical identity not reconciled
+        run: |
+          python3 - <<'PY'
+          import json
+          j=json.load(open('reports/fiscal-cashflow-history-latest.json'))
+          print('status:',j.get('status'),'error:',j.get('error'))
+          assert j.get('status')=='multi_year_dts_cashflows_identity_reconciled_research',j.get('error','Incomplete fiscal identity; no trade signal')
+          assert j.get('identity',{}).get('count',0)>650
+          PY
