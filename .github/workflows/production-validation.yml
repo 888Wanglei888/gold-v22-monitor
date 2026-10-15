@@ -52,7 +52,7 @@ jobs:
           path: diagnostics/
           retention-days: 14
       - name: Publish machine-readable latest verification
-        if: always()
+        if: ${{ !cancelled() }}
         shell: bash
         run: |
           python3 - <<'PY'
@@ -64,6 +64,8 @@ jobs:
                   with open(path) as f: payload=json.load(f)
                   records[name]={'status':payload.get('status'),'error':payload.get('error'),'observations':payload.get('observations'),'first_date':payload.get('first_date'),'last_date':payload.get('last_date'),'data':payload if name in ('full-history-backtest','readiness','v22-source-audit','v22-cot-audit','v22-ohlc-integrity','v22-spec','gold-proxy-backtest') else None}
               except Exception as e: records[name]={'error':str(e)}
+          if not records:
+              raise SystemExit('Refusing to overwrite previous production report with empty diagnostics')
           os.makedirs('reports',exist_ok=True)
           with open('reports/production-latest.json','w') as f: json.dump({'checked_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'commit':os.environ.get('GITHUB_SHA'),'endpoints':records},f,ensure_ascii=False,indent=2)
           PY
