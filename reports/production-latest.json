@@ -1,5 +1,1294 @@
 {
-  "checked_at_utc": "2026-10-15T06:35:57.617582+00:00",
-  "commit": "e2b9100bdd867e83e54ed661cd7db2446001b917",
-  "endpoints": {}
+  "checked_at_utc": "2026-10-15T06:39:32.909651+00:00",
+  "commit": "94d9ae9ec1f11283580724790e0df9ccc515b23b",
+  "endpoints": {
+    "v22-cot-audit": {
+      "status": "cot_source_access_ok",
+      "error": null,
+      "observations": 145,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "cot_source_access_ok",
+        "source": "CFTC Disaggregated Futures Only (72hh-3qpy)",
+        "contract_market_code": "088691",
+        "observations": 145,
+        "first_observation_date": "2024-01-02",
+        "last_observation_date": "2026-10-06",
+        "coverage_by_year": {
+          "2024": 53,
+          "2025": 52,
+          "2026": 40
+        },
+        "recent_reports_observation_date_only": [
+          {
+            "date": "2026-09-15",
+            "long": 142394,
+            "short": 9278,
+            "net": 133116,
+            "open_interest": 409899,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
+          },
+          {
+            "date": "2026-09-22",
+            "long": 135699,
+            "short": 8310,
+            "net": 127389,
+            "open_interest": 412800,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
+          },
+          {
+            "date": "2026-09-29",
+            "long": 131711,
+            "short": 11393,
+            "net": 120318,
+            "open_interest": 406456,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
+          },
+          {
+            "date": "2026-10-06",
+            "long": 127101,
+            "short": 16114,
+            "net": 110987,
+            "open_interest": 396109,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
+          }
+        ],
+        "release_timestamp_aligned": false,
+        "usable_as_v22_trade_filter": false,
+        "limitations": [
+          "Tuesday position report date is NOT publication date; official release calendar required before use in trading",
+          "Futures-only series must not be mixed with futures-and-options combined series",
+          "This source audit neither proves ETF fund flows nor licensed intraday execution",
+          "Current data may include revisions; point-in-time historical snapshots are not validated"
+        ]
+      }
+    },
+    "tga-2026": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 197,
+      "first_date": "2026-01-02",
+      "last_date": "2026-10-13",
+      "data": null
+    },
+    "gold-proxy-backtest": {
+      "status": "exploratory_gold_proxy_signal_test_not_trade_ready",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "exploratory_gold_proxy_signal_test_not_trade_ready",
+        "model": "weekday median TGA change, threshold $5bn",
+        "gold_proxy": "Yahoo GC=F continuous gold futures",
+        "execution": "second subsequent futures daily open; exit two sessions later",
+        "assumed_roundtrip_cost_bps": 10,
+        "overall": {
+          "trades": 472,
+          "win_rate_pct": 45.8,
+          "average_net_return_pct": -0.224
+        },
+        "by_year": {
+          "2023": {
+            "trades": 76,
+            "win_rate_pct": 50,
+            "average_net_return_pct": -0.109
+          },
+          "2024": {
+            "trades": 166,
+            "win_rate_pct": 47,
+            "average_net_return_pct": -0.158
+          },
+          "2025": {
+            "trades": 135,
+            "win_rate_pct": 40,
+            "average_net_return_pct": -0.244
+          },
+          "2026": {
+            "trades": 95,
+            "win_rate_pct": 48.4,
+            "average_net_return_pct": -0.405
+          }
+        },
+        "non_overlapping_portfolio": {
+          "trades": 181,
+          "win_rate_pct": 40.9,
+          "average_net_return_pct": -0.386,
+          "terminal_equity_per_initial_dollar": 0.4811,
+          "total_return_pct": -51.89,
+          "max_drawdown_pct": 55.43,
+          "by_year": {
+            "2023": {
+              "trades": 30,
+              "win_rate_pct": 40,
+              "average_net_return_pct": -0.292
+            },
+            "2024": {
+              "trades": 59,
+              "win_rate_pct": 42.4,
+              "average_net_return_pct": -0.347
+            },
+            "2025": {
+              "trades": 52,
+              "win_rate_pct": 34.6,
+              "average_net_return_pct": -0.397
+            },
+            "2026": {
+              "trades": 40,
+              "win_rate_pct": 47.5,
+              "average_net_return_pct": -0.502
+            }
+          }
+        },
+        "recent_trades": [
+          {
+            "signal_date": "2026-09-21",
+            "entry_date": "2026-09-23",
+            "exit_date": "2026-09-25",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 6.84,
+            "gross_return_pct": 1.939,
+            "net_return_pct": 1.839
+          },
+          {
+            "signal_date": "2026-09-22",
+            "entry_date": "2026-09-24",
+            "exit_date": "2026-09-28",
+            "side": 1,
+            "forecast_tga_delta_usd_billions": -25.65,
+            "gross_return_pct": -0.217,
+            "net_return_pct": -0.317
+          },
+          {
+            "signal_date": "2026-09-25",
+            "entry_date": "2026-09-29",
+            "exit_date": "2026-10-01",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 18.46,
+            "gross_return_pct": -0.964,
+            "net_return_pct": -1.064
+          },
+          {
+            "signal_date": "2026-09-28",
+            "entry_date": "2026-09-30",
+            "exit_date": "2026-10-02",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 6.84,
+            "gross_return_pct": 0.275,
+            "net_return_pct": 0.175
+          },
+          {
+            "signal_date": "2026-09-29",
+            "entry_date": "2026-10-01",
+            "exit_date": "2026-10-05",
+            "side": 1,
+            "forecast_tga_delta_usd_billions": -25.42,
+            "gross_return_pct": -0.494,
+            "net_return_pct": -0.594
+          },
+          {
+            "signal_date": "2026-10-02",
+            "entry_date": "2026-10-06",
+            "exit_date": "2026-10-08",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 18.45,
+            "gross_return_pct": 0.703,
+            "net_return_pct": 0.603
+          },
+          {
+            "signal_date": "2026-10-05",
+            "entry_date": "2026-10-07",
+            "exit_date": "2026-10-09",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 6.84,
+            "gross_return_pct": 0.841,
+            "net_return_pct": 0.741
+          },
+          {
+            "signal_date": "2026-10-06",
+            "entry_date": "2026-10-08",
+            "exit_date": "2026-10-12",
+            "side": 1,
+            "forecast_tga_delta_usd_billions": -25.42,
+            "gross_return_pct": 1.954,
+            "net_return_pct": 1.854
+          }
+        ],
+        "limitations": [
+          "Exploratory hypothesis only; threshold and horizon are not independently pre-registered",
+          "GC=F continuous contract is not an executable unadjusted futures series; roll and spread unmodeled",
+          "Yahoo daily session timestamps and Treasury release-time alignment not verified",
+          "Overall/by_year signal metrics still overlap; non_overlapping_portfolio enforces one position at a time with reinvestment and no leverage",
+          "No stop loss, funding, margin, slippage model beyond assumed 10bp cost",
+          "No genuine 2026 untouched holdout due to prior model iteration",
+          "No claim of live trade readiness"
+        ]
+      }
+    },
+    "source-coverage": {
+      "status": "source_coverage_incomplete_or_unverified",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "tga-2023": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 250,
+      "first_date": "2023-01-03",
+      "last_date": "2023-12-29",
+      "data": null
+    },
+    "v22-source-audit": {
+      "status": "v22_source_feasibility_audit",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "v22_source_feasibility_audit",
+        "as_of": "2026-10-15T06:39:27.514Z",
+        "fred": [
+          {
+            "series": "DFII10",
+            "status": "source_access_ok",
+            "observations": 695,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-13",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 196
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "DGS10",
+            "status": "source_access_ok",
+            "observations": 695,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-13",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 196
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "T10YIE",
+            "status": "source_access_ok",
+            "observations": 696,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-14",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 197
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "RRPONTSYD",
+            "status": "source_access_ok",
+            "observations": 695,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-14",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 196
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "SOFR",
+            "status": "source_access_ok",
+            "observations": 694,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-13",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 195
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "IORB",
+            "status": "source_access_ok",
+            "observations": 1019,
+            "first_date": "2024-01-01",
+            "last_date": "2026-10-15",
+            "coverage": {
+              "2024": 366,
+              "2025": 365,
+              "2026": 288
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "WRESBAL",
+            "status": "source_access_ok",
+            "observations": 145,
+            "first_date": "2024-01-03",
+            "last_date": "2026-10-07",
+            "coverage": {
+              "2024": 52,
+              "2025": 53,
+              "2026": 40
+            },
+            "frequency": "weekly"
+          }
+        ],
+        "intraday": [
+          {
+            "symbol": "GC=F",
+            "status": "available",
+            "bars": 12384,
+            "valid_ohlc_bars": 9781,
+            "invalid_or_missing_ohlc_bars": 2603,
+            "first_date": "2025-02-02T23:00:00.000Z",
+            "last_date": "2026-10-15T06:29:26.000Z",
+            "hourly_per_year": {
+              "2024": 0,
+              "2025": 5281,
+              "2026": 4500
+            },
+            "complete_utc_four_hour_buckets": 2118,
+            "complete_utc_four_hour_per_year": {
+              "2024": 0,
+              "2025": 1144,
+              "2026": 974
+            },
+            "exchange_session_aligned_4h_verified": false
+          },
+          {
+            "symbol": "GLD",
+            "status": "available",
+            "bars": 2984,
+            "valid_ohlc_bars": 2971,
+            "invalid_or_missing_ohlc_bars": 13,
+            "first_date": "2025-02-03T14:30:00.000Z",
+            "last_date": "2026-10-14T20:00:00.000Z",
+            "hourly_per_year": {
+              "2024": 0,
+              "2025": 1601,
+              "2026": 1370
+            },
+            "complete_utc_four_hour_buckets": 422,
+            "complete_utc_four_hour_per_year": {
+              "2024": 0,
+              "2025": 227,
+              "2026": 195
+            },
+            "exchange_session_aligned_4h_verified": false
+          }
+        ],
+        "complete_v22_backtest": false,
+        "limitations": [
+          "FRED CSV is current-vintage, not historical release-time archive",
+          "WRESBAL weekly frequency cannot be interpreted as daily bank reserves",
+          "UTC 4h counts are coverage diagnostics, not verified exchange-session aligned or trade-executable 4-hour candles",
+          "CFTC weekly report must be lagged to actual release, not Tuesday observation date",
+          "No missing inputs may be treated as passing signal filters"
+        ]
+      }
+    },
+    "horizon-backtest": {
+      "status": "historical_walk_forward_baselines_only",
+      "error": null,
+      "observations": 1125,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "v22-dxy-audit": {
+      "status": "dxy_daily_source_access_ok",
+      "error": null,
+      "observations": null,
+      "first_date": "2024-01-02",
+      "last_date": "2026-10-14",
+      "data": {
+        "status": "dxy_daily_source_access_ok",
+        "source": "Yahoo chart DX-Y.NYB (ICE US Dollar Index)",
+        "symbol": "DX-Y.NYB",
+        "raw_bars": 849,
+        "usable_unique_trading_days": 701,
+        "invalid_ohlc_bars": 148,
+        "duplicate_exchange_dates_excluded": 0,
+        "first_date": "2024-01-02",
+        "last_date": "2026-10-14",
+        "by_year": {
+          "2024": 252,
+          "2025": 252,
+          "2026": 197
+        },
+        "recent": [
+          {
+            "date": "2026-10-12",
+            "close": 102.58000183105469
+          },
+          {
+            "date": "2026-10-13",
+            "close": 102.18000030517578
+          },
+          {
+            "date": "2026-10-14",
+            "close": 102.55000305175781
+          }
+        ],
+        "usable_for_full_v22_point_in_time": false,
+        "limitations": [
+          "Yahoo is an unlicensed research proxy, not a contracted production ICE DXY feed",
+          "Duplicate daily dates are quarantined, not silently averaged or chosen",
+          "Market daily close is not information available before that session closes",
+          "FRED broad trade-weighted US dollar index must not be silently relabeled as ICE DXY",
+          "Historical data-vintage, publication release timestamps and gold trade-time joins not verified"
+        ]
+      }
+    },
+    "readiness": {
+      "status": "research_only",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "research_only",
+        "baseline_data_checks_passed": false,
+        "checks": {
+          "robustness-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "tga-identity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "forecast": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "holdout-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "treasury": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          }
+        },
+        "missing_for_trade_ready": [
+          "point_in_time_vintage_archive",
+          "treasury_net_new_cash_reconciled",
+          "tax_and_spending_event_model",
+          "gold_ohlc_execution_backtest",
+          "risk_adjusted_signal_validation",
+          "alert_delivery_end_to_end"
+        ],
+        "trade_signals_enabled": false,
+        "automatic_trade_alerts_enabled": false,
+        "warning": "Passing TGA model validation is not evidence of a profitable gold strategy. No A/A+/A++ live trading signals."
+      }
+    },
+    "forecast": {
+      "status": "experimental_baseline_not_trade_signal",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "v22-spec": {
+      "status": "v2_2_spec_frozen_research_only",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "v2_2_spec_frozen_research_only",
+        "strategy": "US Treasury -> dollar liquidity -> DXY and real yields -> gold flows -> Dow/4H price confirmation",
+        "rules": {
+          "fiscal": {
+            "required": [
+              "Treasury Bills/Coupons net-new-cash by settlement date",
+              "DTS tax/spend calendar seasonality",
+              "D+1/D+3/D+5 TGA forecast revisions",
+              "252-day historical revision z-score"
+            ],
+            "z_thresholds": {
+              "candidate": 0.75,
+              "strong": 1,
+              "extreme": 1.5
+            }
+          },
+          "liquidity": {
+            "required": [
+              "bank reserves",
+              "ON RRP release buffer",
+              "Fed/SOMA liquidity contribution",
+              "SOFR-IORB",
+              "SRF"
+            ],
+            "regimes": [
+              "Cushioned",
+              "Neutral",
+              "Sensitive",
+              "Stressed"
+            ]
+          },
+          "macro": {
+            "required": [
+              "DXY",
+              "10Y TIPS real yield",
+              "10Y nominal yield and breakeven",
+              "Fed expectations"
+            ],
+            "classification": [
+              "monetary tightening",
+              "fiscal-credit repricing",
+              "liquidity squeeze",
+              "easing"
+            ]
+          },
+          "flow": {
+            "required": [
+              "gold ETF flows",
+              "COMEX open interest and volume",
+              "CFTC managed money COT"
+            ],
+            "supplemental": [
+              "GVZ",
+              "MOVE",
+              "VIX",
+              "AI credit stress",
+              "ENSO inflation shock"
+            ]
+          },
+          "price": {
+            "required": [
+              "weekly/daily Dow trend",
+              "4-hour closed candle",
+              "breakout >= 0.25 ATR",
+              "next 4-hour candle confirmation",
+              "execution strictly after confirmation"
+            ],
+            "optional": [
+              "15-minute entry optimization"
+            ]
+          },
+          "risk": {
+            "risk_per_trade_pct": {
+              "A": 0.5,
+              "A+": 0.75,
+              "A++": 1
+            },
+            "max_open_risk_pct": 2,
+            "max_leverage": 5,
+            "add_only_after_favorable_move_atr": 0.5,
+            "required": [
+              "stop distance and contract sizing",
+              "transaction costs and slippage",
+              "no-lookahead event timestamps",
+              "portfolio drawdown and yearly holdout"
+            ]
+          }
+        },
+        "implementation_verified": {
+          "fiscal": false,
+          "liquidity": false,
+          "macro": false,
+          "flow": false,
+          "price": false,
+          "risk": false
+        },
+        "full_v22_backtest_ready": false,
+        "live_trade_signals_enabled": false,
+        "excluded_as_v22": [
+          "TGA-only direction strategy",
+          "unconfirmed daily OHLC proxy as 4H execution",
+          "fitted results without point-in-time inputs"
+        ],
+        "next_required": "Build timestamped historical feature store and 4H OHLC before executing full V2.2 trades"
+      }
+    },
+    "full-history-backtest": {
+      "status": "historical_2023_plus_walk_forward_research",
+      "error": null,
+      "observations": 948,
+      "first_date": "2023-01-03",
+      "last_date": "2026-10-13",
+      "data": {
+        "status": "historical_2023_plus_walk_forward_research",
+        "first_date": "2023-01-03",
+        "last_date": "2026-10-13",
+        "observations": 948,
+        "results": {
+          "D+1": {
+            "2023": {
+              "zero": {
+                "samples": 100,
+                "mae_usd_billions": 22.57,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 100,
+                "mae_usd_billions": 18.538,
+                "direction_accuracy_pct": 74,
+                "predicted_nonzero": 100
+              },
+              "calendar": {
+                "samples": 100,
+                "mae_usd_billions": 18.602,
+                "direction_accuracy_pct": 78,
+                "predicted_nonzero": 100
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 251,
+                "mae_usd_billions": 23.094,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 251,
+                "mae_usd_billions": 19.7,
+                "direction_accuracy_pct": 64.9,
+                "predicted_nonzero": 251
+              },
+              "calendar": {
+                "samples": 251,
+                "mae_usd_billions": 20.189,
+                "direction_accuracy_pct": 68.1,
+                "predicted_nonzero": 251
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 250,
+                "mae_usd_billions": 28.365,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 250,
+                "mae_usd_billions": 24.765,
+                "direction_accuracy_pct": 64,
+                "predicted_nonzero": 250
+              },
+              "calendar": {
+                "samples": 250,
+                "mae_usd_billions": 25.526,
+                "direction_accuracy_pct": 68,
+                "predicted_nonzero": 250
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 196,
+                "mae_usd_billions": 27.12,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 196,
+                "mae_usd_billions": 23.859,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 196
+              },
+              "calendar": {
+                "samples": 196,
+                "mae_usd_billions": 24.265,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 196
+              }
+            }
+          },
+          "D+3": {
+            "2023": {
+              "zero": {
+                "samples": 100,
+                "mae_usd_billions": 38.364,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 100,
+                "mae_usd_billions": 36.742,
+                "direction_accuracy_pct": 60,
+                "predicted_nonzero": 100
+              },
+              "calendar": {
+                "samples": 100,
+                "mae_usd_billions": 36.452,
+                "direction_accuracy_pct": 60,
+                "predicted_nonzero": 100
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 251,
+                "mae_usd_billions": 38.533,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 251,
+                "mae_usd_billions": 35.976,
+                "direction_accuracy_pct": 63.7,
+                "predicted_nonzero": 251
+              },
+              "calendar": {
+                "samples": 251,
+                "mae_usd_billions": 35.294,
+                "direction_accuracy_pct": 67.7,
+                "predicted_nonzero": 251
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 250,
+                "mae_usd_billions": 47.704,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 250,
+                "mae_usd_billions": 45.577,
+                "direction_accuracy_pct": 60.4,
+                "predicted_nonzero": 250
+              },
+              "calendar": {
+                "samples": 250,
+                "mae_usd_billions": 44.805,
+                "direction_accuracy_pct": 66,
+                "predicted_nonzero": 250
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 194,
+                "mae_usd_billions": 48.371,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 194,
+                "mae_usd_billions": 45.11,
+                "direction_accuracy_pct": 61.9,
+                "predicted_nonzero": 194
+              },
+              "calendar": {
+                "samples": 194,
+                "mae_usd_billions": 43.93,
+                "direction_accuracy_pct": 67.5,
+                "predicted_nonzero": 194
+              }
+            }
+          },
+          "D+5": {
+            "2023": {
+              "zero": {
+                "samples": 100,
+                "mae_usd_billions": 48.709,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 100,
+                "mae_usd_billions": 49.606,
+                "direction_accuracy_pct": 49,
+                "predicted_nonzero": 100
+              },
+              "calendar": {
+                "samples": 100,
+                "mae_usd_billions": 48.65,
+                "direction_accuracy_pct": 52,
+                "predicted_nonzero": 100
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 251,
+                "mae_usd_billions": 45.347,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 251,
+                "mae_usd_billions": 46.625,
+                "direction_accuracy_pct": 43.4,
+                "predicted_nonzero": 251
+              },
+              "calendar": {
+                "samples": 251,
+                "mae_usd_billions": 44.999,
+                "direction_accuracy_pct": 53.8,
+                "predicted_nonzero": 251
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 250,
+                "mae_usd_billions": 58.77,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 250,
+                "mae_usd_billions": 59.699,
+                "direction_accuracy_pct": 49.6,
+                "predicted_nonzero": 250
+              },
+              "calendar": {
+                "samples": 250,
+                "mae_usd_billions": 58.397,
+                "direction_accuracy_pct": 54.8,
+                "predicted_nonzero": 250
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 192,
+                "mae_usd_billions": 61.187,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 192,
+                "mae_usd_billions": 60.368,
+                "direction_accuracy_pct": 58.9,
+                "predicted_nonzero": 192
+              },
+              "calendar": {
+                "samples": 192,
+                "mae_usd_billions": 58.376,
+                "direction_accuracy_pct": 65.1,
+                "predicted_nonzero": 192
+              }
+            }
+          }
+        },
+        "validation": {
+          "D+1": {
+            "selection_based_on_years": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "holdout_year": "2026",
+            "selected_model": "weekday",
+            "training_mae_usd_billions": 21.614,
+            "holdout": {
+              "zero": {
+                "samples": 196,
+                "mae_usd_billions": 27.12,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 196,
+                "mae_usd_billions": 23.859,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 196
+              },
+              "calendar": {
+                "samples": 196,
+                "mae_usd_billions": 24.265,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 196
+              }
+            },
+            "selected_vs_zero_holdout_mae_improvement_pct": 12,
+            "holdout_passes_mae": true
+          },
+          "D+3": {
+            "selection_based_on_years": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "holdout_year": "2026",
+            "selected_model": "calendar",
+            "training_mae_usd_billions": 39.443,
+            "holdout": {
+              "zero": {
+                "samples": 194,
+                "mae_usd_billions": 48.371,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 194,
+                "mae_usd_billions": 45.11,
+                "direction_accuracy_pct": 61.9,
+                "predicted_nonzero": 194
+              },
+              "calendar": {
+                "samples": 194,
+                "mae_usd_billions": 43.93,
+                "direction_accuracy_pct": 67.5,
+                "predicted_nonzero": 194
+              }
+            },
+            "selected_vs_zero_holdout_mae_improvement_pct": 9.2,
+            "holdout_passes_mae": true
+          },
+          "D+5": {
+            "selection_based_on_years": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "holdout_year": "2026",
+            "selected_model": "calendar",
+            "training_mae_usd_billions": 51.18,
+            "holdout": {
+              "zero": {
+                "samples": 192,
+                "mae_usd_billions": 61.187,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 192,
+                "mae_usd_billions": 60.368,
+                "direction_accuracy_pct": 58.9,
+                "predicted_nonzero": 192
+              },
+              "calendar": {
+                "samples": 192,
+                "mae_usd_billions": 58.376,
+                "direction_accuracy_pct": 65.1,
+                "predicted_nonzero": 192
+              }
+            },
+            "selected_vs_zero_holdout_mae_improvement_pct": 4.6,
+            "holdout_passes_mae": true
+          }
+        },
+        "strict_d1_weekday_only": {
+          "method": "calendar_weekday_next_only_no_observed_future_date",
+          "excluded_holidays_and_weekends": true,
+          "excluded_nonconsecutive_reporting_days": true,
+          "years": {
+            "2023": {
+              "zero": {
+                "samples": 95,
+                "mae_usd_billions": 22.222,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 95,
+                "mae_usd_billions": 18.163,
+                "direction_accuracy_pct": 74.7,
+                "predicted_nonzero": 95
+              },
+              "calendar": {
+                "samples": 95,
+                "mae_usd_billions": 18.291,
+                "direction_accuracy_pct": 77.9,
+                "predicted_nonzero": 95
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 240,
+                "mae_usd_billions": 22.511,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 240,
+                "mae_usd_billions": 19.215,
+                "direction_accuracy_pct": 64.6,
+                "predicted_nonzero": 240
+              },
+              "calendar": {
+                "samples": 240,
+                "mae_usd_billions": 19.698,
+                "direction_accuracy_pct": 67.9,
+                "predicted_nonzero": 240
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 239,
+                "mae_usd_billions": 27.631,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 239,
+                "mae_usd_billions": 24.081,
+                "direction_accuracy_pct": 63.6,
+                "predicted_nonzero": 239
+              },
+              "calendar": {
+                "samples": 239,
+                "mae_usd_billions": 24.829,
+                "direction_accuracy_pct": 67.8,
+                "predicted_nonzero": 239
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 190,
+                "mae_usd_billions": 27.015,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 190,
+                "mae_usd_billions": 23.813,
+                "direction_accuracy_pct": 65.8,
+                "predicted_nonzero": 190
+              },
+              "calendar": {
+                "samples": 190,
+                "mae_usd_billions": 24.165,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 190
+              }
+            }
+          },
+          "paired_mae_improvement_usd_billions": {
+            "observed": 3.202,
+            "moving_block_95pct_ci": [
+              1.658,
+              4.741
+            ],
+            "block_length": 10,
+            "bootstrap_draws": 1200,
+            "statistically_positive_at_95pct": true
+          },
+          "selected_model": "weekday",
+          "holdout_year": "2026",
+          "holdout": {
+            "zero": {
+              "samples": 190,
+              "mae_usd_billions": 27.015,
+              "direction_accuracy_pct": 0,
+              "predicted_nonzero": 0
+            },
+            "weekday": {
+              "samples": 190,
+              "mae_usd_billions": 23.813,
+              "direction_accuracy_pct": 65.8,
+              "predicted_nonzero": 190
+            },
+            "calendar": {
+              "samples": 190,
+              "mae_usd_billions": 24.165,
+              "direction_accuracy_pct": 66.3,
+              "predicted_nonzero": 190
+            }
+          },
+          "selected_vs_zero_holdout_mae_improvement_pct": 11.9
+        },
+        "limitations": [
+          "Current-version FiscalData is not archived point-in-time vintage",
+          "Main D+1/3/5 validation uses observed future reporting-day calendar; strict_d1_weekday_only instead predicts next calendar weekday and excludes holidays and reporting gaps, without using observed future reporting dates",
+          "No explicit tax or Treasury auction settlement features",
+          "No gold trades, profits or win rates"
+        ]
+      }
+    },
+    "treasury": {
+      "status": null,
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "historical-coverage": {
+      "status": "year_by_year_tga_source_coverage",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "v22-ohlc-integrity": {
+      "status": "research_cme_session_hour_integrity_audited",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "research_cme_session_hour_integrity_audited",
+        "as_of": "2026-10-15T06:39:28.000Z",
+        "source": "Yahoo GC=F 1h proxy",
+        "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
+        "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
+        "counts": {
+          "raw_hours": 12384,
+          "distinct_raw_timestamps": 12384,
+          "valid_ohlc_on_hour_nonduplicated": 9767,
+          "missing_or_invalid_ohlc": 2603,
+          "not_exact_utc_hour": 13,
+          "unclosed_current_hour": 1,
+          "duplicate_hour": 0,
+          "duplicate_timestamp": 0,
+          "candidate_buckets": 2139,
+          "closed_session_aligned_4h": 2108,
+          "excluded_incomplete_buckets": 31,
+          "excluded_nonconsecutive_buckets": 0,
+          "excluded_unclosed_buckets": 0
+        },
+        "closed_4h_by_year": {
+          "2025": 1138,
+          "2026": 970
+        },
+        "closed_4h_by_month": [
+          {
+            "month": "2025-02",
+            "closed_4h_candles": 94
+          },
+          {
+            "month": "2025-03",
+            "closed_4h_candles": 110
+          },
+          {
+            "month": "2025-04",
+            "closed_4h_candles": 105
+          },
+          {
+            "month": "2025-05",
+            "closed_4h_candles": 105
+          },
+          {
+            "month": "2025-06",
+            "closed_4h_candles": 110
+          },
+          {
+            "month": "2025-07",
+            "closed_4h_candles": 105
+          },
+          {
+            "month": "2025-08",
+            "closed_4h_candles": 100
+          },
+          {
+            "month": "2025-09",
+            "closed_4h_candles": 107
+          },
+          {
+            "month": "2025-10",
+            "closed_4h_candles": 107
+          },
+          {
+            "month": "2025-11",
+            "closed_4h_candles": 96
+          },
+          {
+            "month": "2025-12",
+            "closed_4h_candles": 99
+          },
+          {
+            "month": "2026-01",
+            "closed_4h_candles": 95
+          },
+          {
+            "month": "2026-02",
+            "closed_4h_candles": 89
+          },
+          {
+            "month": "2026-03",
+            "closed_4h_candles": 115
+          },
+          {
+            "month": "2026-04",
+            "closed_4h_candles": 103
+          },
+          {
+            "month": "2026-05",
+            "closed_4h_candles": 98
+          },
+          {
+            "month": "2026-06",
+            "closed_4h_candles": 106
+          },
+          {
+            "month": "2026-07",
+            "closed_4h_candles": 105
+          },
+          {
+            "month": "2026-08",
+            "closed_4h_candles": 110
+          },
+          {
+            "month": "2026-09",
+            "closed_4h_candles": 103
+          },
+          {
+            "month": "2026-10",
+            "closed_4h_candles": 46
+          }
+        ],
+        "first_accepted_candle": {
+          "session_date": "2025-02-02",
+          "session_slot": 0,
+          "first_hour_utc": "2025-02-02T23:00:00.000Z",
+          "close_time_utc": "2025-02-03T03:00:00.000Z",
+          "open": 2846.5,
+          "high": 2861.5,
+          "low": 2780.89990234375,
+          "close": 2811.5
+        },
+        "last_accepted_candle": {
+          "session_date": "2026-10-14",
+          "session_slot": 0,
+          "first_hour_utc": "2026-10-14T22:00:00.000Z",
+          "close_time_utc": "2026-10-15T02:00:00.000Z",
+          "open": 4127.89990234375,
+          "high": 4172.7998046875,
+          "low": 4121,
+          "close": 4160.10009765625
+        },
+        "latest_month": "2026-10",
+        "data_quality_gate_passed_for_live_execution": false,
+        "full_v22_backtest_ready": false,
+        "limitations": [
+          "Current GC=F continuous proxy is not a specific executable/roll-adjusted futures contract",
+          "Hours with duplicated timestamps/ambiguous hourly OHLC are rejected, not averaged",
+          "Calendar holidays, exchange session irregularities, source revisions and broker exchange time-stamps are not independently certified",
+          "4h candles are closed only when all four distinct consecutive hourly intervals are validated",
+          "No signal is generated; Treasury, DXY, real yields, reserves, gold ETF and CFTC as-of joins are still required"
+        ]
+      }
+    },
+    "tga-2024": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 251,
+      "first_date": "2024-01-02",
+      "last_date": "2024-12-31",
+      "data": null
+    },
+    "gold-source-audit": {
+      "status": "gold_proxy_candidate_available",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "tga-2025": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 250,
+      "first_date": "2025-01-02",
+      "last_date": "2025-12-31",
+      "data": null
+    }
+  }
 }
