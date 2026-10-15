@@ -66,14 +66,21 @@ def inspect(binary):
                             date_header_row=rows
                         if rows<=20 and len(value)<=80 and any(x in value.lower() for x in ('date','tonne','hold','ounce','share')):
                             hints.add(re.sub(r'\s+',' ',value))
-                        if col not in ('A','B','C','D'):
+                        if col not in date_headers or value.strip().lower()=='date':
                             continue
+                        date_value_formats[cell.attrib.get('t','numeric')]=date_value_formats.get(cell.attrib.get('t','numeric'),0)+1
                         day=None
                         if re.fullmatch(r'\d+(?:\.0+)?',value) and 38000<=float(value)<=50000:
                             day=(dt.datetime(1899,12,30)+dt.timedelta(days=float(value))).date()
-                        elif re.fullmatch(r'20\d\d[-/]\d\d[-/]\d\d',value):
-                            try: day=dt.date.fromisoformat(value.replace('/','-'))
-                            except ValueError: pass
+                        else:
+                            for pattern in ('%Y-%m-%d','%Y/%m/%d','%m/%d/%Y','%m/%d/%y','%d-%b-%Y','%d-%b-%y','%b %d, %Y','%d %b %Y','%Y-%m-%dT%H:%M:%S','%d/%m/%Y','%m-%d-%Y'):
+                                try:
+                                    day=dt.datetime.strptime(value,pattern).date()
+                                    break
+                                except ValueError:
+                                    continue
+                        if day is None and len(masked_date_samples)<5:
+                            masked_date_samples.add(re.sub(r'\d','#',value[:35]))
                         if day is not None:
                             if col not in dates:
                                 dates[col]=[]
