@@ -22,6 +22,8 @@ jobs:
         run: node tests/v22-asof-core.test.js
       - name: Verify strict bills and coupons ledger double-count safeguards
         run: node tests/v22-debt-core.test.js
+      - name: Prove auction future-results exclusion
+        run: node tests/v22-auction-core.test.js
       - name: Wait for Vercel production deployment
         run: sleep 90
       - name: Check production routes and record JSON
@@ -29,7 +31,7 @@ jobs:
         run: |
           mkdir -p diagnostics
           failed=0
-          for name in treasury debt-taxonomy cashflow-taxonomy v22-debt-realized-audit v22-auction-source-audit forecast horizon-backtest historical-coverage full-history-backtest source-coverage readiness gold-source-audit v22-source-audit v22-cot-audit v22-ohlc-integrity v22-dxy-audit v22-etf-audit v22-asof-join v22-spec gold-proxy-backtest; do
+          for name in treasury debt-taxonomy cashflow-taxonomy v22-debt-realized-audit v22-auction-source-audit v22-auction-known-forecast forecast horizon-backtest historical-coverage full-history-backtest source-coverage readiness gold-source-audit v22-source-audit v22-cot-audit v22-ohlc-integrity v22-dxy-audit v22-etf-audit v22-asof-join v22-spec gold-proxy-backtest; do
             echo "Checking $name"
             status=$(curl -L -sS --retry 3 --retry-delay 5 --max-time 110 -w '%{http_code}' -o "diagnostics/$name.json" "https://gold-v22-real-data-v1.vercel.app/api/$name") || status=000
             echo "$name HTTP $status"
@@ -37,7 +39,7 @@ jobs:
               failed=1
               echo "::warning::$name HTTP $status"
             fi
-            python3 -c 'import json,sys; x=json.load(open(sys.argv[1])); n=sys.argv[2]; checks={"v22-source-audit":lambda d:len(d.get("fred",[]))==7 and all(v.get("status")=="source_access_ok" for v in d["fred"]),"v22-cot-audit":lambda d:d.get("status")=="cot_source_access_ok" and d.get("observations",0)>=100,"v22-dxy-audit":lambda d:d.get("status")=="dxy_daily_source_access_ok" and d.get("usable_unique_trading_days",0)>=500,"v22-ohlc-integrity":lambda d:d.get("status")=="research_cme_session_hour_integrity_audited" and d.get("counts",{}).get("closed_session_aligned_4h",0)>=1000,"v22-asof-join":lambda d:d.get("status")=="v22_lagged_feature_join_research_only" and d.get("joined_feature_audit",{}).get("future_time_violations",-1)==0 and d.get("joined_feature_audit",{}).get("complete",0)>500,"v22-debt-realized-audit":lambda d:d.get("status")=="realized_marketable_debt_ledger_research_only" and d.get("coverage",{}).get("complete_days",0)>450}; good=checks[n](x) if n in checks else True; print("status:",x.get("status"),"error:",x.get("error"),"source_integrity_ok:",good); sys.exit(0 if good else 1)' "diagnostics/$name.json" "$name" || failed=1
+            python3 -c 'import json,sys; x=json.load(open(sys.argv[1])); n=sys.argv[2]; checks={"v22-source-audit":lambda d:len(d.get("fred",[]))==7 and all(v.get("status")=="source_access_ok" for v in d["fred"]),"v22-cot-audit":lambda d:d.get("status")=="cot_source_access_ok" and d.get("observations",0)>=100,"v22-dxy-audit":lambda d:d.get("status")=="dxy_daily_source_access_ok" and d.get("usable_unique_trading_days",0)>=500,"v22-ohlc-integrity":lambda d:d.get("status")=="research_cme_session_hour_integrity_audited" and d.get("counts",{}).get("closed_session_aligned_4h",0)>=1000,"v22-asof-join":lambda d:d.get("status")=="v22_lagged_feature_join_research_only" and d.get("joined_feature_audit",{}).get("future_time_violations",-1)==0 and d.get("joined_feature_audit",{}).get("complete",0)>500,"v22-debt-realized-audit":lambda d:d.get("status")=="realized_marketable_debt_ledger_research_only" and d.get("coverage",{}).get("complete_days",0)>450,"v22-auction-known-forecast":lambda d:d.get("status")=="auction_known_bill_component_backtest_research_only" and d.get("by_horizon",{}).get("D+1",{}).get("overall",{}).get("samples",0)>150}; good=checks[n](x) if n in checks else True; print("status:",x.get("status"),"error:",x.get("error"),"source_integrity_ok:",good); sys.exit(0 if good else 1)' "diagnostics/$name.json" "$name" || failed=1
           done
           for year in $(seq 2023 $(date -u +%Y)); do
             echo "Checking TGA year $year"
@@ -66,7 +68,7 @@ jobs:
               name=os.path.basename(path).removesuffix('.json')
               try:
                   with open(path) as f: payload=json.load(f)
-                  records[name]={'status':payload.get('status'),'error':payload.get('error'),'observations':payload.get('observations'),'first_date':payload.get('first_date'),'last_date':payload.get('last_date'),'data':payload if name in ('full-history-backtest','debt-taxonomy','cashflow-taxonomy','v22-debt-realized-audit','v22-auction-source-audit','readiness','v22-source-audit','v22-cot-audit','v22-ohlc-integrity','v22-dxy-audit','v22-etf-audit','v22-asof-join','v22-spec','gold-proxy-backtest') else None}
+                  records[name]={'status':payload.get('status'),'error':payload.get('error'),'observations':payload.get('observations'),'first_date':payload.get('first_date'),'last_date':payload.get('last_date'),'data':payload if name in ('full-history-backtest','debt-taxonomy','cashflow-taxonomy','v22-debt-realized-audit','v22-auction-source-audit','v22-auction-known-forecast','readiness','v22-source-audit','v22-cot-audit','v22-ohlc-integrity','v22-dxy-audit','v22-etf-audit','v22-asof-join','v22-spec','gold-proxy-backtest') else None}
               except Exception as e: records[name]={'error':str(e)}
           if not records:
               raise SystemExit('Refusing to overwrite previous production report with empty diagnostics')
