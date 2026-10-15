@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T06:16:19.524391+00:00",
-  "commit": "7e6546176b0928ad9228b6171a55a3b63c33adb7",
+  "checked_at_utc": "2026-10-15T06:18:58.646809+00:00",
+  "commit": "8bba4eea4f20821c4ad286f976dfd9509d4f13ac",
   "endpoints": {
     "tga-2026": {
       "status": "year_source_ok",
@@ -48,11 +48,11 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "holdout-backtest": {
+          "treasury": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "treasury": {
+          "holdout-backtest": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
