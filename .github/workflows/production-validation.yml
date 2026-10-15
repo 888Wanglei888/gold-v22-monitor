@@ -29,7 +29,7 @@ jobs:
         run: |
           mkdir -p diagnostics
           failed=0
-          for name in treasury debt-taxonomy cashflow-taxonomy v22-debt-realized-audit forecast horizon-backtest historical-coverage full-history-backtest source-coverage readiness gold-source-audit v22-source-audit v22-cot-audit v22-ohlc-integrity v22-dxy-audit v22-etf-audit v22-asof-join v22-spec gold-proxy-backtest; do
+          for name in treasury debt-taxonomy cashflow-taxonomy v22-debt-realized-audit v22-auction-source-audit forecast horizon-backtest historical-coverage full-history-backtest source-coverage readiness gold-source-audit v22-source-audit v22-cot-audit v22-ohlc-integrity v22-dxy-audit v22-etf-audit v22-asof-join v22-spec gold-proxy-backtest; do
             echo "Checking $name"
             status=$(curl -L -sS --retry 3 --retry-delay 5 --max-time 110 -w '%{http_code}' -o "diagnostics/$name.json" "https://gold-v22-real-data-v1.vercel.app/api/$name") || status=000
             echo "$name HTTP $status"
@@ -66,7 +66,7 @@ jobs:
               name=os.path.basename(path).removesuffix('.json')
               try:
                   with open(path) as f: payload=json.load(f)
-                  records[name]={'status':payload.get('status'),'error':payload.get('error'),'observations':payload.get('observations'),'first_date':payload.get('first_date'),'last_date':payload.get('last_date'),'data':payload if name in ('full-history-backtest','debt-taxonomy','cashflow-taxonomy','v22-debt-realized-audit','readiness','v22-source-audit','v22-cot-audit','v22-ohlc-integrity','v22-dxy-audit','v22-etf-audit','v22-asof-join','v22-spec','gold-proxy-backtest') else None}
+                  records[name]={'status':payload.get('status'),'error':payload.get('error'),'observations':payload.get('observations'),'first_date':payload.get('first_date'),'last_date':payload.get('last_date'),'data':payload if name in ('full-history-backtest','debt-taxonomy','cashflow-taxonomy','v22-debt-realized-audit','v22-auction-source-audit','readiness','v22-source-audit','v22-cot-audit','v22-ohlc-integrity','v22-dxy-audit','v22-etf-audit','v22-asof-join','v22-spec','gold-proxy-backtest') else None}
               except Exception as e: records[name]={'error':str(e)}
           if not records:
               raise SystemExit('Refusing to overwrite previous production report with empty diagnostics')
