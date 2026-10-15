@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T03:58:27.987411+00:00",
-  "commit": "523353890cbcbd8b9b87e9a694cb0729f9a65910",
+  "checked_at_utc": "2026-10-15T04:00:33.194628+00:00",
+  "commit": "ef2a6b5a7252445a139abe587ec0c7696961f52e",
   "endpoints": {
     "tga-2026": {
       "status": "year_source_ok",
@@ -44,7 +44,15 @@
         "status": "research_only",
         "baseline_data_checks_passed": false,
         "checks": {
+          "tga-identity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
           "forecast": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "treasury": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -52,15 +60,7 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "tga-identity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
           "holdout-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "treasury": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
@@ -102,57 +102,81 @@
             "2023": {
               "zero": {
                 "samples": 100,
-                "mae_usd_billions": 22.57
+                "mae_usd_billions": 22.57,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 100,
-                "mae_usd_billions": 18.538
+                "mae_usd_billions": 18.538,
+                "direction_accuracy_pct": 74,
+                "predicted_nonzero": 100
               },
               "calendar": {
                 "samples": 100,
-                "mae_usd_billions": 18.602
+                "mae_usd_billions": 18.602,
+                "direction_accuracy_pct": 78,
+                "predicted_nonzero": 100
               }
             },
             "2024": {
               "zero": {
                 "samples": 251,
-                "mae_usd_billions": 23.094
+                "mae_usd_billions": 23.094,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 251,
-                "mae_usd_billions": 19.7
+                "mae_usd_billions": 19.7,
+                "direction_accuracy_pct": 64.9,
+                "predicted_nonzero": 251
               },
               "calendar": {
                 "samples": 251,
-                "mae_usd_billions": 20.189
+                "mae_usd_billions": 20.189,
+                "direction_accuracy_pct": 68.1,
+                "predicted_nonzero": 251
               }
             },
             "2025": {
               "zero": {
                 "samples": 250,
-                "mae_usd_billions": 28.365
+                "mae_usd_billions": 28.365,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 250,
-                "mae_usd_billions": 24.765
+                "mae_usd_billions": 24.765,
+                "direction_accuracy_pct": 64,
+                "predicted_nonzero": 250
               },
               "calendar": {
                 "samples": 250,
-                "mae_usd_billions": 25.526
+                "mae_usd_billions": 25.526,
+                "direction_accuracy_pct": 68,
+                "predicted_nonzero": 250
               }
             },
             "2026": {
               "zero": {
                 "samples": 196,
-                "mae_usd_billions": 27.12
+                "mae_usd_billions": 27.12,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 196,
-                "mae_usd_billions": 23.859
+                "mae_usd_billions": 23.859,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 196
               },
               "calendar": {
                 "samples": 196,
-                "mae_usd_billions": 24.265
+                "mae_usd_billions": 24.265,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 196
               }
             }
           },
@@ -160,57 +184,81 @@
             "2023": {
               "zero": {
                 "samples": 100,
-                "mae_usd_billions": 38.364
+                "mae_usd_billions": 38.364,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 100,
-                "mae_usd_billions": 36.742
+                "mae_usd_billions": 36.742,
+                "direction_accuracy_pct": 60,
+                "predicted_nonzero": 100
               },
               "calendar": {
                 "samples": 100,
-                "mae_usd_billions": 36.452
+                "mae_usd_billions": 36.452,
+                "direction_accuracy_pct": 60,
+                "predicted_nonzero": 100
               }
             },
             "2024": {
               "zero": {
                 "samples": 251,
-                "mae_usd_billions": 38.533
+                "mae_usd_billions": 38.533,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 251,
-                "mae_usd_billions": 35.976
+                "mae_usd_billions": 35.976,
+                "direction_accuracy_pct": 63.7,
+                "predicted_nonzero": 251
               },
               "calendar": {
                 "samples": 251,
-                "mae_usd_billions": 35.294
+                "mae_usd_billions": 35.294,
+                "direction_accuracy_pct": 67.7,
+                "predicted_nonzero": 251
               }
             },
             "2025": {
               "zero": {
                 "samples": 250,
-                "mae_usd_billions": 47.704
+                "mae_usd_billions": 47.704,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 250,
-                "mae_usd_billions": 45.577
+                "mae_usd_billions": 45.577,
+                "direction_accuracy_pct": 60.4,
+                "predicted_nonzero": 250
               },
               "calendar": {
                 "samples": 250,
-                "mae_usd_billions": 44.805
+                "mae_usd_billions": 44.805,
+                "direction_accuracy_pct": 66,
+                "predicted_nonzero": 250
               }
             },
             "2026": {
               "zero": {
                 "samples": 194,
-                "mae_usd_billions": 48.371
+                "mae_usd_billions": 48.371,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 194,
-                "mae_usd_billions": 45.11
+                "mae_usd_billions": 45.11,
+                "direction_accuracy_pct": 61.9,
+                "predicted_nonzero": 194
               },
               "calendar": {
                 "samples": 194,
-                "mae_usd_billions": 43.93
+                "mae_usd_billions": 43.93,
+                "direction_accuracy_pct": 67.5,
+                "predicted_nonzero": 194
               }
             }
           },
@@ -218,64 +266,186 @@
             "2023": {
               "zero": {
                 "samples": 100,
-                "mae_usd_billions": 48.709
+                "mae_usd_billions": 48.709,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 100,
-                "mae_usd_billions": 49.606
+                "mae_usd_billions": 49.606,
+                "direction_accuracy_pct": 49,
+                "predicted_nonzero": 100
               },
               "calendar": {
                 "samples": 100,
-                "mae_usd_billions": 48.65
+                "mae_usd_billions": 48.65,
+                "direction_accuracy_pct": 52,
+                "predicted_nonzero": 100
               }
             },
             "2024": {
               "zero": {
                 "samples": 251,
-                "mae_usd_billions": 45.347
+                "mae_usd_billions": 45.347,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 251,
-                "mae_usd_billions": 46.625
+                "mae_usd_billions": 46.625,
+                "direction_accuracy_pct": 43.4,
+                "predicted_nonzero": 251
               },
               "calendar": {
                 "samples": 251,
-                "mae_usd_billions": 44.999
+                "mae_usd_billions": 44.999,
+                "direction_accuracy_pct": 53.8,
+                "predicted_nonzero": 251
               }
             },
             "2025": {
               "zero": {
                 "samples": 250,
-                "mae_usd_billions": 58.77
+                "mae_usd_billions": 58.77,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 250,
-                "mae_usd_billions": 59.699
+                "mae_usd_billions": 59.699,
+                "direction_accuracy_pct": 49.6,
+                "predicted_nonzero": 250
               },
               "calendar": {
                 "samples": 250,
-                "mae_usd_billions": 58.397
+                "mae_usd_billions": 58.397,
+                "direction_accuracy_pct": 54.8,
+                "predicted_nonzero": 250
               }
             },
             "2026": {
               "zero": {
                 "samples": 192,
-                "mae_usd_billions": 61.187
+                "mae_usd_billions": 61.187,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
               },
               "weekday": {
                 "samples": 192,
-                "mae_usd_billions": 60.368
+                "mae_usd_billions": 60.368,
+                "direction_accuracy_pct": 58.9,
+                "predicted_nonzero": 192
               },
               "calendar": {
                 "samples": 192,
-                "mae_usd_billions": 58.376
+                "mae_usd_billions": 58.376,
+                "direction_accuracy_pct": 65.1,
+                "predicted_nonzero": 192
               }
             }
           }
         },
+        "validation": {
+          "D+1": {
+            "selection_based_on_years": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "holdout_year": "2026",
+            "selected_model": "weekday",
+            "training_mae_usd_billions": 21.614,
+            "holdout": {
+              "zero": {
+                "samples": 196,
+                "mae_usd_billions": 27.12,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 196,
+                "mae_usd_billions": 23.859,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 196
+              },
+              "calendar": {
+                "samples": 196,
+                "mae_usd_billions": 24.265,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 196
+              }
+            },
+            "selected_vs_zero_holdout_mae_improvement_pct": 12,
+            "holdout_passes_mae": true
+          },
+          "D+3": {
+            "selection_based_on_years": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "holdout_year": "2026",
+            "selected_model": "calendar",
+            "training_mae_usd_billions": 39.443,
+            "holdout": {
+              "zero": {
+                "samples": 194,
+                "mae_usd_billions": 48.371,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 194,
+                "mae_usd_billions": 45.11,
+                "direction_accuracy_pct": 61.9,
+                "predicted_nonzero": 194
+              },
+              "calendar": {
+                "samples": 194,
+                "mae_usd_billions": 43.93,
+                "direction_accuracy_pct": 67.5,
+                "predicted_nonzero": 194
+              }
+            },
+            "selected_vs_zero_holdout_mae_improvement_pct": 9.2,
+            "holdout_passes_mae": true
+          },
+          "D+5": {
+            "selection_based_on_years": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "holdout_year": "2026",
+            "selected_model": "calendar",
+            "training_mae_usd_billions": 51.18,
+            "holdout": {
+              "zero": {
+                "samples": 192,
+                "mae_usd_billions": 61.187,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 192,
+                "mae_usd_billions": 60.368,
+                "direction_accuracy_pct": 58.9,
+                "predicted_nonzero": 192
+              },
+              "calendar": {
+                "samples": 192,
+                "mae_usd_billions": 58.376,
+                "direction_accuracy_pct": 65.1,
+                "predicted_nonzero": 192
+              }
+            },
+            "selected_vs_zero_holdout_mae_improvement_pct": 4.6,
+            "holdout_passes_mae": true
+          }
+        },
         "limitations": [
           "Current-version FiscalData is not archived point-in-time vintage",
-          "Targets use subsequently observed reporting days (known future values never used in training)",
+          "Future reporting-day calendar is taken from observed dataset and is not a point-in-time executable forecast; direction statistics are research-only",
           "No explicit tax or Treasury auction settlement features",
           "No gold trades, profits or win rates"
         ]
