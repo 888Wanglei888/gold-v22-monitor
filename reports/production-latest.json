@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T03:53:53.504621+00:00",
-  "commit": "52b36ab486d7f1fec67de7a45d8caa2a92974204",
+  "checked_at_utc": "2026-10-15T03:58:27.987411+00:00",
+  "commit": "523353890cbcbd8b9b87e9a694cb0729f9a65910",
   "endpoints": {
     "tga-2026": {
       "status": "year_source_ok",
@@ -8,14 +8,6 @@
       "observations": 197,
       "first_date": "2026-01-02",
       "last_date": "2026-10-13",
-      "data": null
-    },
-    "tga-2022": {
-      "status": "year_source_ok",
-      "error": null,
-      "observations": 177,
-      "first_date": "2022-04-18",
-      "last_date": "2022-12-30",
       "data": null
     },
     "source-coverage": {
@@ -52,7 +44,7 @@
         "status": "research_only",
         "baseline_data_checks_passed": false,
         "checks": {
-          "tga-identity": {
+          "forecast": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -60,7 +52,7 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "treasury": {
+          "tga-identity": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -68,7 +60,7 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "forecast": {
+          "treasury": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
@@ -86,14 +78,6 @@
         "warning": "Passing TGA model validation is not evidence of a profitable gold strategy. No A/A+/A++ live trading signals."
       }
     },
-    "tga-2019": {
-      "status": "historical_backtest_blocked",
-      "error": "Error: 2019 missing TGA data: 0; received=0; total=NaN; sample=[]",
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": null
-    },
     "forecast": {
       "status": "experimental_baseline_not_trade_signal",
       "error": null,
@@ -103,24 +87,199 @@
       "data": null
     },
     "full-history-backtest": {
-      "status": "historical_backtest_blocked",
-      "error": "Error: 2019 missing TGA data: 0; received=0; total=NaN; sample=[]",
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
+      "status": "historical_2023_plus_walk_forward_research",
+      "error": null,
+      "observations": 948,
+      "first_date": "2023-01-03",
+      "last_date": "2026-10-13",
       "data": {
-        "status": "historical_backtest_blocked",
-        "error": "Error: 2019 missing TGA data: 0; received=0; total=NaN; sample=[]",
-        "warning": "No partial results are presented as full 2019+ history"
+        "status": "historical_2023_plus_walk_forward_research",
+        "first_date": "2023-01-03",
+        "last_date": "2026-10-13",
+        "observations": 948,
+        "results": {
+          "D+1": {
+            "2023": {
+              "zero": {
+                "samples": 100,
+                "mae_usd_billions": 22.57
+              },
+              "weekday": {
+                "samples": 100,
+                "mae_usd_billions": 18.538
+              },
+              "calendar": {
+                "samples": 100,
+                "mae_usd_billions": 18.602
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 251,
+                "mae_usd_billions": 23.094
+              },
+              "weekday": {
+                "samples": 251,
+                "mae_usd_billions": 19.7
+              },
+              "calendar": {
+                "samples": 251,
+                "mae_usd_billions": 20.189
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 250,
+                "mae_usd_billions": 28.365
+              },
+              "weekday": {
+                "samples": 250,
+                "mae_usd_billions": 24.765
+              },
+              "calendar": {
+                "samples": 250,
+                "mae_usd_billions": 25.526
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 196,
+                "mae_usd_billions": 27.12
+              },
+              "weekday": {
+                "samples": 196,
+                "mae_usd_billions": 23.859
+              },
+              "calendar": {
+                "samples": 196,
+                "mae_usd_billions": 24.265
+              }
+            }
+          },
+          "D+3": {
+            "2023": {
+              "zero": {
+                "samples": 100,
+                "mae_usd_billions": 38.364
+              },
+              "weekday": {
+                "samples": 100,
+                "mae_usd_billions": 36.742
+              },
+              "calendar": {
+                "samples": 100,
+                "mae_usd_billions": 36.452
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 251,
+                "mae_usd_billions": 38.533
+              },
+              "weekday": {
+                "samples": 251,
+                "mae_usd_billions": 35.976
+              },
+              "calendar": {
+                "samples": 251,
+                "mae_usd_billions": 35.294
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 250,
+                "mae_usd_billions": 47.704
+              },
+              "weekday": {
+                "samples": 250,
+                "mae_usd_billions": 45.577
+              },
+              "calendar": {
+                "samples": 250,
+                "mae_usd_billions": 44.805
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 194,
+                "mae_usd_billions": 48.371
+              },
+              "weekday": {
+                "samples": 194,
+                "mae_usd_billions": 45.11
+              },
+              "calendar": {
+                "samples": 194,
+                "mae_usd_billions": 43.93
+              }
+            }
+          },
+          "D+5": {
+            "2023": {
+              "zero": {
+                "samples": 100,
+                "mae_usd_billions": 48.709
+              },
+              "weekday": {
+                "samples": 100,
+                "mae_usd_billions": 49.606
+              },
+              "calendar": {
+                "samples": 100,
+                "mae_usd_billions": 48.65
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 251,
+                "mae_usd_billions": 45.347
+              },
+              "weekday": {
+                "samples": 251,
+                "mae_usd_billions": 46.625
+              },
+              "calendar": {
+                "samples": 251,
+                "mae_usd_billions": 44.999
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 250,
+                "mae_usd_billions": 58.77
+              },
+              "weekday": {
+                "samples": 250,
+                "mae_usd_billions": 59.699
+              },
+              "calendar": {
+                "samples": 250,
+                "mae_usd_billions": 58.397
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 192,
+                "mae_usd_billions": 61.187
+              },
+              "weekday": {
+                "samples": 192,
+                "mae_usd_billions": 60.368
+              },
+              "calendar": {
+                "samples": 192,
+                "mae_usd_billions": 58.376
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Current-version FiscalData is not archived point-in-time vintage",
+          "Targets use subsequently observed reporting days (known future values never used in training)",
+          "No explicit tax or Treasury auction settlement features",
+          "No gold trades, profits or win rates"
+        ]
       }
-    },
-    "tga-2021": {
-      "status": "historical_backtest_blocked",
-      "error": "Error: 2021 missing TGA data: 0; received=0; total=NaN; sample=[]",
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": null
     },
     "treasury": {
       "status": null,
@@ -144,14 +303,6 @@
       "observations": 251,
       "first_date": "2024-01-02",
       "last_date": "2024-12-31",
-      "data": null
-    },
-    "tga-2020": {
-      "status": "historical_backtest_blocked",
-      "error": "Error: 2020 missing TGA data: 0; received=0; total=NaN; sample=[]",
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
       "data": null
     },
     "tga-2025": {
