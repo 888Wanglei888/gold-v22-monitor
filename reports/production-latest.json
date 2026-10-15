@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T04:00:33.194628+00:00",
-  "commit": "ef2a6b5a7252445a139abe587ec0c7696961f52e",
+  "checked_at_utc": "2026-10-15T04:03:00.050520+00:00",
+  "commit": "ab4cf31a596514b424e9ee29bcc73e878aaed59f",
   "endpoints": {
     "tga-2026": {
       "status": "year_source_ok",
@@ -44,15 +44,11 @@
         "status": "research_only",
         "baseline_data_checks_passed": false,
         "checks": {
-          "tga-identity": {
+          "treasury": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
           "forecast": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "treasury": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -61,6 +57,10 @@
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
           "holdout-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "tga-identity": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
@@ -443,9 +443,119 @@
             "holdout_passes_mae": true
           }
         },
+        "strict_d1_weekday_only": {
+          "method": "calendar_weekday_next_only_no_observed_future_date",
+          "excluded_holidays_and_weekends": true,
+          "excluded_nonconsecutive_reporting_days": true,
+          "years": {
+            "2023": {
+              "zero": {
+                "samples": 95,
+                "mae_usd_billions": 22.222,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 95,
+                "mae_usd_billions": 18.163,
+                "direction_accuracy_pct": 74.7,
+                "predicted_nonzero": 95
+              },
+              "calendar": {
+                "samples": 95,
+                "mae_usd_billions": 18.291,
+                "direction_accuracy_pct": 77.9,
+                "predicted_nonzero": 95
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 240,
+                "mae_usd_billions": 22.511,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 240,
+                "mae_usd_billions": 19.215,
+                "direction_accuracy_pct": 64.6,
+                "predicted_nonzero": 240
+              },
+              "calendar": {
+                "samples": 240,
+                "mae_usd_billions": 19.698,
+                "direction_accuracy_pct": 67.9,
+                "predicted_nonzero": 240
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 239,
+                "mae_usd_billions": 27.631,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 239,
+                "mae_usd_billions": 24.081,
+                "direction_accuracy_pct": 63.6,
+                "predicted_nonzero": 239
+              },
+              "calendar": {
+                "samples": 239,
+                "mae_usd_billions": 24.829,
+                "direction_accuracy_pct": 67.8,
+                "predicted_nonzero": 239
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 190,
+                "mae_usd_billions": 27.015,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 190,
+                "mae_usd_billions": 23.813,
+                "direction_accuracy_pct": 65.8,
+                "predicted_nonzero": 190
+              },
+              "calendar": {
+                "samples": 190,
+                "mae_usd_billions": 24.165,
+                "direction_accuracy_pct": 66.3,
+                "predicted_nonzero": 190
+              }
+            }
+          },
+          "selected_model": "weekday",
+          "holdout_year": "2026",
+          "holdout": {
+            "zero": {
+              "samples": 190,
+              "mae_usd_billions": 27.015,
+              "direction_accuracy_pct": 0,
+              "predicted_nonzero": 0
+            },
+            "weekday": {
+              "samples": 190,
+              "mae_usd_billions": 23.813,
+              "direction_accuracy_pct": 65.8,
+              "predicted_nonzero": 190
+            },
+            "calendar": {
+              "samples": 190,
+              "mae_usd_billions": 24.165,
+              "direction_accuracy_pct": 66.3,
+              "predicted_nonzero": 190
+            }
+          },
+          "selected_vs_zero_holdout_mae_improvement_pct": 11.9
+        },
         "limitations": [
           "Current-version FiscalData is not archived point-in-time vintage",
-          "Future reporting-day calendar is taken from observed dataset and is not a point-in-time executable forecast; direction statistics are research-only",
+          "Main D+1/3/5 validation uses observed future reporting-day calendar; strict_d1_weekday_only instead predicts next calendar weekday and excludes holidays and reporting gaps, without using observed future reporting dates",
           "No explicit tax or Treasury auction settlement features",
           "No gold trades, profits or win rates"
         ]
