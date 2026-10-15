@@ -1,32 +1,32 @@
 {
-  "checked_at_utc": "2026-10-15T11:48:04.528Z",
-  "github_sha": "2890fa11a016226b1d0308c6a94a03666ea4a785",
+  "checked_at_utc": "2026-10-15T11:50:57.855Z",
+  "github_sha": "3a6da3e6fa45f84e2b7f7e9fb89bc8f1d437d700",
   "source": "Yahoo continuous GC=F 1-hour research proxy",
   "status": "closed_four_hour_price_pattern_audited",
   "complete_v22_trade_backtest": false,
   "trade_signals_enabled": false,
   "ohlc": {
     "raw_hours": 13007,
-    "closed_four_hour_candles": 2212,
+    "closed_four_hour_candles": 2198,
     "quality": {
       "raw": 13007,
-      "missing_ohlc": 2743,
+      "missing_ohlc": 2806,
       "off_hour": 13,
       "unclosed": 1,
       "duplicate_hours": 0,
       "nonconsecutive_groups": 0,
-      "incomplete_groups": 34
+      "incomplete_groups": 35
     },
     "first": "2025-01-01",
     "last": "2026-10-14"
   },
   "patterns": {
-    "candidate_count": 146,
+    "candidate_count": 145,
     "counts": {
       "long_breakout": 131,
-      "short_breakout": 53,
+      "short_breakout": 52,
       "long_confirmed": 108,
-      "short_confirmed": 38,
+      "short_confirmed": 37,
       "market_session_gap_excluded": 19
     },
     "per_year": {
@@ -36,9 +36,9 @@
         "short": 15
       },
       "2026": {
-        "confirmed_breakouts": 53,
+        "confirmed_breakouts": 52,
         "long": 30,
-        "short": 23
+        "short": 22
       }
     },
     "recent_confirmed_patterns": [
@@ -70,7 +70,7 @@
         "confirmation_closed_utc": "2026-09-01T14:00:00.000Z",
         "earliest_hypothetical_entry_open_utc": "2026-09-01T14:00:00.000Z",
         "breakout_price": 4413.7001953125,
-        "atr_14_4h": 45.114222935267854,
+        "atr_14_4h": 45.228515625,
         "prior_range_high": 4698,
         "prior_range_low": 4445.60009765625,
         "price_only": true
@@ -81,7 +81,7 @@
         "confirmation_closed_utc": "2026-09-02T06:00:00.000Z",
         "earliest_hypothetical_entry_open_utc": "2026-09-02T06:00:00.000Z",
         "breakout_price": 4338.10009765625,
-        "atr_14_4h": 48.57139369419643,
+        "atr_14_4h": 48.68568638392857,
         "prior_range_high": 4697.7001953125,
         "prior_range_low": 4374.10009765625,
         "price_only": true
@@ -102,7 +102,7 @@
         "breakout_closed_utc": "2026-09-28T02:00:00.000Z",
         "confirmation_closed_utc": "2026-09-28T06:00:00.000Z",
         "earliest_hypothetical_entry_open_utc": "2026-09-28T06:00:00.000Z",
-        "breakout_price": 4249.5,
+        "breakout_price": 4249.39990234375,
         "atr_14_4h": 34.242885044642854,
         "prior_range_high": 4414.10009765625,
         "prior_range_low": 4278.2998046875,
@@ -114,7 +114,7 @@
         "confirmation_closed_utc": "2026-09-28T10:00:00.000Z",
         "earliest_hypothetical_entry_open_utc": "2026-09-28T10:00:00.000Z",
         "breakout_price": 4212,
-        "atr_14_4h": 38.471470424107146,
+        "atr_14_4h": 38.492919921875,
         "prior_range_high": 4407.5,
         "prior_range_low": 4239.2998046875,
         "price_only": true
@@ -125,7 +125,7 @@
         "confirmation_closed_utc": "2026-09-28T14:00:00.000Z",
         "earliest_hypothetical_entry_open_utc": "2026-09-28T14:00:00.000Z",
         "breakout_price": 4188.10009765625,
-        "atr_14_4h": 39.221470424107146,
+        "atr_14_4h": 39.242919921875,
         "prior_range_high": 4407.5,
         "prior_range_low": 4211.39990234375,
         "price_only": true
@@ -136,7 +136,7 @@
         "confirmation_closed_utc": "2026-10-09T10:00:00.000Z",
         "earliest_hypothetical_entry_open_utc": "2026-10-09T10:00:00.000Z",
         "breakout_price": 4217.89990234375,
-        "atr_14_4h": 32.664219447544646,
+        "atr_14_4h": 32.671334402901785,
         "prior_range_high": 4208,
         "prior_range_low": 4091.199951171875,
         "price_only": true
