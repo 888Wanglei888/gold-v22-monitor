@@ -6,6 +6,7 @@ const handlers = Object.freeze({
   "debt-reconciliation": require('../lib/endpoints/debt-reconciliation.js'),
   "debt-taxonomy": require('../lib/endpoints/debt-taxonomy.js'),
   "fiscal-flows": require('../lib/endpoints/fiscal-flows.js'),
+  "gold-source-audit": require('../lib/endpoints/gold-source-audit.js'),
   "forecast": require('../lib/endpoints/forecast.js'),
   "full-history-backtest": require('../lib/endpoints/full-history-backtest.js'),
   "historical-coverage": require('../lib/endpoints/historical-coverage.js'),
