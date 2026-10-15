@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict');
-const {normalize,knownAt,buildKnownFutureLedger}=require('../lib/endpoints/v22-auction-core');
+const {normalize,knownAt,buildKnownFutureLedger,normalizeAnnouncements,buildAnnouncedFutureLedger}=require('../lib/endpoints/v22-auction-core');
 const row=(auction_date,issue_date,maturity_date,amount,cusip)=>({auction_date,issue_date,maturity_date,cusip,security_type:'Bill',total_accepted:String(amount)});
 const r1=row('2025-01-06','2025-01-09','2025-02-06',100000000,'AA1111111');
 const r2=row('2025-02-03','2025-02-06','2025-03-06',120000000,'BB2222222');
@@ -14,3 +14,17 @@ assert.equal(x.known_bill_proxy_net_usd,20000000);
 assert.equal(normalize([r1,r1]).faults.duplicate_auction_identity,1);
 assert.throws(()=>buildKnownFutureLedger(events,'2025-02-05','2025-02-05',2));
 console.log('Treasury auction as-of no-future-results normalization and settlement tests passed');
+
+const prior={...r1,announcemt_date:'2025-01-02',offering_amt:'100000000'};
+const futureAuction={...r2,announcemt_date:'2025-02-04',offering_amt:'115000000',auction_date:'2025-02-06',issue_date:'2025-02-10',maturity_date:'2025-03-10',total_accepted:'0'};
+const futureUnannounced={...r3,announcemt_date:'2025-02-06',offering_amt:'130000000',auction_date:'2025-02-07',issue_date:'2025-02-10',maturity_date:'2025-03-10',total_accepted:'190000000'};
+const a=normalizeAnnouncements([prior,futureAuction,futureUnannounced]);
+assert.equal(a.events.length,3);
+const predicted=buildAnnouncedFutureLedger(a.events,'2025-02-05','2025-02-10',1,2);
+assert.equal(predicted.by_type.Bill.published_upcoming_offering_usd,115000000);
+assert.equal(predicted.by_type.Bill.offering_count,1);
+assert.equal(predicted.completed_auction_results_are_not_used_for_future_issue_amounts,true);
+const maturity=buildAnnouncedFutureLedger(a.events,'2025-02-05','2025-02-06',1,2);
+assert.equal(maturity.by_type.Bill.previously_issued_maturing_awards_usd,100000000);
+assert.equal(normalizeAnnouncements([prior,prior]).faults.duplicate_auction_identity,1);
+console.log('Historical announcement-date filtering excludes both future auction results and unannounced offerings');
