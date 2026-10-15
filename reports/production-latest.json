@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T04:03:00.050520+00:00",
-  "commit": "ab4cf31a596514b424e9ee29bcc73e878aaed59f",
+  "checked_at_utc": "2026-10-15T06:04:51.818710+00:00",
+  "commit": "0927e6a4d773779b30113465f34cf91ab374ba8d",
   "endpoints": {
     "tga-2026": {
       "status": "year_source_ok",
@@ -48,15 +48,15 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "forecast": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
           "robustness-backtest": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
           "holdout-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "forecast": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -528,6 +528,16 @@
                 "predicted_nonzero": 190
               }
             }
+          },
+          "paired_mae_improvement_usd_billions": {
+            "observed": 3.202,
+            "moving_block_95pct_ci": [
+              1.658,
+              4.741
+            ],
+            "block_length": 10,
+            "bootstrap_draws": 1200,
+            "statistically_positive_at_95pct": true
           },
           "selected_model": "weekday",
           "holdout_year": "2026",
