@@ -34,11 +34,14 @@ def inspect(binary):
             first_column_a={'cells':0,'nonempty':0,'types':{},'first_nonempty_row':None,'last_nonempty_row':None,'masked_examples':set()}
             date_header_row=None
             topic_columns={}
+            tonnes_pairs=[]
             with z.open(path) as sheet:
                 for _,element in ET.iterparse(sheet,events=('end',)):
                     if element.tag!=X+'row':
                         continue
                     rows+=1
+                    row_date=None
+                    row_tonnes=None
                     for cell in element.findall(X+'c'):
                         mat=re.match(r'([A-Z]+)',cell.attrib.get('r',''))
                         if not mat:
@@ -72,6 +75,13 @@ def inspect(binary):
                             topic_columns['total_ounces']=col
                         if rows<=20 and len(value)<=80 and any(x in value.lower() for x in ('date','tonne','hold','ounce','share')):
                             hints.add(re.sub(r'\s+',' ',value))
+                        if col==topic_columns.get('gold_tonnes') and rows>(date_header_row or 1):
+                            try:
+                                candidate=float(value.replace(',','').strip())
+                                if 0<candidate<20000:
+                                    row_tonnes=candidate
+                            except ValueError:
+                                pass
                         if col not in date_headers or value.strip().lower()=='date':
                             continue
                         date_value_formats[cell.attrib.get('t','numeric')]=date_value_formats.get(cell.attrib.get('t','numeric'),0)+1
@@ -88,13 +98,27 @@ def inspect(binary):
                         if day is None and len(masked_date_samples)<5:
                             masked_date_samples.add(re.sub(r'\d','#',value[:35]))
                         if day is not None:
+                            if col==topic_columns.get('date'):
+                                row_date=day
                             if col not in dates:
                                 dates[col]=[]
                             dates[col].append(day)
+                    if row_date is not None and row_tonnes is not None:
+                        tonnes_pairs.append((row_date,row_tonnes))
                     element.clear()
+            tonnes_pairs.sort(key=lambda item:item[0])
+            distinct_dates={day for day,_ in tonnes_pairs}
+            if len(distinct_dates)!=len(tonnes_pairs):
+                tonnes_pairs=[]  # fail closed rather than pick among duplicate original dates
+            transitions=[(d,tonnes_pairs[i][1]-tonnes_pairs[i-1][1]) for i,(d,_) in enumerate(tonnes_pairs) if i>0]
+            changes_by_year={}
+            for year in (2024,2025,2026):
+                subset=[delta for day,delta in transitions if day.year==year]
+                changes_by_year[str(year)]={'sample_days':len(subset),'holdings_increased_days':sum(delta>0 for delta in subset),'holdings_decreased_days':sum(delta<0 for delta in subset),'holdings_unchanged_days':sum(delta==0 for delta in subset)}
+            tonnes_coverage={'valid_date_tonnes_pairs':len(tonnes_pairs),'first_date':str(tonnes_pairs[0][0]) if tonnes_pairs else None,'last_date':str(tonnes_pairs[-1][0]) if tonnes_pairs else None,'historical_daily_change_samples':len(transitions),'counts_by_year':changes_by_year,'true_net_etf_flow_not_inferred':True}
             date_cols={col:{'count':len(days),'first':str(min(days)),'last':str(max(days))} for col,days in dates.items()}
             first_column_a['masked_examples']=sorted(first_column_a['masked_examples'])
-            sheets.append({'xml_file':path,'row_count':rows,'date_header_row':date_header_row,'first_column_a_debug':first_column_a,'topic_columns':topic_columns,'date_header_columns':sorted(date_headers),'date_column_candidates':date_cols,'date_cell_storage_types':date_value_formats,'unparsed_date_shapes':sorted(masked_date_samples),'header_topics':sorted(hints)[:16]})
+            sheets.append({'xml_file':path,'row_count':rows,'date_header_row':date_header_row,'first_column_a_debug':first_column_a,'topic_columns':topic_columns,'gold_tonnes_change_coverage':tonnes_coverage,'date_header_columns':sorted(date_headers),'date_column_candidates':date_cols,'date_cell_storage_types':date_value_formats,'unparsed_date_shapes':sorted(masked_date_samples),'header_topics':sorted(hints)[:16]})
         return sheets
 
 def main():
