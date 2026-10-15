@@ -1,0 +1,20 @@
+const assert=require('node:assert/strict');
+const {auditCandles,atr,permittedSignal,backtest}=require('../lib/endpoints/v22-execution-core');
+const T=Date.parse('2025-01-10T00:00:00Z'),H=4*3600000;
+const x=[];for(let i=0;i<28;i++)x.push({start_ms:T+i*H,close_ms:T+(i+1)*H,open:100,high:102,low:99,close:100});
+x[22]={...x[22],open:103,high:107,low:102,close:106};
+x[23]={...x[23],open:106,high:108,low:103,close:107};
+x[24]={...x[24],open:107,high:111,low:104,close:110};
+assert.equal(auditCandles(x).candles.length,28);
+assert(atr(x,21,14)>0);
+const signal={known_at_ms:x[22].close_ms-1000,grade:'A',direction:'long',forecast_z:1.2,factor_status:'asof_verified',evidence:{
+ fiscal_forecast_asof_verified:true,treasury_components_reconciled:true,dollar_liquidity_confirmed:true,real_yield_and_dxy_regime_confirmed:true,gold_positioning_confirmed:true,dow_weekly_daily_trend_confirmed:true}};
+assert(permittedSignal(signal,x[22].close_ms).ok);
+const opts={stop_atr:1.5,max_bars:3};
+assert.equal(backtest(x,[signal],opts).trades,1);
+assert.equal(backtest(x,[{...signal,factor_status:'missing'}],opts).trades,0);
+assert.equal(backtest(x,[{...signal,known_at_ms:x[22].close_ms+1}],opts).trades,0);
+assert.equal(backtest(x,[signal,signal],opts).trades,1);
+assert.equal(backtest([...x,x[24]],[],opts).status,'OHLC_FAILED_CLOSED');
+assert.throws(()=>backtest(x,[],{max_bars:3}),/Explicit stop ATR/);
+console.log('V2.2 4h closed-candle causal execution, mandatory macro gating and single-position ledger tests passed');
