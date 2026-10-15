@@ -8,6 +8,8 @@ on:
       - lib/endpoints/v22-fiscal-composite-core.js
       - lib/endpoints/v22-tax-calendar.js
       - lib/endpoints/v22-fiscal-price-core.js
+      - lib/endpoints/v22-fiscal-revision-core.js
+      - tests/v22-fiscal-revision-core.test.js
       - tests/v22-fiscal-price-core.test.js
       - tests/v22-tax-calendar.test.js
       - tests/v22-fiscal-composite-core.test.js
@@ -30,6 +32,7 @@ jobs:
           node tests/v22-fiscal-composite-core.test.js
           node tests/v22-tax-calendar.test.js
           node tests/v22-fiscal-price-core.test.js
+          node tests/v22-fiscal-revision-core.test.js
       - name: Build audited 2023-present daily Treasury nondebt, tax and financing cashflows
         run: node scripts/v22-cashflow-history.js
       - uses: actions/upload-artifact@v4
@@ -68,4 +71,8 @@ jobs:
           assert a.get('status')=='historical_fiscal_predicted_level_direction_vs_gold_price_patterns_only',a.get('error')
           assert a.get('conservative_prior_fiscal_forecasts_found',0)>=30
           assert a.get('trade_signals_enabled') is False
+          z=j.get('fiscal_D3_same_target_research_revision_Z',{})
+          assert z.get('rolling_z_valid_days',0)>100
+          assert z.get('gold_4h_price_crosscheck',{}).get('counts',{}).get('revision_z_record_available',0)>30
+          assert z.get('trade_signals_enabled') is False
           PY
