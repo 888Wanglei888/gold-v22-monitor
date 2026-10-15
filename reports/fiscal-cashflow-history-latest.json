@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T11:58:14.060Z",
-  "github_sha": "c66c626ac1bbb44f169e938cb454741c7a2f3394",
+  "checked_at_utc": "2026-10-15T11:58:35.318Z",
+  "github_sha": "7221b4b0f96e889e367d4ed627e2dbfe731d427d",
   "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
   "months_requested": 46,
   "full_v22_fiscal_prediction_ready": false,
@@ -767,10 +767,10 @@
   },
   "historical_fiscal_vs_gold_price_candidate_alignment": {
     "status": "historical_fiscal_predicted_level_direction_vs_gold_price_patterns_only",
-    "candidates": 146,
-    "conservative_prior_fiscal_forecasts_found": 136,
+    "candidates": 145,
+    "conservative_prior_fiscal_forecasts_found": 135,
     "missing_or_older_than_72h": 10,
-    "forecast_TGA_change_direction_aligned_auction_known_only": 80,
+    "forecast_TGA_change_direction_aligned_auction_known_only": 79,
     "forecast_TGA_change_direction_aligned_with_unannounced_bill_fallback": 77,
     "both_fiscal_models_same_direction_aligned": 75,
     "by_year": {
@@ -781,9 +781,9 @@
         "with_issuance_fallback_direction_aligned": 52
       },
       "2026": {
-        "price_candidates": 53,
-        "fiscal_forecasts_available": 51,
-        "known_offers_direction_aligned": 26,
+        "price_candidates": 52,
+        "fiscal_forecasts_available": 50,
+        "known_offers_direction_aligned": 25,
         "with_issuance_fallback_direction_aligned": 25
       }
     },
@@ -897,7 +897,7 @@
       "Gold price patterns are non-independent and may represent repeats during one trend",
       "Does NOT imply market profit or combine with full factor and risk rules"
     ],
-    "gold_4h_closed_bars": 2212,
+    "gold_4h_closed_bars": 2198,
     "fiscal_decision_dates_with_research_only_forecasts": 395,
     "limited_research_only": true
   },
