@@ -21,4 +21,11 @@ if(old){
  assert.equal(after.records.find(x=>x.decision_date===old.decision_date)?.fiscal_revision_z_research_proxy_known_auction,old.fiscal_revision_z_research_proxy_known_auction);
 }
 assert.equal(revision(paths.slice(0,20)).rolling_z_valid_days,0);
-console.log('Strict previous decision same-remaining-target fiscal revision rolling-Z and future independence tests passed');
+const available=r.records.find(x=>Number.isFinite(x.fiscal_revision_z_research_proxy_known_auction));
+assert(available);
+const matched=alignRevisionToGoldPrice([{confirmation_closed_utc:available.no_earlier_than_utc,direction:'long'}],r.records);
+assert.equal(matched.counts.revision_z_record_available,1);
+assert.equal(matched.A_Aplus_Aplusplus_trades_authorized,0);
+const before=alignRevisionToGoldPrice([{confirmation_closed_utc:new Date(Date.parse(available.no_earlier_than_utc)-1).toISOString(),direction:'long'}],[available]);
+assert.equal(before.counts.revision_z_record_available,0);
+console.log('Strict prior-vintage same-target rolling fiscal Z, future independence and 4-hour gold release-time join tests passed');
