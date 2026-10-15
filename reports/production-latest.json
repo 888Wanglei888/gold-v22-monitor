@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T10:28:30.785123+00:00",
-  "commit": "fc84fdc7e9bb3d6d72934507bdfaad85f12a4d96",
+  "checked_at_utc": "2026-10-15T10:30:36.812323+00:00",
+  "commit": "dcc128f1608673d55dd5b57aefaafc0a3556dbea",
   "endpoints": {
     "v22-cot-audit": {
       "status": "cot_source_access_ok",
@@ -71,6 +71,1900 @@
       "first_date": "2026-01-02",
       "last_date": "2026-10-13",
       "data": null
+    },
+    "v22-cashflow-line-audit": {
+      "status": "dts_cashflow_category_inventory_research_only",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "dts_cashflow_category_inventory_research_only",
+        "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash",
+        "months": [
+          "2025-09",
+          "2026-09"
+        ],
+        "month_rows": {
+          "2025-09": 3843,
+          "2026-09": 3780
+        },
+        "unique_tga_report_days": 42,
+        "distinct_category_lines": 307,
+        "duplicate_exact_day_category_line": 0,
+        "columns": [
+          "record_date",
+          "account_type",
+          "transaction_type",
+          "transaction_catg",
+          "transaction_catg_desc",
+          "transaction_today_amt",
+          "transaction_mtd_amt",
+          "transaction_fytd_amt",
+          "table_nbr",
+          "table_nm",
+          "src_line_nbr",
+          "record_fiscal_year",
+          "record_fiscal_quarter",
+          "record_calendar_year",
+          "record_calendar_quarter",
+          "record_calendar_month",
+          "record_calendar_day"
+        ],
+        "likely_tax_related_labels": [
+          {
+            "transaction_type": "Deposits",
+            "category": "DHS - Customs and Certain Excise Taxes",
+            "description": "null",
+            "src_line_nbr": "14",
+            "records": 21,
+            "example_today_usd_millions": 401,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DHS - Customs Duties, Taxes, and Fees",
+            "description": "null",
+            "src_line_nbr": "14",
+            "records": 21,
+            "example_today_usd_millions": 352,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Corporate Income",
+            "description": "null",
+            "src_line_nbr": "36",
+            "records": 42,
+            "example_today_usd_millions": 273,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Estate and Gift",
+            "description": "null",
+            "src_line_nbr": "37",
+            "records": 42,
+            "example_today_usd_millions": 7,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Federal Unemployment (FUTA)",
+            "description": "null",
+            "src_line_nbr": "38",
+            "records": 42,
+            "example_today_usd_millions": 1,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - IRS Collected Estate, Gift, misc",
+            "description": "null",
+            "src_line_nbr": "39",
+            "records": 42,
+            "example_today_usd_millions": 4,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Miscellaneous Excise",
+            "description": "null",
+            "src_line_nbr": "40",
+            "records": 42,
+            "example_today_usd_millions": 48,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Non Withheld Ind/SECA Electronic",
+            "description": "null",
+            "src_line_nbr": "41",
+            "records": 42,
+            "example_today_usd_millions": 1529,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Non Withheld Ind/SECA Other",
+            "description": "null",
+            "src_line_nbr": "42",
+            "records": 42,
+            "example_today_usd_millions": 263,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Railroad Retirement",
+            "description": "null",
+            "src_line_nbr": "43",
+            "records": 42,
+            "example_today_usd_millions": 70,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Withheld Individual/FICA",
+            "description": "null",
+            "src_line_nbr": "44",
+            "records": 42,
+            "example_today_usd_millions": 46635,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Veterans Affairs (VA)",
+            "description": "null",
+            "src_line_nbr": "45",
+            "records": 42,
+            "example_today_usd_millions": 38,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "DHS - Customs & Border Protection (CBP)",
+            "description": "null",
+            "src_line_nbr": "112",
+            "records": 21,
+            "example_today_usd_millions": 104,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "DHS - Customs & Border Protection (CBP)",
+            "description": "null",
+            "src_line_nbr": "114",
+            "records": 21,
+            "example_today_usd_millions": 8,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "TREAS - IRS Refunds for Puerto Rico",
+            "description": "null",
+            "src_line_nbr": "136",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "TREAS - IRS Refunds for Puerto Rico",
+            "description": "null",
+            "src_line_nbr": "138",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Taxes - Business Tax Refunds (EFT)",
+            "description": "null",
+            "src_line_nbr": "139",
+            "records": 21,
+            "example_today_usd_millions": 1883,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Taxes - Individual Tax Refunds (EFT)",
+            "description": "null",
+            "src_line_nbr": "140",
+            "records": 21,
+            "example_today_usd_millions": 23,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Taxes - Business Tax Refunds (EFT)",
+            "description": "null",
+            "src_line_nbr": "141",
+            "records": 21,
+            "example_today_usd_millions": 19,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Taxes - Individual Tax Refunds (EFT)",
+            "description": "null",
+            "src_line_nbr": "142",
+            "records": 21,
+            "example_today_usd_millions": 53,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Veterans Affairs (VA)",
+            "description": "null",
+            "src_line_nbr": "142",
+            "records": 21,
+            "example_today_usd_millions": 399,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Veterans Affairs (VA)",
+            "description": "null",
+            "src_line_nbr": "144",
+            "records": 21,
+            "example_today_usd_millions": 763,
+            "report_days": 21
+          }
+        ],
+        "likely_expense_related_labels": [
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Defense (DoD) - misc",
+            "description": "null",
+            "src_line_nbr": "6",
+            "records": 42,
+            "example_today_usd_millions": 595,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Education (ED)",
+            "description": "null",
+            "src_line_nbr": "8",
+            "records": 42,
+            "example_today_usd_millions": 190,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "HHS - Medicare Premiums",
+            "description": "null",
+            "src_line_nbr": "12",
+            "records": 42,
+            "example_today_usd_millions": 214,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Veterans Affairs (VA)",
+            "description": "null",
+            "src_line_nbr": "45",
+            "records": 42,
+            "example_today_usd_millions": 38,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Social Security Admin (SSA) - misc",
+            "description": "null",
+            "src_line_nbr": "72",
+            "records": 21,
+            "example_today_usd_millions": 5,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Social Security Admin (SSA) - misc",
+            "description": "null",
+            "src_line_nbr": "73",
+            "records": 21,
+            "example_today_usd_millions": 6,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Defense (DoD) - misc",
+            "description": "null",
+            "src_line_nbr": "90",
+            "records": 21,
+            "example_today_usd_millions": 931,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Defense (DoD) - misc",
+            "description": "null",
+            "src_line_nbr": "92",
+            "records": 21,
+            "example_today_usd_millions": 701,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Education (ED)",
+            "description": "null",
+            "src_line_nbr": "94",
+            "records": 21,
+            "example_today_usd_millions": 994,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Education (ED)",
+            "description": "null",
+            "src_line_nbr": "96",
+            "records": 21,
+            "example_today_usd_millions": 1052,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Grants to States for Medicaid",
+            "description": "null",
+            "src_line_nbr": "100",
+            "records": 21,
+            "example_today_usd_millions": 5210,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Grants to States for Medicaid",
+            "description": "null",
+            "src_line_nbr": "102",
+            "records": 21,
+            "example_today_usd_millions": 1147,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Medicare Prescription Drugs",
+            "description": "null",
+            "src_line_nbr": "104",
+            "records": 21,
+            "example_today_usd_millions": 18947,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Medicare Prescription Drugs",
+            "description": "null",
+            "src_line_nbr": "106",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Othr Cent Medicare & Medicaid Serv",
+            "description": "null",
+            "src_line_nbr": "108",
+            "records": 21,
+            "example_today_usd_millions": 139,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Othr Cent Medicare & Medicaid Serv",
+            "description": "null",
+            "src_line_nbr": "110",
+            "records": 21,
+            "example_today_usd_millions": 156,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Veterans Affairs (VA)",
+            "description": "null",
+            "src_line_nbr": "142",
+            "records": 21,
+            "example_today_usd_millions": 399,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Veterans Affairs (VA)",
+            "description": "null",
+            "src_line_nbr": "144",
+            "records": 21,
+            "example_today_usd_millions": 763,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Interest on Treasury Securities",
+            "description": "null",
+            "src_line_nbr": "155",
+            "records": 21,
+            "example_today_usd_millions": 87,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Interest on Treasury Securities",
+            "description": "null",
+            "src_line_nbr": "157",
+            "records": 21,
+            "example_today_usd_millions": 21820,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Social Security Admin (SSA) - misc",
+            "description": "null",
+            "src_line_nbr": "174",
+            "records": 21,
+            "example_today_usd_millions": 15,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Social Security Admin (SSA) - misc",
+            "description": "null",
+            "src_line_nbr": "177",
+            "records": 21,
+            "example_today_usd_millions": 25,
+            "report_days": 21
+          }
+        ],
+        "possible_aggregate_lines": [],
+        "category_line_inventory": [
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Agriculture (USDA) - misc",
+            "description": "null",
+            "src_line_nbr": "1",
+            "records": 42,
+            "example_today_usd_millions": 17,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "USDA - Commodity Credit Corporation",
+            "description": "null",
+            "src_line_nbr": "2",
+            "records": 42,
+            "example_today_usd_millions": 42,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "USDA - Federal Crop Insurance Corp Fund",
+            "description": "null",
+            "src_line_nbr": "3",
+            "records": 42,
+            "example_today_usd_millions": 2,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "USDA - Loan Repayments",
+            "description": "null",
+            "src_line_nbr": "4",
+            "records": 21,
+            "example_today_usd_millions": 52,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "USDA - Rural Services",
+            "description": "null",
+            "src_line_nbr": "4",
+            "records": 21,
+            "example_today_usd_millions": 45,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Commerce (DOC)",
+            "description": "null",
+            "src_line_nbr": "5",
+            "records": 42,
+            "example_today_usd_millions": 17,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Defense (DoD) - misc",
+            "description": "null",
+            "src_line_nbr": "6",
+            "records": 42,
+            "example_today_usd_millions": 595,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DoD - Health",
+            "description": "null",
+            "src_line_nbr": "7",
+            "records": 42,
+            "example_today_usd_millions": 36,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Education (ED)",
+            "description": "null",
+            "src_line_nbr": "8",
+            "records": 42,
+            "example_today_usd_millions": 190,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Energy (DOE)",
+            "description": "null",
+            "src_line_nbr": "9",
+            "records": 42,
+            "example_today_usd_millions": 41,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Health & Human Serv (HHS) - misc",
+            "description": "null",
+            "src_line_nbr": "10",
+            "records": 42,
+            "example_today_usd_millions": 47,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "HHS - Marketplace Receipts",
+            "description": "null",
+            "src_line_nbr": "11",
+            "records": 42,
+            "example_today_usd_millions": 11,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "HHS - Medicare Premiums",
+            "description": "null",
+            "src_line_nbr": "12",
+            "records": 42,
+            "example_today_usd_millions": 214,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Homeland Security (DHS) - misc",
+            "description": "null",
+            "src_line_nbr": "13",
+            "records": 42,
+            "example_today_usd_millions": 35,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DHS - Customs and Certain Excise Taxes",
+            "description": "null",
+            "src_line_nbr": "14",
+            "records": 21,
+            "example_today_usd_millions": 401,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DHS - Customs Duties, Taxes, and Fees",
+            "description": "null",
+            "src_line_nbr": "14",
+            "records": 21,
+            "example_today_usd_millions": 352,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DHS - Fed Emergency Mgmt Agency (FEMA)",
+            "description": "null",
+            "src_line_nbr": "15",
+            "records": 42,
+            "example_today_usd_millions": 17,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DHS - Seized Assets",
+            "description": "null",
+            "src_line_nbr": "16",
+            "records": 42,
+            "example_today_usd_millions": 2,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DHS - Transportation Security Admn (TSA)",
+            "description": "null",
+            "src_line_nbr": "17",
+            "records": 42,
+            "example_today_usd_millions": 3,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Housing & Urban Dev (HUD) - misc",
+            "description": "null",
+            "src_line_nbr": "18",
+            "records": 42,
+            "example_today_usd_millions": 13,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "HUD - Federal Housing Admin (FHA)",
+            "description": "null",
+            "src_line_nbr": "19",
+            "records": 42,
+            "example_today_usd_millions": 66,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Interior (DOI) - misc",
+            "description": "null",
+            "src_line_nbr": "20",
+            "records": 42,
+            "example_today_usd_millions": 3,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DOI - Fish and Wildlife and Parks",
+            "description": "null",
+            "src_line_nbr": "21",
+            "records": 42,
+            "example_today_usd_millions": 8,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DOI - Gas and Oil Lease Sales Proceeds",
+            "description": "null",
+            "src_line_nbr": "22",
+            "records": 42,
+            "example_today_usd_millions": 228,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DOI - Land and Minerals Management",
+            "description": "null",
+            "src_line_nbr": "23",
+            "records": 42,
+            "example_today_usd_millions": 4,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DOI - Water and Science",
+            "description": "null",
+            "src_line_nbr": "24",
+            "records": 42,
+            "example_today_usd_millions": 1,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Justice (DOJ)",
+            "description": "null",
+            "src_line_nbr": "25",
+            "records": 42,
+            "example_today_usd_millions": 19,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Labor (DOL) - misc",
+            "description": "null",
+            "src_line_nbr": "26",
+            "records": 42,
+            "example_today_usd_millions": 3,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "DOL - Pension Benefit Guaranty Corp.",
+            "description": "null",
+            "src_line_nbr": "27",
+            "records": 42,
+            "example_today_usd_millions": 9,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of State (DOS)",
+            "description": "null",
+            "src_line_nbr": "28",
+            "records": 42,
+            "example_today_usd_millions": 18,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Transportation (DOT)",
+            "description": "null",
+            "src_line_nbr": "29",
+            "records": 42,
+            "example_today_usd_millions": 21,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Treasury (TREAS) - misc",
+            "description": "null",
+            "src_line_nbr": "30",
+            "records": 42,
+            "example_today_usd_millions": 0,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "TREAS - Bureau of Engraving and Printing",
+            "description": "null",
+            "src_line_nbr": "31",
+            "records": 42,
+            "example_today_usd_millions": 0,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "TREAS - Comptroller of the Currency",
+            "description": "null",
+            "src_line_nbr": "32",
+            "records": 42,
+            "example_today_usd_millions": 0,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "TREAS - Federal Financing Bank",
+            "description": "null",
+            "src_line_nbr": "33",
+            "records": 42,
+            "example_today_usd_millions": 0,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "TREAS - GSE Proceeds",
+            "description": "null",
+            "src_line_nbr": "34",
+            "records": 42,
+            "example_today_usd_millions": 0,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "TREAS - United States Mint",
+            "description": "null",
+            "src_line_nbr": "35",
+            "records": 42,
+            "example_today_usd_millions": 6,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Corporate Income",
+            "description": "null",
+            "src_line_nbr": "36",
+            "records": 42,
+            "example_today_usd_millions": 273,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Estate and Gift",
+            "description": "null",
+            "src_line_nbr": "37",
+            "records": 42,
+            "example_today_usd_millions": 7,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Federal Unemployment (FUTA)",
+            "description": "null",
+            "src_line_nbr": "38",
+            "records": 42,
+            "example_today_usd_millions": 1,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - IRS Collected Estate, Gift, misc",
+            "description": "null",
+            "src_line_nbr": "39",
+            "records": 42,
+            "example_today_usd_millions": 4,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Miscellaneous Excise",
+            "description": "null",
+            "src_line_nbr": "40",
+            "records": 42,
+            "example_today_usd_millions": 48,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Non Withheld Ind/SECA Electronic",
+            "description": "null",
+            "src_line_nbr": "41",
+            "records": 42,
+            "example_today_usd_millions": 1529,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Non Withheld Ind/SECA Other",
+            "description": "null",
+            "src_line_nbr": "42",
+            "records": 42,
+            "example_today_usd_millions": 263,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Railroad Retirement",
+            "description": "null",
+            "src_line_nbr": "43",
+            "records": 42,
+            "example_today_usd_millions": 70,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Taxes - Withheld Individual/FICA",
+            "description": "null",
+            "src_line_nbr": "44",
+            "records": 42,
+            "example_today_usd_millions": 46635,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Dept of Veterans Affairs (VA)",
+            "description": "null",
+            "src_line_nbr": "45",
+            "records": 42,
+            "example_today_usd_millions": 38,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "District of Columbia",
+            "description": "null",
+            "src_line_nbr": "46",
+            "records": 42,
+            "example_today_usd_millions": 0,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Environmental Protection Agency (EPA)",
+            "description": "null",
+            "src_line_nbr": "47",
+            "records": 42,
+            "example_today_usd_millions": 8,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Export-Import Bank",
+            "description": "null",
+            "src_line_nbr": "48",
+            "records": 42,
+            "example_today_usd_millions": 18,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Federal Communications Commission (FCC)",
+            "description": "null",
+            "src_line_nbr": "49",
+            "records": 42,
+            "example_today_usd_millions": 2,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "FCC - Universal Service Fund",
+            "description": "null",
+            "src_line_nbr": "50",
+            "records": 42,
+            "example_today_usd_millions": 1,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Federal Deposit Insurance Corp (FDIC)",
+            "description": "null",
+            "src_line_nbr": "51",
+            "records": 42,
+            "example_today_usd_millions": 0,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Federal Reserve Earnings",
+            "description": "null",
+            "src_line_nbr": "52",
+            "records": 42,
+            "example_today_usd_millions": 0,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Federal Retirement Thrift Savings Plan",
+            "description": "null",
+            "src_line_nbr": "53",
+            "records": 42,
+            "example_today_usd_millions": 536,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Federal Trade Commission (FTC)",
+            "description": "null",
+            "src_line_nbr": "54",
+            "records": 42,
+            "example_today_usd_millions": 5,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "General Services Administration (GSA)",
+            "description": "null",
+            "src_line_nbr": "55",
+            "records": 42,
+            "example_today_usd_millions": -9,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Independent Agencies - misc",
+            "description": "null",
+            "src_line_nbr": "56",
+            "records": 42,
+            "example_today_usd_millions": 14,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "International Monetary Fund (IMF)",
+            "description": "null",
+            "src_line_nbr": "57",
+            "records": 42,
+            "example_today_usd_millions": 334,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Int'l Assistance Programs (IAP) - misc",
+            "description": "null",
+            "src_line_nbr": "58",
+            "records": 42,
+            "example_today_usd_millions": 0,
+            "report_days": 42
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "IAP - Agency for Int'l Development (AID)",
+            "description": "null",
+            "src_line_nbr": "59",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "IAP - Foreign Military Sales",
+            "description": "null",
+            "src_line_nbr": "59",
+            "records": 21,
+            "example_today_usd_millions": 1922,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "IAP - Foreign Military Sales",
+            "description": "null",
+            "src_line_nbr": "60",
+            "records": 21,
+            "example_today_usd_millions": 1230,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "IAP - US Int'l Devlop Finance Corp (DFC)",
+            "description": "null",
+            "src_line_nbr": "60",
+            "records": 21,
+            "example_today_usd_millions": 10,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "IAP - US Int'l Devlop Finance Corp (DFC)",
+            "description": "null",
+            "src_line_nbr": "61",
+            "records": 21,
+            "example_today_usd_millions": 4,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Judicial Branch - Courts",
+            "description": "null",
+            "src_line_nbr": "61",
+            "records": 21,
+            "example_today_usd_millions": 6,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Judicial Branch - Courts",
+            "description": "null",
+            "src_line_nbr": "62",
+            "records": 21,
+            "example_today_usd_millions": 5,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Legislative Branch - misc",
+            "description": "null",
+            "src_line_nbr": "62",
+            "records": 21,
+            "example_today_usd_millions": 1,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Legislative Branch - misc",
+            "description": "null",
+            "src_line_nbr": "63",
+            "records": 21,
+            "example_today_usd_millions": 1,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Legislative Branch - Library of Congress",
+            "description": "null",
+            "src_line_nbr": "63",
+            "records": 21,
+            "example_today_usd_millions": 1,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Legislative Branch - Library of Congress",
+            "description": "null",
+            "src_line_nbr": "64",
+            "records": 21,
+            "example_today_usd_millions": 8,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "National Credit Union Admin (NCUA)",
+            "description": "null",
+            "src_line_nbr": "64",
+            "records": 21,
+            "example_today_usd_millions": 1,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "National Credit Union Admin (NCUA)",
+            "description": "null",
+            "src_line_nbr": "65",
+            "records": 21,
+            "example_today_usd_millions": 5,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "National Science Foundation (NSF)",
+            "description": "null",
+            "src_line_nbr": "65",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "National Science Foundation (NSF)",
+            "description": "null",
+            "src_line_nbr": "66",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Office of Personnel Mgmt (OPM) - misc",
+            "description": "null",
+            "src_line_nbr": "66",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Office of Personnel Mgmt (OPM) - misc",
+            "description": "null",
+            "src_line_nbr": "67",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "OPM - Federal Employee Insurance Receipt",
+            "description": "null",
+            "src_line_nbr": "67",
+            "records": 21,
+            "example_today_usd_millions": 2,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "OPM - Federal Employee Insurance Receipt",
+            "description": "null",
+            "src_line_nbr": "68",
+            "records": 21,
+            "example_today_usd_millions": 58,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "RRB - Natl Railroad Retirement Inv Trust",
+            "description": "null",
+            "src_line_nbr": "68",
+            "records": 21,
+            "example_today_usd_millions": 169,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "RRB - Natl Railroad Retirement Inv Trust",
+            "description": "null",
+            "src_line_nbr": "69",
+            "records": 21,
+            "example_today_usd_millions": 165,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "RRB - Unemployment Insurance",
+            "description": "null",
+            "src_line_nbr": "69",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "RRB - Unemployment Insurance",
+            "description": "null",
+            "src_line_nbr": "70",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Securities and Exchange Commission (SEC)",
+            "description": "null",
+            "src_line_nbr": "70",
+            "records": 21,
+            "example_today_usd_millions": 3,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Securities and Exchange Commission (SEC)",
+            "description": "null",
+            "src_line_nbr": "71",
+            "records": 21,
+            "example_today_usd_millions": 2,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Small Business Administration (SBA)",
+            "description": "null",
+            "src_line_nbr": "71",
+            "records": 21,
+            "example_today_usd_millions": 154,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Small Business Administration (SBA)",
+            "description": "null",
+            "src_line_nbr": "72",
+            "records": 21,
+            "example_today_usd_millions": 213,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Social Security Admin (SSA) - misc",
+            "description": "null",
+            "src_line_nbr": "72",
+            "records": 21,
+            "example_today_usd_millions": 5,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Social Security Admin (SSA) - misc",
+            "description": "null",
+            "src_line_nbr": "73",
+            "records": 21,
+            "example_today_usd_millions": 6,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "SSA - Supplemental Security Income",
+            "description": "null",
+            "src_line_nbr": "73",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "SSA - Supplemental Security Income",
+            "description": "null",
+            "src_line_nbr": "74",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "State Unemployment Insurance Deposits",
+            "description": "null",
+            "src_line_nbr": "74",
+            "records": 21,
+            "example_today_usd_millions": 12,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "State Unemployment Insurance Deposits",
+            "description": "null",
+            "src_line_nbr": "75",
+            "records": 21,
+            "example_today_usd_millions": 13,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "United States Postal Service (USPS)",
+            "description": "null",
+            "src_line_nbr": "75",
+            "records": 21,
+            "example_today_usd_millions": 469,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "United States Postal Service (USPS)",
+            "description": "null",
+            "src_line_nbr": "76",
+            "records": 21,
+            "example_today_usd_millions": 437,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "US Army Corps of Engineers",
+            "description": "null",
+            "src_line_nbr": "76",
+            "records": 21,
+            "example_today_usd_millions": 1,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "US Army Corps of Engineers",
+            "description": "null",
+            "src_line_nbr": "77",
+            "records": 21,
+            "example_today_usd_millions": 1,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Unclassified - Deposits",
+            "description": "null",
+            "src_line_nbr": "77",
+            "records": 21,
+            "example_today_usd_millions": 9,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Unclassified - Deposits",
+            "description": "null",
+            "src_line_nbr": "78",
+            "records": 21,
+            "example_today_usd_millions": 8,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Public Debt Cash Issues (Table IIIB)",
+            "description": "null",
+            "src_line_nbr": "79",
+            "records": 21,
+            "example_today_usd_millions": 288770,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "Public Debt Cash Issues (Table IIIB)",
+            "description": "null",
+            "src_line_nbr": "80",
+            "records": 21,
+            "example_today_usd_millions": 478332,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "null",
+            "description": "null",
+            "src_line_nbr": "80",
+            "records": 21,
+            "example_today_usd_millions": 319714,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Deposits",
+            "category": "null",
+            "description": "null",
+            "src_line_nbr": "81",
+            "records": 21,
+            "example_today_usd_millions": 532388,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Agriculture (USDA) - misc",
+            "description": "null",
+            "src_line_nbr": "81",
+            "records": 21,
+            "example_today_usd_millions": 289,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Corporation for Public Broadcasting",
+            "description": "null",
+            "src_line_nbr": "82",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Child Nutrition",
+            "description": "null",
+            "src_line_nbr": "82",
+            "records": 21,
+            "example_today_usd_millions": 24,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Agriculture (USDA) - misc",
+            "description": "null",
+            "src_line_nbr": "83",
+            "records": 21,
+            "example_today_usd_millions": 78,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Commodity Credit Corporation",
+            "description": "null",
+            "src_line_nbr": "83",
+            "records": 21,
+            "example_today_usd_millions": 12,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Child Nutrition",
+            "description": "null",
+            "src_line_nbr": "84",
+            "records": 21,
+            "example_today_usd_millions": 23,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Federal Crop Insurance Corp Fund",
+            "description": "null",
+            "src_line_nbr": "84",
+            "records": 21,
+            "example_today_usd_millions": 27,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Commodity Credit Corporation",
+            "description": "null",
+            "src_line_nbr": "85",
+            "records": 21,
+            "example_today_usd_millions": 7,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Other Farm Service",
+            "description": "null",
+            "src_line_nbr": "85",
+            "records": 21,
+            "example_today_usd_millions": 13,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Federal Crop Insurance Corp Fund",
+            "description": "null",
+            "src_line_nbr": "86",
+            "records": 21,
+            "example_today_usd_millions": 38,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Rural Services",
+            "description": "null",
+            "src_line_nbr": "86",
+            "records": 21,
+            "example_today_usd_millions": 93,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Loan Payments",
+            "description": "null",
+            "src_line_nbr": "87",
+            "records": 21,
+            "example_today_usd_millions": 81,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Supp Nutrition Assist Prog (SNAP)",
+            "description": "null",
+            "src_line_nbr": "87",
+            "records": 21,
+            "example_today_usd_millions": 129,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Other Farm Service",
+            "description": "null",
+            "src_line_nbr": "88",
+            "records": 21,
+            "example_today_usd_millions": 88,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Supp Nutrition Assist Prog (WIC)",
+            "description": "null",
+            "src_line_nbr": "88",
+            "records": 21,
+            "example_today_usd_millions": 24,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Supp Nutrition Assist Prog (SNAP)",
+            "description": "null",
+            "src_line_nbr": "89",
+            "records": 21,
+            "example_today_usd_millions": 585,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Commerce (DOC)",
+            "description": "null",
+            "src_line_nbr": "89",
+            "records": 21,
+            "example_today_usd_millions": 48,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "USDA - Supp Nutrition Assist Prog (WIC)",
+            "description": "null",
+            "src_line_nbr": "90",
+            "records": 21,
+            "example_today_usd_millions": 57,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Defense (DoD) - misc",
+            "description": "null",
+            "src_line_nbr": "90",
+            "records": 21,
+            "example_today_usd_millions": 931,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Commerce (DOC)",
+            "description": "null",
+            "src_line_nbr": "91",
+            "records": 21,
+            "example_today_usd_millions": 11,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "DoD - Health",
+            "description": "null",
+            "src_line_nbr": "91",
+            "records": 21,
+            "example_today_usd_millions": 92,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Defense (DoD) - misc",
+            "description": "null",
+            "src_line_nbr": "92",
+            "records": 21,
+            "example_today_usd_millions": 701,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "DoD - Military Active Duty Pay",
+            "description": "null",
+            "src_line_nbr": "92",
+            "records": 21,
+            "example_today_usd_millions": 5069,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "DoD - Health",
+            "description": "null",
+            "src_line_nbr": "93",
+            "records": 21,
+            "example_today_usd_millions": 138,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "DoD - Military Retirement",
+            "description": "null",
+            "src_line_nbr": "93",
+            "records": 21,
+            "example_today_usd_millions": 6163,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "DoD - Military Active Duty Pay",
+            "description": "null",
+            "src_line_nbr": "94",
+            "records": 21,
+            "example_today_usd_millions": 28,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Education (ED)",
+            "description": "null",
+            "src_line_nbr": "94",
+            "records": 21,
+            "example_today_usd_millions": 994,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "DoD - Military Retirement",
+            "description": "null",
+            "src_line_nbr": "95",
+            "records": 21,
+            "example_today_usd_millions": 426,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Energy (DOE)",
+            "description": "null",
+            "src_line_nbr": "95",
+            "records": 21,
+            "example_today_usd_millions": 224,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Education (ED)",
+            "description": "null",
+            "src_line_nbr": "96",
+            "records": 21,
+            "example_today_usd_millions": 1052,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Health & Human Serv (HHS) - misc",
+            "description": "null",
+            "src_line_nbr": "96",
+            "records": 21,
+            "example_today_usd_millions": 13,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Energy (DOE)",
+            "description": "null",
+            "src_line_nbr": "97",
+            "records": 21,
+            "example_today_usd_millions": 245,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Centers for Disease Control (CDC)",
+            "description": "null",
+            "src_line_nbr": "97",
+            "records": 21,
+            "example_today_usd_millions": 31,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "Dept of Health & Human Serv (HHS) - misc",
+            "description": "null",
+            "src_line_nbr": "98",
+            "records": 21,
+            "example_today_usd_millions": 15,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Federal Hospital Insr Trust Fund",
+            "description": "null",
+            "src_line_nbr": "98",
+            "records": 21,
+            "example_today_usd_millions": 18938,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Centers for Disease Control (CDC)",
+            "description": "null",
+            "src_line_nbr": "99",
+            "records": 21,
+            "example_today_usd_millions": 45,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Federal Supple Med Insr Trust Fund",
+            "description": "null",
+            "src_line_nbr": "99",
+            "records": 21,
+            "example_today_usd_millions": 29467,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Federal Hospital Insr Trust Fund",
+            "description": "null",
+            "src_line_nbr": "100",
+            "records": 21,
+            "example_today_usd_millions": 975,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Grants to States for Medicaid",
+            "description": "null",
+            "src_line_nbr": "100",
+            "records": 21,
+            "example_today_usd_millions": 5210,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Federal Supple Med Insr Trust Fund",
+            "description": "null",
+            "src_line_nbr": "101",
+            "records": 21,
+            "example_today_usd_millions": 1298,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Health Resources & Services Admin",
+            "description": "null",
+            "src_line_nbr": "101",
+            "records": 21,
+            "example_today_usd_millions": 52,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Grants to States for Medicaid",
+            "description": "null",
+            "src_line_nbr": "102",
+            "records": 21,
+            "example_today_usd_millions": 1147,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Indian Health Service",
+            "description": "null",
+            "src_line_nbr": "102",
+            "records": 21,
+            "example_today_usd_millions": 2,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Health Resources & Services Admin",
+            "description": "null",
+            "src_line_nbr": "103",
+            "records": 21,
+            "example_today_usd_millions": 22,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Marketplace Payments",
+            "description": "null",
+            "src_line_nbr": "103",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Indian Health Service",
+            "description": "null",
+            "src_line_nbr": "104",
+            "records": 21,
+            "example_today_usd_millions": 1,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Medicare Prescription Drugs",
+            "description": "null",
+            "src_line_nbr": "104",
+            "records": 21,
+            "example_today_usd_millions": 18947,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Marketplace Payments",
+            "description": "null",
+            "src_line_nbr": "105",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - National Institutes of Health",
+            "description": "null",
+            "src_line_nbr": "105",
+            "records": 21,
+            "example_today_usd_millions": 91,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Medicare Prescription Drugs",
+            "description": "null",
+            "src_line_nbr": "106",
+            "records": 21,
+            "example_today_usd_millions": 0,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Other Public Health Services",
+            "description": "null",
+            "src_line_nbr": "106",
+            "records": 21,
+            "example_today_usd_millions": 38,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - National Institutes of Health",
+            "description": "null",
+            "src_line_nbr": "107",
+            "records": 21,
+            "example_today_usd_millions": 127,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Othr Admin for Children & Families",
+            "description": "null",
+            "src_line_nbr": "107",
+            "records": 21,
+            "example_today_usd_millions": 74,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Other Public Health Services",
+            "description": "null",
+            "src_line_nbr": "108",
+            "records": 21,
+            "example_today_usd_millions": 14,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Othr Cent Medicare & Medicaid Serv",
+            "description": "null",
+            "src_line_nbr": "108",
+            "records": 21,
+            "example_today_usd_millions": 139,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Othr Admin for Children & Families",
+            "description": "null",
+            "src_line_nbr": "109",
+            "records": 21,
+            "example_today_usd_millions": 27,
+            "report_days": 21
+          },
+          {
+            "transaction_type": "Withdrawals",
+            "category": "HHS - Payments to Children and Families",
+            "description": "null",
+            "src_line_nbr": "109",
+            "records": 21,
+            "example_today_usd_millions": 96,
+            "report_days": 21
+          }
+        ],
+        "net_tax_receipts_usd_millions": null,
+        "net_government_spending_usd_millions": null,
+        "ready_for_tax_spending_forecast": false,
+        "limitations": [
+          "Category labels are diagnostic, not an independently certified non-overlapping line-item hierarchy",
+          "Never sum category lines before checking table subtotals and cash closing-balance identity",
+          "FiscalData current version is not an archive of historical release times",
+          "Two sample months do not prove 2024-2026 structural consistency",
+          "Do not use realized DTS future-date tax amounts as forecasts"
+        ]
+      }
     },
     "gold-proxy-backtest": {
       "status": "exploratory_gold_proxy_signal_test_not_trade_ready",
@@ -1796,7 +3690,7 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-10-15T10:28:23.789Z",
+        "as_of": "2026-10-15T10:30:30.558Z",
         "fred": [
           {
             "series": "DFII10",
@@ -1898,7 +3792,7 @@
             "valid_ohlc_bars": 9786,
             "invalid_or_missing_ohlc_bars": 2602,
             "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-10-15T10:18:19.000Z",
+            "last_date": "2026-10-15T10:20:27.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 5281,
@@ -2014,19 +3908,7 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
-          "forecast": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "robustness-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-cot-audit": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-dxy-audit": {
+          "treasury": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -2034,15 +3916,27 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "v22-ohlc-integrity": {
+          "v22-dxy-audit": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "treasury": {
+          "robustness-backtest": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
           "tga-identity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-ohlc-integrity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "forecast": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-cot-audit": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -3137,7 +5031,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-10-15T10:28:26.904Z",
+        "as_of": "2026-10-15T10:30:32.871Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -3652,7 +5546,7 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-10-15T10:28:25.000Z",
+        "as_of": "2026-10-15T10:30:31.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
