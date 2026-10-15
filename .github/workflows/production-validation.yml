@@ -11,6 +11,10 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository for saving reports
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - name: Wait for Vercel production deployment
         run: sleep 90
       - name: Check production routes and record JSON
@@ -57,4 +61,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reports/production-latest.json
           git commit -m "Record latest production API verification" || true
-          git push || true
+          git push origin HEAD:main || echo '::warning::Report could not be pushed; check repository workflow permissions'
