@@ -33,7 +33,7 @@ jobs:
               failed=1
               echo "::warning::$name HTTP $status"
             fi
-            python3 -c 'import json,sys; x=json.load(open(sys.argv[1])); print("status:",x.get("status"),"error:",x.get("error"),"observations:",x.get("observations"))' "diagnostics/$name.json" || failed=1
+            python3 -c 'import json,sys; x=json.load(open(sys.argv[1])); n=sys.argv[2]; checks={"v22-source-audit":lambda d:len(d.get("fred",[]))==7 and all(v.get("status")=="source_access_ok" for v in d["fred"]),"v22-cot-audit":lambda d:d.get("status")=="cot_source_access_ok" and d.get("observations",0)>=100,"v22-dxy-audit":lambda d:d.get("status")=="dxy_daily_source_access_ok" and d.get("usable_unique_trading_days",0)>=500,"v22-ohlc-integrity":lambda d:d.get("status")=="research_cme_session_hour_integrity_audited" and d.get("counts",{}).get("closed_session_aligned_4h",0)>=1000}; good=checks[n](x) if n in checks else True; print("status:",x.get("status"),"error:",x.get("error"),"source_integrity_ok:",good); sys.exit(0 if good else 1)' "diagnostics/$name.json" "$name" || failed=1
           done
           for year in $(seq 2023 $(date -u +%Y)); do
             echo "Checking TGA year $year"
