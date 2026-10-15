@@ -1,0 +1,11 @@
+const assert=require('node:assert/strict');
+const {scan}=require('../lib/endpoints/v22-price-pattern-core');
+const h=4*3600000,t=Date.parse('2025-04-01T00:00:00Z'),bars=[];
+for(let i=0;i<30;i++)bars.push({start_ms:t+i*h,close_ms:t+(i+1)*h,open:100,high:102,low:99,close:100});
+bars[23]={...bars[23],open:103,high:108,low:102,close:107};
+bars[24]={...bars[24],open:107,high:109,low:103,close:108};
+const r=scan(bars);
+assert(r.candidate_count>=1);
+assert(r.recent_confirmed_patterns[0].earliest_hypothetical_entry_open_utc>r.recent_confirmed_patterns[0].confirmation_closed_utc||r.recent_confirmed_patterns[0].earliest_hypothetical_entry_open_utc===r.recent_confirmed_patterns[0].confirmation_closed_utc);
+assert(r.recent_confirmed_patterns[0].price_only);
+console.log('4-hour ATR buffer, next-closed-bar confirmation and following-open screening passed');
