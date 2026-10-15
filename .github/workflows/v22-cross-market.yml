@@ -1,0 +1,61 @@
+name: Audit price candidates against as-of macro gold sources
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - lib/endpoints/v22-asof-join.js
+      - lib/endpoints/v22-cross-market-core.js
+      - tests/v22-cross-market-core.test.js
+      - scripts/v22-cross-market-source.js
+      - .github/workflows/v22-cross-market.yml
+concurrency:
+  group: v22-cross-market-asof
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify no forward macro source timestamps or missing-source pass
+        run: |
+          node --check lib/endpoints/v22-asof-join.js
+          node tests/v22-cross-market-core.test.js
+      - name: Test actual candidate timing against FRED FiscalData CFTC GLD DXY
+        run: node scripts/v22-cross-market-source.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v22-cross-market-research-asof
+          path: reports/v22-cross-market-latest.json
+          retention-days: 14
+      - name: Archive qualified non-trading provenance audit
+        if: ${{ !cancelled() }}
+        run: |
+          test -s reports/v22-cross-market-latest.json
+          cp reports/v22-cross-market-latest.json /tmp/v22-cross-market-result.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/v22-cross-market-result.json reports/v22-cross-market-latest.json
+            git add reports/v22-cross-market-latest.json
+            git commit -m "Store price macro prior-known research concurrence audit" || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Fail closed if mandatory macro coverage lost
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('reports/v22-cross-market-latest.json'))
+          assert d.get('status')=='v22_lagged_feature_join_research_only',d.get('macro_source_errors')
+          p=d.get('candidate_macro_crosscheck',{})
+          assert p.get('status')=='technical_patterns_cross_market_asof_descriptive_only'
+          assert p.get('counts',{}).get('candidates',0)>=30
+          assert d.get('trade_signals_enabled') is False
+          PY
