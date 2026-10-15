@@ -1,0 +1,58 @@
+name: Fiscal Research Direct Source Validation
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/validate-fiscal-local.js
+      - lib/endpoints/v22-tga-cashflow-identity.js
+      - lib/endpoints/v22-cashflow-core.js
+      - lib/endpoints/v22-auction-core.js
+      - lib/endpoints/v22-auction-known-forecast.js
+      - .github/workflows/fiscal-local-validation.yml
+concurrency:
+  group: fiscal-direct-source-research
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax and deterministic time/accounting tests
+        run: |
+          node --check scripts/validate-fiscal-local.js
+          node --check lib/endpoints/v22-auction-known-forecast.js
+          node --check lib/endpoints/v22-tga-cashflow-identity.js
+          node tests/v22-auction-core.test.js
+          node tests/v22-cashflow-core.test.js
+      - name: Fetch official Treasury historical data without Vercel deployment dependency
+        run: node scripts/validate-fiscal-local.js
+      - name: Archive factual research results even if classifications require adjustment
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fiscal-direct-source-diagnostics
+          path: reports/fiscal-validation-local-latest.json
+          retention-days: 14
+      - name: Publish validated research diagnostic (no trades)
+        if: ${{ !cancelled() }}
+        run: |
+          if [ ! -s reports/fiscal-validation-local-latest.json ]; then
+            echo "::error::No fiscal research report generated"
+            exit 1
+          fi
+          cp reports/fiscal-validation-local-latest.json /tmp/fiscal-direct-report.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/fiscal-direct-report.json reports/fiscal-validation-local-latest.json
+            git add reports/fiscal-validation-local-latest.json
+            git commit -m "Record direct Treasury fiscal source research status" || exit 0
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 4
+          done
+          exit 1
