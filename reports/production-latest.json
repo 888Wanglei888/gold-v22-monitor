@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T10:30:36.812323+00:00",
-  "commit": "dcc128f1608673d55dd5b57aefaafc0a3556dbea",
+  "checked_at_utc": "2026-10-15T10:37:33.820936+00:00",
+  "commit": "0d1fb00930dcc853ad50b1c9497574647ea5c39e",
   "endpoints": {
     "v22-cot-audit": {
       "status": "cot_source_access_ok",
@@ -71,6 +71,16 @@
       "first_date": "2026-01-02",
       "last_date": "2026-10-13",
       "data": null
+    },
+    "v22-tga-cashflow-identity": {
+      "status": null,
+      "error": "Unknown endpoint",
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "error": "Unknown endpoint"
+      }
     },
     "v22-cashflow-line-audit": {
       "status": "dts_cashflow_category_inventory_research_only",
@@ -2144,22 +2154,29 @@
       "last_date": null,
       "data": {
         "status": "auction_known_bill_component_backtest_research_only",
-        "model": "Only issuance and maturing awards from Treasury auction results published >=2 calendar days earlier",
+        "model": "Compare earlier auction results only against offerings published on Treasury announcement_date >=1 calendar day earlier (both exclude future auction results)",
         "target": "Ex-post DTS IIIA actual daily BILL issues minus redemptions",
         "units": "USD billions",
         "data_coverage": {
           "raw_auction_rows": 1653,
           "accepted_auction_events": 1651,
+          "announced_offering_events": 1653,
           "auction_faults": {
             "invalid_fields": 2,
             "duplicate_auction_identity": 0,
             "auction_after_issue": 0
           },
+          "announcement_faults": {
+            "missing_announcement": 0,
+            "invalid_offering": 0,
+            "duplicate_auction_identity": 0,
+            "bad_date_order": 0
+          },
           "realized_dts": 698
         },
         "by_horizon": {
           "D+1": {
-            "overall": {
+            "earlier_results_only_proxy": {
               "samples": 429,
               "known_event_samples": 171,
               "known_event_coverage_pct": 39.9,
@@ -2168,29 +2185,60 @@
               "mae_vs_zero_improvement_pct": -151,
               "direction_match_all_samples_pct": 27.3
             },
+            "announced_offerings_proxy": {
+              "samples": 429,
+              "known_event_samples": 173,
+              "known_event_coverage_pct": 40.3,
+              "auction_known_proxy_mae_usd_billions": 3.563,
+              "zero_baseline_mae_usd_billions": 9.392,
+              "mae_vs_zero_improvement_pct": 62.1,
+              "direction_match_all_samples_pct": 36.6
+            },
             "by_year": {
               "2025": {
-                "samples": 239,
-                "known_event_samples": 95,
-                "known_event_coverage_pct": 39.7,
-                "auction_known_proxy_mae_usd_billions": 22.342,
-                "zero_baseline_mae_usd_billions": 10.073,
-                "mae_vs_zero_improvement_pct": -121.8,
-                "direction_match_all_samples_pct": 28.5
+                "earlier_results_only_proxy": {
+                  "samples": 239,
+                  "known_event_samples": 95,
+                  "known_event_coverage_pct": 39.7,
+                  "auction_known_proxy_mae_usd_billions": 22.342,
+                  "zero_baseline_mae_usd_billions": 10.073,
+                  "mae_vs_zero_improvement_pct": -121.8,
+                  "direction_match_all_samples_pct": 28.5
+                },
+                "announced_offerings_proxy": {
+                  "samples": 239,
+                  "known_event_samples": 96,
+                  "known_event_coverage_pct": 40.2,
+                  "auction_known_proxy_mae_usd_billions": 2.336,
+                  "zero_baseline_mae_usd_billions": 10.073,
+                  "mae_vs_zero_improvement_pct": 76.8,
+                  "direction_match_all_samples_pct": 39.7
+                }
               },
               "2026": {
-                "samples": 190,
-                "known_event_samples": 76,
-                "known_event_coverage_pct": 40,
-                "auction_known_proxy_mae_usd_billions": 25.13,
-                "zero_baseline_mae_usd_billions": 8.536,
-                "mae_vs_zero_improvement_pct": -194.4,
-                "direction_match_all_samples_pct": 25.8
+                "earlier_results_only_proxy": {
+                  "samples": 190,
+                  "known_event_samples": 76,
+                  "known_event_coverage_pct": 40,
+                  "auction_known_proxy_mae_usd_billions": 25.13,
+                  "zero_baseline_mae_usd_billions": 8.536,
+                  "mae_vs_zero_improvement_pct": -194.4,
+                  "direction_match_all_samples_pct": 25.8
+                },
+                "announced_offerings_proxy": {
+                  "samples": 190,
+                  "known_event_samples": 77,
+                  "known_event_coverage_pct": 40.5,
+                  "auction_known_proxy_mae_usd_billions": 5.106,
+                  "zero_baseline_mae_usd_billions": 8.536,
+                  "mae_vs_zero_improvement_pct": 40.2,
+                  "direction_match_all_samples_pct": 32.6
+                }
               }
             }
           },
           "D+3": {
-            "overall": {
+            "earlier_results_only_proxy": {
               "samples": 395,
               "known_event_samples": 395,
               "known_event_coverage_pct": 100,
@@ -2199,29 +2247,60 @@
               "mae_vs_zero_improvement_pct": -679.7,
               "direction_match_all_samples_pct": 42.5
             },
+            "announced_offerings_proxy": {
+              "samples": 395,
+              "known_event_samples": 395,
+              "known_event_coverage_pct": 100,
+              "auction_known_proxy_mae_usd_billions": 10.816,
+              "zero_baseline_mae_usd_billions": 27.564,
+              "mae_vs_zero_improvement_pct": 60.8,
+              "direction_match_all_samples_pct": 90.1
+            },
             "by_year": {
               "2025": {
-                "samples": 217,
-                "known_event_samples": 217,
-                "known_event_coverage_pct": 100,
-                "auction_known_proxy_mae_usd_billions": 204.991,
-                "zero_baseline_mae_usd_billions": 29.37,
-                "mae_vs_zero_improvement_pct": -598,
-                "direction_match_all_samples_pct": 44.7
+                "earlier_results_only_proxy": {
+                  "samples": 217,
+                  "known_event_samples": 217,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 204.991,
+                  "zero_baseline_mae_usd_billions": 29.37,
+                  "mae_vs_zero_improvement_pct": -598,
+                  "direction_match_all_samples_pct": 44.7
+                },
+                "announced_offerings_proxy": {
+                  "samples": 217,
+                  "known_event_samples": 217,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 7.099,
+                  "zero_baseline_mae_usd_billions": 29.37,
+                  "mae_vs_zero_improvement_pct": 75.8,
+                  "direction_match_all_samples_pct": 96.3
+                }
               },
               "2026": {
-                "samples": 178,
-                "known_event_samples": 178,
-                "known_event_coverage_pct": 100,
-                "auction_known_proxy_mae_usd_billions": 227.033,
-                "zero_baseline_mae_usd_billions": 25.361,
-                "mae_vs_zero_improvement_pct": -795.2,
-                "direction_match_all_samples_pct": 39.9
+                "earlier_results_only_proxy": {
+                  "samples": 178,
+                  "known_event_samples": 178,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 227.033,
+                  "zero_baseline_mae_usd_billions": 25.361,
+                  "mae_vs_zero_improvement_pct": -795.2,
+                  "direction_match_all_samples_pct": 39.9
+                },
+                "announced_offerings_proxy": {
+                  "samples": 178,
+                  "known_event_samples": 178,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 15.347,
+                  "zero_baseline_mae_usd_billions": 25.361,
+                  "mae_vs_zero_improvement_pct": 39.5,
+                  "direction_match_all_samples_pct": 82.6
+                }
               }
             }
           },
           "D+5": {
-            "overall": {
+            "earlier_results_only_proxy": {
               "samples": 362,
               "known_event_samples": 362,
               "known_event_coverage_pct": 100,
@@ -2230,24 +2309,55 @@
               "mae_vs_zero_improvement_pct": -853.8,
               "direction_match_all_samples_pct": 43.4
             },
+            "announced_offerings_proxy": {
+              "samples": 362,
+              "known_event_samples": 362,
+              "known_event_coverage_pct": 100,
+              "auction_known_proxy_mae_usd_billions": 118.519,
+              "zero_baseline_mae_usd_billions": 44.352,
+              "mae_vs_zero_improvement_pct": -167.2,
+              "direction_match_all_samples_pct": 69.9
+            },
             "by_year": {
               "2025": {
-                "samples": 196,
-                "known_event_samples": 196,
-                "known_event_coverage_pct": 100,
-                "auction_known_proxy_mae_usd_billions": 403.808,
-                "zero_baseline_mae_usd_billions": 46.615,
-                "mae_vs_zero_improvement_pct": -766.3,
-                "direction_match_all_samples_pct": 45.4
+                "earlier_results_only_proxy": {
+                  "samples": 196,
+                  "known_event_samples": 196,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 403.808,
+                  "zero_baseline_mae_usd_billions": 46.615,
+                  "mae_vs_zero_improvement_pct": -766.3,
+                  "direction_match_all_samples_pct": 45.4
+                },
+                "announced_offerings_proxy": {
+                  "samples": 196,
+                  "known_event_samples": 196,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 107.971,
+                  "zero_baseline_mae_usd_billions": 46.615,
+                  "mae_vs_zero_improvement_pct": -131.6,
+                  "direction_match_all_samples_pct": 71.4
+                }
               },
               "2026": {
-                "samples": 166,
-                "known_event_samples": 166,
-                "known_event_coverage_pct": 100,
-                "auction_known_proxy_mae_usd_billions": 445.761,
-                "zero_baseline_mae_usd_billions": 41.681,
-                "mae_vs_zero_improvement_pct": -969.5,
-                "direction_match_all_samples_pct": 41
+                "earlier_results_only_proxy": {
+                  "samples": 166,
+                  "known_event_samples": 166,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 445.761,
+                  "zero_baseline_mae_usd_billions": 41.681,
+                  "mae_vs_zero_improvement_pct": -969.5,
+                  "direction_match_all_samples_pct": 41
+                },
+                "announced_offerings_proxy": {
+                  "samples": 166,
+                  "known_event_samples": 166,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 130.974,
+                  "zero_baseline_mae_usd_billions": 41.681,
+                  "mae_vs_zero_improvement_pct": -214.2,
+                  "direction_match_all_samples_pct": 68.1
+                }
               }
             }
           }
@@ -2258,42 +2368,54 @@
             "target": "2026-10-02",
             "known_auction_bill_proxy_usd_billions": 0,
             "realized_dts_bill_net_usd_billions": -0.006,
-            "known_event_count": 0
+            "known_event_count": 0,
+            "announced_issuance_bill_proxy_usd_billions": 0,
+            "announced_event_count": 0
           },
           {
             "asof": "2026-10-02",
             "target": "2026-10-05",
             "known_auction_bill_proxy_usd_billions": 0,
             "realized_dts_bill_net_usd_billions": -0.005,
-            "known_event_count": 0
+            "known_event_count": 0,
+            "announced_issuance_bill_proxy_usd_billions": 0,
+            "announced_event_count": 0
           },
           {
             "asof": "2026-10-05",
             "target": "2026-10-06",
             "known_auction_bill_proxy_usd_billions": 10.998,
             "realized_dts_bill_net_usd_billions": 11.035,
-            "known_event_count": 6
+            "known_event_count": 6,
+            "announced_issuance_bill_proxy_usd_billions": -2.751,
+            "announced_event_count": 6
           },
           {
             "asof": "2026-10-06",
             "target": "2026-10-07",
             "known_auction_bill_proxy_usd_billions": 0,
             "realized_dts_bill_net_usd_billions": -0.014,
-            "known_event_count": 0
+            "known_event_count": 0,
+            "announced_issuance_bill_proxy_usd_billions": 0,
+            "announced_event_count": 0
           },
           {
             "asof": "2026-10-07",
             "target": "2026-10-08",
             "known_auction_bill_proxy_usd_billions": -88.451,
             "realized_dts_bill_net_usd_billions": 13.709,
-            "known_event_count": 5
+            "known_event_count": 5,
+            "announced_issuance_bill_proxy_usd_billions": -6.784,
+            "announced_event_count": 6
           },
           {
             "asof": "2026-10-08",
             "target": "2026-10-09",
             "known_auction_bill_proxy_usd_billions": 0,
             "realized_dts_bill_net_usd_billions": -0.006,
-            "known_event_count": 0
+            "known_event_count": 0,
+            "announced_issuance_bill_proxy_usd_billions": 0,
+            "announced_event_count": 0
           }
         ],
         "full_TGA_forecast_validated": false,
@@ -2301,10 +2423,11 @@
         "trade_signals_enabled": false,
         "limitations": [
           "A forecast of known auction bill cash is NOT a forecast of all Treasury new cash or TGA balance",
-          "Historic auction feed is current-vintage; published result timestamp unverified; assumes data known 2 calendar days after auction",
+          "Historic auction feed is current-vintage; published result timestamp unverified; assumes data known 2 calendar days after auction and public offerings known 1 calendar day after announcement",
           "Maturity is inferred from prior auction gross awards, which can differ from publicly-held principal and cash redemption",
           "Coupons, TIPS and FRNs excluded from this evaluated known-bill-only proxy",
-          "Future issue amounts from auctions after as-of are always excluded; actual DTS comparison is used ONLY for after-the-fact scoring",
+          "Announced future offerings may be included BEFORE auction date but only once their announcement is as-of known; never use future accepted totals as issuance",
+          "Actual DTS comparison is used ONLY for after-the-fact scoring",
           "Non-trading-day and holiday DST calendar mismatches excluded from scored evaluation",
           "Model is diagnostic; no parameters optimized on 2026 outcomes and no claim of tradable profit"
         ]
@@ -3690,7 +3813,7 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-10-15T10:30:30.558Z",
+        "as_of": "2026-10-15T10:37:27.045Z",
         "fred": [
           {
             "series": "DFII10",
@@ -3792,7 +3915,7 @@
             "valid_ohlc_bars": 9786,
             "invalid_or_missing_ohlc_bars": 2602,
             "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-10-15T10:20:27.000Z",
+            "last_date": "2026-10-15T10:27:21.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 5281,
@@ -3908,31 +4031,7 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
-          "treasury": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-source-audit": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-dxy-audit": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
           "robustness-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "tga-identity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-ohlc-integrity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "forecast": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -3940,7 +4039,31 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
+          "tga-identity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
           "holdout-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "forecast": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-source-audit": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "treasury": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-ohlc-integrity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-dxy-audit": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
@@ -5031,7 +5154,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-10-15T10:30:32.871Z",
+        "as_of": "2026-10-15T10:37:30.002Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -5546,7 +5669,7 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-10-15T10:30:31.000Z",
+        "as_of": "2026-10-15T10:37:28.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
@@ -5902,15 +6025,20 @@
           "pdf_filenm_spec_announcemt"
         ],
         "missing_required_fields": [],
+        "announcement_fields_present": true,
         "duplicate_cusip_auction_issue_keys": 0,
         "bad_data": {
           "unparseable_amount": 2,
           "invalid_dates": 0,
           "auction_after_issue": 0,
-          "issue_after_maturity": 0
+          "issue_after_maturity": 0,
+          "missing_announcement_date": 0,
+          "announcement_after_auction": 0,
+          "missing_offering_amount": 0
         },
         "recent_source_samples": [
           {
+            "announcemt_date": "2026-10-08",
             "auction_date": "2026-10-13",
             "issue_date": "2026-10-15",
             "maturity_date": "2027-04-15",
@@ -5923,6 +6051,7 @@
             "cusip": "912797UE5"
           },
           {
+            "announcemt_date": "2026-10-08",
             "auction_date": "2026-10-13",
             "issue_date": "2026-10-15",
             "maturity_date": "2027-01-14",
@@ -5935,6 +6064,7 @@
             "cusip": "912797VT1"
           },
           {
+            "announcemt_date": "2026-10-13",
             "auction_date": "2026-10-14",
             "issue_date": "2026-10-20",
             "maturity_date": "2027-02-16",
@@ -5947,6 +6077,7 @@
             "cusip": "912797WZ6"
           },
           {
+            "announcemt_date": "2026-10-13",
             "auction_date": "2026-10-15",
             "issue_date": "2026-10-20",
             "maturity_date": "2026-12-15",
@@ -5959,6 +6090,7 @@
             "cusip": "912797WF0"
           },
           {
+            "announcemt_date": "2026-10-13",
             "auction_date": "2026-10-15",
             "issue_date": "2026-10-20",
             "maturity_date": "2026-11-17",
