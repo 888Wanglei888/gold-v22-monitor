@@ -1,0 +1,52 @@
+name: Audit official GLD archive (metadata only)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/audit-gld-archive.py
+      - .github/workflows/gld-archive-audit.yml
+  schedule:
+    - cron: '40 9 * * 1'
+concurrency:
+  group: gld-archive-source-metadata
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read official GLD XLSX privately in runner and output non-redistributive metadata
+        run: python3 scripts/audit-gld-archive.py
+      - name: Validate JSON result exists and has explicit honest status
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('reports/gld-archive-audit-latest.json'))
+          assert d['status'] in ('official_gld_archive_readable','official_gld_archive_blocked')
+          assert d['raw_archive_redistributed'] is False
+          assert d['actual_etf_flow_calculated'] is False
+          print('source-status:',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: official-gld-archive-source-metadata
+          path: reports/gld-archive-audit-latest.json
+          retention-days: 14
+      - name: Publish metadata only after complete inspection
+        run: |
+          cp reports/gld-archive-audit-latest.json /tmp/gld-audit-result.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p reports
+            cp /tmp/gld-audit-result.json reports/gld-archive-audit-latest.json
+            git add reports/gld-archive-audit-latest.json
+            git commit -m "Store SPDR GLD archive source metadata without raw holdings" || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 4
+          done
+          exit 1
