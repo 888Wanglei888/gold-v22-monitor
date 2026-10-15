@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T12:09:31.146406+00:00",
-  "commit": "6503efd2eb440c9f98eb8e60b090c7b64aa4cd29",
+  "checked_at_utc": "2026-10-15T12:42:10.343919+00:00",
+  "commit": "b085be11727fd6659f616849289a600a3fd64ff2",
   "endpoints": {
     "v22-cot-audit": {
       "status": "cot_source_access_ok",
@@ -3943,7 +3943,7 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-10-15T12:09:24.800Z",
+        "as_of": "2026-10-15T12:42:03.200Z",
         "fred": [
           {
             "series": "DFII10",
@@ -4041,21 +4041,21 @@
           {
             "symbol": "GC=F",
             "status": "available",
-            "bars": 12389,
-            "valid_ohlc_bars": 9787,
+            "bars": 12390,
+            "valid_ohlc_bars": 9788,
             "invalid_or_missing_ohlc_bars": 2602,
             "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-10-15T11:59:23.000Z",
+            "last_date": "2026-10-15T12:32:01.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 5281,
-              "2026": 4506
+              "2026": 4507
             },
-            "complete_utc_four_hour_buckets": 2119,
+            "complete_utc_four_hour_buckets": 2120,
             "complete_utc_four_hour_per_year": {
               "2024": 0,
               "2025": 1144,
-              "2026": 975
+              "2026": 976
             },
             "exchange_session_aligned_4h_verified": false
           },
@@ -4161,6 +4161,26 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
+          "v22-cot-audit": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "robustness-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "tga-identity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-ohlc-integrity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "holdout-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
           "v22-dxy-audit": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
@@ -4169,31 +4189,11 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "holdout-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-cot-audit": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "forecast": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "robustness-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-ohlc-integrity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
           "treasury": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "tga-identity": {
+          "forecast": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
@@ -5284,7 +5284,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-10-15T12:09:27.371Z",
+        "as_of": "2026-10-15T12:42:06.150Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -5403,10 +5403,10 @@
           }
         },
         "ohlc_quality": {
-          "raw": 13007,
+          "raw": 13008,
           "missing_ohlc": 2743,
           "off_hour": 13,
-          "unclosed": 0,
+          "unclosed": 1,
           "duplicate_hours": 0,
           "nonconsecutive_groups": 0,
           "incomplete_groups": 34
@@ -5963,17 +5963,17 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-10-15T12:09:25.000Z",
+        "as_of": "2026-10-15T12:42:04.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
         "counts": {
-          "raw_hours": 12389,
-          "distinct_raw_timestamps": 12389,
+          "raw_hours": 12390,
+          "distinct_raw_timestamps": 12390,
           "valid_ohlc_on_hour_nonduplicated": 9774,
           "missing_or_invalid_ohlc": 2602,
           "not_exact_utc_hour": 13,
-          "unclosed_current_hour": 0,
+          "unclosed_current_hour": 1,
           "duplicate_hour": 0,
           "duplicate_timestamp": 0,
           "candidate_buckets": 2141,
