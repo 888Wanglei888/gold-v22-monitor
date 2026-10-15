@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T03:49:12.921641+00:00",
-  "commit": "a855bf0876e29e83bc9394f131eec63e7f1f81a1",
+  "checked_at_utc": "2026-10-15T03:53:53.504621+00:00",
+  "commit": "52b36ab486d7f1fec67de7a45d8caa2a92974204",
   "endpoints": {
     "tga-2026": {
       "status": "year_source_ok",
@@ -52,11 +52,11 @@
         "status": "research_only",
         "baseline_data_checks_passed": false,
         "checks": {
-          "holdout-backtest": {
+          "tga-identity": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "tga-identity": {
+          "robustness-backtest": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -64,11 +64,11 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "forecast": {
+          "holdout-backtest": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "robustness-backtest": {
+          "forecast": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
@@ -88,7 +88,7 @@
     },
     "tga-2019": {
       "status": "historical_backtest_blocked",
-      "error": "Error: 2019 missing TGA data: 0",
+      "error": "Error: 2019 missing TGA data: 0; received=0; total=NaN; sample=[]",
       "observations": null,
       "first_date": null,
       "last_date": null,
@@ -104,19 +104,19 @@
     },
     "full-history-backtest": {
       "status": "historical_backtest_blocked",
-      "error": "Error: 2019 missing TGA data: 0",
+      "error": "Error: 2019 missing TGA data: 0; received=0; total=NaN; sample=[]",
       "observations": null,
       "first_date": null,
       "last_date": null,
       "data": {
         "status": "historical_backtest_blocked",
-        "error": "Error: 2019 missing TGA data: 0",
+        "error": "Error: 2019 missing TGA data: 0; received=0; total=NaN; sample=[]",
         "warning": "No partial results are presented as full 2019+ history"
       }
     },
     "tga-2021": {
       "status": "historical_backtest_blocked",
-      "error": "Error: 2021 missing TGA data: 0",
+      "error": "Error: 2021 missing TGA data: 0; received=0; total=NaN; sample=[]",
       "observations": null,
       "first_date": null,
       "last_date": null,
@@ -148,7 +148,7 @@
     },
     "tga-2020": {
       "status": "historical_backtest_blocked",
-      "error": "Error: 2020 missing TGA data: 0",
+      "error": "Error: 2020 missing TGA data: 0; received=0; total=NaN; sample=[]",
       "observations": null,
       "first_date": null,
       "last_date": null,
