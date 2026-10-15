@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T06:13:39.698689+00:00",
-  "commit": "d1f3c42d202bc34d09bea460cdc3eaa770b4e2c4",
+  "checked_at_utc": "2026-10-15T06:16:19.524391+00:00",
+  "commit": "7e6546176b0928ad9228b6171a55a3b63c33adb7",
   "endpoints": {
     "tga-2026": {
       "status": "year_source_ok",
@@ -48,11 +48,7 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "forecast": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "tga-identity": {
+          "holdout-backtest": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -60,7 +56,11 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "holdout-backtest": {
+          "forecast": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "tga-identity": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
