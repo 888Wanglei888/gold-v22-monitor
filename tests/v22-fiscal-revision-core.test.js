@@ -1,4 +1,4 @@
-const assert=require('node:assert/strict'),{revision}=require('../lib/endpoints/v22-fiscal-revision-core');
+const assert=require('node:assert/strict'),{revision,alignRevisionToGoldPrice}=require('../lib/endpoints/v22-fiscal-revision-core');
 const DAY=86400000,iso=x=>new Date(x).toISOString().slice(0,10),next=x=>{let n=Date.parse(x+'T12:00:00Z');do{n+=DAY}while([0,6].includes(new Date(n).getUTCDay()));return iso(n)};
 const paths=[];let now='2024-07-01';
 for(let i=0;i<420;i++){
