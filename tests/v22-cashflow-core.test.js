@@ -11,7 +11,7 @@ const total=x('2026-09-01','Deposits','null',120,80);
 const augmented=cashflowByDay([...rows,total]);
 assert.equal(augmented.days[0].cashflow_net,60,'Unlabeled grand-total deposit must not be summed with leaf cashflows');
 assert.equal(augmented.faults.unlabeled_possible_total_rows_excluded,1);
-const debtRows=cashflowByDay([...rows,x('2026-09-01','Deposits','Public Debt Cash Issues (Table IIIB)',300,79),x('2026-09-01','Withdrawals','Public Debt Cash Redemptions (Table IIIB)',200,166)]);
+const debtRows=cashflowByDay([...rows,x('2026-09-01','Deposits','Public Debt Cash Issues (Table IIIB)',300,79),x('2026-09-01','Withdrawals','Public Debt Cash Redemp. (Table IIIB)',200,166)]);
 assert.equal(debtRows.days[0].cashflow_net,160);
 assert.equal(debtRows.days[0].nondebt_net,60);
 assert.equal(debtRows.days[0].public_debt_cash_issues,300);
