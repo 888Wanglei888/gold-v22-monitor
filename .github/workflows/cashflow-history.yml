@@ -5,6 +5,8 @@ on:
     paths:
       - scripts/v22-cashflow-history.js
       - lib/endpoints/v22-cashflow-core.js
+      - lib/endpoints/v22-fiscal-composite-core.js
+      - tests/v22-fiscal-composite-core.test.js
       - .github/workflows/cashflow-history.yml
 concurrency:
   group: v22-complete-dts-cashflow-history
@@ -21,6 +23,7 @@ jobs:
         run: |
           node --check scripts/v22-cashflow-history.js
           node tests/v22-cashflow-core.test.js
+          node tests/v22-fiscal-composite-core.test.js
       - name: Build audited 2023-present daily Treasury nondebt, tax and financing cashflows
         run: node scripts/v22-cashflow-history.js
       - uses: actions/upload-artifact@v4
