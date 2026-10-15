@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T10:49:12.718Z",
-  "github_sha": "f4557bd66b5581624ac2744b415aa9b12b447cc2",
+  "checked_at_utc": "2026-10-15T10:52:55.885Z",
+  "github_sha": "2545dcec8976a62456adc9118cdefa453ff8f6cc",
   "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
   "months_requested": 46,
   "full_v22_fiscal_prediction_ready": false,
@@ -334,6 +334,96 @@
       "non_debt_net_usd_billions": -1308.278
     }
   },
+  "auction_announcement_events": 1653,
+  "exploratory_partial_tga_auction_plus_fiscal_forecast": {
+    "history_samples": 669,
+    "scored": {
+      "D+1": {
+        "overall": {
+          "samples": 429,
+          "mae_zero_usd_billions": 27.358,
+          "mae_total_weekday_usd_billions": 23.888,
+          "mae_auction_plus_residual_usd_billions": 19.084,
+          "mae_auction_plus_split_cash_usd_billions": 19.222,
+          "median_absolute_actual_change_usd_billions": 20.095
+        },
+        "by_year": {
+          "2025": {
+            "samples": 239,
+            "mae_zero_usd_billions": 27.631,
+            "mae_total_weekday_usd_billions": 24.002,
+            "mae_auction_plus_residual_usd_billions": 17.582,
+            "mae_auction_plus_split_cash_usd_billions": 17.637,
+            "median_absolute_actual_change_usd_billions": 20.095
+          },
+          "2026": {
+            "samples": 190,
+            "mae_zero_usd_billions": 27.015,
+            "mae_total_weekday_usd_billions": 23.744,
+            "mae_auction_plus_residual_usd_billions": 20.972,
+            "mae_auction_plus_split_cash_usd_billions": 21.215,
+            "median_absolute_actual_change_usd_billions": 20.105
+          }
+        }
+      },
+      "D+3": {
+        "overall": {
+          "samples": 395,
+          "mae_zero_usd_billions": 48.202,
+          "mae_total_weekday_usd_billions": 45.32,
+          "mae_auction_plus_residual_usd_billions": 40.42,
+          "mae_auction_plus_split_cash_usd_billions": 40.711,
+          "median_absolute_actual_change_usd_billions": 34.071
+        },
+        "by_year": {
+          "2025": {
+            "samples": 217,
+            "mae_zero_usd_billions": 47.818,
+            "mae_total_weekday_usd_billions": 45.548,
+            "mae_auction_plus_residual_usd_billions": 37.289,
+            "mae_auction_plus_split_cash_usd_billions": 37.427,
+            "median_absolute_actual_change_usd_billions": 34.993
+          },
+          "2026": {
+            "samples": 178,
+            "mae_zero_usd_billions": 48.671,
+            "mae_total_weekday_usd_billions": 45.041,
+            "mae_auction_plus_residual_usd_billions": 44.238,
+            "mae_auction_plus_split_cash_usd_billions": 44.713,
+            "median_absolute_actual_change_usd_billions": 33.564
+          }
+        }
+      },
+      "D+5": {
+        "overall": {
+          "samples": 362,
+          "mae_zero_usd_billions": 58.952,
+          "mae_total_weekday_usd_billions": 59.224,
+          "mae_auction_plus_residual_usd_billions": 145.314,
+          "mae_auction_plus_split_cash_usd_billions": 147.003,
+          "median_absolute_actual_change_usd_billions": 44.919
+        },
+        "by_year": {
+          "2025": {
+            "samples": 196,
+            "mae_zero_usd_billions": 57.961,
+            "mae_total_weekday_usd_billions": 59.843,
+            "mae_auction_plus_residual_usd_billions": 138.162,
+            "mae_auction_plus_split_cash_usd_billions": 139.653,
+            "median_absolute_actual_change_usd_billions": 45.071
+          },
+          "2026": {
+            "samples": 166,
+            "mae_zero_usd_billions": 60.122,
+            "mae_total_weekday_usd_billions": 58.492,
+            "mae_auction_plus_residual_usd_billions": 153.757,
+            "mae_auction_plus_split_cash_usd_billions": 155.683,
+            "median_absolute_actual_change_usd_billions": 44.894
+          }
+        }
+      }
+    }
+  },
   "exploratory_fiscal_seasonality": {
     "tax_net_named_categories": {
       "overall": {
@@ -393,7 +483,7 @@
     "Nondebt net cannot be treated as verified discretionary spending until Public Debt Cash Redemptions category mapping is separately confirmed",
     "Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast",
     "Original FiscalData source is current-version and may have revisions",
-    "Treasury auction announced issue forecasts and nondebt seasonal estimates have not yet been added for a complete future TGA forecast",
+    "Treasury auction bill announcements and lagged nondebt/other debt seasonal priors are now tested as research proxies, but coupon/TIPS/FRN announced net cash, tax date calendar, auction vintages and verified publication stamps remain missing for full V2.2 forecast",
     "GLD cashflow flow signal, gold multi-factor confirmations and execution backtest remain distinct tasks"
   ]
 }
