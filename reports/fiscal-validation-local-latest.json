@@ -1,13 +1,13 @@
 {
-  "checked_at_utc": "2026-10-15T10:43:04.219Z",
-  "github_sha": "4ac90bbc6baab1ca78a9d72a8acb082989a7d873",
+  "checked_at_utc": "2026-10-15T10:44:31.250Z",
+  "github_sha": "e7f672ae2e2c28372a2414f4f253b6bd1f0e6d3b",
   "source": "GitHub Actions standalone Node 24; NOT Vercel production",
   "full_v22_trade_backtest_ready": false,
   "trade_signals_enabled": false,
   "endpoints": {
     "v22-tga-cashflow-identity": {
       "http_status": 200,
-      "elapsed_ms": 1682,
+      "elapsed_ms": 1784,
       "status": "tga_operating_cashflows_identity_verified_in_two_months",
       "error": null,
       "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/",
@@ -134,7 +134,7 @@
     },
     "v22-auction-known-forecast": {
       "http_status": 200,
-      "elapsed_ms": 2617,
+      "elapsed_ms": 2314,
       "status": "auction_known_bill_component_backtest_research_only",
       "error": null,
       "source": null,
@@ -358,7 +358,7 @@
     },
     "v22-auction-source-audit": {
       "http_status": 200,
-      "elapsed_ms": 1475,
+      "elapsed_ms": 1324,
       "status": "auction_historical_source_access_ok",
       "error": null,
       "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
