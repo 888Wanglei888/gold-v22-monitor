@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T10:48:47.747Z",
-  "github_sha": "ac8cb7cb9ce1e1782598b3551f33c44c5cc22108",
+  "checked_at_utc": "2026-10-15T10:49:12.718Z",
+  "github_sha": "f4557bd66b5581624ac2744b415aa9b12b447cc2",
   "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
   "months_requested": 46,
   "full_v22_fiscal_prediction_ready": false,
@@ -178,10 +178,10 @@
       },
       "explicit_named_tax_net_proxy_usd_billions": 3780.52,
       "public_debt_cash_issues_usd_billions": 23066.959,
-      "public_debt_cash_redemptions_usd_billions": 0,
+      "public_debt_cash_redemptions_usd_billions": 20999.161,
       "non_debt_receipts_usd_billions": 9471.511,
-      "non_debt_withdrawals_usd_billions": 33568.909,
-      "non_debt_net_usd_billions": -24097.398
+      "non_debt_withdrawals_usd_billions": 12569.748,
+      "non_debt_net_usd_billions": -3098.237
     },
     "2024": {
       "cashflow_days": 251,
@@ -228,10 +228,10 @@
       },
       "explicit_named_tax_net_proxy_usd_billions": 4636.657,
       "public_debt_cash_issues_usd_billions": 29841.122,
-      "public_debt_cash_redemptions_usd_billions": 0,
+      "public_debt_cash_redemptions_usd_billions": 28296.924,
       "non_debt_receipts_usd_billions": 5748.557,
-      "non_debt_withdrawals_usd_billions": 35636.488,
-      "non_debt_net_usd_billions": -29887.931
+      "non_debt_withdrawals_usd_billions": 7339.564,
+      "non_debt_net_usd_billions": -1591.007
     },
     "2025": {
       "cashflow_days": 250,
@@ -278,10 +278,10 @@
       },
       "explicit_named_tax_net_proxy_usd_billions": 4914.264,
       "public_debt_cash_issues_usd_billions": 31089.249,
-      "public_debt_cash_redemptions_usd_billions": 0,
+      "public_debt_cash_redemptions_usd_billions": 29448.477,
       "non_debt_receipts_usd_billions": 6275.134,
-      "non_debt_withdrawals_usd_billions": 37213.48,
-      "non_debt_net_usd_billions": -30938.346
+      "non_debt_withdrawals_usd_billions": 7765.003,
+      "non_debt_net_usd_billions": -1489.869
     },
     "2026": {
       "cashflow_days": 197,
@@ -328,10 +328,10 @@
       },
       "explicit_named_tax_net_proxy_usd_billions": 4017.561,
       "public_debt_cash_issues_usd_billions": 26290.221,
-      "public_debt_cash_redemptions_usd_billions": 0,
+      "public_debt_cash_redemptions_usd_billions": 24934.666,
       "non_debt_receipts_usd_billions": 5288.477,
-      "non_debt_withdrawals_usd_billions": 31531.421,
-      "non_debt_net_usd_billions": -26242.944
+      "non_debt_withdrawals_usd_billions": 6596.755,
+      "non_debt_net_usd_billions": -1308.278
     }
   },
   "exploratory_fiscal_seasonality": {
@@ -363,24 +363,24 @@
     "nondebt_net_unvalidated_debt_redemption_category": {
       "overall": {
         "samples": 429,
-        "weekday_median_mae_usd_billions": 31.483,
-        "month_day_calendar_median_mae_usd_billions": 84.439,
-        "zero_mae_usd_billions": 129.8,
+        "weekday_median_mae_usd_billions": 15.853,
+        "month_day_calendar_median_mae_usd_billions": 16.3,
+        "zero_mae_usd_billions": 20.528,
         "calendar_days_with_5_or_more_prior_examples": 213
       },
       "by_year": {
         "2025": {
           "samples": 239,
-          "weekday_median_mae_usd_billions": 29.766,
-          "month_day_calendar_median_mae_usd_billions": 54.356,
-          "zero_mae_usd_billions": 124.277,
+          "weekday_median_mae_usd_billions": 15.075,
+          "month_day_calendar_median_mae_usd_billions": 14.935,
+          "zero_mae_usd_billions": 19.756,
           "calendar_days_with_5_or_more_prior_examples": 35
         },
         "2026": {
           "samples": 190,
-          "weekday_median_mae_usd_billions": 33.643,
-          "month_day_calendar_median_mae_usd_billions": 122.28,
-          "zero_mae_usd_billions": 136.747,
+          "weekday_median_mae_usd_billions": 16.832,
+          "month_day_calendar_median_mae_usd_billions": 18.018,
+          "zero_mae_usd_billions": 21.5,
           "calendar_days_with_5_or_more_prior_examples": 178
         }
       }
