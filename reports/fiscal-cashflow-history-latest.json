@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T12:07:05.791Z",
-  "github_sha": "47b3283e2bd1d4dfd11da33742ec7a65e5877fe9",
+  "checked_at_utc": "2026-10-15T12:03:47.308Z",
+  "github_sha": "28501b57a010abb7508e041b4d501078e3886dee",
   "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
   "months_requested": 46,
   "full_v22_fiscal_prediction_ready": false,
@@ -339,272 +339,6 @@
     "complete_days": 698,
     "first": "2024-01-02",
     "last": "2026-10-13"
-  },
-  "fiscal_D3_same_target_research_revision_Z": {
-    "status": "unverified_tga_revision_z_proxy_no_gold_trades",
-    "settings": {
-      "rolling_prior_decisions": 252,
-      "min_prior_revisions": 60,
-      "comparison": "revision of future cashflow on SAME 3 remaining business days in current vs prior decision forecast"
-    },
-    "revision_days": 446,
-    "rolling_z_valid_days": 386,
-    "research_proxy_abs_z_counts": {
-      "gte_0_75": 5,
-      "gte_1_00": 5,
-      "gte_1_50": 4
-    },
-    "by_year": {
-      "2025": {
-        "revision_days": 249,
-        "usable_z_days": 189
-      },
-      "2026": {
-        "revision_days": 197,
-        "usable_z_days": 197
-      }
-    },
-    "recent_research_revisions": [
-      {
-        "decision_date": "2026-10-01",
-        "no_earlier_than_utc": "2026-10-01T23:59:59.000Z",
-        "comparison_target_date": "2026-10-06",
-        "prior_decision_date": "2026-09-30",
-        "same_target_revised_D3_remaining_known_auction_usd_millions": 286.5092000000004,
-        "same_target_revised_D3_remaining_bill_issuance_fallback_usd_millions": 2.5,
-        "rolling_prior_revision_days": 252,
-        "fiscal_revision_z_research_proxy_known_auction": -0.05080024742211887,
-        "fiscal_revision_z_research_proxy_fallback": -0.007780673432844767,
-        "full_TGA_forecast_revision_vintage_verified": false,
-        "grade_A_Aplus_Aplusplus_verified": false
-      },
-      {
-        "decision_date": "2026-10-02",
-        "no_earlier_than_utc": "2026-10-02T23:59:59.000Z",
-        "comparison_target_date": "2026-10-07",
-        "prior_decision_date": "2026-10-01",
-        "same_target_revised_D3_remaining_known_auction_usd_millions": 256.2509999999984,
-        "same_target_revised_D3_remaining_bill_issuance_fallback_usd_millions": 324.5,
-        "rolling_prior_revision_days": 252,
-        "fiscal_revision_z_research_proxy_known_auction": -0.05294176538268553,
-        "fiscal_revision_z_research_proxy_fallback": 0.14599733512479138,
-        "full_TGA_forecast_revision_vintage_verified": false,
-        "grade_A_Aplus_Aplusplus_verified": false
-      },
-      {
-        "decision_date": "2026-10-05",
-        "no_earlier_than_utc": "2026-10-05T23:59:59.000Z",
-        "comparison_target_date": "2026-10-08",
-        "prior_decision_date": "2026-10-02",
-        "same_target_revised_D3_remaining_known_auction_usd_millions": 0,
-        "same_target_revised_D3_remaining_bill_issuance_fallback_usd_millions": 0,
-        "rolling_prior_revision_days": 252,
-        "fiscal_revision_z_research_proxy_known_auction": -0.07048879911547277,
-        "fiscal_revision_z_research_proxy_fallback": -0.009593960085708432,
-        "full_TGA_forecast_revision_vintage_verified": false,
-        "grade_A_Aplus_Aplusplus_verified": false
-      },
-      {
-        "decision_date": "2026-10-06",
-        "no_earlier_than_utc": "2026-10-06T23:59:59.000Z",
-        "comparison_target_date": "2026-10-09",
-        "prior_decision_date": "2026-10-05",
-        "same_target_revised_D3_remaining_known_auction_usd_millions": 0,
-        "same_target_revised_D3_remaining_bill_issuance_fallback_usd_millions": 0,
-        "rolling_prior_revision_days": 252,
-        "fiscal_revision_z_research_proxy_known_auction": -0.07047642436503333,
-        "fiscal_revision_z_research_proxy_fallback": -0.009486890772021979,
-        "full_TGA_forecast_revision_vintage_verified": false,
-        "grade_A_Aplus_Aplusplus_verified": false
-      },
-      {
-        "decision_date": "2026-10-07",
-        "no_earlier_than_utc": "2026-10-07T23:59:59.000Z",
-        "comparison_target_date": "2026-10-12",
-        "prior_decision_date": "2026-10-06",
-        "same_target_revised_D3_remaining_known_auction_usd_millions": 0,
-        "same_target_revised_D3_remaining_bill_issuance_fallback_usd_millions": 0,
-        "rolling_prior_revision_days": 252,
-        "fiscal_revision_z_research_proxy_known_auction": -0.07046398115797146,
-        "fiscal_revision_z_research_proxy_fallback": -0.009448987000475197,
-        "full_TGA_forecast_revision_vintage_verified": false,
-        "grade_A_Aplus_Aplusplus_verified": false
-      },
-      {
-        "decision_date": "2026-10-08",
-        "no_earlier_than_utc": "2026-10-08T23:59:59.000Z",
-        "comparison_target_date": "2026-10-13",
-        "prior_decision_date": "2026-10-07",
-        "same_target_revised_D3_remaining_known_auction_usd_millions": -86.5,
-        "same_target_revised_D3_remaining_bill_issuance_fallback_usd_millions": -85,
-        "rolling_prior_revision_days": 252,
-        "fiscal_revision_z_research_proxy_known_auction": -0.07642047686292575,
-        "fiscal_revision_z_research_proxy_fallback": -0.050400326856676364,
-        "full_TGA_forecast_revision_vintage_verified": false,
-        "grade_A_Aplus_Aplusplus_verified": false
-      },
-      {
-        "decision_date": "2026-10-09",
-        "no_earlier_than_utc": "2026-10-09T23:59:59.000Z",
-        "comparison_target_date": "2026-10-14",
-        "prior_decision_date": "2026-10-08",
-        "same_target_revised_D3_remaining_known_auction_usd_millions": 127.25099999999657,
-        "same_target_revised_D3_remaining_bill_issuance_fallback_usd_millions": -199.5,
-        "rolling_prior_revision_days": 252,
-        "fiscal_revision_z_research_proxy_known_auction": -0.06181815603254579,
-        "fiscal_revision_z_research_proxy_fallback": -0.1049211293556598,
-        "full_TGA_forecast_revision_vintage_verified": false,
-        "grade_A_Aplus_Aplusplus_verified": false
-      },
-      {
-        "decision_date": "2026-10-13",
-        "no_earlier_than_utc": "2026-10-13T23:59:59.000Z",
-        "comparison_target_date": "2026-10-16",
-        "prior_decision_date": "2026-10-09",
-        "same_target_revised_D3_remaining_known_auction_usd_millions": -123.03989999999976,
-        "same_target_revised_D3_remaining_bill_issuance_fallback_usd_millions": -256,
-        "rolling_prior_revision_days": 252,
-        "fiscal_revision_z_research_proxy_known_auction": -0.07892374003058189,
-        "fiscal_revision_z_research_proxy_fallback": -0.13152308700703996,
-        "full_TGA_forecast_revision_vintage_verified": false,
-        "grade_A_Aplus_Aplusplus_verified": false
-      }
-    ],
-    "official_v22_A_Aplus_Aplusplus_signals": 0,
-    "complete_point_in_time_source_vintage": false,
-    "trade_signals_enabled": false,
-    "limitations": [
-      "This is a same-target forecast-revision STATISTICAL PROXY, not certified historical Treasury public release vintages",
-      "A/A+/A++ categorization cannot be finalized without full real-time Treasury, tax schedule, Fed and gold factor evidence",
-      "252 prior decisions, not 252 independent model vintage archives; one revision per eligible decision date",
-      "No gold trade profitability or execution is tested"
-    ],
-    "gold_4h_price_crosscheck": {
-      "status": "gold_price_vs_fiscal_revision_z_asof_research_only",
-      "counts": {
-        "candidates": 146,
-        "revision_z_record_available": 126,
-        "unavailable_or_stale": 20,
-        "fiscal_revision_z_abs_gte_0_75": 0,
-        "fiscal_revision_z_abs_gte_1": 0,
-        "fiscal_revision_z_abs_gte_1_5": 0,
-        "price_direction_agrees_fiscal_revision_z_abs_gte_0_75": 0,
-        "price_direction_agrees_fiscal_revision_z_abs_gte_1": 0,
-        "price_direction_agrees_fiscal_revision_z_abs_gte_1_5": 0,
-        "both_fiscal_estimators_abs_z_gte_0_75_and_same_direction": 0
-      },
-      "by_year": {
-        "2025": {
-          "price_candidates": 93,
-          "z_ready": 74,
-          "directional_z_0_75": 0
-        },
-        "2026": {
-          "price_candidates": 53,
-          "z_ready": 52,
-          "directional_z_0_75": 0
-        }
-      },
-      "recent_research_examples": [
-        {
-          "gold_confirmed_utc": "2026-09-01T14:00:00.000Z",
-          "price_direction": "short",
-          "fiscal_revision_issued_no_earlier_than_utc": "2026-08-31T23:59:59.000Z",
-          "comparison_same_target_date": "2026-09-03",
-          "auction_known_revision_z": -0.103,
-          "future_bill_issuance_fallback_revision_z": -0.252,
-          "aligned_to_gold_price": false,
-          "research_statistical_z_only": true,
-          "not_a_trade_signal": true
-        },
-        {
-          "gold_confirmed_utc": "2026-09-02T06:00:00.000Z",
-          "price_direction": "short",
-          "fiscal_revision_issued_no_earlier_than_utc": "2026-09-01T23:59:59.000Z",
-          "comparison_same_target_date": "2026-09-04",
-          "auction_known_revision_z": -0.07,
-          "future_bill_issuance_fallback_revision_z": -0.008,
-          "aligned_to_gold_price": false,
-          "research_statistical_z_only": true,
-          "not_a_trade_signal": true
-        },
-        {
-          "gold_confirmed_utc": "2026-09-24T14:00:00.000Z",
-          "price_direction": "short",
-          "fiscal_revision_issued_no_earlier_than_utc": "2026-09-23T23:59:59.000Z",
-          "comparison_same_target_date": "2026-09-28",
-          "auction_known_revision_z": -0.07,
-          "future_bill_issuance_fallback_revision_z": -0.01,
-          "aligned_to_gold_price": false,
-          "research_statistical_z_only": true,
-          "not_a_trade_signal": true
-        },
-        {
-          "gold_confirmed_utc": "2026-09-28T06:00:00.000Z",
-          "price_direction": "short",
-          "fiscal_revision_issued_no_earlier_than_utc": "2026-09-25T23:59:59.000Z",
-          "comparison_same_target_date": "2026-09-30",
-          "auction_known_revision_z": -0.059,
-          "future_bill_issuance_fallback_revision_z": -0.073,
-          "aligned_to_gold_price": false,
-          "research_statistical_z_only": true,
-          "not_a_trade_signal": true
-        },
-        {
-          "gold_confirmed_utc": "2026-09-28T10:00:00.000Z",
-          "price_direction": "short",
-          "fiscal_revision_issued_no_earlier_than_utc": "2026-09-25T23:59:59.000Z",
-          "comparison_same_target_date": "2026-09-30",
-          "auction_known_revision_z": -0.059,
-          "future_bill_issuance_fallback_revision_z": -0.073,
-          "aligned_to_gold_price": false,
-          "research_statistical_z_only": true,
-          "not_a_trade_signal": true
-        },
-        {
-          "gold_confirmed_utc": "2026-09-28T14:00:00.000Z",
-          "price_direction": "short",
-          "fiscal_revision_issued_no_earlier_than_utc": "2026-09-25T23:59:59.000Z",
-          "comparison_same_target_date": "2026-09-30",
-          "auction_known_revision_z": -0.059,
-          "future_bill_issuance_fallback_revision_z": -0.073,
-          "aligned_to_gold_price": false,
-          "research_statistical_z_only": true,
-          "not_a_trade_signal": true
-        },
-        {
-          "gold_confirmed_utc": "2026-10-09T10:00:00.000Z",
-          "price_direction": "long",
-          "fiscal_revision_issued_no_earlier_than_utc": "2026-10-08T23:59:59.000Z",
-          "comparison_same_target_date": "2026-10-13",
-          "auction_known_revision_z": -0.076,
-          "future_bill_issuance_fallback_revision_z": -0.05,
-          "aligned_to_gold_price": true,
-          "research_statistical_z_only": true,
-          "not_a_trade_signal": true
-        },
-        {
-          "gold_confirmed_utc": "2026-10-14T18:00:00.000Z",
-          "price_direction": "short",
-          "fiscal_revision_issued_no_earlier_than_utc": "2026-10-13T23:59:59.000Z",
-          "comparison_same_target_date": "2026-10-16",
-          "auction_known_revision_z": -0.079,
-          "future_bill_issuance_fallback_revision_z": -0.132,
-          "aligned_to_gold_price": false,
-          "research_statistical_z_only": true,
-          "not_a_trade_signal": true
-        }
-      ],
-      "A_Aplus_Aplusplus_trades_authorized": 0,
-      "full_historical_vintage_verified": false,
-      "trade_signals_enabled": false,
-      "limitations": [
-        "Statistical forecast revisions are not confirmed official historical Treasury forecast releases",
-        "Gold macro filter agreement, prior Dow trends, COMEX contract execution and full liquidity confirmation remain separate gates",
-        "Rolling Z parameters and issuance model were developed with overlapping 2025-2026 research samples: no untouched strategy holdout",
-        "Candidate price patterns cluster; do not count these as independent winning trades"
-      ]
-    }
   },
   "exploratory_partial_tga_auction_plus_fiscal_forecast": {
     "history_samples": 669,
@@ -1033,10 +767,10 @@
   },
   "historical_fiscal_vs_gold_price_candidate_alignment": {
     "status": "historical_fiscal_predicted_level_direction_vs_gold_price_patterns_only",
-    "candidates": 146,
-    "conservative_prior_fiscal_forecasts_found": 144,
+    "candidates": 145,
+    "conservative_prior_fiscal_forecasts_found": 143,
     "missing_or_older_than_72h": 2,
-    "forecast_TGA_change_direction_aligned_auction_known_only": 82,
+    "forecast_TGA_change_direction_aligned_auction_known_only": 81,
     "forecast_TGA_change_direction_aligned_with_unannounced_bill_fallback": 73,
     "both_fiscal_models_same_direction_aligned": 71,
     "by_year": {
@@ -1047,9 +781,9 @@
         "with_issuance_fallback_direction_aligned": 49
       },
       "2026": {
-        "price_candidates": 53,
-        "fiscal_forecasts_available": 52,
-        "known_offers_direction_aligned": 25,
+        "price_candidates": 52,
+        "fiscal_forecasts_available": 51,
+        "known_offers_direction_aligned": 24,
         "with_issuance_fallback_direction_aligned": 24
       }
     },
@@ -1163,7 +897,7 @@
       "Gold price patterns are non-independent and may represent repeats during one trend",
       "Does NOT imply market profit or combine with full factor and risk rules"
     ],
-    "gold_4h_closed_bars": 2212,
+    "gold_4h_closed_bars": 2198,
     "fiscal_decision_dates_with_research_only_forecasts": 447,
     "limited_research_only": true
   },
@@ -1227,6 +961,6 @@
     "Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast",
     "Original FiscalData source is current-version and may have revisions",
     "Treasury auction bill announcements and actual DTS gross Bill historical seasonal issuance are tested with no future rows, but TIPS/FRN, tax extensions, settlement cash basis and publication vintages remain unverified",
-    "Fiscal D+3 prior forecast revision proxy rolling Z is now compared to price candidates; historical official Treasury release vintages, all V2.2 A/A+/A++ gates and full trading PnL are NOT verified"
+    "Fiscal D+3 forecast LEVEL sign checked against gold 4h price candidates; original V2.2 fiscal forecast REVISION Z score and full macro/price/risk trade backtest not yet established"
   ]
 }
