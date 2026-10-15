@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T11:33:36.345Z",
-  "github_sha": "3c8bdc1fd503cd9e27cb470ce3049901b96c1fb4",
+  "checked_at_utc": "2026-10-15T11:36:50.044Z",
+  "github_sha": "32d7dd8763e9a86c01f97ab39a85be8dc1ec7f0e",
   "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
   "months_requested": 46,
   "full_v22_fiscal_prediction_ready": false,
@@ -345,9 +345,12 @@
           "mae_total_weekday_usd_billions": 23.888,
           "mae_auction_plus_residual_usd_billions": 19.084,
           "mae_auction_plus_split_cash_usd_billions": 19.222,
+          "mae_auction_plus_tax_calendar_usd_billions": 17.089,
           "mae_without_known_maturity_usd_billions": 109.829,
           "mae_without_known_issue_usd_billions": 113.741,
           "median_absolute_actual_change_usd_billions": 20.095,
+          "tax_event_affected_samples": 8,
+          "prior_year_tax_event_history_included": 3,
           "predicted_auction_absolute_issue_total_usd_billions": 42130,
           "predicted_auction_absolute_maturity_total_usd_billions": 42828.8,
           "auction_plus_residual_error_p50_usd_billions": 9.556,
@@ -362,9 +365,12 @@
             "mae_total_weekday_usd_billions": 24.002,
             "mae_auction_plus_residual_usd_billions": 17.582,
             "mae_auction_plus_split_cash_usd_billions": 17.637,
+            "mae_auction_plus_tax_calendar_usd_billions": 15.692,
             "mae_without_known_maturity_usd_billions": 105.416,
             "mae_without_known_issue_usd_billions": 108.035,
             "median_absolute_actual_change_usd_billions": 20.095,
+            "tax_event_affected_samples": 4,
+            "prior_year_tax_event_history_included": 0,
             "predicted_auction_absolute_issue_total_usd_billions": 22563,
             "predicted_auction_absolute_maturity_total_usd_billions": 22852.7,
             "auction_plus_residual_error_p50_usd_billions": 7.826,
@@ -378,9 +384,12 @@
             "mae_total_weekday_usd_billions": 23.744,
             "mae_auction_plus_residual_usd_billions": 20.972,
             "mae_auction_plus_split_cash_usd_billions": 21.215,
+            "mae_auction_plus_tax_calendar_usd_billions": 18.846,
             "mae_without_known_maturity_usd_billions": 115.38,
             "mae_without_known_issue_usd_billions": 120.919,
             "median_absolute_actual_change_usd_billions": 20.105,
+            "tax_event_affected_samples": 4,
+            "prior_year_tax_event_history_included": 3,
             "predicted_auction_absolute_issue_total_usd_billions": 19567,
             "predicted_auction_absolute_maturity_total_usd_billions": 19976.1,
             "auction_plus_residual_error_p50_usd_billions": 11.552,
@@ -398,7 +407,8 @@
             "forecast_error_usd_billions": -196.717,
             "published_issue_component_usd_billions": 220,
             "historical_maturity_component_usd_billions": 224.728,
-            "residual_seasonality_component_usd_billions": -7.204
+            "residual_seasonality_component_usd_billions": -7.204,
+            "tax_calendar_adjustment_usd_billions": 171.206
           },
           {
             "asof": "2026-09-14",
@@ -408,7 +418,8 @@
             "forecast_error_usd_billions": -173.938,
             "published_issue_component_usd_billions": 247,
             "historical_maturity_component_usd_billions": 295.929,
-            "residual_seasonality_component_usd_billions": -4.676
+            "residual_seasonality_component_usd_billions": -4.676,
+            "tax_calendar_adjustment_usd_billions": 93.385
           },
           {
             "asof": "2026-04-14",
@@ -418,7 +429,8 @@
             "forecast_error_usd_billions": -170.692,
             "published_issue_component_usd_billions": 0,
             "historical_maturity_component_usd_billions": 0,
-            "residual_seasonality_component_usd_billions": -25.763
+            "residual_seasonality_component_usd_billions": -25.763,
+            "tax_calendar_adjustment_usd_billions": 169.102
           },
           {
             "asof": "2026-06-12",
@@ -428,7 +440,8 @@
             "forecast_error_usd_billions": -146.633,
             "published_issue_component_usd_billions": 0,
             "historical_maturity_component_usd_billions": 0,
-            "residual_seasonality_component_usd_billions": 17.134
+            "residual_seasonality_component_usd_billions": 17.134,
+            "tax_calendar_adjustment_usd_billions": 92.662
           },
           {
             "asof": "2025-06-13",
@@ -438,7 +451,8 @@
             "forecast_error_usd_billions": -142.245,
             "published_issue_component_usd_billions": 0,
             "historical_maturity_component_usd_billions": 0,
-            "residual_seasonality_component_usd_billions": 15.979
+            "residual_seasonality_component_usd_billions": 15.979,
+            "tax_calendar_adjustment_usd_billions": 91.397
           }
         ]
       },
@@ -449,9 +463,12 @@
           "mae_total_weekday_usd_billions": 45.32,
           "mae_auction_plus_residual_usd_billions": 40.42,
           "mae_auction_plus_split_cash_usd_billions": 40.711,
+          "mae_auction_plus_tax_calendar_usd_billions": 34.043,
           "mae_without_known_maturity_usd_billions": 285.511,
           "mae_without_known_issue_usd_billions": 313.488,
           "median_absolute_actual_change_usd_billions": 34.071,
+          "tax_event_affected_samples": 23,
+          "prior_year_tax_event_history_included": 9,
           "predicted_auction_absolute_issue_total_usd_billions": 117197,
           "predicted_auction_absolute_maturity_total_usd_billions": 119058.4,
           "auction_plus_residual_error_p50_usd_billions": 24.933,
@@ -466,9 +483,12 @@
             "mae_total_weekday_usd_billions": 45.548,
             "mae_auction_plus_residual_usd_billions": 37.289,
             "mae_auction_plus_split_cash_usd_billions": 37.427,
+            "mae_auction_plus_tax_calendar_usd_billions": 31.041,
             "mae_without_known_maturity_usd_billions": 275.203,
             "mae_without_known_issue_usd_billions": 302.409,
             "median_absolute_actual_change_usd_billions": 34.993,
+            "tax_event_affected_samples": 12,
+            "prior_year_tax_event_history_included": 0,
             "predicted_auction_absolute_issue_total_usd_billions": 62119,
             "predicted_auction_absolute_maturity_total_usd_billions": 62897.8,
             "auction_plus_residual_error_p50_usd_billions": 22.914,
@@ -482,9 +502,12 @@
             "mae_total_weekday_usd_billions": 45.041,
             "mae_auction_plus_residual_usd_billions": 44.238,
             "mae_auction_plus_split_cash_usd_billions": 44.713,
+            "mae_auction_plus_tax_calendar_usd_billions": 37.703,
             "mae_without_known_maturity_usd_billions": 298.077,
             "mae_without_known_issue_usd_billions": 326.994,
             "median_absolute_actual_change_usd_billions": 33.564,
+            "tax_event_affected_samples": 11,
+            "prior_year_tax_event_history_included": 9,
             "predicted_auction_absolute_issue_total_usd_billions": 55078,
             "predicted_auction_absolute_maturity_total_usd_billions": 56160.6,
             "auction_plus_residual_error_p50_usd_billions": 25.383,
@@ -502,7 +525,8 @@
             "forecast_error_usd_billions": -328.605,
             "published_issue_component_usd_billions": 220,
             "historical_maturity_component_usd_billions": 224.728,
-            "residual_seasonality_component_usd_billions": -15.596
+            "residual_seasonality_component_usd_billions": -15.596,
+            "tax_calendar_adjustment_usd_billions": 171.589
           },
           {
             "asof": "2026-04-13",
@@ -512,7 +536,8 @@
             "forecast_error_usd_billions": -310.042,
             "published_issue_component_usd_billions": 510,
             "historical_maturity_component_usd_billions": 576.916,
-            "residual_seasonality_component_usd_billions": -30.881
+            "residual_seasonality_component_usd_billions": -30.881,
+            "tax_calendar_adjustment_usd_billions": 169.102
           },
           {
             "asof": "2025-04-14",
@@ -522,7 +547,8 @@
             "forecast_error_usd_billions": -295.041,
             "published_issue_component_usd_billions": 482,
             "historical_maturity_component_usd_billions": 559.565,
-            "residual_seasonality_component_usd_billions": -33.153
+            "residual_seasonality_component_usd_billions": -33.153,
+            "tax_calendar_adjustment_usd_billions": 171.206
           },
           {
             "asof": "2025-04-10",
@@ -532,7 +558,8 @@
             "forecast_error_usd_billions": -283.455,
             "published_issue_component_usd_billions": 220,
             "historical_maturity_component_usd_billions": 224.728,
-            "residual_seasonality_component_usd_billions": 7.261
+            "residual_seasonality_component_usd_billions": 7.261,
+            "tax_calendar_adjustment_usd_billions": 171.528
           },
           {
             "asof": "2026-04-10",
@@ -542,7 +569,8 @@
             "forecast_error_usd_billions": -277.189,
             "published_issue_component_usd_billions": 224,
             "historical_maturity_component_usd_billions": 265.22,
-            "residual_seasonality_component_usd_billions": -14.752
+            "residual_seasonality_component_usd_billions": -14.752,
+            "tax_calendar_adjustment_usd_billions": 169.15
           }
         ]
       },
@@ -553,9 +581,12 @@
           "mae_total_weekday_usd_billions": 59.224,
           "mae_auction_plus_residual_usd_billions": 145.314,
           "mae_auction_plus_split_cash_usd_billions": 147.003,
+          "mae_auction_plus_tax_calendar_usd_billions": 134.655,
           "mae_without_known_maturity_usd_billions": 376.017,
           "mae_without_known_issue_usd_billions": 523.632,
           "median_absolute_actual_change_usd_billions": 44.919,
+          "tax_event_affected_samples": 34,
+          "prior_year_tax_event_history_included": 14,
           "predicted_auction_absolute_issue_total_usd_billions": 143039,
           "predicted_auction_absolute_maturity_total_usd_billions": 182194.1,
           "auction_plus_residual_error_p50_usd_billions": 78.498,
@@ -570,9 +601,12 @@
             "mae_total_weekday_usd_billions": 59.843,
             "mae_auction_plus_residual_usd_billions": 138.162,
             "mae_auction_plus_split_cash_usd_billions": 139.653,
+            "mae_auction_plus_tax_calendar_usd_billions": 127.563,
             "mae_without_known_maturity_usd_billions": 362.133,
             "mae_without_known_issue_usd_billions": 507.267,
             "median_absolute_actual_change_usd_billions": 45.071,
+            "tax_event_affected_samples": 18,
+            "prior_year_tax_event_history_included": 0,
             "predicted_auction_absolute_issue_total_usd_billions": 75031,
             "predicted_auction_absolute_maturity_total_usd_billions": 95085.9,
             "auction_plus_residual_error_p50_usd_billions": 69.645,
@@ -586,9 +620,12 @@
             "mae_total_weekday_usd_billions": 58.492,
             "mae_auction_plus_residual_usd_billions": 153.757,
             "mae_auction_plus_split_cash_usd_billions": 155.683,
+            "mae_auction_plus_tax_calendar_usd_billions": 143.028,
             "mae_without_known_maturity_usd_billions": 392.409,
             "mae_without_known_issue_usd_billions": 542.955,
             "median_absolute_actual_change_usd_billions": 44.894,
+            "tax_event_affected_samples": 16,
+            "prior_year_tax_event_history_included": 14,
             "predicted_auction_absolute_issue_total_usd_billions": 68008,
             "predicted_auction_absolute_maturity_total_usd_billions": 87108.2,
             "auction_plus_residual_error_p50_usd_billions": 91.115,
@@ -606,7 +643,8 @@
             "forecast_error_usd_billions": -653.975,
             "published_issue_component_usd_billions": 224,
             "historical_maturity_component_usd_billions": 576.916,
-            "residual_seasonality_component_usd_billions": -16.873
+            "residual_seasonality_component_usd_billions": -16.873,
+            "tax_calendar_adjustment_usd_billions": 169.15
           },
           {
             "asof": "2025-04-10",
@@ -616,7 +654,8 @@
             "forecast_error_usd_billions": -643.751,
             "published_issue_component_usd_billions": 220,
             "historical_maturity_component_usd_billions": 559.565,
-            "residual_seasonality_component_usd_billions": -18.66
+            "residual_seasonality_component_usd_billions": -18.66,
+            "tax_calendar_adjustment_usd_billions": 171.528
           },
           {
             "asof": "2026-04-14",
@@ -626,7 +665,8 @@
             "forecast_error_usd_billions": -548.137,
             "published_issue_component_usd_billions": 286,
             "historical_maturity_component_usd_billions": 566.808,
-            "residual_seasonality_component_usd_billions": -17.325
+            "residual_seasonality_component_usd_billions": -17.325,
+            "tax_calendar_adjustment_usd_billions": 169.102
           },
           {
             "asof": "2025-04-08",
@@ -636,7 +676,8 @@
             "forecast_error_usd_billions": -526.344,
             "published_issue_component_usd_billions": 214,
             "historical_maturity_component_usd_billions": 467.773,
-            "residual_seasonality_component_usd_billions": -18.751
+            "residual_seasonality_component_usd_billions": -18.751,
+            "tax_calendar_adjustment_usd_billions": 171.589
           },
           {
             "asof": "2026-09-10",
@@ -646,7 +687,8 @@
             "forecast_error_usd_billions": -500.171,
             "published_issue_component_usd_billions": 247,
             "historical_maturity_component_usd_billions": 578.097,
-            "residual_seasonality_component_usd_billions": -14.509
+            "residual_seasonality_component_usd_billions": -14.509,
+            "tax_calendar_adjustment_usd_billions": 93.418
           }
         ]
       }
