@@ -1,0 +1,166 @@
+{
+  "checked_at_utc": "2026-10-15T03:49:12.921641+00:00",
+  "commit": "a855bf0876e29e83bc9394f131eec63e7f1f81a1",
+  "endpoints": {
+    "tga-2026": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 197,
+      "first_date": "2026-01-02",
+      "last_date": "2026-10-13",
+      "data": null
+    },
+    "tga-2022": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 177,
+      "first_date": "2022-04-18",
+      "last_date": "2022-12-30",
+      "data": null
+    },
+    "source-coverage": {
+      "status": "source_coverage_incomplete_or_unverified",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "tga-2023": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 250,
+      "first_date": "2023-01-03",
+      "last_date": "2023-12-29",
+      "data": null
+    },
+    "horizon-backtest": {
+      "status": "historical_walk_forward_baselines_only",
+      "error": null,
+      "observations": 1125,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "readiness": {
+      "status": "research_only",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "research_only",
+        "baseline_data_checks_passed": false,
+        "checks": {
+          "holdout-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "tga-identity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "treasury": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "forecast": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "robustness-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          }
+        },
+        "missing_for_trade_ready": [
+          "point_in_time_vintage_archive",
+          "treasury_net_new_cash_reconciled",
+          "tax_and_spending_event_model",
+          "gold_ohlc_execution_backtest",
+          "risk_adjusted_signal_validation",
+          "alert_delivery_end_to_end"
+        ],
+        "trade_signals_enabled": false,
+        "automatic_trade_alerts_enabled": false,
+        "warning": "Passing TGA model validation is not evidence of a profitable gold strategy. No A/A+/A++ live trading signals."
+      }
+    },
+    "tga-2019": {
+      "status": "historical_backtest_blocked",
+      "error": "Error: 2019 missing TGA data: 0",
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "forecast": {
+      "status": "experimental_baseline_not_trade_signal",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "full-history-backtest": {
+      "status": "historical_backtest_blocked",
+      "error": "Error: 2019 missing TGA data: 0",
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "historical_backtest_blocked",
+        "error": "Error: 2019 missing TGA data: 0",
+        "warning": "No partial results are presented as full 2019+ history"
+      }
+    },
+    "tga-2021": {
+      "status": "historical_backtest_blocked",
+      "error": "Error: 2021 missing TGA data: 0",
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "treasury": {
+      "status": null,
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "historical-coverage": {
+      "status": "year_by_year_tga_source_coverage",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "tga-2024": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 251,
+      "first_date": "2024-01-02",
+      "last_date": "2024-12-31",
+      "data": null
+    },
+    "tga-2020": {
+      "status": "historical_backtest_blocked",
+      "error": "Error: 2020 missing TGA data: 0",
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "tga-2025": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 250,
+      "first_date": "2025-01-02",
+      "last_date": "2025-12-31",
+      "data": null
+    }
+  }
+}
