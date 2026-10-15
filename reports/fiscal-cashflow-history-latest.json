@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T11:41:59.021Z",
-  "github_sha": "3fd30e99192f38d765cdc6773505f03bb61372d4",
+  "checked_at_utc": "2026-10-15T11:56:08.062Z",
+  "github_sha": "88c7acf90dece4c04cdcc2f9a8d73fd52d87d278",
   "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
   "months_requested": 46,
   "full_v22_fiscal_prediction_ready": false,
