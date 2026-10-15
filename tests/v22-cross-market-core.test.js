@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');
+const {buildAsOf}=require('../lib/endpoints/v22-asof-core');
+const {inspectPriceCandidates}=require('../lib/endpoints/v22-cross-market-core');
+const sources={};
+const required=['DFII10','DGS10','T10YIE','RRPONTSYD','SOFR','IORB','WRESBAL','DXY','COT_NET','COT_OI','TGA','GLD_TONNES_DELTA'];
+for(const k of required)sources[k]=buildAsOf([{date:'2025-02-01',value:10},{date:'2025-02-10',value:9},{date:'2025-02-18',value:8}],1);
+const now='2025-02-20T20:00:00.000Z',point=[{confirmation_closed_utc:now,direction:'long'}],age=Object.fromEntries(required.map(k=>[k,60]));
+const d=inspectPriceCandidates(point,sources,age);
+assert.equal(d.counts.candidates,1);assert.equal(d.counts.complete_asof_12_of_12,1);
+assert.equal(d.full_v22_macro_signals_generated,0);
+const future=inspectPriceCandidates([{confirmation_closed_utc:'2025-01-01T00:00:00.000Z',direction:'long'}],sources,age);
+assert.equal(future.counts.incomplete_asof,1);
+delete sources.TGA;
+assert.equal(inspectPriceCandidates(point,sources,age).counts.complete_asof_12_of_12,0);
+console.log('All 12 macro/gold feature staleness and confirmation-time gating tests passed; no trade signals emitted');
