@@ -28,6 +28,9 @@ def inspect(binary):
             rows=0
             hints=set()
             dates={}
+            date_headers=set()
+            date_value_formats={}
+            masked_date_samples=set()
             with z.open(path) as sheet:
                 for _,element in ET.iterparse(sheet,events=('end',)):
                     if element.tag!=X+'row':
@@ -35,13 +38,19 @@ def inspect(binary):
                     rows+=1
                     for cell in element.findall(X+'c'):
                         mat=re.match(r'([A-Z]+)',cell.attrib.get('r',''))
-                        val=cell.find(X+'v')
-                        if not mat or val is None or val.text is None:
+                        if not mat:
                             continue
                         col=mat.group(1)
-                        value=val.text.strip()
+                        val=cell.find(X+'v')
+                        value=val.text.strip() if val is not None and val.text is not None else ''
+                        if not value and cell.find(X+'is') is not None:
+                            value=''.join(t.text or '' for t in cell.find(X+'is').iter(X+'t')).strip()
                         if cell.attrib.get('t')=='s' and value.isdecimal() and int(value)<len(strings):
                             value=strings[int(value)]
+                        if not value:
+                            continue
+                        if rows<=20 and value.strip().lower()=='date':
+                            date_headers.add(col)
                         if rows<=20 and len(value)<=80 and any(x in value.lower() for x in ('date','tonne','hold','ounce','share')):
                             hints.add(re.sub(r'\s+',' ',value))
                         if col not in ('A','B','C','D'):
@@ -58,7 +67,7 @@ def inspect(binary):
                             dates[col].append(day)
                     element.clear()
             date_cols={col:{'count':len(days),'first':str(min(days)),'last':str(max(days))} for col,days in dates.items()}
-            sheets.append({'xml_file':path,'row_count':rows,'date_column_candidates':date_cols,'header_topics':sorted(hints)[:16]})
+            sheets.append({'xml_file':path,'row_count':rows,'date_header_columns':sorted(date_headers),'date_column_candidates':date_cols,'date_cell_storage_types':date_value_formats,'unparsed_date_shapes':sorted(masked_date_samples),'header_topics':sorted(hints)[:16]})
         return sheets
 
 def main():
