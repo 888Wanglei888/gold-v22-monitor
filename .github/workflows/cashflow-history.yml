@@ -52,6 +52,7 @@ jobs:
           import json
           j=json.load(open('reports/fiscal-cashflow-history-latest.json'))
           print('status:',j.get('status'),'error:',j.get('error'))
-          assert j.get('status')=='multi_year_dts_cashflows_identity_reconciled_research',j.get('error','Incomplete fiscal identity; no trade signal')
-          assert j.get('identity',{}).get('count',0)>650
+          assert j.get('status')=='dts_cashflows_2024_plus_identity_reconciled_research',j.get('error','Incomplete fiscal identity; no trade signal')
+          assert j.get('identity',{}).get('count',0)>690
+          assert j.get('excluded_unreconciled_year')==2023
           PY
