@@ -19,6 +19,7 @@ const handlers = Object.freeze({
   "settlements": require('../lib/endpoints/settlements.js'),
   "source-coverage": require('../lib/endpoints/source-coverage.js'),
   "tga-identity": require('../lib/endpoints/tga-identity.js'),
+  "v22-debt-realized-audit": require('../lib/endpoints/v22-debt-realized-audit.js'),
   "v22-etf-audit": require('../lib/endpoints/v22-etf-audit.js'),
   "v22-asof-join": require('../lib/endpoints/v22-asof-join.js'),
   "v22-dxy-audit": require('../lib/endpoints/v22-dxy-audit.js'),
