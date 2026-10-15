@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-15T07:24:40.725438+00:00",
-  "commit": "759967b48da0dea3988735db3315fb4dd2c044c4",
+  "checked_at_utc": "2026-10-15T10:28:30.785123+00:00",
+  "commit": "fc84fdc7e9bb3d6d72934507bdfaad85f12a4d96",
   "endpoints": {
     "v22-cot-audit": {
       "status": "cot_source_access_ok",
@@ -241,6 +241,180 @@
       "first_date": "2023-01-03",
       "last_date": "2023-12-29",
       "data": null
+    },
+    "v22-auction-known-forecast": {
+      "status": "auction_known_bill_component_backtest_research_only",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "auction_known_bill_component_backtest_research_only",
+        "model": "Only issuance and maturing awards from Treasury auction results published >=2 calendar days earlier",
+        "target": "Ex-post DTS IIIA actual daily BILL issues minus redemptions",
+        "units": "USD billions",
+        "data_coverage": {
+          "raw_auction_rows": 1653,
+          "accepted_auction_events": 1651,
+          "auction_faults": {
+            "invalid_fields": 2,
+            "duplicate_auction_identity": 0,
+            "auction_after_issue": 0
+          },
+          "realized_dts": 698
+        },
+        "by_horizon": {
+          "D+1": {
+            "overall": {
+              "samples": 429,
+              "known_event_samples": 171,
+              "known_event_coverage_pct": 39.9,
+              "auction_known_proxy_mae_usd_billions": 23.577,
+              "zero_baseline_mae_usd_billions": 9.392,
+              "mae_vs_zero_improvement_pct": -151,
+              "direction_match_all_samples_pct": 27.3
+            },
+            "by_year": {
+              "2025": {
+                "samples": 239,
+                "known_event_samples": 95,
+                "known_event_coverage_pct": 39.7,
+                "auction_known_proxy_mae_usd_billions": 22.342,
+                "zero_baseline_mae_usd_billions": 10.073,
+                "mae_vs_zero_improvement_pct": -121.8,
+                "direction_match_all_samples_pct": 28.5
+              },
+              "2026": {
+                "samples": 190,
+                "known_event_samples": 76,
+                "known_event_coverage_pct": 40,
+                "auction_known_proxy_mae_usd_billions": 25.13,
+                "zero_baseline_mae_usd_billions": 8.536,
+                "mae_vs_zero_improvement_pct": -194.4,
+                "direction_match_all_samples_pct": 25.8
+              }
+            }
+          },
+          "D+3": {
+            "overall": {
+              "samples": 395,
+              "known_event_samples": 395,
+              "known_event_coverage_pct": 100,
+              "auction_known_proxy_mae_usd_billions": 214.924,
+              "zero_baseline_mae_usd_billions": 27.564,
+              "mae_vs_zero_improvement_pct": -679.7,
+              "direction_match_all_samples_pct": 42.5
+            },
+            "by_year": {
+              "2025": {
+                "samples": 217,
+                "known_event_samples": 217,
+                "known_event_coverage_pct": 100,
+                "auction_known_proxy_mae_usd_billions": 204.991,
+                "zero_baseline_mae_usd_billions": 29.37,
+                "mae_vs_zero_improvement_pct": -598,
+                "direction_match_all_samples_pct": 44.7
+              },
+              "2026": {
+                "samples": 178,
+                "known_event_samples": 178,
+                "known_event_coverage_pct": 100,
+                "auction_known_proxy_mae_usd_billions": 227.033,
+                "zero_baseline_mae_usd_billions": 25.361,
+                "mae_vs_zero_improvement_pct": -795.2,
+                "direction_match_all_samples_pct": 39.9
+              }
+            }
+          },
+          "D+5": {
+            "overall": {
+              "samples": 362,
+              "known_event_samples": 362,
+              "known_event_coverage_pct": 100,
+              "auction_known_proxy_mae_usd_billions": 423.046,
+              "zero_baseline_mae_usd_billions": 44.352,
+              "mae_vs_zero_improvement_pct": -853.8,
+              "direction_match_all_samples_pct": 43.4
+            },
+            "by_year": {
+              "2025": {
+                "samples": 196,
+                "known_event_samples": 196,
+                "known_event_coverage_pct": 100,
+                "auction_known_proxy_mae_usd_billions": 403.808,
+                "zero_baseline_mae_usd_billions": 46.615,
+                "mae_vs_zero_improvement_pct": -766.3,
+                "direction_match_all_samples_pct": 45.4
+              },
+              "2026": {
+                "samples": 166,
+                "known_event_samples": 166,
+                "known_event_coverage_pct": 100,
+                "auction_known_proxy_mae_usd_billions": 445.761,
+                "zero_baseline_mae_usd_billions": 41.681,
+                "mae_vs_zero_improvement_pct": -969.5,
+                "direction_match_all_samples_pct": 41
+              }
+            }
+          }
+        },
+        "recent_historical_comparisons": [
+          {
+            "asof": "2026-10-01",
+            "target": "2026-10-02",
+            "known_auction_bill_proxy_usd_billions": 0,
+            "realized_dts_bill_net_usd_billions": -0.006,
+            "known_event_count": 0
+          },
+          {
+            "asof": "2026-10-02",
+            "target": "2026-10-05",
+            "known_auction_bill_proxy_usd_billions": 0,
+            "realized_dts_bill_net_usd_billions": -0.005,
+            "known_event_count": 0
+          },
+          {
+            "asof": "2026-10-05",
+            "target": "2026-10-06",
+            "known_auction_bill_proxy_usd_billions": 10.998,
+            "realized_dts_bill_net_usd_billions": 11.035,
+            "known_event_count": 6
+          },
+          {
+            "asof": "2026-10-06",
+            "target": "2026-10-07",
+            "known_auction_bill_proxy_usd_billions": 0,
+            "realized_dts_bill_net_usd_billions": -0.014,
+            "known_event_count": 0
+          },
+          {
+            "asof": "2026-10-07",
+            "target": "2026-10-08",
+            "known_auction_bill_proxy_usd_billions": -88.451,
+            "realized_dts_bill_net_usd_billions": 13.709,
+            "known_event_count": 5
+          },
+          {
+            "asof": "2026-10-08",
+            "target": "2026-10-09",
+            "known_auction_bill_proxy_usd_billions": 0,
+            "realized_dts_bill_net_usd_billions": -0.006,
+            "known_event_count": 0
+          }
+        ],
+        "full_TGA_forecast_validated": false,
+        "full_V22_strategy_backtested": false,
+        "trade_signals_enabled": false,
+        "limitations": [
+          "A forecast of known auction bill cash is NOT a forecast of all Treasury new cash or TGA balance",
+          "Historic auction feed is current-vintage; published result timestamp unverified; assumes data known 2 calendar days after auction",
+          "Maturity is inferred from prior auction gross awards, which can differ from publicly-held principal and cash redemption",
+          "Coupons, TIPS and FRNs excluded from this evaluated known-bill-only proxy",
+          "Future issue amounts from auctions after as-of are always excluded; actual DTS comparison is used ONLY for after-the-fact scoring",
+          "Non-trading-day and holiday DST calendar mismatches excluded from scored evaluation",
+          "Model is diagnostic; no parameters optimized on 2026 outcomes and no claim of tradable profit"
+        ]
+      }
     },
     "cashflow-taxonomy": {
       "status": "taxonomy_audit_not_net_financing",
@@ -1622,7 +1796,7 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-10-15T07:24:34.016Z",
+        "as_of": "2026-10-15T10:28:23.789Z",
         "fred": [
           {
             "series": "DFII10",
@@ -1720,21 +1894,21 @@
           {
             "symbol": "GC=F",
             "status": "available",
-            "bars": 12385,
-            "valid_ohlc_bars": 9783,
+            "bars": 12388,
+            "valid_ohlc_bars": 9786,
             "invalid_or_missing_ohlc_bars": 2602,
             "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-10-15T07:14:22.000Z",
+            "last_date": "2026-10-15T10:18:19.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 5281,
-              "2026": 4502
+              "2026": 4505
             },
-            "complete_utc_four_hour_buckets": 2118,
+            "complete_utc_four_hour_buckets": 2120,
             "complete_utc_four_hour_per_year": {
               "2024": 0,
               "2025": 1144,
-              "2026": 974
+              "2026": 976
             },
             "exchange_session_aligned_4h_verified": false
           },
@@ -1840,10 +2014,6 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
-          "tga-identity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
           "forecast": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
@@ -1852,7 +2022,15 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
+          "v22-cot-audit": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
           "v22-dxy-audit": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-source-audit": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -1864,15 +2042,11 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
+          "tga-identity": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
           "holdout-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-cot-audit": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-source-audit": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
@@ -2963,7 +3137,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-10-15T07:24:37.105Z",
+        "as_of": "2026-10-15T10:28:26.904Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -3082,13 +3256,13 @@
           }
         },
         "ohlc_quality": {
-          "raw": 13003,
+          "raw": 13006,
           "missing_ohlc": 2743,
           "off_hour": 13,
           "unclosed": 1,
           "duplicate_hours": 0,
           "nonconsecutive_groups": 0,
-          "incomplete_groups": 34
+          "incomplete_groups": 33
         },
         "gld_official_holdings_source_coverage": {
           "source": "SPDR GLD official XLSX",
@@ -3112,67 +3286,67 @@
           "real_historical_archive_vintage_verified": false
         },
         "joined_feature_audit": {
-          "candle_count": 2211,
-          "complete": 2211,
+          "candle_count": 2212,
+          "complete": 2212,
           "complete_pct": 100,
           "source_coverage": {
             "DFII10": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "DGS10": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "T10YIE": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "RRPONTSYD": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "SOFR": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "IORB": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "WRESBAL": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "DXY": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "COT_NET": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "COT_OI": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "TGA": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "GLD_TONNES_DELTA": {
-              "joined_candles": 2211,
+              "joined_candles": 2212,
               "stale_rejected_candles": 0,
               "pct": 100
             }
@@ -3198,7 +3372,7 @@
               }
             },
             {
-              "close_utc": "2026-10-15T06:00:00.000Z",
+              "close_utc": "2026-10-15T10:00:00.000Z",
               "all_required_available": true,
               "asof_dates": {
                 "DFII10": "2026-10-09",
@@ -3326,68 +3500,68 @@
             ]
           },
           "2026": {
-            "candles": 971,
-            "candle_count": 971,
-            "complete": 971,
+            "candles": 972,
+            "candle_count": 972,
+            "complete": 972,
             "complete_pct": 100,
             "source_coverage": {
               "DFII10": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "DGS10": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "T10YIE": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "RRPONTSYD": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "SOFR": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "IORB": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "WRESBAL": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "DXY": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "COT_NET": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "COT_OI": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "TGA": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "GLD_TONNES_DELTA": {
-                "joined_candles": 971,
+                "joined_candles": 972,
                 "stale_rejected_candles": 0,
                 "pct": 100
               }
@@ -3413,7 +3587,7 @@
                 }
               },
               {
-                "close_utc": "2026-10-15T06:00:00.000Z",
+                "close_utc": "2026-10-15T10:00:00.000Z",
                 "all_required_available": true,
                 "asof_dates": {
                   "DFII10": "2026-10-09",
@@ -3478,28 +3652,28 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-10-15T07:24:35.000Z",
+        "as_of": "2026-10-15T10:28:25.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
         "counts": {
-          "raw_hours": 12385,
-          "distinct_raw_timestamps": 12385,
-          "valid_ohlc_on_hour_nonduplicated": 9769,
+          "raw_hours": 12388,
+          "distinct_raw_timestamps": 12388,
+          "valid_ohlc_on_hour_nonduplicated": 9772,
           "missing_or_invalid_ohlc": 2602,
           "not_exact_utc_hour": 13,
           "unclosed_current_hour": 1,
           "duplicate_hour": 0,
           "duplicate_timestamp": 0,
           "candidate_buckets": 2140,
-          "closed_session_aligned_4h": 2109,
-          "excluded_incomplete_buckets": 31,
+          "closed_session_aligned_4h": 2110,
+          "excluded_incomplete_buckets": 30,
           "excluded_nonconsecutive_buckets": 0,
           "excluded_unclosed_buckets": 0
         },
         "closed_4h_by_year": {
           "2025": 1138,
-          "2026": 971
+          "2026": 972
         },
         "closed_4h_by_month": [
           {
@@ -3584,7 +3758,7 @@
           },
           {
             "month": "2026-10",
-            "closed_4h_candles": 47
+            "closed_4h_candles": 48
           }
         ],
         "first_accepted_candle": {
@@ -3599,13 +3773,13 @@
         },
         "last_accepted_candle": {
           "session_date": "2026-10-14",
-          "session_slot": 1,
-          "first_hour_utc": "2026-10-15T02:00:00.000Z",
-          "close_time_utc": "2026-10-15T06:00:00.000Z",
-          "open": 4160,
-          "high": 4183.2998046875,
-          "low": 4156.7998046875,
-          "close": 4159.2001953125
+          "session_slot": 2,
+          "first_hour_utc": "2026-10-15T06:00:00.000Z",
+          "close_time_utc": "2026-10-15T10:00:00.000Z",
+          "open": 4158.7998046875,
+          "high": 4182,
+          "low": 4152.7001953125,
+          "close": 4178.60009765625
         },
         "latest_month": "2026-10",
         "data_quality_gate_passed_for_live_execution": false,
@@ -3660,6 +3834,261 @@
       "first_date": null,
       "last_date": null,
       "data": null
+    },
+    "v22-auction-source-audit": {
+      "status": "auction_historical_source_access_ok",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "auction_historical_source_access_ok",
+        "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
+        "per_year": {
+          "2023": {
+            "auction_rows": 428,
+            "type_counts": {
+              "Bill": 320,
+              "Note": 82,
+              "Bond": 26
+            },
+            "accepted_amount_rows": 428,
+            "first_auction": "2023-01-03",
+            "last_auction": "2023-12-28"
+          },
+          "2024": {
+            "auction_rows": 440,
+            "type_counts": {
+              "Bill": 332,
+              "Note": 82,
+              "Bond": 26
+            },
+            "accepted_amount_rows": 440,
+            "first_auction": "2024-01-02",
+            "last_auction": "2024-12-30"
+          },
+          "2025": {
+            "auction_rows": 444,
+            "type_counts": {
+              "Bill": 336,
+              "Note": 82,
+              "Bond": 26
+            },
+            "accepted_amount_rows": 444,
+            "first_auction": "2025-01-02",
+            "last_auction": "2025-12-31"
+          },
+          "2026": {
+            "auction_rows": 341,
+            "type_counts": {
+              "Bill": 257,
+              "Note": 63,
+              "Bond": 21
+            },
+            "accepted_amount_rows": 339,
+            "first_auction": "2026-01-05",
+            "last_auction": "2026-10-15"
+          }
+        },
+        "raw_record_count": 1653,
+        "columns": [
+          "record_date",
+          "cusip",
+          "security_type",
+          "security_term",
+          "auction_date",
+          "issue_date",
+          "maturity_date",
+          "price_per100",
+          "accrued_int_per100",
+          "accrued_int_per1000",
+          "adj_accrued_int_per1000",
+          "adj_price",
+          "allocation_pctage",
+          "allocation_pctage_decimals",
+          "announcemtd_cusip",
+          "announcemt_date",
+          "auction_format",
+          "avg_med_discnt_rate",
+          "avg_med_investment_rate",
+          "avg_med_price",
+          "avg_med_discnt_margin",
+          "avg_med_yield",
+          "back_dated",
+          "back_dated_date",
+          "bid_to_cover_ratio",
+          "callable",
+          "call_date",
+          "called_date",
+          "cash_management_bill_cmb",
+          "closing_time_comp",
+          "closing_time_noncomp",
+          "comp_accepted",
+          "comp_bid_decimals",
+          "comp_tendered",
+          "comp_tenders_accepted",
+          "corpus_cusip",
+          "cpi_base_reference_period",
+          "currently_outstanding",
+          "dated_date",
+          "direct_bidder_accepted",
+          "direct_bidder_tendered",
+          "est_pub_held_mat_by_type_amt",
+          "fima_included",
+          "fima_noncomp_accepted",
+          "fima_noncomp_tendered",
+          "first_int_period",
+          "first_int_payment_date",
+          "floating_rate",
+          "frn_index_determination_date",
+          "frn_index_determination_rate",
+          "high_discnt_rate",
+          "high_investment_rate",
+          "high_price",
+          "high_discnt_margin",
+          "high_yield",
+          "index_ratio_on_issue_date",
+          "indirect_bidder_accepted",
+          "indirect_bidder_tendered",
+          "int_payment_frequency",
+          "int_rate",
+          "low_discnt_rate",
+          "low_investment_rate",
+          "low_price",
+          "low_discnt_margin",
+          "low_yield",
+          "mat_date",
+          "max_comp_award",
+          "max_noncomp_award",
+          "max_single_bid",
+          "min_bid_amt",
+          "min_strip_amt",
+          "min_to_issue",
+          "multiples_to_bid",
+          "multiples_to_issue",
+          "nlp_exclusion_amt",
+          "nlp_reporting_threshold",
+          "noncomp_accepted",
+          "noncomp_tenders_accepted",
+          "offering_amt",
+          "original_cusip",
+          "original_dated_date",
+          "original_issue_date",
+          "original_security_term",
+          "pdf_filenm_announcemt",
+          "pdf_filenm_comp_results",
+          "pdf_filenm_noncomp_results",
+          "primary_dealer_accepted",
+          "primary_dealer_tendered",
+          "ref_cpi_on_dated_date",
+          "ref_cpi_on_issue_date",
+          "reopening",
+          "security_term_day_month",
+          "security_term_week_year",
+          "series",
+          "soma_accepted",
+          "soma_holdings",
+          "soma_included",
+          "soma_tendered",
+          "spread",
+          "std_int_payment_per1000",
+          "strippable",
+          "tiin_conversion_factor_per1000",
+          "total_accepted",
+          "total_tendered",
+          "treas_retail_accepted",
+          "treas_retail_tenders_accepted",
+          "unadj_accrued_int_per1000",
+          "unadj_price",
+          "xml_filenm_announcemt",
+          "xml_filenm_comp_results",
+          "inflation_index_security",
+          "tint_cusip_1",
+          "tint_cusip_2",
+          "pdf_filenm_spec_announcemt"
+        ],
+        "missing_required_fields": [],
+        "duplicate_cusip_auction_issue_keys": 0,
+        "bad_data": {
+          "unparseable_amount": 2,
+          "invalid_dates": 0,
+          "auction_after_issue": 0,
+          "issue_after_maturity": 0
+        },
+        "recent_source_samples": [
+          {
+            "auction_date": "2026-10-13",
+            "issue_date": "2026-10-15",
+            "maturity_date": "2027-04-15",
+            "security_type": "Bill",
+            "security_term": "26-Week",
+            "total_accepted": "86664987000",
+            "offering_amt": "82000000000",
+            "record_date": "2026-10-15",
+            "reopening": "Yes",
+            "cusip": "912797UE5"
+          },
+          {
+            "auction_date": "2026-10-13",
+            "issue_date": "2026-10-15",
+            "maturity_date": "2027-01-14",
+            "security_type": "Bill",
+            "security_term": "13-Week",
+            "total_accepted": "100404693200",
+            "offering_amt": "95000000000",
+            "record_date": "2026-10-15",
+            "reopening": "Yes",
+            "cusip": "912797VT1"
+          },
+          {
+            "auction_date": "2026-10-14",
+            "issue_date": "2026-10-20",
+            "maturity_date": "2027-02-16",
+            "security_type": "Bill",
+            "security_term": "17-Week",
+            "total_accepted": "80054540100",
+            "offering_amt": "75000000000",
+            "record_date": "2026-10-20",
+            "reopening": "No",
+            "cusip": "912797WZ6"
+          },
+          {
+            "auction_date": "2026-10-15",
+            "issue_date": "2026-10-20",
+            "maturity_date": "2026-12-15",
+            "security_type": "Bill",
+            "security_term": "8-Week",
+            "total_accepted": "null",
+            "offering_amt": "105000000000",
+            "record_date": "2026-10-20",
+            "reopening": "Yes",
+            "cusip": "912797WF0"
+          },
+          {
+            "auction_date": "2026-10-15",
+            "issue_date": "2026-10-20",
+            "maturity_date": "2026-11-17",
+            "security_type": "Bill",
+            "security_term": "4-Week",
+            "total_accepted": "null",
+            "offering_amt": "110000000000",
+            "record_date": "2026-10-20",
+            "reopening": "Yes",
+            "cusip": "912797VX2"
+          }
+        ],
+        "announcement_time_verified": false,
+        "issue_date_equals_cash_settlement_verified": false,
+        "total_accepted_is_net_new_cash": false,
+        "full_v22_fiscal_forecast_ready": false,
+        "limitations": [
+          "Auction results are only knowable after the auction results are made public; use conservative next-day delay until timestamps independently certified",
+          "Maturity cash payout cannot be inferred from auctions in the same year alone",
+          "total_accepted includes gross awards and is not directly equivalent to public-market cash proceeds",
+          "Need compare per-day inferred issuance and redeemed maturities against DTS IIIA line-item cash amounts",
+          "Release/publication record_date semantics require empirical verification; never assume they equal auction_date"
+        ]
+      }
     },
     "tga-2025": {
       "status": "year_source_ok",
