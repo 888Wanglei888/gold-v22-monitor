@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir -p diagnostics
           failed=0
-          for name in treasury forecast horizon-backtest historical-coverage full-history-backtest source-coverage readiness gold-source-audit; do
+          for name in treasury forecast horizon-backtest historical-coverage full-history-backtest source-coverage readiness gold-source-audit v22-source-audit v22-spec gold-proxy-backtest; do
             echo "Checking $name"
             status=$(curl -L -sS --retry 3 --retry-delay 5 --max-time 110 -w '%{http_code}' -o "diagnostics/$name.json" "https://gold-v22-real-data-v1.vercel.app/api/$name") || status=000
             echo "$name HTTP $status"
@@ -59,7 +59,7 @@ jobs:
               name=os.path.basename(path).removesuffix('.json')
               try:
                   with open(path) as f: payload=json.load(f)
-                  records[name]={'status':payload.get('status'),'error':payload.get('error'),'observations':payload.get('observations'),'first_date':payload.get('first_date'),'last_date':payload.get('last_date'),'data':payload if name in ('full-history-backtest','readiness') else None}
+                  records[name]={'status':payload.get('status'),'error':payload.get('error'),'observations':payload.get('observations'),'first_date':payload.get('first_date'),'last_date':payload.get('last_date'),'data':payload if name in ('full-history-backtest','readiness','v22-source-audit','v22-spec','gold-proxy-backtest') else None}
               except Exception as e: records[name]={'error':str(e)}
           os.makedirs('reports',exist_ok=True)
           with open('reports/production-latest.json','w') as f: json.dump({'checked_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'commit':os.environ.get('GITHUB_SHA'),'endpoints':records},f,ensure_ascii=False,indent=2)
