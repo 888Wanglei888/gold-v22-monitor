@@ -1,0 +1,59 @@
+name: Verify actual gold V2.2 four-hour price confirmations
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/v22-price-pattern-audit.js
+      - lib/endpoints/v22-price-pattern-core.js
+      - tests/v22-price-pattern-core.test.js
+      - .github/workflows/v22-price-pattern.yml
+concurrency:
+  group: v22-gold-price-pattern-source
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test strict technical confirmation source
+        run: |
+          node --check scripts/v22-price-pattern-audit.js
+          node tests/v22-price-pattern-core.test.js
+          node tests/v22-execution-core.test.js
+      - name: Evaluate actual gold 4h closed-bar candidates without macro trades
+        run: node scripts/v22-price-pattern-audit.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v22-price-pattern-diagnostics
+          path: reports/v22-price-pattern-latest.json
+          retention-days: 14
+      - name: Publish source diagnostics
+        if: ${{ !cancelled() }}
+        run: |
+          test -s reports/v22-price-pattern-latest.json
+          cp reports/v22-price-pattern-latest.json /tmp/price-source-report.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/price-source-report.json reports/v22-price-pattern-latest.json
+            git add reports/v22-price-pattern-latest.json
+            git commit -m "Record current gold 4h price pattern research diagnostics" || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 3
+          done
+          exit 1
+      - name: Fail closed on invalid or insufficient gold OHLC
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('reports/v22-price-pattern-latest.json'))
+          assert d['status']=='closed_four_hour_price_pattern_audited',d.get('error')
+          assert d['ohlc']['closed_four_hour_candles']>=1500
+          assert d['trade_signals_enabled'] is False
+          PY
