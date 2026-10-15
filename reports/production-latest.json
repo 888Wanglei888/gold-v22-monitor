@@ -1,7 +1,69 @@
 {
-  "checked_at_utc": "2026-10-15T06:18:58.646809+00:00",
-  "commit": "8bba4eea4f20821c4ad286f976dfd9509d4f13ac",
+  "checked_at_utc": "2026-10-15T06:26:30.545351+00:00",
+  "commit": "91b219646d8b890fe984961c4e72b5af68e4d24a",
   "endpoints": {
+    "v22-cot-audit": {
+      "status": "cot_source_access_ok",
+      "error": null,
+      "observations": 145,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "cot_source_access_ok",
+        "source": "CFTC Disaggregated Futures Only (72hh-3qpy)",
+        "contract_market_code": "088691",
+        "observations": 145,
+        "first_observation_date": "2024-01-02",
+        "last_observation_date": "2026-10-06",
+        "coverage_by_year": {
+          "2024": 53,
+          "2025": 52,
+          "2026": 40
+        },
+        "recent_reports_observation_date_only": [
+          {
+            "date": "2026-09-15",
+            "long": 142394,
+            "short": 9278,
+            "net": 133116,
+            "open_interest": 409899,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
+          },
+          {
+            "date": "2026-09-22",
+            "long": 135699,
+            "short": 8310,
+            "net": 127389,
+            "open_interest": 412800,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
+          },
+          {
+            "date": "2026-09-29",
+            "long": 131711,
+            "short": 11393,
+            "net": 120318,
+            "open_interest": 406456,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
+          },
+          {
+            "date": "2026-10-06",
+            "long": 127101,
+            "short": 16114,
+            "net": 110987,
+            "open_interest": 396109,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
+          }
+        ],
+        "release_timestamp_aligned": false,
+        "usable_as_v22_trade_filter": false,
+        "limitations": [
+          "Tuesday position report date is NOT publication date; official release calendar required before use in trading",
+          "Futures-only series must not be mixed with futures-and-options combined series",
+          "This source audit neither proves ETF fund flows nor licensed intraday execution",
+          "Current data may include revisions; point-in-time historical snapshots are not validated"
+        ]
+      }
+    },
     "tga-2026": {
       "status": "year_source_ok",
       "error": null,
@@ -9,6 +71,160 @@
       "first_date": "2026-01-02",
       "last_date": "2026-10-13",
       "data": null
+    },
+    "gold-proxy-backtest": {
+      "status": "exploratory_gold_proxy_signal_test_not_trade_ready",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "exploratory_gold_proxy_signal_test_not_trade_ready",
+        "model": "weekday median TGA change, threshold $5bn",
+        "gold_proxy": "Yahoo GC=F continuous gold futures",
+        "execution": "second subsequent futures daily open; exit two sessions later",
+        "assumed_roundtrip_cost_bps": 10,
+        "overall": {
+          "trades": 472,
+          "win_rate_pct": 45.8,
+          "average_net_return_pct": -0.224
+        },
+        "by_year": {
+          "2023": {
+            "trades": 76,
+            "win_rate_pct": 50,
+            "average_net_return_pct": -0.109
+          },
+          "2024": {
+            "trades": 166,
+            "win_rate_pct": 47,
+            "average_net_return_pct": -0.158
+          },
+          "2025": {
+            "trades": 135,
+            "win_rate_pct": 40,
+            "average_net_return_pct": -0.244
+          },
+          "2026": {
+            "trades": 95,
+            "win_rate_pct": 48.4,
+            "average_net_return_pct": -0.405
+          }
+        },
+        "non_overlapping_portfolio": {
+          "trades": 181,
+          "win_rate_pct": 40.9,
+          "average_net_return_pct": -0.386,
+          "terminal_equity_per_initial_dollar": 0.4811,
+          "total_return_pct": -51.89,
+          "max_drawdown_pct": 55.43,
+          "by_year": {
+            "2023": {
+              "trades": 30,
+              "win_rate_pct": 40,
+              "average_net_return_pct": -0.292
+            },
+            "2024": {
+              "trades": 59,
+              "win_rate_pct": 42.4,
+              "average_net_return_pct": -0.347
+            },
+            "2025": {
+              "trades": 52,
+              "win_rate_pct": 34.6,
+              "average_net_return_pct": -0.397
+            },
+            "2026": {
+              "trades": 40,
+              "win_rate_pct": 47.5,
+              "average_net_return_pct": -0.502
+            }
+          }
+        },
+        "recent_trades": [
+          {
+            "signal_date": "2026-09-21",
+            "entry_date": "2026-09-23",
+            "exit_date": "2026-09-25",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 6.84,
+            "gross_return_pct": 1.939,
+            "net_return_pct": 1.839
+          },
+          {
+            "signal_date": "2026-09-22",
+            "entry_date": "2026-09-24",
+            "exit_date": "2026-09-28",
+            "side": 1,
+            "forecast_tga_delta_usd_billions": -25.65,
+            "gross_return_pct": -0.217,
+            "net_return_pct": -0.317
+          },
+          {
+            "signal_date": "2026-09-25",
+            "entry_date": "2026-09-29",
+            "exit_date": "2026-10-01",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 18.46,
+            "gross_return_pct": -0.964,
+            "net_return_pct": -1.064
+          },
+          {
+            "signal_date": "2026-09-28",
+            "entry_date": "2026-09-30",
+            "exit_date": "2026-10-02",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 6.84,
+            "gross_return_pct": 0.275,
+            "net_return_pct": 0.175
+          },
+          {
+            "signal_date": "2026-09-29",
+            "entry_date": "2026-10-01",
+            "exit_date": "2026-10-05",
+            "side": 1,
+            "forecast_tga_delta_usd_billions": -25.42,
+            "gross_return_pct": -0.494,
+            "net_return_pct": -0.594
+          },
+          {
+            "signal_date": "2026-10-02",
+            "entry_date": "2026-10-06",
+            "exit_date": "2026-10-08",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 18.45,
+            "gross_return_pct": 0.703,
+            "net_return_pct": 0.603
+          },
+          {
+            "signal_date": "2026-10-05",
+            "entry_date": "2026-10-07",
+            "exit_date": "2026-10-09",
+            "side": -1,
+            "forecast_tga_delta_usd_billions": 6.84,
+            "gross_return_pct": 0.841,
+            "net_return_pct": 0.741
+          },
+          {
+            "signal_date": "2026-10-06",
+            "entry_date": "2026-10-08",
+            "exit_date": "2026-10-12",
+            "side": 1,
+            "forecast_tga_delta_usd_billions": -25.42,
+            "gross_return_pct": 1.954,
+            "net_return_pct": 1.854
+          }
+        ],
+        "limitations": [
+          "Exploratory hypothesis only; threshold and horizon are not independently pre-registered",
+          "GC=F continuous contract is not an executable unadjusted futures series; roll and spread unmodeled",
+          "Yahoo daily session timestamps and Treasury release-time alignment not verified",
+          "Overall/by_year signal metrics still overlap; non_overlapping_portfolio enforces one position at a time with reinvestment and no leverage",
+          "No stop loss, funding, margin, slippage model beyond assumed 10bp cost",
+          "No genuine 2026 untouched holdout due to prior model iteration",
+          "No claim of live trade readiness"
+        ]
+      }
     },
     "source-coverage": {
       "status": "source_coverage_incomplete_or_unverified",
@@ -25,6 +241,162 @@
       "first_date": "2023-01-03",
       "last_date": "2023-12-29",
       "data": null
+    },
+    "v22-source-audit": {
+      "status": "v22_source_feasibility_audit",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "v22_source_feasibility_audit",
+        "as_of": "2026-10-15T06:24:59.991Z",
+        "fred": [
+          {
+            "series": "DFII10",
+            "status": "source_access_ok",
+            "observations": 695,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-13",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 196
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "DGS10",
+            "status": "source_access_ok",
+            "observations": 695,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-13",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 196
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "T10YIE",
+            "status": "source_access_ok",
+            "observations": 696,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-14",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 197
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "RRPONTSYD",
+            "status": "source_access_ok",
+            "observations": 695,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-14",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 196
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "SOFR",
+            "status": "source_access_ok",
+            "observations": 694,
+            "first_date": "2024-01-02",
+            "last_date": "2026-10-13",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 195
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "IORB",
+            "status": "source_access_ok",
+            "observations": 1019,
+            "first_date": "2024-01-01",
+            "last_date": "2026-10-15",
+            "coverage": {
+              "2024": 366,
+              "2025": 365,
+              "2026": 288
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "WRESBAL",
+            "status": "source_access_ok",
+            "observations": 145,
+            "first_date": "2024-01-03",
+            "last_date": "2026-10-07",
+            "coverage": {
+              "2024": 52,
+              "2025": 53,
+              "2026": 40
+            },
+            "frequency": "weekly"
+          }
+        ],
+        "intraday": [
+          {
+            "symbol": "GC=F",
+            "status": "available",
+            "bars": 12384,
+            "valid_ohlc_bars": 9781,
+            "invalid_or_missing_ohlc_bars": 2603,
+            "first_date": "2025-02-02T23:00:00.000Z",
+            "last_date": "2026-10-15T06:14:04.000Z",
+            "hourly_per_year": {
+              "2024": 0,
+              "2025": 5281,
+              "2026": 4500
+            },
+            "complete_utc_four_hour_buckets": 2118,
+            "complete_utc_four_hour_per_year": {
+              "2024": 0,
+              "2025": 1144,
+              "2026": 974
+            },
+            "exchange_session_aligned_4h_verified": false
+          },
+          {
+            "symbol": "GLD",
+            "status": "available",
+            "bars": 2984,
+            "valid_ohlc_bars": 2971,
+            "invalid_or_missing_ohlc_bars": 13,
+            "first_date": "2025-02-03T14:30:00.000Z",
+            "last_date": "2026-10-14T20:00:00.000Z",
+            "hourly_per_year": {
+              "2024": 0,
+              "2025": 1601,
+              "2026": 1370
+            },
+            "complete_utc_four_hour_buckets": 422,
+            "complete_utc_four_hour_per_year": {
+              "2024": 0,
+              "2025": 227,
+              "2026": 195
+            },
+            "exchange_session_aligned_4h_verified": false
+          }
+        ],
+        "complete_v22_backtest": false,
+        "limitations": [
+          "FRED CSV is current-vintage, not historical release-time archive",
+          "WRESBAL weekly frequency cannot be interpreted as daily bank reserves",
+          "UTC 4h counts are coverage diagnostics, not verified exchange-session aligned or trade-executable 4-hour candles",
+          "CFTC weekly report must be lagged to actual release, not Tuesday observation date",
+          "No missing inputs may be treated as passing signal filters"
+        ]
+      }
     },
     "horizon-backtest": {
       "status": "historical_walk_forward_baselines_only",
@@ -44,7 +416,11 @@
         "status": "research_only",
         "baseline_data_checks_passed": false,
         "checks": {
-          "robustness-backtest": {
+          "forecast": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "tga-identity": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -52,15 +428,11 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
+          "robustness-backtest": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
           "holdout-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "forecast": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "tga-identity": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
@@ -85,6 +457,119 @@
       "first_date": null,
       "last_date": null,
       "data": null
+    },
+    "v22-spec": {
+      "status": "v2_2_spec_frozen_research_only",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "v2_2_spec_frozen_research_only",
+        "strategy": "US Treasury -> dollar liquidity -> DXY and real yields -> gold flows -> Dow/4H price confirmation",
+        "rules": {
+          "fiscal": {
+            "required": [
+              "Treasury Bills/Coupons net-new-cash by settlement date",
+              "DTS tax/spend calendar seasonality",
+              "D+1/D+3/D+5 TGA forecast revisions",
+              "252-day historical revision z-score"
+            ],
+            "z_thresholds": {
+              "candidate": 0.75,
+              "strong": 1,
+              "extreme": 1.5
+            }
+          },
+          "liquidity": {
+            "required": [
+              "bank reserves",
+              "ON RRP release buffer",
+              "Fed/SOMA liquidity contribution",
+              "SOFR-IORB",
+              "SRF"
+            ],
+            "regimes": [
+              "Cushioned",
+              "Neutral",
+              "Sensitive",
+              "Stressed"
+            ]
+          },
+          "macro": {
+            "required": [
+              "DXY",
+              "10Y TIPS real yield",
+              "10Y nominal yield and breakeven",
+              "Fed expectations"
+            ],
+            "classification": [
+              "monetary tightening",
+              "fiscal-credit repricing",
+              "liquidity squeeze",
+              "easing"
+            ]
+          },
+          "flow": {
+            "required": [
+              "gold ETF flows",
+              "COMEX open interest and volume",
+              "CFTC managed money COT"
+            ],
+            "supplemental": [
+              "GVZ",
+              "MOVE",
+              "VIX",
+              "AI credit stress",
+              "ENSO inflation shock"
+            ]
+          },
+          "price": {
+            "required": [
+              "weekly/daily Dow trend",
+              "4-hour closed candle",
+              "breakout >= 0.25 ATR",
+              "next 4-hour candle confirmation",
+              "execution strictly after confirmation"
+            ],
+            "optional": [
+              "15-minute entry optimization"
+            ]
+          },
+          "risk": {
+            "risk_per_trade_pct": {
+              "A": 0.5,
+              "A+": 0.75,
+              "A++": 1
+            },
+            "max_open_risk_pct": 2,
+            "max_leverage": 5,
+            "add_only_after_favorable_move_atr": 0.5,
+            "required": [
+              "stop distance and contract sizing",
+              "transaction costs and slippage",
+              "no-lookahead event timestamps",
+              "portfolio drawdown and yearly holdout"
+            ]
+          }
+        },
+        "implementation_verified": {
+          "fiscal": false,
+          "liquidity": false,
+          "macro": false,
+          "flow": false,
+          "price": false,
+          "risk": false
+        },
+        "full_v22_backtest_ready": false,
+        "live_trade_signals_enabled": false,
+        "excluded_as_v22": [
+          "TGA-only direction strategy",
+          "unconfirmed daily OHLC proxy as 4H execution",
+          "fitted results without point-in-time inputs"
+        ],
+        "next_required": "Build timestamped historical feature store and 4H OHLC before executing full V2.2 trades"
+      }
     },
     "full-history-backtest": {
       "status": "historical_2023_plus_walk_forward_research",
