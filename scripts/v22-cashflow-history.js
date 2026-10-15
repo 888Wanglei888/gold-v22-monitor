@@ -7,6 +7,7 @@ const {evaluate}=require('../lib/endpoints/v22-fiscal-composite-core');
 const {build4h}=require('../lib/endpoints/v22-asof-core');
 const {scan:scanGoldPrice}=require('../lib/endpoints/v22-price-pattern-core');
 const {align:alignFiscalGold}=require('../lib/endpoints/v22-fiscal-price-core');
+const {revision:computeFiscalRevisions,alignRevisionToGoldPrice}=require('../lib/endpoints/v22-fiscal-revision-core');
 const {audit:marketableDebtLedger}=require('../lib/endpoints/v22-debt-core');
 const ROOT='https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/';
 const MS=86400000;
@@ -127,9 +128,15 @@ async function main(){
   const completedDebt=marketableDebtLedger(debtYears.flat());
   if(completedDebt.coverage.complete_days<680||completedDebt.coverage.faults.duplicate_line_date>0)throw Error('Marketable DTS bill gross issue historic training source incomplete');
   report.market_bill_issuance_history={complete_days:completedDebt.coverage.complete_days,first:completedDebt.coverage.first_date,last:completedDebt.coverage.last_date};
-  const completeFiscal=evaluate(trustedTga.days,trustedCash.days,auction.events,2025,completedDebt.daily,{include_decision_forecasts:true});
+  const completeFiscal=evaluate(trustedTga.days,trustedCash.days,auction.events,2025,completedDebt.daily,{include_decision_forecasts:true,include_revision_factors:true});
   const priorKnownPredictions=completeFiscal.research_only_decision_forecasts||[];
-  delete completeFiscal.research_only_decision_forecasts; // Never publish raw per-date training outcomes or as-of ledgers.
+  delete completeFiscal.research_only_decision_forecasts; // Never publish per-date prediction path input ledger.
+  const futureForecastPaths=completeFiscal.research_only_target_level_daily_forecast_paths||[];
+  delete completeFiscal.research_only_target_level_daily_forecast_paths;
+  const statisticalRevision=computeFiscalRevisions(futureForecastPaths,{rolling_prior_decisions:252,min_prior_revisions:60,return_records:true});
+  const fiscalRevisionRecords=statisticalRevision.records||[];
+  delete statisticalRevision.records;
+  report.fiscal_D3_same_target_research_revision_Z=statisticalRevision;
   report.exploratory_partial_tga_auction_plus_fiscal_forecast=completeFiscal;
   const priceData=await goldPromise;
   if(priceData.error){
@@ -140,12 +147,13 @@ async function main(){
     gold_4h_closed_bars:priceData.bars,
     fiscal_decision_dates_with_research_only_forecasts:priorKnownPredictions.length,
     limited_research_only:true};
+   report.fiscal_D3_same_target_research_revision_Z.gold_4h_price_crosscheck=alignRevisionToGoldPrice(priceData.confirmed,fiscalRevisionRecords);
   }
   report.exploratory_fiscal_seasonality={
    tax_net_named_categories:predict(trustedCash.days,'tax_net_proxy'),
    nondebt_net_unvalidated_debt_redemption_category:predict(trustedCash.days,'nondebt_net'),
    disclosure:'Calendar/weekday priors are fixed and one-day walk-forward, lagging training by 3 calendar days; no optimization or actual historical release vintages' };
-  report.limitations=['2023 year fails cashflow/TGA accounting identity and is explicitly excluded from all train/test statistics; do not silently reuse','Named taxes are a partial tax proxy, customs separate, not certified entire IRS revenue','Nondebt net cannot be treated as verified discretionary spending until Public Debt Cash Redemptions category mapping is separately confirmed','Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast','Original FiscalData source is current-version and may have revisions','Treasury auction bill announcements and actual DTS gross Bill historical seasonal issuance are tested with no future rows, but TIPS/FRN, tax extensions, settlement cash basis and publication vintages remain unverified','Fiscal D+3 forecast LEVEL sign checked against gold 4h price candidates; original V2.2 fiscal forecast REVISION Z score and full macro/price/risk trade backtest not yet established'];
+  report.limitations=['2023 year fails cashflow/TGA accounting identity and is explicitly excluded from all train/test statistics; do not silently reuse','Named taxes are a partial tax proxy, customs separate, not certified entire IRS revenue','Nondebt net cannot be treated as verified discretionary spending until Public Debt Cash Redemptions category mapping is separately confirmed','Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast','Original FiscalData source is current-version and may have revisions','Treasury auction bill announcements and actual DTS gross Bill historical seasonal issuance are tested with no future rows, but TIPS/FRN, tax extensions, settlement cash basis and publication vintages remain unverified','Fiscal D+3 prior forecast revision proxy rolling Z is now compared to price candidates; historical official Treasury release vintages, all V2.2 A/A+/A++ gates and full trading PnL are NOT verified'];
  }catch(e){report.status='multi_year_cashflow_audit_blocked';report.error=String(e)}
  fs.mkdirSync('reports',{recursive:true});fs.writeFileSync('reports/fiscal-cashflow-history-latest.json',JSON.stringify(report,null,2));
  console.log(report.status,'months',report.months_requested,'matched_days',report.identity?.count,'MAE USD millions',report.identity?.average_absolute_identity_gap_usd_millions,report.error||'');
