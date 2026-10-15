@@ -7,4 +7,8 @@ assert.equal(q.days[0].cashflow_net,60);assert.equal(q.days[1].cashflow_net,100)
 const tga=tgaByDay([{record_date:'2026-08-31',table_nbr:'I',src_line_nbr:'4',account_type:'Treasury General Account (TGA) Closing Balance',open_today_bal:'1000'},{record_date:'2026-09-01',table_nbr:'I',src_line_nbr:'4',account_type:'Treasury General Account (TGA) Closing Balance',open_today_bal:'1060'},{record_date:'2026-09-02',table_nbr:'I',src_line_nbr:'4',account_type:'Treasury General Account (TGA) Closing Balance',open_today_bal:'1160'}]);
 assert.equal(reconcile(q,tga).max_absolute_identity_gap_usd_millions,0);
 assert.equal(cashflowByDay([...rows,rows[0]]).faults.duplicate_line_key,1);
-console.log('Treasury cashflow exact category and day-on-day TGA identity unit tests passed');
+const total=x('2026-09-01','Deposits','null',120,80);
+const augmented=cashflowByDay([...rows,total]);
+assert.equal(augmented.days[0].cashflow_net,60,'Unlabeled grand-total deposit must not be summed with leaf cashflows');
+assert.equal(augmented.faults.unlabeled_possible_total_rows_excluded,1);
+console.log('Treasury cashflow excluding grand totals and TGA identity unit tests passed');
