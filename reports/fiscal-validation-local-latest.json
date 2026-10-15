@@ -1,14 +1,14 @@
 {
-  "checked_at_utc": "2026-10-15T10:41:44.066Z",
-  "github_sha": "79491ceed46b11c48e1d1ac2792cf6a6e6853fe0",
+  "checked_at_utc": "2026-10-15T10:43:04.219Z",
+  "github_sha": "4ac90bbc6baab1ca78a9d72a8acb082989a7d873",
   "source": "GitHub Actions standalone Node 24; NOT Vercel production",
   "full_v22_trade_backtest_ready": false,
   "trade_signals_enabled": false,
   "endpoints": {
     "v22-tga-cashflow-identity": {
       "http_status": 200,
-      "elapsed_ms": 1858,
-      "status": "tga_cashflows_identity_mismatch_or_incomplete",
+      "elapsed_ms": 1682,
+      "status": "tga_operating_cashflows_identity_verified_in_two_months",
       "error": null,
       "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/",
       "audit": {
@@ -22,50 +22,51 @@
             "bad_transaction_type": 0,
             "non_tga_ignored": 0,
             "non_table_ii_ignored": 0,
-            "duplicate_line_key": 0
+            "duplicate_line_key": 0,
+            "unlabeled_possible_total_rows_excluded": 42
           },
           "duplicate_tga_dates": 0,
           "identity": {
             "count": 21,
-            "average_absolute_identity_gap_usd_millions": 32080.429,
-            "max_absolute_identity_gap_usd_millions": 149945,
-            "within_one_billion_pct": 0,
+            "average_absolute_identity_gap_usd_millions": 3.476,
+            "max_absolute_identity_gap_usd_millions": 9,
+            "within_one_billion_pct": 100,
             "recent_examples": [
               {
                 "date": "2025-09-25",
                 "reported_tga_delta": 3117,
-                "reported_net_deposits_minus_withdrawals": 6234,
-                "difference": -3117,
+                "reported_net_deposits_minus_withdrawals": 3117,
+                "difference": 0,
                 "tax_net_proxy": 10245,
                 "customs_deposits": 310
               },
               {
                 "date": "2025-09-26",
                 "reported_tga_delta": 25250,
-                "reported_net_deposits_minus_withdrawals": 50493,
-                "difference": -25243,
+                "reported_net_deposits_minus_withdrawals": 25243,
+                "difference": 7,
                 "tax_net_proxy": 14495,
                 "customs_deposits": 419
               },
               {
                 "date": "2025-09-29",
                 "reported_tga_delta": 19337,
-                "reported_net_deposits_minus_withdrawals": 38673,
-                "difference": -19336,
+                "reported_net_deposits_minus_withdrawals": 19336,
+                "difference": 1,
                 "tax_net_proxy": 32769,
                 "customs_deposits": 516
               },
               {
                 "date": "2025-09-30",
                 "reported_tga_delta": 85151,
-                "reported_net_deposits_minus_withdrawals": 170303,
-                "difference": -85152,
+                "reported_net_deposits_minus_withdrawals": 85152,
+                "difference": -1,
                 "tax_net_proxy": 11097,
                 "customs_deposits": 381
               }
             ]
           },
-          "identity_reconciled": false,
+          "identity_reconciled": true,
           "illustrative_month_tax_withheld_and_other_explicit_tax_deposits_less_named_refunds_usd_billions": 504.584,
           "customs_duties_tax_fee_deposits_usd_billions": 31.676,
           "disclaimer": "Named tax categories are a partial proxy, not a certified full IRS receipt/spending forecast"
@@ -80,50 +81,51 @@
             "bad_transaction_type": 0,
             "non_tga_ignored": 0,
             "non_table_ii_ignored": 0,
-            "duplicate_line_key": 0
+            "duplicate_line_key": 0,
+            "unlabeled_possible_total_rows_excluded": 42
           },
           "duplicate_tga_dates": 0,
           "identity": {
             "count": 21,
-            "average_absolute_identity_gap_usd_millions": 29433.19,
-            "max_absolute_identity_gap_usd_millions": 120333,
-            "within_one_billion_pct": 4.8,
+            "average_absolute_identity_gap_usd_millions": 2.857,
+            "max_absolute_identity_gap_usd_millions": 9,
+            "within_one_billion_pct": 100,
             "recent_examples": [
               {
                 "date": "2026-09-25",
                 "reported_tga_delta": 20663,
-                "reported_net_deposits_minus_withdrawals": 41329,
-                "difference": -20666,
+                "reported_net_deposits_minus_withdrawals": 20665,
+                "difference": -2,
                 "tax_net_proxy": 13031,
                 "customs_deposits": 398
               },
               {
                 "date": "2026-09-28",
                 "reported_tga_delta": 14282,
-                "reported_net_deposits_minus_withdrawals": 28567,
-                "difference": -14285,
+                "reported_net_deposits_minus_withdrawals": 14285,
+                "difference": -3,
                 "tax_net_proxy": 30595,
                 "customs_deposits": 373
               },
               {
                 "date": "2026-09-29",
                 "reported_tga_delta": -22972,
-                "reported_net_deposits_minus_withdrawals": -45947,
-                "difference": 22975,
+                "reported_net_deposits_minus_withdrawals": -22975,
+                "difference": 3,
                 "tax_net_proxy": 9786,
                 "customs_deposits": 457
               },
               {
                 "date": "2026-09-30",
                 "reported_tga_delta": 47446,
-                "reported_net_deposits_minus_withdrawals": 94896,
-                "difference": -47450,
+                "reported_net_deposits_minus_withdrawals": 47451,
+                "difference": -5,
                 "tax_net_proxy": 16709,
                 "customs_deposits": 278
               }
             ]
           },
-          "identity_reconciled": false,
+          "identity_reconciled": true,
           "illustrative_month_tax_withheld_and_other_explicit_tax_deposits_less_named_refunds_usd_billions": 538.138,
           "customs_duties_tax_fee_deposits_usd_billions": 26.611,
           "disclaimer": "Named tax categories are a partial proxy, not a certified full IRS receipt/spending forecast"
@@ -132,7 +134,7 @@
     },
     "v22-auction-known-forecast": {
       "http_status": 200,
-      "elapsed_ms": 1769,
+      "elapsed_ms": 2617,
       "status": "auction_known_bill_component_backtest_research_only",
       "error": null,
       "source": null,
@@ -356,7 +358,7 @@
     },
     "v22-auction-source-audit": {
       "http_status": 200,
-      "elapsed_ms": 1775,
+      "elapsed_ms": 1475,
       "status": "auction_historical_source_access_ok",
       "error": null,
       "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
