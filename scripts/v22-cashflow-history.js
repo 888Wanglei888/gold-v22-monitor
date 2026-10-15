@@ -4,6 +4,9 @@ const fs=require('node:fs');
 const {cashflowByDay,tgaByDay,reconcile}=require('../lib/endpoints/v22-cashflow-core');
 const {normalizeAnnouncements}=require('../lib/endpoints/v22-auction-core');
 const {evaluate}=require('../lib/endpoints/v22-fiscal-composite-core');
+const {build4h}=require('../lib/endpoints/v22-asof-core');
+const {scan:scanGoldPrice}=require('../lib/endpoints/v22-price-pattern-core');
+const {align:alignFiscalGold}=require('../lib/endpoints/v22-fiscal-price-core');
 const {audit:marketableDebtLedger}=require('../lib/endpoints/v22-debt-core');
 const ROOT='https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/';
 const MS=86400000;
@@ -54,6 +57,16 @@ function predict(rows,field){
  };
  return {overall:summarise(scores),by_year:Object.fromEntries([2025,2026].map(y=>[y,summarise(scores.filter(x=>x.asof.startsWith(String(y))))]))};
 }
+async function historicalGoldPriceCandidates(){
+ const start=Math.floor(Date.UTC(2025,0,1)/1000),end=Math.floor(Date.now()/1000);
+ const url='https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?period1='+start+'&period2='+end+'&interval=1h';
+ const r=await fetch(url,{signal:AbortSignal.timeout(30000),headers:{'User-Agent':'Mozilla/5.0',Accept:'application/json'}});
+ if(!r.ok)throw Error('Yahoo GC futures hourly HTTP '+r.status);
+ const a=(await r.json()).chart?.result?.[0];if(!a?.timestamp?.length)throw Error('Gold hourly chart missing');
+ const q=a.indicators?.quote?.[0]||{},raw=a.timestamp.map((t,i)=>({t:t*1000,o:q.open?.[i],h:q.high?.[i],l:q.low?.[i],c:q.close?.[i]}));
+ const bars=build4h(raw,Date.now());if(bars.candles.length<1500)throw Error('Gold 4h sessions incomplete');
+ return {confirmed:scanGoldPrice(bars.candles,{include_all_candidates:true}).confirmed_candidates,bars:bars.candles.length};
+}
 async function main(){
  const now=new Date(),maxYear=Math.min(2026,now.getUTCFullYear()),endMonth=maxYear===2026?Math.min(10,now.getUTCMonth()+1):12;
  const months=[];
@@ -65,6 +78,7 @@ async function main(){
   source:'US Treasury DTS II operating cash transactions + Table I TGA close',months_requested:months.length,
   full_v22_fiscal_prediction_ready:false,trade_signals_enabled:false};
  try{
+  const goldPromise=historicalGoldPriceCandidates().catch(e=>({error:String(e)}));
   const [monthRows,tgaYears,auctionYears,debtYears]=await Promise.all([
    pool(months,5,m=>fetchRows('deposits_withdrawals_operating_cash',m.from,m.to)),
    pool(Array.from({length:maxYear-2022},(_,i)=>2023+i),3,y=>fetchRows('operating_cash_balance',String(y)+'-01-01',String(y)+'-12-31')),
@@ -113,12 +127,25 @@ async function main(){
   const completedDebt=marketableDebtLedger(debtYears.flat());
   if(completedDebt.coverage.complete_days<680||completedDebt.coverage.faults.duplicate_line_date>0)throw Error('Marketable DTS bill gross issue historic training source incomplete');
   report.market_bill_issuance_history={complete_days:completedDebt.coverage.complete_days,first:completedDebt.coverage.first_date,last:completedDebt.coverage.last_date};
-  report.exploratory_partial_tga_auction_plus_fiscal_forecast=evaluate(trustedTga.days,trustedCash.days,auction.events,2025,completedDebt.daily);
+  const completeFiscal=evaluate(trustedTga.days,trustedCash.days,auction.events,2025,completedDebt.daily,{include_decision_forecasts:true});
+  const priorKnownPredictions=completeFiscal.research_only_decision_forecasts||[];
+  delete completeFiscal.research_only_decision_forecasts; // Never publish raw per-date training outcomes or as-of ledgers.
+  report.exploratory_partial_tga_auction_plus_fiscal_forecast=completeFiscal;
+  const priceData=await goldPromise;
+  if(priceData.error){
+   report.historical_fiscal_vs_gold_price_candidate_alignment={status:'gold_source_unavailable',error:priceData.error,v22_trade_signals_enabled:false};
+  } else{
+   report.historical_fiscal_vs_gold_price_candidate_alignment={
+    ...alignFiscalGold(priorKnownPredictions,priceData.confirmed),
+    gold_4h_closed_bars:priceData.bars,
+    fiscal_decision_dates_with_research_only_forecasts:priorKnownPredictions.length,
+    limited_research_only:true};
+  }
   report.exploratory_fiscal_seasonality={
    tax_net_named_categories:predict(trustedCash.days,'tax_net_proxy'),
    nondebt_net_unvalidated_debt_redemption_category:predict(trustedCash.days,'nondebt_net'),
    disclosure:'Calendar/weekday priors are fixed and one-day walk-forward, lagging training by 3 calendar days; no optimization or actual historical release vintages' };
-  report.limitations=['2023 year fails cashflow/TGA accounting identity and is explicitly excluded from all train/test statistics; do not silently reuse','Named taxes are a partial tax proxy, customs separate, not certified entire IRS revenue','Nondebt net cannot be treated as verified discretionary spending until Public Debt Cash Redemptions category mapping is separately confirmed','Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast','Original FiscalData source is current-version and may have revisions','Treasury auction bill announcements and actual DTS gross Bill historical seasonal issuance are tested with no future rows, but TIPS/FRN, tax extensions, settlement cash basis and publication vintages remain unverified','GLD cashflow flow signal, gold multi-factor confirmations and execution backtest remain distinct tasks'];
+  report.limitations=['2023 year fails cashflow/TGA accounting identity and is explicitly excluded from all train/test statistics; do not silently reuse','Named taxes are a partial tax proxy, customs separate, not certified entire IRS revenue','Nondebt net cannot be treated as verified discretionary spending until Public Debt Cash Redemptions category mapping is separately confirmed','Daily date samples exclude holidays/closure gaps; this is research not published event-time forecast','Original FiscalData source is current-version and may have revisions','Treasury auction bill announcements and actual DTS gross Bill historical seasonal issuance are tested with no future rows, but TIPS/FRN, tax extensions, settlement cash basis and publication vintages remain unverified','Fiscal D+3 forecast LEVEL sign checked against gold 4h price candidates; original V2.2 fiscal forecast REVISION Z score and full macro/price/risk trade backtest not yet established'];
  }catch(e){report.status='multi_year_cashflow_audit_blocked';report.error=String(e)}
  fs.mkdirSync('reports',{recursive:true});fs.writeFileSync('reports/fiscal-cashflow-history-latest.json',JSON.stringify(report,null,2));
  console.log(report.status,'months',report.months_requested,'matched_days',report.identity?.count,'MAE USD millions',report.identity?.average_absolute_identity_gap_usd_millions,report.error||'');
