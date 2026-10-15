@@ -1,0 +1,262 @@
+{
+  "at": "2026-10-15T11:52:22.721Z",
+  "source_commit": "cde92b3e5689d0d0ae909eb8428f8d688be4b5dc",
+  "http_status": 200,
+  "status": "v22_lagged_feature_join_research_only",
+  "complete_asof_history": 2212,
+  "closed_4h_candles": 2212,
+  "macro_source_errors": {},
+  "required_source_coverage": {
+    "DFII10": {
+      "observations": 695,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-13",
+      "conservative_lag_calendar_days": 3
+    },
+    "DGS10": {
+      "observations": 695,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-13",
+      "conservative_lag_calendar_days": 3
+    },
+    "T10YIE": {
+      "observations": 696,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-14",
+      "conservative_lag_calendar_days": 3
+    },
+    "RRPONTSYD": {
+      "observations": 695,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-14",
+      "conservative_lag_calendar_days": 3
+    },
+    "SOFR": {
+      "observations": 694,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-13",
+      "conservative_lag_calendar_days": 3
+    },
+    "IORB": {
+      "observations": 1019,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-01",
+      "last_observation_date": "2026-10-15",
+      "conservative_lag_calendar_days": 3
+    },
+    "WRESBAL": {
+      "observations": 145,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-03",
+      "last_observation_date": "2026-10-07",
+      "conservative_lag_calendar_days": 9
+    },
+    "DXY": {
+      "observations": 702,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-15",
+      "conservative_lag_calendar_days": 2
+    },
+    "COT_NET": {
+      "observations": 145,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-06",
+      "conservative_lag_calendar_days": 15
+    },
+    "COT_OI": {
+      "observations": 145,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-06",
+      "conservative_lag_calendar_days": 15
+    },
+    "TGA": {
+      "observations": 698,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-13",
+      "conservative_lag_calendar_days": 3
+    },
+    "GLD_TONNES_DELTA": {
+      "observations": 5508,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2004-11-19",
+      "last_observation_date": "2026-10-14",
+      "conservative_lag_calendar_days": 3
+    }
+  },
+  "candidate_macro_crosscheck": {
+    "status": "technical_patterns_cross_market_asof_descriptive_only",
+    "counts": {
+      "candidates": 146,
+      "complete_asof_12_of_12": 146,
+      "incomplete_asof": 0,
+      "dxy_real_yield_and_gld_direction_aligned": 29,
+      "dxy_and_real_yield_aligned": 53,
+      "cftc_net_direction_aligned": 77,
+      "not_sufficient_source_history_for_change": 0
+    },
+    "by_year": {
+      "2025": {
+        "candidates": 93,
+        "complete_asof": 93,
+        "triple_alignment": 15
+      },
+      "2026": {
+        "candidates": 53,
+        "complete_asof": 53,
+        "triple_alignment": 14
+      }
+    },
+    "recent_descriptive_only": [
+      {
+        "confirmed_utc": "2026-09-01T14:00:00.000Z",
+        "direction": "short",
+        "asof_full_data": true,
+        "dxy_delta_7calendar_days": 0.9,
+        "real_yield_delta_percentage_points_7calendar_days": 0.02,
+        "gld_holding_tonnes_delta_7calendar_days": -4.85,
+        "managed_money_net_futures_contract_delta_28calendar_days": 16883,
+        "direction_aligned": {
+          "dxy": true,
+          "real_yield": true,
+          "gld_holdings": true,
+          "managed_money": false,
+          "triple": true
+        }
+      },
+      {
+        "confirmed_utc": "2026-09-02T06:00:00.000Z",
+        "direction": "short",
+        "asof_full_data": true,
+        "dxy_delta_7calendar_days": 0.43,
+        "real_yield_delta_percentage_points_7calendar_days": 0.02,
+        "gld_holding_tonnes_delta_7calendar_days": -4.85,
+        "managed_money_net_futures_contract_delta_28calendar_days": 16817,
+        "direction_aligned": {
+          "dxy": true,
+          "real_yield": true,
+          "gld_holdings": true,
+          "managed_money": false,
+          "triple": true
+        }
+      },
+      {
+        "confirmed_utc": "2026-09-24T14:00:00.000Z",
+        "direction": "short",
+        "asof_full_data": true,
+        "dxy_delta_7calendar_days": 0.95,
+        "real_yield_delta_percentage_points_7calendar_days": 0.02,
+        "gld_holding_tonnes_delta_7calendar_days": 7.99,
+        "managed_money_net_futures_contract_delta_28calendar_days": -2690,
+        "direction_aligned": {
+          "dxy": true,
+          "real_yield": true,
+          "gld_holdings": false,
+          "managed_money": true,
+          "triple": false
+        }
+      },
+      {
+        "confirmed_utc": "2026-09-28T06:00:00.000Z",
+        "direction": "short",
+        "asof_full_data": true,
+        "dxy_delta_7calendar_days": 0.75,
+        "real_yield_delta_percentage_points_7calendar_days": 0.15,
+        "gld_holding_tonnes_delta_7calendar_days": -2.57,
+        "managed_money_net_futures_contract_delta_28calendar_days": -2690,
+        "direction_aligned": {
+          "dxy": true,
+          "real_yield": true,
+          "gld_holdings": true,
+          "managed_money": true,
+          "triple": true
+        }
+      },
+      {
+        "confirmed_utc": "2026-09-28T10:00:00.000Z",
+        "direction": "short",
+        "asof_full_data": true,
+        "dxy_delta_7calendar_days": 0.75,
+        "real_yield_delta_percentage_points_7calendar_days": 0.15,
+        "gld_holding_tonnes_delta_7calendar_days": -2.57,
+        "managed_money_net_futures_contract_delta_28calendar_days": -2690,
+        "direction_aligned": {
+          "dxy": true,
+          "real_yield": true,
+          "gld_holdings": true,
+          "managed_money": true,
+          "triple": true
+        }
+      },
+      {
+        "confirmed_utc": "2026-09-28T14:00:00.000Z",
+        "direction": "short",
+        "asof_full_data": true,
+        "dxy_delta_7calendar_days": 0.75,
+        "real_yield_delta_percentage_points_7calendar_days": 0.15,
+        "gld_holding_tonnes_delta_7calendar_days": -2.57,
+        "managed_money_net_futures_contract_delta_28calendar_days": -2690,
+        "direction_aligned": {
+          "dxy": true,
+          "real_yield": true,
+          "gld_holdings": true,
+          "managed_money": true,
+          "triple": true
+        }
+      },
+      {
+        "confirmed_utc": "2026-10-09T10:00:00.000Z",
+        "direction": "long",
+        "asof_full_data": true,
+        "dxy_delta_7calendar_days": 0.79,
+        "real_yield_delta_percentage_points_7calendar_days": 0,
+        "gld_holding_tonnes_delta_7calendar_days": 2.56,
+        "managed_money_net_futures_contract_delta_28calendar_days": -17358,
+        "direction_aligned": {
+          "dxy": false,
+          "real_yield": false,
+          "gld_holdings": true,
+          "managed_money": false,
+          "triple": false
+        }
+      },
+      {
+        "confirmed_utc": "2026-10-14T18:00:00.000Z",
+        "direction": "short",
+        "asof_full_data": true,
+        "dxy_delta_7calendar_days": 0.41,
+        "real_yield_delta_percentage_points_7calendar_days": -0.01,
+        "gld_holding_tonnes_delta_7calendar_days": -2.57,
+        "managed_money_net_futures_contract_delta_28calendar_days": -16453,
+        "direction_aligned": {
+          "dxy": true,
+          "real_yield": false,
+          "gld_holdings": true,
+          "managed_money": true,
+          "triple": false
+        }
+      }
+    ],
+    "full_v22_macro_signals_generated": 0,
+    "verified_treasury_event_forecast_signals_generated": 0,
+    "trade_signals_enabled": false,
+    "limitations": [
+      "Coincidence is NOT V2.2 eligibility; no fiscal forecast surprise or positive V2.2 A/A+/A++ proof",
+      "DXY and real-rate comparison uses conservative point-in-time lagged CURRENT-VINTAGE values, not verified actual historical release versions",
+      "GLD tonnes changes are trust-inventory proxies, not actual daily global ETF dollar creations/redemptions",
+      "CFTC 28-calendar-day delta uses conservative as-of release lag and current-vintage files",
+      "No daily/weekly Dow trend, COMEX contract roll, costs, PnL, or signal execution is inferred"
+    ]
+  },
+  "full_v22_strategy_backtested": false,
+  "trade_signals_enabled": false,
+  "caution": "Descriptive coincidence only. No fiscal surprise trade signal or stable time-of-release vintage, multi-timeframe Dow confirmation, COMEX contract roll or PnL."
+}
