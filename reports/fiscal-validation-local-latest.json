@@ -1,0 +1,423 @@
+{
+  "checked_at_utc": "2026-10-15T10:41:44.066Z",
+  "github_sha": "79491ceed46b11c48e1d1ac2792cf6a6e6853fe0",
+  "source": "GitHub Actions standalone Node 24; NOT Vercel production",
+  "full_v22_trade_backtest_ready": false,
+  "trade_signals_enabled": false,
+  "endpoints": {
+    "v22-tga-cashflow-identity": {
+      "http_status": 200,
+      "elapsed_ms": 1858,
+      "status": "tga_cashflows_identity_mismatch_or_incomplete",
+      "error": null,
+      "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/",
+      "audit": {
+        "2025": {
+          "raw_cashflow_rows": 3843,
+          "raw_tga_rows": 29,
+          "classified_cashflow_report_days": 21,
+          "closing_tga_report_days": 29,
+          "cashflow_faults": {
+            "invalid_today_amount": 0,
+            "bad_transaction_type": 0,
+            "non_tga_ignored": 0,
+            "non_table_ii_ignored": 0,
+            "duplicate_line_key": 0
+          },
+          "duplicate_tga_dates": 0,
+          "identity": {
+            "count": 21,
+            "average_absolute_identity_gap_usd_millions": 32080.429,
+            "max_absolute_identity_gap_usd_millions": 149945,
+            "within_one_billion_pct": 0,
+            "recent_examples": [
+              {
+                "date": "2025-09-25",
+                "reported_tga_delta": 3117,
+                "reported_net_deposits_minus_withdrawals": 6234,
+                "difference": -3117,
+                "tax_net_proxy": 10245,
+                "customs_deposits": 310
+              },
+              {
+                "date": "2025-09-26",
+                "reported_tga_delta": 25250,
+                "reported_net_deposits_minus_withdrawals": 50493,
+                "difference": -25243,
+                "tax_net_proxy": 14495,
+                "customs_deposits": 419
+              },
+              {
+                "date": "2025-09-29",
+                "reported_tga_delta": 19337,
+                "reported_net_deposits_minus_withdrawals": 38673,
+                "difference": -19336,
+                "tax_net_proxy": 32769,
+                "customs_deposits": 516
+              },
+              {
+                "date": "2025-09-30",
+                "reported_tga_delta": 85151,
+                "reported_net_deposits_minus_withdrawals": 170303,
+                "difference": -85152,
+                "tax_net_proxy": 11097,
+                "customs_deposits": 381
+              }
+            ]
+          },
+          "identity_reconciled": false,
+          "illustrative_month_tax_withheld_and_other_explicit_tax_deposits_less_named_refunds_usd_billions": 504.584,
+          "customs_duties_tax_fee_deposits_usd_billions": 31.676,
+          "disclaimer": "Named tax categories are a partial proxy, not a certified full IRS receipt/spending forecast"
+        },
+        "2026": {
+          "raw_cashflow_rows": 3780,
+          "raw_tga_rows": 29,
+          "classified_cashflow_report_days": 21,
+          "closing_tga_report_days": 29,
+          "cashflow_faults": {
+            "invalid_today_amount": 0,
+            "bad_transaction_type": 0,
+            "non_tga_ignored": 0,
+            "non_table_ii_ignored": 0,
+            "duplicate_line_key": 0
+          },
+          "duplicate_tga_dates": 0,
+          "identity": {
+            "count": 21,
+            "average_absolute_identity_gap_usd_millions": 29433.19,
+            "max_absolute_identity_gap_usd_millions": 120333,
+            "within_one_billion_pct": 4.8,
+            "recent_examples": [
+              {
+                "date": "2026-09-25",
+                "reported_tga_delta": 20663,
+                "reported_net_deposits_minus_withdrawals": 41329,
+                "difference": -20666,
+                "tax_net_proxy": 13031,
+                "customs_deposits": 398
+              },
+              {
+                "date": "2026-09-28",
+                "reported_tga_delta": 14282,
+                "reported_net_deposits_minus_withdrawals": 28567,
+                "difference": -14285,
+                "tax_net_proxy": 30595,
+                "customs_deposits": 373
+              },
+              {
+                "date": "2026-09-29",
+                "reported_tga_delta": -22972,
+                "reported_net_deposits_minus_withdrawals": -45947,
+                "difference": 22975,
+                "tax_net_proxy": 9786,
+                "customs_deposits": 457
+              },
+              {
+                "date": "2026-09-30",
+                "reported_tga_delta": 47446,
+                "reported_net_deposits_minus_withdrawals": 94896,
+                "difference": -47450,
+                "tax_net_proxy": 16709,
+                "customs_deposits": 278
+              }
+            ]
+          },
+          "identity_reconciled": false,
+          "illustrative_month_tax_withheld_and_other_explicit_tax_deposits_less_named_refunds_usd_billions": 538.138,
+          "customs_duties_tax_fee_deposits_usd_billions": 26.611,
+          "disclaimer": "Named tax categories are a partial proxy, not a certified full IRS receipt/spending forecast"
+        }
+      }
+    },
+    "v22-auction-known-forecast": {
+      "http_status": 200,
+      "elapsed_ms": 1769,
+      "status": "auction_known_bill_component_backtest_research_only",
+      "error": null,
+      "source": null,
+      "audit": {
+        "sources": {
+          "raw_auction_rows": 1653,
+          "accepted_auction_events": 1651,
+          "announced_offering_events": 1653,
+          "auction_faults": {
+            "invalid_fields": 2,
+            "duplicate_auction_identity": 0,
+            "auction_after_issue": 0
+          },
+          "announcement_faults": {
+            "missing_announcement": 0,
+            "invalid_offering": 0,
+            "duplicate_auction_identity": 0,
+            "bad_date_order": 0
+          },
+          "realized_dts": 698
+        },
+        "by_horizon": {
+          "D+1": {
+            "earlier_results_only_proxy": {
+              "samples": 429,
+              "known_event_samples": 171,
+              "known_event_coverage_pct": 39.9,
+              "auction_known_proxy_mae_usd_billions": 23.577,
+              "zero_baseline_mae_usd_billions": 9.392,
+              "mae_vs_zero_improvement_pct": -151,
+              "direction_match_all_samples_pct": 27.3
+            },
+            "announced_offerings_proxy": {
+              "samples": 429,
+              "known_event_samples": 173,
+              "known_event_coverage_pct": 40.3,
+              "auction_known_proxy_mae_usd_billions": 3.563,
+              "zero_baseline_mae_usd_billions": 9.392,
+              "mae_vs_zero_improvement_pct": 62.1,
+              "direction_match_all_samples_pct": 36.6
+            },
+            "by_year": {
+              "2025": {
+                "earlier_results_only_proxy": {
+                  "samples": 239,
+                  "known_event_samples": 95,
+                  "known_event_coverage_pct": 39.7,
+                  "auction_known_proxy_mae_usd_billions": 22.342,
+                  "zero_baseline_mae_usd_billions": 10.073,
+                  "mae_vs_zero_improvement_pct": -121.8,
+                  "direction_match_all_samples_pct": 28.5
+                },
+                "announced_offerings_proxy": {
+                  "samples": 239,
+                  "known_event_samples": 96,
+                  "known_event_coverage_pct": 40.2,
+                  "auction_known_proxy_mae_usd_billions": 2.336,
+                  "zero_baseline_mae_usd_billions": 10.073,
+                  "mae_vs_zero_improvement_pct": 76.8,
+                  "direction_match_all_samples_pct": 39.7
+                }
+              },
+              "2026": {
+                "earlier_results_only_proxy": {
+                  "samples": 190,
+                  "known_event_samples": 76,
+                  "known_event_coverage_pct": 40,
+                  "auction_known_proxy_mae_usd_billions": 25.13,
+                  "zero_baseline_mae_usd_billions": 8.536,
+                  "mae_vs_zero_improvement_pct": -194.4,
+                  "direction_match_all_samples_pct": 25.8
+                },
+                "announced_offerings_proxy": {
+                  "samples": 190,
+                  "known_event_samples": 77,
+                  "known_event_coverage_pct": 40.5,
+                  "auction_known_proxy_mae_usd_billions": 5.106,
+                  "zero_baseline_mae_usd_billions": 8.536,
+                  "mae_vs_zero_improvement_pct": 40.2,
+                  "direction_match_all_samples_pct": 32.6
+                }
+              }
+            }
+          },
+          "D+3": {
+            "earlier_results_only_proxy": {
+              "samples": 395,
+              "known_event_samples": 395,
+              "known_event_coverage_pct": 100,
+              "auction_known_proxy_mae_usd_billions": 214.924,
+              "zero_baseline_mae_usd_billions": 27.564,
+              "mae_vs_zero_improvement_pct": -679.7,
+              "direction_match_all_samples_pct": 42.5
+            },
+            "announced_offerings_proxy": {
+              "samples": 395,
+              "known_event_samples": 395,
+              "known_event_coverage_pct": 100,
+              "auction_known_proxy_mae_usd_billions": 10.816,
+              "zero_baseline_mae_usd_billions": 27.564,
+              "mae_vs_zero_improvement_pct": 60.8,
+              "direction_match_all_samples_pct": 90.1
+            },
+            "by_year": {
+              "2025": {
+                "earlier_results_only_proxy": {
+                  "samples": 217,
+                  "known_event_samples": 217,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 204.991,
+                  "zero_baseline_mae_usd_billions": 29.37,
+                  "mae_vs_zero_improvement_pct": -598,
+                  "direction_match_all_samples_pct": 44.7
+                },
+                "announced_offerings_proxy": {
+                  "samples": 217,
+                  "known_event_samples": 217,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 7.099,
+                  "zero_baseline_mae_usd_billions": 29.37,
+                  "mae_vs_zero_improvement_pct": 75.8,
+                  "direction_match_all_samples_pct": 96.3
+                }
+              },
+              "2026": {
+                "earlier_results_only_proxy": {
+                  "samples": 178,
+                  "known_event_samples": 178,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 227.033,
+                  "zero_baseline_mae_usd_billions": 25.361,
+                  "mae_vs_zero_improvement_pct": -795.2,
+                  "direction_match_all_samples_pct": 39.9
+                },
+                "announced_offerings_proxy": {
+                  "samples": 178,
+                  "known_event_samples": 178,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 15.347,
+                  "zero_baseline_mae_usd_billions": 25.361,
+                  "mae_vs_zero_improvement_pct": 39.5,
+                  "direction_match_all_samples_pct": 82.6
+                }
+              }
+            }
+          },
+          "D+5": {
+            "earlier_results_only_proxy": {
+              "samples": 362,
+              "known_event_samples": 362,
+              "known_event_coverage_pct": 100,
+              "auction_known_proxy_mae_usd_billions": 423.046,
+              "zero_baseline_mae_usd_billions": 44.352,
+              "mae_vs_zero_improvement_pct": -853.8,
+              "direction_match_all_samples_pct": 43.4
+            },
+            "announced_offerings_proxy": {
+              "samples": 362,
+              "known_event_samples": 362,
+              "known_event_coverage_pct": 100,
+              "auction_known_proxy_mae_usd_billions": 118.519,
+              "zero_baseline_mae_usd_billions": 44.352,
+              "mae_vs_zero_improvement_pct": -167.2,
+              "direction_match_all_samples_pct": 69.9
+            },
+            "by_year": {
+              "2025": {
+                "earlier_results_only_proxy": {
+                  "samples": 196,
+                  "known_event_samples": 196,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 403.808,
+                  "zero_baseline_mae_usd_billions": 46.615,
+                  "mae_vs_zero_improvement_pct": -766.3,
+                  "direction_match_all_samples_pct": 45.4
+                },
+                "announced_offerings_proxy": {
+                  "samples": 196,
+                  "known_event_samples": 196,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 107.971,
+                  "zero_baseline_mae_usd_billions": 46.615,
+                  "mae_vs_zero_improvement_pct": -131.6,
+                  "direction_match_all_samples_pct": 71.4
+                }
+              },
+              "2026": {
+                "earlier_results_only_proxy": {
+                  "samples": 166,
+                  "known_event_samples": 166,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 445.761,
+                  "zero_baseline_mae_usd_billions": 41.681,
+                  "mae_vs_zero_improvement_pct": -969.5,
+                  "direction_match_all_samples_pct": 41
+                },
+                "announced_offerings_proxy": {
+                  "samples": 166,
+                  "known_event_samples": 166,
+                  "known_event_coverage_pct": 100,
+                  "auction_known_proxy_mae_usd_billions": 130.974,
+                  "zero_baseline_mae_usd_billions": 41.681,
+                  "mae_vs_zero_improvement_pct": -214.2,
+                  "direction_match_all_samples_pct": 68.1
+                }
+              }
+            }
+          }
+        },
+        "limitations": [
+          "A forecast of known auction bill cash is NOT a forecast of all Treasury new cash or TGA balance",
+          "Historic auction feed is current-vintage; published result timestamp unverified; assumes data known 2 calendar days after auction and public offerings known 1 calendar day after announcement",
+          "Maturity is inferred from prior auction gross awards, which can differ from publicly-held principal and cash redemption",
+          "Coupons, TIPS and FRNs excluded from this evaluated known-bill-only proxy",
+          "Announced future offerings may be included BEFORE auction date but only once their announcement is as-of known; never use future accepted totals as issuance",
+          "Actual DTS comparison is used ONLY for after-the-fact scoring",
+          "Non-trading-day and holiday DST calendar mismatches excluded from scored evaluation",
+          "Model is diagnostic; no parameters optimized on 2026 outcomes and no claim of tradable profit"
+        ]
+      }
+    },
+    "v22-auction-source-audit": {
+      "http_status": 200,
+      "elapsed_ms": 1775,
+      "status": "auction_historical_source_access_ok",
+      "error": null,
+      "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
+      "audit": {
+        "per_year": {
+          "2023": {
+            "auction_rows": 428,
+            "type_counts": {
+              "Bill": 320,
+              "Note": 82,
+              "Bond": 26
+            },
+            "accepted_amount_rows": 428,
+            "first_auction": "2023-01-03",
+            "last_auction": "2023-12-28"
+          },
+          "2024": {
+            "auction_rows": 440,
+            "type_counts": {
+              "Bill": 332,
+              "Note": 82,
+              "Bond": 26
+            },
+            "accepted_amount_rows": 440,
+            "first_auction": "2024-01-02",
+            "last_auction": "2024-12-30"
+          },
+          "2025": {
+            "auction_rows": 444,
+            "type_counts": {
+              "Bill": 336,
+              "Note": 82,
+              "Bond": 26
+            },
+            "accepted_amount_rows": 444,
+            "first_auction": "2025-01-02",
+            "last_auction": "2025-12-31"
+          },
+          "2026": {
+            "auction_rows": 341,
+            "type_counts": {
+              "Bill": 257,
+              "Note": 63,
+              "Bond": 21
+            },
+            "accepted_amount_rows": 339,
+            "first_auction": "2026-01-05",
+            "last_auction": "2026-10-15"
+          }
+        },
+        "bad_data": {
+          "unparseable_amount": 2,
+          "invalid_dates": 0,
+          "auction_after_issue": 0,
+          "issue_after_maturity": 0,
+          "missing_announcement_date": 0,
+          "announcement_after_auction": 0,
+          "missing_offering_amount": 0
+        },
+        "missing": []
+      }
+    }
+  }
+}
