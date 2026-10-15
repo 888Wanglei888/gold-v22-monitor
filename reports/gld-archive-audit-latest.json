@@ -1,7 +1,7 @@
 {
   "source": "SPDR GLD Historical Archive (official)",
   "url": "https://api.spdrgoldshares.com/api/v1/historical-archive?exchange=NYSE&lang=en&product=gld",
-  "checked_at_utc": "2026-10-15T07:03:59.141976+00:00",
+  "checked_at_utc": "2026-10-15T07:04:51.646639+00:00",
   "raw_archive_redistributed": false,
   "actual_etf_flow_calculated": false,
   "verified_trade_time_release": false,
@@ -55,8 +55,16 @@
       "date_header_columns": [
         "A"
       ],
-      "date_column_candidates": {},
-      "date_cell_storage_types": {},
+      "date_column_candidates": {
+        "A": {
+          "count": 5714,
+          "first": "2004-11-18",
+          "last": "2026-10-14"
+        }
+      },
+      "date_cell_storage_types": {
+        "s": 5714
+      },
       "unparsed_date_shapes": [],
       "header_topics": [
         "Daily Share Volume",
