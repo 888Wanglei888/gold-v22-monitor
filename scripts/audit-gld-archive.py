@@ -33,6 +33,7 @@ def inspect(binary):
             masked_date_samples=set()
             first_column_a={'cells':0,'nonempty':0,'types':{},'first_nonempty_row':None,'last_nonempty_row':None,'masked_examples':set()}
             date_header_row=None
+            topic_columns={}
             with z.open(path) as sheet:
                 for _,element in ET.iterparse(sheet,events=('end',)):
                     if element.tag!=X+'row':
@@ -64,6 +65,11 @@ def inspect(binary):
                         if rows<=20 and value.strip().lower()=='date':
                             date_headers.add(col)
                             date_header_row=rows
+                            topic_columns['date']=col
+                        if rows<=20 and value.strip().lower().startswith('tonnes of gold'):
+                            topic_columns['gold_tonnes']=col
+                        if rows<=20 and 'total ounces of gold in the trust' in value.strip().lower():
+                            topic_columns['total_ounces']=col
                         if rows<=20 and len(value)<=80 and any(x in value.lower() for x in ('date','tonne','hold','ounce','share')):
                             hints.add(re.sub(r'\s+',' ',value))
                         if col not in date_headers or value.strip().lower()=='date':
@@ -88,7 +94,7 @@ def inspect(binary):
                     element.clear()
             date_cols={col:{'count':len(days),'first':str(min(days)),'last':str(max(days))} for col,days in dates.items()}
             first_column_a['masked_examples']=sorted(first_column_a['masked_examples'])
-            sheets.append({'xml_file':path,'row_count':rows,'date_header_row':date_header_row,'first_column_a_debug':first_column_a,'date_header_columns':sorted(date_headers),'date_column_candidates':date_cols,'date_cell_storage_types':date_value_formats,'unparsed_date_shapes':sorted(masked_date_samples),'header_topics':sorted(hints)[:16]})
+            sheets.append({'xml_file':path,'row_count':rows,'date_header_row':date_header_row,'first_column_a_debug':first_column_a,'topic_columns':topic_columns,'date_header_columns':sorted(date_headers),'date_column_candidates':date_cols,'date_cell_storage_types':date_value_formats,'unparsed_date_shapes':sorted(masked_date_samples),'header_topics':sorted(hints)[:16]})
         return sheets
 
 def main():
