@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T03:36:05.534Z",
-  "source_sha": "7e808234d2e74ed99103388d6f4998be863140aa",
+  "checked_at_utc": "2026-10-16T03:38:00.837Z",
+  "source_sha": "cd2459b14349b698f49b720c51641896853a2027",
   "status": "C2_dual_mode_gold_v22_proxy_backtest_completed_research_not_official",
   "live_trade_signals_enabled": false,
   "complete_historical_publication_vintages_verified": false,
@@ -2632,6 +2632,17 @@
       }
     ],
     "warning": "These A/A+/A++ are C2 PROXY research confidence grades, NOT official verified original gold V2.2 grade outcomes"
+  },
+  "posthoc_loss_pattern_diagnostics": {
+    "all_executed_C2_combined_trades": 5,
+    "losing": 5,
+    "winning": 0,
+    "missing_future_bill_auction_gross_amount_imputed": 5,
+    "forecast_tga_decline_and_28day_reserve_decline": 4,
+    "real_yield_and_dxy_both_supporting": 3,
+    "managed_money_COT_direction_supporting": 3,
+    "exit_stop_touch_or_open_gap_count": 5,
+    "inference_guardrail": "Observed in the same in-sample losing trades. This is a POST-HOC descriptive risk diagnosis, not optimized confirmation for profit."
   },
   "provenance_limits": [
     "No certified ALFRED historical vintage for every macro feed",
