@@ -86,6 +86,22 @@ async function main(){
    caution:'Original code uses 4h OHLC intrabar stop and max15 4h bars; B1 hourly counterpart uses true hourly OHLC, more precise stop path, same nominal stop width and holding 60 observed hours'};
   d.measured_technicals=run.candidates;
   d.fixed_10bps_three_way=cases;
+  const b1Ledger=b1.trade_ledger,b3Ledger=run.result.B3_confirmed_4h_plus_1h_limit_retest.trade_ledger;
+  const b3Filled=new Set(b3Ledger.map(t=>t.original_signal_known_utc+'#'+t.side));
+  const kept=b1Ledger.filter(t=>b3Filled.has(t.original_signal_known_utc+'#'+t.side));
+  const skipped=b1Ledger.filter(t=>!b3Filled.has(t.original_signal_known_utc+'#'+t.side));
+  d.B3_same_original_B1_executed_cohort_attribution={
+   B1_original_executed_trade_count:b1Ledger.length,
+   B3_actual_limit_fills:b3Ledger.length,
+   skipped_original_B1_winners:skipped.filter(x=>x.pnl_after_costs_usd>0).length,
+   skipped_original_B1_losers:skipped.filter(x=>x.pnl_after_costs_usd<0).length,
+   B1_winners_with_B3_fill:kept.filter(x=>x.pnl_after_costs_usd>0).length,
+   B1_losers_with_B3_fill:kept.filter(x=>x.pnl_after_costs_usd<0).length,
+   matched_B1_net_pnl_usd:Math.round(100*kept.reduce((v,x)=>v+x.pnl_after_costs_usd,0))/100,
+   matched_B3_net_pnl_usd:Math.round(100*b3Ledger.reduce((v,x)=>v+x.pnl_after_costs_usd,0))/100,
+   caution:'Matching is keyed by timestamp of 4h signal already recorded in actual B1 trades, not all 34 eligible 4h candidates. Different entry times and fills alter subsequent portfolio equity and opportunity cost.'
+  };
+  d.B3_optional_all_34_eligible_4h_patterns_unmatched_portfolio_sensitivity=abbreviated(run.B3_optional_all_eligible_4h_signal_opportunities);
   d.cost_sensitivity_1_3_5_30bps={};
   for(const bps of [1,3,5,30]){
    const sensitivity=runThreeWay({hourly,four:four.candles,startDate:forecastStart,costBps:bps,lookbackHours:12});
