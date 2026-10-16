@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T02:33:15.435Z",
-  "github_sha": "6e529ef084ae9acf0552218dab60154b2fc651ea",
+  "checked_at_utc": "2026-10-16T02:33:34.881Z",
+  "github_sha": "5c566b45c84bada5321a231533640b0a3f71d02e",
   "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
   "months_requested": 46,
   "full_v22_fiscal_prediction_ready": false,
@@ -482,8 +482,8 @@
     "gold_4h_price_crosscheck": {
       "status": "gold_price_vs_fiscal_revision_z_asof_research_only",
       "counts": {
-        "candidates": 146,
-        "revision_z_record_available": 126,
+        "candidates": 145,
+        "revision_z_record_available": 125,
         "unavailable_or_stale": 20,
         "fiscal_revision_z_abs_gte_0_75": 0,
         "fiscal_revision_z_abs_gte_1": 0,
@@ -500,8 +500,8 @@
           "directional_z_0_75": 0
         },
         "2026": {
-          "price_candidates": 53,
-          "z_ready": 52,
+          "price_candidates": 52,
+          "z_ready": 51,
           "directional_z_0_75": 0
         }
       },
@@ -1033,10 +1033,10 @@
   },
   "historical_fiscal_vs_gold_price_candidate_alignment": {
     "status": "historical_fiscal_predicted_level_direction_vs_gold_price_patterns_only",
-    "candidates": 146,
-    "conservative_prior_fiscal_forecasts_found": 144,
+    "candidates": 145,
+    "conservative_prior_fiscal_forecasts_found": 143,
     "missing_or_older_than_72h": 2,
-    "forecast_TGA_change_direction_aligned_auction_known_only": 82,
+    "forecast_TGA_change_direction_aligned_auction_known_only": 81,
     "forecast_TGA_change_direction_aligned_with_unannounced_bill_fallback": 73,
     "both_fiscal_models_same_direction_aligned": 71,
     "by_year": {
@@ -1047,9 +1047,9 @@
         "with_issuance_fallback_direction_aligned": 49
       },
       "2026": {
-        "price_candidates": 53,
-        "fiscal_forecasts_available": 52,
-        "known_offers_direction_aligned": 25,
+        "price_candidates": 52,
+        "fiscal_forecasts_available": 51,
+        "known_offers_direction_aligned": 24,
         "with_issuance_fallback_direction_aligned": 24
       }
     },
@@ -1163,7 +1163,7 @@
       "Gold price patterns are non-independent and may represent repeats during one trend",
       "Does NOT imply market profit or combine with full factor and risk rules"
     ],
-    "gold_4h_closed_bars": 2215,
+    "gold_4h_closed_bars": 2201,
     "fiscal_decision_dates_with_research_only_forecasts": 448,
     "limited_research_only": true
   },
@@ -1217,7 +1217,7 @@
                 "avg_raw_gold_pre_event_return_pct": -0.09,
                 "hypothetical_liquidity_direction_pre_event_hit_pct": 53.571,
                 "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.068,
-                "avg_raw_gold_after_event_3_business_days_pct": 0.156,
+                "avg_raw_gold_after_event_3_business_days_pct": 0.155,
                 "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.887,
                 "gold_4h_price_confirmation_before_event": 2,
                 "predicted_tga_rise_events": 9,
@@ -1229,7 +1229,7 @@
                 "date": "2026-09-15",
                 "known_fiscal_decision": "2026-09-11",
                 "forecasted_daily_tga_change_usd_billions": 38.007,
-                "pre_event_gold_pct": -0.974,
+                "pre_event_gold_pct": -0.981,
                 "post_event_3_business_days_gold_pct": 1.284,
                 "prior_confirmed_gold_4h_pattern": false
               },
@@ -1246,15 +1246,15 @@
                 "known_fiscal_decision": "2026-09-18",
                 "forecasted_daily_tga_change_usd_billions": -54.332,
                 "pre_event_gold_pct": -0.747,
-                "post_event_3_business_days_gold_pct": -1.949,
+                "post_event_3_business_days_gold_pct": -1.958,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
                 "date": "2026-09-24",
                 "known_fiscal_decision": "2026-09-22",
                 "forecasted_daily_tga_change_usd_billions": -41.772,
-                "pre_event_gold_pct": -1.112,
-                "post_event_3_business_days_gold_pct": -3.403,
+                "pre_event_gold_pct": -1.117,
+                "post_event_3_business_days_gold_pct": -3.398,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
@@ -1276,7 +1276,7 @@
               "avg_hypothesis_direction_adjusted_pre_event_return_pct": 0.064,
               "avg_raw_gold_after_event_3_business_days_pct": 0.212,
               "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.237,
-              "gold_4h_price_confirmation_before_event": 17,
+              "gold_4h_price_confirmation_before_event": 18,
               "predicted_tga_rise_events": 19,
               "predicted_tga_decline_events": 51
             },
@@ -1298,10 +1298,10 @@
                 "pre_event_price_coverage": 28,
                 "avg_raw_gold_pre_event_return_pct": -0.044,
                 "hypothetical_liquidity_direction_pre_event_hit_pct": 50,
-                "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.305,
-                "avg_raw_gold_after_event_3_business_days_pct": 0.008,
+                "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.306,
+                "avg_raw_gold_after_event_3_business_days_pct": 0.007,
                 "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -1.035,
-                "gold_4h_price_confirmation_before_event": 2,
+                "gold_4h_price_confirmation_before_event": 3,
                 "predicted_tga_rise_events": 9,
                 "predicted_tga_decline_events": 19
               }
@@ -1319,7 +1319,7 @@
                 "date": "2026-09-17",
                 "known_fiscal_decision": "2026-09-11",
                 "forecasted_daily_tga_change_usd_billions": -47.414,
-                "pre_event_gold_pct": 0.105,
+                "pre_event_gold_pct": 0.098,
                 "post_event_3_business_days_gold_pct": 1.033,
                 "prior_confirmed_gold_4h_pattern": false
               },
@@ -1328,22 +1328,22 @@
                 "known_fiscal_decision": "2026-09-16",
                 "forecasted_daily_tga_change_usd_billions": -54.366,
                 "pre_event_gold_pct": 1.033,
-                "post_event_3_business_days_gold_pct": -1.949,
+                "post_event_3_business_days_gold_pct": -1.958,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
                 "date": "2026-09-24",
                 "known_fiscal_decision": "2026-09-18",
                 "forecasted_daily_tga_change_usd_billions": -41.928,
-                "pre_event_gold_pct": -1.959,
-                "post_event_3_business_days_gold_pct": -3.403,
+                "pre_event_gold_pct": -1.963,
+                "post_event_3_business_days_gold_pct": -3.398,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
                 "date": "2026-09-29",
                 "known_fiscal_decision": "2026-09-23",
                 "forecasted_daily_tga_change_usd_billions": -45.316,
-                "pre_event_gold_pct": -3.403,
+                "pre_event_gold_pct": -3.398,
                 "post_event_3_business_days_gold_pct": 0.814,
                 "prior_confirmed_gold_4h_pattern": false
               }
@@ -1355,9 +1355,9 @@
               "pre_event_price_coverage": 61,
               "avg_raw_gold_pre_event_return_pct": 0.349,
               "hypothetical_liquidity_direction_pre_event_hit_pct": 47.541,
-              "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.134,
-              "avg_raw_gold_after_event_3_business_days_pct": 0.149,
-              "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": 0.072,
+              "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.133,
+              "avg_raw_gold_after_event_3_business_days_pct": 0.192,
+              "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": 0.115,
               "gold_4h_price_confirmation_before_event": 25,
               "predicted_tga_rise_events": 9,
               "predicted_tga_decline_events": 52
@@ -1380,9 +1380,9 @@
                 "pre_event_price_coverage": 29,
                 "avg_raw_gold_pre_event_return_pct": -0.856,
                 "hypothetical_liquidity_direction_pre_event_hit_pct": 41.379,
-                "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.869,
-                "avg_raw_gold_after_event_3_business_days_pct": -0.071,
-                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.177,
+                "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.868,
+                "avg_raw_gold_after_event_3_business_days_pct": 0.02,
+                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.086,
                 "gold_4h_price_confirmation_before_event": 6,
                 "predicted_tga_rise_events": 3,
                 "predicted_tga_decline_events": 26
@@ -1393,7 +1393,7 @@
                 "date": "2026-09-29",
                 "known_fiscal_decision": "2026-09-21",
                 "forecasted_daily_tga_change_usd_billions": -46.593,
-                "pre_event_gold_pct": -4.982,
+                "pre_event_gold_pct": -4.991,
                 "post_event_3_business_days_gold_pct": 0.814,
                 "prior_confirmed_gold_4h_pattern": false
               },
@@ -1401,8 +1401,8 @@
                 "date": "2026-10-01",
                 "known_fiscal_decision": "2026-09-23",
                 "forecasted_daily_tga_change_usd_billions": -88.979,
-                "pre_event_gold_pct": -3.046,
-                "post_event_3_business_days_gold_pct": -0.537,
+                "pre_event_gold_pct": -3.041,
+                "post_event_3_business_days_gold_pct": -0.53,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
@@ -1410,15 +1410,15 @@
                 "known_fiscal_decision": "2026-09-28",
                 "forecasted_daily_tga_change_usd_billions": -33.65,
                 "pre_event_gold_pct": -0.07,
-                "post_event_3_business_days_gold_pct": 0.01,
+                "post_event_3_business_days_gold_pct": 0.007,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
                 "date": "2026-10-08",
                 "known_fiscal_decision": "2026-09-30",
                 "forecasted_daily_tga_change_usd_billions": -33.538,
-                "pre_event_gold_pct": -1.201,
-                "post_event_3_business_days_gold_pct": 0.9,
+                "pre_event_gold_pct": -1.194,
+                "post_event_3_business_days_gold_pct": 0.895,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
@@ -1470,10 +1470,10 @@
             "overall": {
               "exante_selected_event_days": 20,
               "pre_event_price_coverage": 20,
-              "avg_raw_gold_pre_event_return_pct": 0.446,
+              "avg_raw_gold_pre_event_return_pct": 0.445,
               "hypothetical_liquidity_direction_pre_event_hit_pct": 60,
-              "avg_hypothesis_direction_adjusted_pre_event_return_pct": 0.249,
-              "avg_raw_gold_after_event_3_business_days_pct": 0.374,
+              "avg_hypothesis_direction_adjusted_pre_event_return_pct": 0.248,
+              "avg_raw_gold_after_event_3_business_days_pct": 0.373,
               "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.241,
               "gold_4h_price_confirmation_before_event": 4,
               "predicted_tga_rise_events": 8,
@@ -1495,11 +1495,11 @@
               "2026": {
                 "exante_selected_event_days": 5,
                 "pre_event_price_coverage": 5,
-                "avg_raw_gold_pre_event_return_pct": 0.337,
+                "avg_raw_gold_pre_event_return_pct": 0.335,
                 "hypothetical_liquidity_direction_pre_event_hit_pct": 60,
-                "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.009,
-                "avg_raw_gold_after_event_3_business_days_pct": 0.099,
-                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.676,
+                "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.011,
+                "avg_raw_gold_after_event_3_business_days_pct": 0.096,
+                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.678,
                 "gold_4h_price_confirmation_before_event": 0,
                 "predicted_tga_rise_events": 2,
                 "predicted_tga_decline_events": 3
@@ -1534,8 +1534,8 @@
                 "date": "2026-06-18",
                 "known_fiscal_decision": "2026-06-16",
                 "forecasted_daily_tga_change_usd_billions": -60.027,
-                "pre_event_gold_pct": 0.922,
-                "post_event_3_business_days_gold_pct": -3.149,
+                "pre_event_gold_pct": 0.913,
+                "post_event_3_business_days_gold_pct": -3.151,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
@@ -1543,7 +1543,7 @@
                 "known_fiscal_decision": "2026-09-18",
                 "forecasted_daily_tga_change_usd_billions": -54.332,
                 "pre_event_gold_pct": -0.747,
-                "post_event_3_business_days_gold_pct": -1.949,
+                "post_event_3_business_days_gold_pct": -1.958,
                 "prior_confirmed_gold_4h_pattern": false
               }
             ]
@@ -1552,11 +1552,11 @@
             "overall": {
               "exante_selected_event_days": 21,
               "pre_event_price_coverage": 21,
-              "avg_raw_gold_pre_event_return_pct": 0.784,
+              "avg_raw_gold_pre_event_return_pct": 0.783,
               "hypothetical_liquidity_direction_pre_event_hit_pct": 57.143,
               "avg_hypothesis_direction_adjusted_pre_event_return_pct": 0.25,
-              "avg_raw_gold_after_event_3_business_days_pct": 0.155,
-              "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.028,
+              "avg_raw_gold_after_event_3_business_days_pct": 0.154,
+              "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.029,
               "gold_4h_price_confirmation_before_event": 6,
               "predicted_tga_rise_events": 9,
               "predicted_tga_decline_events": 12
@@ -1577,11 +1577,11 @@
               "2026": {
                 "exante_selected_event_days": 5,
                 "pre_event_price_coverage": 5,
-                "avg_raw_gold_pre_event_return_pct": -0.272,
+                "avg_raw_gold_pre_event_return_pct": -0.274,
                 "hypothetical_liquidity_direction_pre_event_hit_pct": 60,
-                "avg_hypothesis_direction_adjusted_pre_event_return_pct": 0.916,
-                "avg_raw_gold_after_event_3_business_days_pct": 0.099,
-                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.676,
+                "avg_hypothesis_direction_adjusted_pre_event_return_pct": 0.914,
+                "avg_raw_gold_after_event_3_business_days_pct": 0.096,
+                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.678,
                 "gold_4h_price_confirmation_before_event": 0,
                 "predicted_tga_rise_events": 2,
                 "predicted_tga_decline_events": 3
@@ -1616,8 +1616,8 @@
                 "date": "2026-06-18",
                 "known_fiscal_decision": "2026-06-12",
                 "forecasted_daily_tga_change_usd_billions": -60.164,
-                "pre_event_gold_pct": 1.476,
-                "post_event_3_business_days_gold_pct": -3.149,
+                "pre_event_gold_pct": 1.466,
+                "post_event_3_business_days_gold_pct": -3.151,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
@@ -1625,7 +1625,7 @@
                 "known_fiscal_decision": "2026-09-16",
                 "forecasted_daily_tga_change_usd_billions": -54.366,
                 "pre_event_gold_pct": 1.033,
-                "post_event_3_business_days_gold_pct": -1.949,
+                "post_event_3_business_days_gold_pct": -1.958,
                 "prior_confirmed_gold_4h_pattern": false
               }
             ]
@@ -1634,11 +1634,11 @@
             "overall": {
               "exante_selected_event_days": 31,
               "pre_event_price_coverage": 31,
-              "avg_raw_gold_pre_event_return_pct": 0.343,
+              "avg_raw_gold_pre_event_return_pct": 0.344,
               "hypothetical_liquidity_direction_pre_event_hit_pct": 48.387,
-              "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.284,
-              "avg_raw_gold_after_event_3_business_days_pct": 0.255,
-              "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": 0.18,
+              "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.283,
+              "avg_raw_gold_after_event_3_business_days_pct": 0.341,
+              "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": 0.266,
               "gold_4h_price_confirmation_before_event": 12,
               "predicted_tga_rise_events": 6,
               "predicted_tga_decline_events": 25
@@ -1659,11 +1659,11 @@
               "2026": {
                 "exante_selected_event_days": 13,
                 "pre_event_price_coverage": 13,
-                "avg_raw_gold_pre_event_return_pct": -1.268,
+                "avg_raw_gold_pre_event_return_pct": -1.266,
                 "hypothetical_liquidity_direction_pre_event_hit_pct": 46.154,
-                "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.63,
-                "avg_raw_gold_after_event_3_business_days_pct": 0.252,
-                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.046,
+                "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.628,
+                "avg_raw_gold_after_event_3_business_days_pct": 0.456,
+                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": 0.158,
                 "gold_4h_price_confirmation_before_event": 3,
                 "predicted_tga_rise_events": 2,
                 "predicted_tga_decline_events": 11
@@ -1674,15 +1674,15 @@
                 "date": "2026-07-09",
                 "known_fiscal_decision": "2026-07-01",
                 "forecasted_daily_tga_change_usd_billions": -76.942,
-                "pre_event_gold_pct": 0.34,
-                "post_event_3_business_days_gold_pct": -1.992,
+                "pre_event_gold_pct": 0.35,
+                "post_event_3_business_days_gold_pct": 0.657,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
                 "date": "2026-08-06",
                 "known_fiscal_decision": "2026-07-29",
                 "forecasted_daily_tga_change_usd_billions": -55.138,
-                "pre_event_gold_pct": 4.078,
+                "pre_event_gold_pct": 4.083,
                 "post_event_3_business_days_gold_pct": 1.666,
                 "prior_confirmed_gold_4h_pattern": true
               },
@@ -1690,7 +1690,7 @@
                 "date": "2026-09-03",
                 "known_fiscal_decision": "2026-08-26",
                 "forecasted_daily_tga_change_usd_billions": -82.34,
-                "pre_event_gold_pct": -5.783,
+                "pre_event_gold_pct": -5.781,
                 "post_event_3_business_days_gold_pct": 0.198,
                 "prior_confirmed_gold_4h_pattern": false
               },
@@ -1699,15 +1699,15 @@
                 "known_fiscal_decision": "2026-09-14",
                 "forecasted_daily_tga_change_usd_billions": -55.643,
                 "pre_event_gold_pct": 0.886,
-                "post_event_3_business_days_gold_pct": -1.949,
+                "post_event_3_business_days_gold_pct": -1.958,
                 "prior_confirmed_gold_4h_pattern": false
               },
               {
                 "date": "2026-10-01",
                 "known_fiscal_decision": "2026-09-23",
                 "forecasted_daily_tga_change_usd_billions": -88.979,
-                "pre_event_gold_pct": -3.046,
-                "post_event_3_business_days_gold_pct": -0.537,
+                "pre_event_gold_pct": -3.041,
+                "post_event_3_business_days_gold_pct": -0.53,
                 "prior_confirmed_gold_4h_pattern": false
               }
             ]
