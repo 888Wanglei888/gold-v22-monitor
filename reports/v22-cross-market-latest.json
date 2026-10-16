@@ -1,66 +1,66 @@
 {
-  "at": "2026-10-15T11:52:22.721Z",
-  "source_commit": "cde92b3e5689d0d0ae909eb8428f8d688be4b5dc",
+  "at": "2026-10-16T03:01:46.573Z",
+  "source_commit": "833caa6c67752caf77913c16d163d25b53cfbd1f",
   "http_status": 200,
   "status": "v22_lagged_feature_join_research_only",
-  "complete_asof_history": 2212,
-  "closed_4h_candles": 2212,
+  "complete_asof_history": 2201,
+  "closed_4h_candles": 2201,
   "macro_source_errors": {},
   "required_source_coverage": {
     "DFII10": {
-      "observations": 695,
-      "duplicate_observation_dates_excluded": 0,
-      "first_observation_date": "2024-01-02",
-      "last_observation_date": "2026-10-13",
-      "conservative_lag_calendar_days": 3
-    },
-    "DGS10": {
-      "observations": 695,
-      "duplicate_observation_dates_excluded": 0,
-      "first_observation_date": "2024-01-02",
-      "last_observation_date": "2026-10-13",
-      "conservative_lag_calendar_days": 3
-    },
-    "T10YIE": {
       "observations": 696,
       "duplicate_observation_dates_excluded": 0,
       "first_observation_date": "2024-01-02",
       "last_observation_date": "2026-10-14",
       "conservative_lag_calendar_days": 3
     },
+    "DGS10": {
+      "observations": 696,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-14",
+      "conservative_lag_calendar_days": 3
+    },
+    "T10YIE": {
+      "observations": 697,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-15",
+      "conservative_lag_calendar_days": 3
+    },
     "RRPONTSYD": {
+      "observations": 696,
+      "duplicate_observation_dates_excluded": 0,
+      "first_observation_date": "2024-01-02",
+      "last_observation_date": "2026-10-15",
+      "conservative_lag_calendar_days": 3
+    },
+    "SOFR": {
       "observations": 695,
       "duplicate_observation_dates_excluded": 0,
       "first_observation_date": "2024-01-02",
       "last_observation_date": "2026-10-14",
       "conservative_lag_calendar_days": 3
     },
-    "SOFR": {
-      "observations": 694,
-      "duplicate_observation_dates_excluded": 0,
-      "first_observation_date": "2024-01-02",
-      "last_observation_date": "2026-10-13",
-      "conservative_lag_calendar_days": 3
-    },
     "IORB": {
-      "observations": 1019,
+      "observations": 1020,
       "duplicate_observation_dates_excluded": 0,
       "first_observation_date": "2024-01-01",
-      "last_observation_date": "2026-10-15",
+      "last_observation_date": "2026-10-16",
       "conservative_lag_calendar_days": 3
     },
     "WRESBAL": {
-      "observations": 145,
+      "observations": 146,
       "duplicate_observation_dates_excluded": 0,
       "first_observation_date": "2024-01-03",
-      "last_observation_date": "2026-10-07",
+      "last_observation_date": "2026-10-14",
       "conservative_lag_calendar_days": 9
     },
     "DXY": {
-      "observations": 702,
-      "duplicate_observation_dates_excluded": 0,
+      "observations": 701,
+      "duplicate_observation_dates_excluded": 1,
       "first_observation_date": "2024-01-02",
-      "last_observation_date": "2026-10-15",
+      "last_observation_date": "2026-10-14",
       "conservative_lag_calendar_days": 2
     },
     "COT_NET": {
@@ -78,29 +78,29 @@
       "conservative_lag_calendar_days": 15
     },
     "TGA": {
-      "observations": 698,
+      "observations": 699,
       "duplicate_observation_dates_excluded": 0,
       "first_observation_date": "2024-01-02",
-      "last_observation_date": "2026-10-13",
+      "last_observation_date": "2026-10-14",
       "conservative_lag_calendar_days": 3
     },
     "GLD_TONNES_DELTA": {
-      "observations": 5508,
+      "observations": 5509,
       "duplicate_observation_dates_excluded": 0,
       "first_observation_date": "2004-11-19",
-      "last_observation_date": "2026-10-14",
+      "last_observation_date": "2026-10-15",
       "conservative_lag_calendar_days": 3
     }
   },
   "candidate_macro_crosscheck": {
     "status": "technical_patterns_cross_market_asof_descriptive_only",
     "counts": {
-      "candidates": 146,
-      "complete_asof_12_of_12": 146,
+      "candidates": 145,
+      "complete_asof_12_of_12": 145,
       "incomplete_asof": 0,
       "dxy_real_yield_and_gld_direction_aligned": 29,
-      "dxy_and_real_yield_aligned": 53,
-      "cftc_net_direction_aligned": 77,
+      "dxy_and_real_yield_aligned": 51,
+      "cftc_net_direction_aligned": 76,
       "not_sufficient_source_history_for_change": 0
     },
     "by_year": {
@@ -110,8 +110,8 @@
         "triple_alignment": 15
       },
       "2026": {
-        "candidates": 53,
-        "complete_asof": 53,
+        "candidates": 52,
+        "complete_asof": 52,
         "triple_alignment": 14
       }
     },
