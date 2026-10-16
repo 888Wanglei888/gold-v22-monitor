@@ -2,7 +2,7 @@
 // Track I: five-minute fills after true completed 4-hour signals.
 // Track II: independent five-minute NY morning strategies, long and short, no overnight.
 // Same 10000USD, risk, 10bp fees; 30bp fee stress, and fixed chronological 70/30 validation.
-const fs=require('node:fs');
+const fs=require('node:fs'),crypto=require('node:crypto');
 const {clean5m,evaluateIntraday}=require('../lib/endpoints/v22-gold-5m-intraday-core');
 const {studyRefinement}=require('../lib/endpoints/v22-gold-5m-refine-core');
 const {build4h}=require('../lib/endpoints/v22-asof-core');
@@ -49,7 +49,20 @@ async function main(){
   original_full_v22_trade_results_claimed:false};
  try{
   const [q5,q1]=await Promise.all([yahoo('5m',start5m),yahoo('1h',Date.UTC(2024,11,1))]);
-  const data=clean5m(q5.bars.map(x=>({start_ms:x.t,...x})),now);
+  // Keep the OBSERVATION WINDOW FIXED across repeated CI runs, so a few minutes of shifting
+  // Yahoo retention cannot change sample boundaries or be confused with strategy alpha.
+  const fixedStart='2026-08-20T00:00:00.000Z',fixedEndExclusive='2026-10-16T00:00:00.000Z';
+  const sourceHistory=q5.bars.map(x=>({start_ms:x.t,...x}));
+  const fixedHistory=sourceHistory.filter(x=>x.start_ms>=Date.parse(fixedStart)&&x.start_ms<Date.parse(fixedEndExclusive));
+  const data=clean5m(fixedHistory,now);
+  const fixedDataFingerprint=crypto.createHash('sha256').update(data.bars.map(x=>[
+   x.start_ms,x.open.toFixed(4),x.high.toFixed(4),x.low.toFixed(4),x.close.toFixed(4)
+  ].join(',')).join(';')).digest('hex');
+  const stableStart=Date.parse('2026-09-01T00:00:00.000Z'),stableEnd=Date.parse('2026-10-15T00:00:00.000Z');
+  const stableRange=data.bars.filter(x=>x.start_ms>=stableStart&&x.start_ms<stableEnd);
+  const stableFingerprint=crypto.createHash('sha256').update(stableRange.map(x=>[
+   x.start_ms,x.open.toFixed(4),x.high.toFixed(4),x.low.toFixed(4),x.close.toFixed(4)
+  ].join(',')).join(';')).digest('hex');
   if(data.bars.length<3500||data.quality.excluded.duplicate>0)throw Error('Too little valid genuine 5m data or duplicates');
   const four=build4h(q1.bars.map(x=>({t:x.t,o:x.open,h:x.high,l:x.low,c:x.close})),now);
   if(four.candles.length<1600)throw Error('Not enough 4-hour as-of higher frame history for original Dow trend');
@@ -61,7 +74,14 @@ async function main(){
   const trainData=clean5m(train,now),validData=clean5m(valid,now);
   report.status='gold_5m_two_tracks_tested_research_only';
   report.data_source={five_minute:q5.source,one_hour:q1.source,
-   five_minute_history:{...data.quality,raw_source_timestamp_count:q5.bars.length,first_request_utc:new Date(start5m).toISOString(),
+   five_minute_history:{...data.quality,raw_source_timestamp_count:q5.bars.length,
+    fixed_observation_window_start_utc:fixedStart,fixed_observation_window_end_exclusive_utc:fixedEndExclusive,
+    fingerprint_closed_five_minute_fixed_window_sha256:fixedDataFingerprint,
+    fixed_stable_subrange_start_utc:'2026-09-01T00:00:00Z',
+    fixed_stable_subrange_end_exclusive_utc:'2026-10-15T00:00:00Z',
+    fingerprint_closed_five_minute_stable_subrange_sha256:stableFingerprint,
+    stable_subrange_5m_candle_count:stableRange.length,
+    first_request_utc:new Date(start5m).toISOString(),
     distinct_eligible_US_NY_morning_dates:days.length,train_dates:days.filter(x=>x<split).length,
     validation_dates:days.filter(x=>x>=split).length,split_at_NY_local_date:split},
    four_hour_history:{actual_1h_rows:q1.bars.length,complete_session_four_hour_bars:four.candles.length,quality:four.quality}};
@@ -97,6 +117,7 @@ async function main(){
    'Yahoo 5m GC=F continuous futures is NOT authenticated CME per-contract historical execution or COMEX tick data, nor gold spot XAUUSD',
    'Short Yahoo retained 5m history cannot replicate 2019-2025 5m entries, no fictional synthetic 5m candles',
    'Source omits null/partial 5m OHLC records; impossible to claim zero price gaps and direct tradable liquidity',
+   'Yahoo 5-minute data can revise after repeated pulls; report records SHA256 fingerprint of CLEAN quoted OHLC in fixed UTC date window for reproducibility',
    '5m simulation uses next observed 5m open, OHLC stop-first ambiguity, 10bp assumed roundtrip fees and additional stop slippage',
    '0bp is a nontradable mathematical reference. 1bp/3bp/5bp/10bp and 30bp are HYPOTHETICAL fee scenarios, not broker-specific live spreads',
    '30bp stress is hypothetical; not an observed retail broker spread, commission or actual gold futures market impact',
