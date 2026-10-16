@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T04:15:13.143701+00:00",
-  "commit": "d93ae118b9c19756e47444f41ccc07bfc862eb60",
+  "checked_at_utc": "2026-10-16T06:25:42.337750+00:00",
+  "commit": "1ebc76d164fdad8ced569ceeaac7d8a33423c477",
   "endpoints": {
     "v22-cot-audit": {
       "status": "cot_source_access_ok",
@@ -3943,7 +3943,7 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-10-16T04:15:07.212Z",
+        "as_of": "2026-10-16T06:25:36.324Z",
         "fred": [
           {
             "series": "DFII10",
@@ -4041,21 +4041,21 @@
           {
             "symbol": "GC=F",
             "status": "available",
-            "bars": 12406,
-            "valid_ohlc_bars": 9803,
+            "bars": 12408,
+            "valid_ohlc_bars": 9805,
             "invalid_or_missing_ohlc_bars": 2603,
             "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-10-16T04:05:03.000Z",
+            "last_date": "2026-10-16T06:15:31.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 5281,
-              "2026": 4522
+              "2026": 4524
             },
-            "complete_utc_four_hour_buckets": 2123,
+            "complete_utc_four_hour_buckets": 2124,
             "complete_utc_four_hour_per_year": {
               "2024": 0,
               "2025": 1144,
-              "2026": 979
+              "2026": 980
             },
             "exchange_session_aligned_4h_verified": false
           },
@@ -4131,7 +4131,7 @@
           },
           {
             "date": "2026-10-16",
-            "close": 101.85299682617188
+            "close": 101.93000030517578
           }
         ],
         "usable_for_full_v22_point_in_time": false,
@@ -4161,11 +4161,7 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
-          "tga-identity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-dxy-audit": {
+          "v22-ohlc-integrity": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -4173,15 +4169,19 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
+          "v22-cot-audit": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
+          "v22-dxy-audit": {
+            "valid": false,
+            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          },
           "forecast": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "v22-ohlc-integrity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-cot-audit": {
+          "treasury": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
@@ -4189,11 +4189,11 @@
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "v22-source-audit": {
+          "tga-identity": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           },
-          "treasury": {
+          "v22-source-audit": {
             "valid": false,
             "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
           }
@@ -5304,7 +5304,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-10-16T04:15:09.299Z",
+        "as_of": "2026-10-16T06:25:39.050Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -5421,13 +5421,13 @@
           }
         },
         "ohlc_quality": {
-          "raw": 13024,
+          "raw": 13026,
           "missing_ohlc": 2744,
           "off_hour": 13,
           "unclosed": 1,
           "duplicate_hours": 0,
           "nonconsecutive_groups": 0,
-          "incomplete_groups": 34
+          "incomplete_groups": 33
         },
         "gld_official_holdings_source_coverage": {
           "source": "SPDR GLD official XLSX",
@@ -5451,67 +5451,67 @@
           "real_historical_archive_vintage_verified": false
         },
         "joined_feature_audit": {
-          "candle_count": 2215,
-          "complete": 2019,
+          "candle_count": 2216,
+          "complete": 2020,
           "complete_pct": 91.2,
           "source_coverage": {
             "DFII10": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "DGS10": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "T10YIE": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "RRPONTSYD": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "SOFR": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "IORB": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "WRESBAL": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "DXY": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "COT_NET": {
-              "joined_candles": 2019,
+              "joined_candles": 2020,
               "stale_rejected_candles": 196,
               "pct": 91.2
             },
             "COT_OI": {
-              "joined_candles": 2019,
+              "joined_candles": 2020,
               "stale_rejected_candles": 196,
               "pct": 91.2
             },
             "TGA": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "GLD_TONNES_DELTA": {
-              "joined_candles": 2215,
+              "joined_candles": 2216,
               "stale_rejected_candles": 0,
               "pct": 100
             }
@@ -5537,7 +5537,7 @@
               }
             },
             {
-              "close_utc": "2026-10-16T02:00:00.000Z",
+              "close_utc": "2026-10-16T06:00:00.000Z",
               "all_required_available": true,
               "asof_dates": {
                 "DFII10": "2026-10-13",
@@ -5665,68 +5665,68 @@
             ]
           },
           "2026": {
-            "candles": 975,
-            "candle_count": 975,
-            "complete": 975,
+            "candles": 976,
+            "candle_count": 976,
+            "complete": 976,
             "complete_pct": 100,
             "source_coverage": {
               "DFII10": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "DGS10": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "T10YIE": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "RRPONTSYD": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "SOFR": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "IORB": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "WRESBAL": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "DXY": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "COT_NET": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "COT_OI": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "TGA": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "GLD_TONNES_DELTA": {
-                "joined_candles": 975,
+                "joined_candles": 976,
                 "stale_rejected_candles": 0,
                 "pct": 100
               }
@@ -5752,7 +5752,7 @@
                 }
               },
               {
-                "close_utc": "2026-10-16T02:00:00.000Z",
+                "close_utc": "2026-10-16T06:00:00.000Z",
                 "all_required_available": true,
                 "asof_dates": {
                   "DFII10": "2026-10-13",
@@ -5981,28 +5981,28 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-10-16T04:15:07.000Z",
+        "as_of": "2026-10-16T06:25:37.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
         "counts": {
-          "raw_hours": 12406,
-          "distinct_raw_timestamps": 12406,
-          "valid_ohlc_on_hour_nonduplicated": 9789,
+          "raw_hours": 12408,
+          "distinct_raw_timestamps": 12408,
+          "valid_ohlc_on_hour_nonduplicated": 9791,
           "missing_or_invalid_ohlc": 2603,
           "not_exact_utc_hour": 13,
           "unclosed_current_hour": 1,
           "duplicate_hour": 0,
           "duplicate_timestamp": 0,
           "candidate_buckets": 2144,
-          "closed_session_aligned_4h": 2113,
-          "excluded_incomplete_buckets": 31,
+          "closed_session_aligned_4h": 2114,
+          "excluded_incomplete_buckets": 30,
           "excluded_nonconsecutive_buckets": 0,
           "excluded_unclosed_buckets": 0
         },
         "closed_4h_by_year": {
           "2025": 1138,
-          "2026": 975
+          "2026": 976
         },
         "closed_4h_by_month": [
           {
@@ -6087,7 +6087,7 @@
           },
           {
             "month": "2026-10",
-            "closed_4h_candles": 51
+            "closed_4h_candles": 52
           }
         ],
         "first_accepted_candle": {
@@ -6102,13 +6102,13 @@
         },
         "last_accepted_candle": {
           "session_date": "2026-10-15",
-          "session_slot": 0,
-          "first_hour_utc": "2026-10-15T22:00:00.000Z",
-          "close_time_utc": "2026-10-16T02:00:00.000Z",
-          "open": 4192.10009765625,
-          "high": 4193.89990234375,
-          "low": 4167.5,
-          "close": 4173.39990234375
+          "session_slot": 1,
+          "first_hour_utc": "2026-10-16T02:00:00.000Z",
+          "close_time_utc": "2026-10-16T06:00:00.000Z",
+          "open": 4173.5,
+          "high": 4207.89990234375,
+          "low": 4173.2998046875,
+          "close": 4195.89990234375
         },
         "latest_month": "2026-10",
         "data_quality_gate_passed_for_live_execution": false,
