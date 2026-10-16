@@ -122,6 +122,18 @@ async function main(){
     return_pct:gradedResult.total_return_pct,max_drawdown_pct:gradedResult.max_mark_to_market_drawdown_pct,
     end_equity_usd:gradedResult.final_equity_usd,trade_ledger:gradedResult.full_costed_trade_ledger,
     warning:'These A/A+/A++ are C2 PROXY research confidence grades, NOT official verified original gold V2.2 grade outcomes'};
+  const primaryC2=c2Report.variants.combined.full_portfolio.trade_ledger;
+  const features=primaryC2.map(t=>t.macro_signal_proxy_audit||{});
+  c2Report.posthoc_loss_pattern_diagnostics={
+   all_executed_C2_combined_trades:primaryC2.length,losing:primaryC2.filter(t=>t.pnl_after_costs_usd<0).length,
+   winning:primaryC2.filter(t=>t.pnl_after_costs_usd>0).length,
+   missing_future_bill_auction_gross_amount_imputed:features.filter(x=>x.fiscal_includes_imputed_future_bills===true).length,
+   forecast_tga_decline_and_28day_reserve_decline:features.filter(x=>x.forecast_D3_TGA_usd_bn<0&&x.reserve_28d<0).length,
+   real_yield_and_dxy_both_supporting:features.filter(x=>x.positive_evidence?.usd&&x.positive_evidence?.real_yield).length,
+   managed_money_COT_direction_supporting:features.filter(x=>x.positive_evidence?.CFTC).length,
+   exit_stop_touch_or_open_gap_count:primaryC2.filter(t=>t.reason==='stop_fill_at_stop_or_worse_gap').length,
+   inference_guardrail:'Observed in the same in-sample losing trades. This is a POST-HOC descriptive risk diagnosis, not optimized confirmation for profit.'
+  };
   c2Report.status='C2_dual_mode_gold_v22_proxy_backtest_completed_research_not_official';
   c2Report.provenance_limits=['No certified ALFRED historical vintage for every macro feed','No complete TreasuryDirect all-day ex-ante Net New Cash against actual TGA',
     'GLD tonnes instead of full ETF USD net flows; weekly CFTC managed money instead of daily CME futures OI and volume',
