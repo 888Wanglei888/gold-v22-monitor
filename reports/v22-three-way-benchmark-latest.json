@@ -1,20 +1,20 @@
 {
-  "checked_at_utc": "2026-10-16T02:53:03.680Z",
-  "github_sha": "8bf2070fa6c1b48d1703e8039c4b4bbb9799217e",
+  "checked_at_utc": "2026-10-16T03:02:27.569Z",
+  "github_sha": "bdd3e5d67caada5329199f32ba1910844823cf65",
   "source": "Yahoo GC=F continuous Gold futures hourly research proxy",
   "status": "gold_A_B_benchmarks_completed_C_V22_benchmark_explicitly_blocked",
   "trade_signals_enabled": false,
   "input": {
     "raw_hour_records": 13609,
-    "closed_four_hour_bars": 2314,
+    "closed_four_hour_bars": 2300,
     "quality": {
       "raw": 13609,
-      "missing_ohlc": 2866,
+      "missing_ohlc": 2929,
       "off_hour": 17,
-      "unclosed": 1,
+      "unclosed": 0,
       "duplicate_hours": 0,
       "nonconsecutive_groups": 0,
-      "incomplete_groups": 36
+      "incomplete_groups": 38
     }
   },
   "comparison": {
@@ -24,12 +24,13 @@
       "first_4h_start_utc": "2025-06-02T02:00:00.000Z",
       "last_4h_close_utc": "2026-10-16T02:00:00.000Z",
       "startDate_predeclared": "2025-06-02",
-      "shared_bars": 1698,
+      "shared_bars": 1684,
       "initial_usd": 10000
     },
     "common_assumptions": {
       "gold": "Yahoo continuous GC=F hourly to five-slot 4h New York evening sessions",
       "cost_bps_roundtrip": 10,
+      "macro_gate_applied": false,
       "stop_atr": 1.5,
       "maximum_4h_bars_held_B": 15,
       "unit_risk_fraction_B": 0.005,
@@ -38,19 +39,21 @@
       "B_exposure": "Cash unless strict confirmed Dow daily AND weekly swing trend equals 4h breakout; 0.5pct risk / trade, 5x cap"
     },
     "dow_higher_timeframe_proxy": {
-      "complete_daily_sessions": 449,
-      "completed_weekly_proxies": 96,
-      "excluded_daily_due_missing_4h_slots": 29,
-      "excluded_incomplete_weeks": 2,
+      "complete_daily_sessions": 445,
+      "completed_weekly_proxies": 95,
+      "excluded_daily_due_missing_4h_slots": 31,
+      "excluded_incomplete_weeks": 3,
       "caveat": "Daily uses full five available proxy slots until about NY 14:00, not official COMEX 17:00/settlement; weekly trend uses only prior confirmed pivots"
     },
     "pattern_filter_counts": {
-      "price_candidates": 108,
+      "macro_evidence_missing_or_conflicted": 0,
+      "price_candidates": 107,
       "confirmation_missing_entry_bar": 43,
-      "weekly_or_daily_structure_unconfirmed": 52,
+      "weekly_or_daily_structure_unconfirmed": 51,
       "trend_opposite_to_4h": 22,
       "trend_confirmed_same_direction": 34
     },
+    "blocked_macro_examples": [],
     "A_always_long": {
       "trade_count": 1,
       "win_rate_pct": 100,
@@ -75,14 +78,14 @@
       ]
     },
     "B_dow_higher_frames_plus_4h": {
-      "total_patterns_screened": 108,
+      "total_patterns_screened": 107,
       "valid_trend_price_signals": 34,
       "executed_nonoverlapping_trades": 11,
       "winning_trades": 7,
       "long_trades": 11,
       "short_trades": 0,
-      "percent_4h_bars_in_market": 8.01,
-      "average_4h_bar_notional_exposure_including_cash": 0.04,
+      "percent_4h_bars_in_market": 8.08,
+      "average_4h_bar_notional_exposure_including_cash": 0.041,
       "win_rate_pct": 63.6,
       "total_return_pct": 9.83,
       "max_mark_to_market_drawdown_pct": 2.03,
@@ -118,6 +121,7 @@
           "raw_direction_gold_change_pct": 1.735,
           "same_trade_window_always_long_gold_pct": 1.735,
           "source_dow_confirmed_at_utc": "2025-09-29T10:00:00.000Z",
+          "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
         {
@@ -133,6 +137,7 @@
           "raw_direction_gold_change_pct": 0.149,
           "same_trade_window_always_long_gold_pct": 0.149,
           "source_dow_confirmed_at_utc": "2025-10-06T06:00:00.000Z",
+          "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
         {
@@ -148,6 +153,7 @@
           "raw_direction_gold_change_pct": 4.324,
           "same_trade_window_always_long_gold_pct": 4.324,
           "source_dow_confirmed_at_utc": "2025-10-13T18:00:00.000Z",
+          "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
         {
@@ -163,6 +169,7 @@
           "raw_direction_gold_change_pct": -1.458,
           "same_trade_window_always_long_gold_pct": -1.458,
           "source_dow_confirmed_at_utc": "2025-10-17T02:00:00.000Z",
+          "macro_signal_proxy_audit": null,
           "reason": "stop_fill_at_stop_or_worse_gap"
         },
         {
@@ -178,6 +185,7 @@
           "raw_direction_gold_change_pct": 3.195,
           "same_trade_window_always_long_gold_pct": 3.195,
           "source_dow_confirmed_at_utc": "2025-11-10T07:00:00.000Z",
+          "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
         {
@@ -193,6 +201,7 @@
           "raw_direction_gold_change_pct": 4.176,
           "same_trade_window_always_long_gold_pct": 4.176,
           "source_dow_confirmed_at_utc": "2026-01-20T15:00:00.000Z",
+          "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
         {
@@ -208,6 +217,7 @@
           "raw_direction_gold_change_pct": 10.178,
           "same_trade_window_always_long_gold_pct": 10.178,
           "source_dow_confirmed_at_utc": "2026-01-26T07:00:00.000Z",
+          "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
         {
@@ -223,6 +233,7 @@
           "raw_direction_gold_change_pct": -1.617,
           "same_trade_window_always_long_gold_pct": -1.617,
           "source_dow_confirmed_at_utc": "2026-01-29T07:00:00.000Z",
+          "macro_signal_proxy_audit": null,
           "reason": "stop_fill_at_stop_or_worse_gap"
         }
       ]
@@ -253,7 +264,8 @@
       "Future weekly/daily bar revisions are not archived, prior confirmed pivot timing is enforced",
       "Sample was already examined in prior V2.2 development, so no true untouched 2025-26 out-of-sample evidence",
       "B is a fixed Dow-inspired pivot proxy and has NOT been established as the exact original agreed Dow rules",
-      "C is never represented as zero returns or zero trades; genuine V2.2 remains scientifically unmeasured"
+      "C is never represented as zero returns or zero trades; genuine V2.2 remains scientifically unmeasured",
+      "entryGate, when enabled, is only a fixed as-of C1 research proxy overlay and does not authorize an original V2.2 live trading signal"
     ]
   }
 }
