@@ -18,6 +18,9 @@ assert(p.highs.length>=2&&p.lows.length>=2);
 const pre=classify(out,Date.UTC(2025,0,8));
 assert.equal(pre.weekly.direction,null);
 const later=classify(out,Date.UTC(2025,4,1));assert(later.daily.frames>10);
+const sampleSun=closedHigherFrames([{session_date:'2025-03-09',slot:0,start_ms:Date.UTC(2025,2,9,22),close_ms:Date.UTC(2025,2,10,2),open:100,high:102,low:99,close:101},
+ ...[1,2,3,4].map(i=>({session_date:'2025-03-09',slot:i,start_ms:Date.UTC(2025,2,9,22)+i*4*3600000,close_ms:Date.UTC(2025,2,9,22)+(i+1)*4*3600000,open:101,high:102,low:99,close:101}))]);
+assert.equal(sampleSun.daily[0].label,'2025-03-10','Sunday 18:00 NY Globex session belongs to Monday CME trade date');
 const drop=closedHigherFrames(bars.filter(x=>!(x.session_date===dates[5]&&x.slot===4)));
 assert.equal(drop.daily.length,dates.length-1);
 console.log('Dow-style confirmed daily weekly swing proxy time gating and incomplete-day safeguards passed');
