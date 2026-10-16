@@ -13,7 +13,7 @@ assert.equal(base.bars.length,bars.length);
 assert.equal(base.audit.invalid,0);
 assert.equal(base.audit.duplicates,0);
 assert.equal(locateHourly(base.bars,base.bars[10].start_ms),10);
-assert(Number.isFinite(countedATR1h(base.bars,22)));
+assert(Number.isFinite(countedATR1h(base.bars,35)));
 assert.equal(countedATR1h(base.bars,20),null,'Cross-day 4-hour market session gap must invalidate 1h ATR lookback');
 const malicious=prepareHourly([...bars,bars[50],{...bars[51],high:bars[51].close-100}],T+131*24*H);
 assert(malicious.audit.invalid>0);assert(malicious.audit.duplicates>0);
