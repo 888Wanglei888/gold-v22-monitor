@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T07:26:03.770Z",
-  "github_sha": "60b07636ed338d3d69556dd56f752555e5c99ef2",
+  "checked_at_utc": "2026-10-16T07:26:27.394Z",
+  "github_sha": "04c675811c7d96a2ed1938a909b4000ec875b3f8",
   "status": "gold_three_way_B1_4h_B2_1h_B3_1h_tested_source_research_only",
   "live_signals_enabled": false,
   "full_V22_gold_macro_study_verified": false,
@@ -12,12 +12,12 @@
     "first_used_hour_utc": "2024-12-01T23:00:00.000Z",
     "last_used_hour_closed_utc": "2026-10-15T18:00:00.000Z",
     "raw_yahoo_hour_bars": 13614,
-    "clean_raw_1h_bars": 10660,
-    "completely_accounted_1h_candles": 9196,
-    "complete_4h_candles": 2299,
-    "market_hours_without_complete_4h_excluded": 1464,
-    "hourly_source_sha256": "e437f9f568b44ebd3bba009eaf73b7741dff17ddba532313a46a5231734db54d",
-    "stability_2026_Jan_to_Sep_fingerprint_sha256": "b42791665461d2cdb8492958b564d4aeb4031ae07465ef8484e29c6ba19517ae",
+    "clean_raw_1h_bars": 10723,
+    "completely_accounted_1h_candles": 9252,
+    "complete_4h_candles": 2313,
+    "market_hours_without_complete_4h_excluded": 1471,
+    "hourly_source_sha256": "bf313d86cae38c5dace784b12ad81930013b18d16ad4fa22bc83064f588adbf2",
+    "stability_2026_Jan_to_Sep_fingerprint_sha256": "c2d4164b7be9bd213b165d01678e943fa7ec05d6bfdd7a7d38184c9a23c6b312",
     "source": {
       "symbol": "GC=F",
       "full_exchange_name": "COMEX",
@@ -26,20 +26,20 @@
       "timezone": "America/New_York",
       "raw_quality": {
         "raw": 13605,
-        "invalid": 2929,
+        "invalid": 2866,
         "unclosed": 0,
         "off_grid": 16,
         "duplicates": 0,
-        "gaps_over_1h": 478
+        "gaps_over_1h": 480
       },
       "four_hour_quality": {
-        "raw": 10660,
+        "raw": 10723,
         "missing_ohlc": 0,
         "off_hour": 0,
         "unclosed": 0,
         "duplicate_hours": 0,
         "nonconsecutive_groups": 0,
-        "incomplete_groups": 38
+        "incomplete_groups": 37
       }
     }
   },
@@ -65,18 +65,18 @@
   },
   "measured_technicals": {
     "B1": {
-      "raw_patterns": 150,
-      "not_trending": 73,
+      "raw_patterns": 151,
+      "not_trending": 74,
       "entry_1h_missing": 0,
       "old_signal": 43,
       "accepted": 34
     },
     "B2": {
-      "hourly_breakout_seen": 149,
+      "hourly_breakout_seen": 148,
       "confirmed_1h": 125,
       "confirmed_higher_timeframe": 23,
       "missing_closed_4h_ATR": 0,
-      "weekend_or_hourly_gap": 4774,
+      "weekend_or_hourly_gap": 4810,
       "candidates_after_start": 23
     },
     "B3": {
@@ -93,7 +93,7 @@
       "return_pct": 9.83,
       "max_hourly_equity_drawdown_pct": 2.03,
       "final_account_usd": 10983.18,
-      "exposure_hour_pct": 7.94,
+      "exposure_hour_pct": 7.88,
       "average_trade_pnl_usd": 89.38,
       "cost_bps_roundtrip": 10,
       "execution_audit": {
@@ -350,10 +350,10 @@
       "trades": 14,
       "winners": 9,
       "win_rate_pct": 64.3,
-      "return_pct": 8.29,
+      "return_pct": 8.3,
       "max_hourly_equity_drawdown_pct": 2.84,
-      "final_account_usd": 10829.46,
-      "exposure_hour_pct": 10.02,
+      "final_account_usd": 10829.55,
+      "exposure_hour_pct": 9.94,
       "average_trade_pnl_usd": 59.25,
       "cost_bps_roundtrip": 10,
       "execution_audit": {
@@ -379,7 +379,7 @@
         "2026": {
           "trades": 3,
           "wins": 3,
-          "net_pnl_usd": 236.92,
+          "net_pnl_usd": 237.01,
           "win_rate_pct": 100
         }
       },
@@ -650,15 +650,15 @@
           "original_signal_known_utc": "2026-07-23T15:00:00.000Z",
           "entry_utc": "2026-07-23T15:00:00.000Z",
           "exit_utc": "2026-07-28T15:00:00.000Z",
-          "entry_px": 4061.5,
+          "entry_px": 4061.6,
           "exit_px": 4023.8,
-          "stop_at_entry": 4119.764,
+          "stop_at_entry": 4119.864,
           "stop_width_from_prior_complete_4h_ATR": 58.264,
           "prior_4h_ATR": 38.843,
           "prior_1h_ATR": 15.907,
           "entry_mode": "next_1h_market_open",
-          "pnl_after_costs_usd": 31.19,
-          "equity_after_usd": 10829.46,
+          "pnl_after_costs_usd": 31.28,
+          "equity_after_usd": 10829.55,
           "fees_usd": 3.75,
           "why_closed": "max_60_observed_1h_bars",
           "simulated_fractional_oz": 0.9267,
@@ -735,7 +735,7 @@
         "win_rate_pct": 64.3,
         "return_pct": 8.9,
         "max_hourly_equity_drawdown_pct": 2.76,
-        "final_account_usd": 10890.12
+        "final_account_usd": 10890.22
       },
       "B3_confirmed_4h_plus_1h_limit_retest": {
         "trades": 1,
@@ -758,7 +758,7 @@
         "win_rate_pct": 64.3,
         "return_pct": 8.77,
         "max_hourly_equity_drawdown_pct": 2.77,
-        "final_account_usd": 10876.62
+        "final_account_usd": 10876.71
       },
       "B3_confirmed_4h_plus_1h_limit_retest": {
         "trades": 1,
@@ -781,7 +781,7 @@
         "win_rate_pct": 64.3,
         "return_pct": 8.63,
         "max_hourly_equity_drawdown_pct": 2.79,
-        "final_account_usd": 10863.12
+        "final_account_usd": 10863.22
       },
       "B3_confirmed_4h_plus_1h_limit_retest": {
         "trades": 1,
@@ -804,7 +804,7 @@
         "win_rate_pct": 64.3,
         "return_pct": 6.96,
         "max_hourly_equity_drawdown_pct": 3.01,
-        "final_account_usd": 10695.76
+        "final_account_usd": 10695.85
       },
       "B3_confirmed_4h_plus_1h_limit_retest": {
         "trades": 1,
@@ -823,7 +823,7 @@
       "return_pct": 2.15,
       "max_hourly_equity_drawdown_pct": 2.76,
       "final_account_usd": 10215.36,
-      "exposure_hour_pct": 5.81,
+      "exposure_hour_pct": 5.76,
       "average_trade_pnl_usd": 23.93,
       "cost_bps_roundtrip": 10,
       "execution_audit": {
