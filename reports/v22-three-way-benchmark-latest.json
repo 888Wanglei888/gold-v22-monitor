@@ -1,17 +1,17 @@
 {
-  "checked_at_utc": "2026-10-16T03:05:57.293Z",
-  "github_sha": "b97d80a498eedb7f07486e3bb6c9461d891962a2",
+  "checked_at_utc": "2026-10-16T03:32:15.535Z",
+  "github_sha": "7c545120cacaf1a054a35acc850d59d68b2f4be1",
   "source": "Yahoo GC=F continuous Gold futures hourly research proxy",
   "status": "gold_A_B_benchmarks_completed_C_V22_benchmark_explicitly_blocked",
   "trade_signals_enabled": false,
   "input": {
-    "raw_hour_records": 13609,
+    "raw_hour_records": 13610,
     "closed_four_hour_bars": 2314,
     "quality": {
-      "raw": 13609,
+      "raw": 13610,
       "missing_ohlc": 2866,
       "off_hour": 17,
-      "unclosed": 0,
+      "unclosed": 1,
       "duplicate_hours": 0,
       "nonconsecutive_groups": 0,
       "incomplete_groups": 37
@@ -31,6 +31,7 @@
       "gold": "Yahoo continuous GC=F hourly to five-slot 4h New York evening sessions",
       "cost_bps_roundtrip": 10,
       "macro_gate_applied": false,
+      "graded_risk_used": false,
       "stop_atr": 1.5,
       "maximum_4h_bars_held_B": 15,
       "unit_risk_fraction_B": 0.005,
