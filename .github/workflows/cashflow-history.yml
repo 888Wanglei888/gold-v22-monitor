@@ -6,6 +6,8 @@ on:
       - scripts/v22-cashflow-history.js
       - lib/endpoints/v22-cashflow-core.js
       - lib/endpoints/v22-fiscal-composite-core.js
+      - lib/endpoints/v22-fiscal-expectation-core.js
+      - tests/v22-fiscal-expectation-core.test.js
       - lib/endpoints/v22-tax-calendar.js
       - lib/endpoints/v22-fiscal-price-core.js
       - lib/endpoints/v22-fiscal-revision-core.js
@@ -30,6 +32,7 @@ jobs:
           node --check scripts/v22-cashflow-history.js
           node tests/v22-cashflow-core.test.js
           node tests/v22-fiscal-composite-core.test.js
+          node tests/v22-fiscal-expectation-core.test.js
           node tests/v22-tax-calendar.test.js
           node tests/v22-fiscal-price-core.test.js
           node tests/v22-fiscal-revision-core.test.js
@@ -75,4 +78,8 @@ jobs:
           assert z.get('rolling_z_valid_days',0)>100
           assert z.get('gold_4h_price_crosscheck',{}).get('counts',{}).get('revision_z_record_available',0)>30
           assert z.get('trade_signals_enabled') is False
+          ex=j.get('exante_fiscal_predicted_event_prepricing',{}).get('by_threshold',{}).get('30bn',{})
+          assert ex.get('status')=='fiscal_predicted_event_prepricing_walk_forward_research_only'
+          assert ex.get('by_horizon',{}).get('T-3',{}).get('overall',{}).get('exante_selected_event_days',0)>=10
+          assert ex.get('trade_signals_enabled') is False
           PY
