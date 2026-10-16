@@ -1,0 +1,58 @@
+name: Validate Gold V2.2 Pre-Event Expectation Pricing
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/v22-expectation-event-audit.js
+      - lib/endpoints/v22-expectation-event-core.js
+      - tests/v22-expectation-event-core.test.js
+      - .github/workflows/v22-expectation-event.yml
+concurrency:
+  group: v22-pre-event-expectation-pricing
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  pre-event:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prove events known before price action and no hindsight event selection
+        run: |
+          node --check lib/endpoints/v22-expectation-event-core.js
+          node --check scripts/v22-expectation-event-audit.js
+          node tests/v22-expectation-event-core.test.js
+      - name: Retrieve actual official Treasury announcements and actual gold hourly proxy prices
+        run: node scripts/v22-expectation-event-audit.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v22-pre-event-treasury-expectation-research
+          path: reports/v22-expectation-event-latest.json
+          retention-days: 21
+      - name: Fail closed on missing event study evidence
+        run: |
+          python3 - <<'PY'
+          import json
+          data=json.load(open('reports/v22-expectation-event-latest.json'))
+          assert data.get('status')=='pre_event_treasury_expectation_pricing_research_completed', data.get('error')
+          assert data.get('trade_signals_enabled') is False
+          assert data.get('by_threshold',{}).get('30bn_bill_known_net',{}).get('by_horizon',{}).get('T-3',{}).get('overall',{}).get('pre_event_price_coverage',0)>=20
+          PY
+      - name: Publish aggregated observational results, never trading signals
+        if: ${{ !cancelled() }}
+        run: |
+          cp reports/v22-expectation-event-latest.json /tmp/v22-event-report.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/v22-event-report.json reports/v22-expectation-event-latest.json
+            git add reports/v22-expectation-event-latest.json
+            git commit -m "Record ex-ante Treasury gold anticipation event study without hindsight" || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 4
+          done
+          exit 1
