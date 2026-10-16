@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T06:44:47.251271+00:00",
-  "commit": "9a6a666c958fecdcd043cb63d8aae420b3f5c30c",
+  "checked_at_utc": "2026-10-16T06:46:32.383749+00:00",
+  "commit": "492183751849afcbb6e118b6ec6ff3b1da987a3c",
   "endpoints": {
     "v22-cot-audit": {
       "status": "cot_source_access_ok",
