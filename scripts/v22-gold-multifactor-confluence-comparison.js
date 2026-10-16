@@ -163,7 +163,7 @@ async function main(){
   const avg=x=>x.length?x.reduce((a,b)=>a+b,0)/x.length:null,rd=x=>Number.isFinite(x)?+x.toFixed(3):null;
   const non=[];let prev=-Infinity;for(const x of rows)if(x.index-prev>=h){non.push(x);prev=x.index}
   return {n,wins,hit_pct:n?rd(100*wins/n):null,longs:rows.filter(x=>x.side===1).length,shorts:rows.filter(x=>x.side===-1).length,
-   mean_net_10bp_pct:rd(avg(rows.map(x=>x.side*x.fwd[h]-.1))),same_event_long_net_pct:rd(avg(rows.map(x=>x.fwd[h]-.1))),
+   mean_net_10bp_pct:rd(avg(rows.map(x=>x.side*x.fwd[h]-.1))),same_event_long_net_pct:rd(avg(rows.map(x=>x.fwd[h]-.1))),same_event_long_hit_pct:n?rd(100*rows.filter(x=>x.fwd[h]>0).length/n):null,
    matched_price_only_hit_pct:n?rd(100*rows.filter(x=>x.P*x.fwd[h]>0).length/n):null,
    matched_price_only_net_pct:rd(avg(rows.map(x=>x.P*x.fwd[h]-.1))),nonoverlap_n:non.length,
    nonoverlap_hit_pct:non.length?rd(100*non.filter(x=>x.side*x.fwd[h]>0).length/non.length):null,
