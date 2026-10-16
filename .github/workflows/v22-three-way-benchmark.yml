@@ -1,0 +1,68 @@
+name: Compare gold buyhold Dow and original V2.2 research
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/v22-three-way-benchmark.js
+      - lib/endpoints/v22-benchmark-core.js
+      - lib/endpoints/v22-dow-proxy-core.js
+      - tests/v22-benchmark-core.test.js
+      - tests/v22-dow-proxy-core.test.js
+      - .github/workflows/v22-three-way-benchmark.yml
+concurrency:
+  group: v22-comparable-strategy-benchmark
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify strict closed higher timeframe swings and costed same-window ledger
+        run: |
+          node --check lib/endpoints/v22-benchmark-core.js
+          node --check lib/endpoints/v22-dow-proxy-core.js
+          node --check scripts/v22-three-way-benchmark.js
+          node tests/v22-dow-proxy-core.test.js
+          node tests/v22-benchmark-core.test.js
+          node tests/v22-price-pattern-core.test.js
+      - name: Measure gold buy-and-hold vs Dow plus 4h from actual proxy hourly bars
+        run: node scripts/v22-three-way-benchmark.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gold-v22-three-way-research-accounting
+          path: reports/v22-three-way-benchmark-latest.json
+          retention-days: 21
+      - name: Fail closed if C is falsely claimed verified or A/B unmeasured
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('reports/v22-three-way-benchmark-latest.json'))
+          assert d['status']=='gold_A_B_benchmarks_completed_C_V22_benchmark_explicitly_blocked',d.get('error')
+          a=d['comparison']['A_always_long'];b=d['comparison']['B_dow_higher_frames_plus_4h'];c=d['comparison']['C_original_V22']
+          assert d['comparison']['time_window']['shared_bars']>1000
+          assert isinstance(a['total_return_pct'],(int,float)) and isinstance(b['total_return_pct'],(int,float))
+          assert c['win_rate_pct'] is None and c['total_return_pct'] is None
+          assert d['trade_signals_enabled'] is False
+          PY
+      - name: Archive honest A and B, C explicitly unavailable
+        if: ${{ !cancelled() }}
+        run: |
+          test -s reports/v22-three-way-benchmark-latest.json
+          cp reports/v22-three-way-benchmark-latest.json /tmp/v22-three-way-benchmark.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p reports
+            cp /tmp/v22-three-way-benchmark.json reports/v22-three-way-benchmark-latest.json
+            git add reports/v22-three-way-benchmark-latest.json
+            git commit -m "Store gold buyhold vs Dow-confirmed costed results; full V2.2 blocked" || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 4
+          done
+          exit 1
