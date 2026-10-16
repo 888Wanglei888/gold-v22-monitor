@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T03:32:15.535Z",
-  "github_sha": "7c545120cacaf1a054a35acc850d59d68b2f4be1",
+  "checked_at_utc": "2026-10-16T04:09:02.067Z",
+  "github_sha": "ae97d8c414fd4ca0c397703514e0893d723c050c",
   "source": "Yahoo GC=F continuous Gold futures hourly research proxy",
   "status": "gold_A_B_benchmarks_completed_C_V22_benchmark_explicitly_blocked",
   "trade_signals_enabled": false,
@@ -11,7 +11,7 @@
       "raw": 13610,
       "missing_ohlc": 2866,
       "off_hour": 17,
-      "unclosed": 1,
+      "unclosed": 0,
       "duplicate_hours": 0,
       "nonconsecutive_groups": 0,
       "incomplete_groups": 37
@@ -122,6 +122,7 @@
           "raw_direction_gold_change_pct": 3.077,
           "same_trade_window_always_long_gold_pct": 3.077,
           "source_dow_confirmed_at_utc": "2025-08-28T18:00:00.000Z",
+          "atr_14_at_signal": 14.957118443080358,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -138,6 +139,7 @@
           "raw_direction_gold_change_pct": -0.095,
           "same_trade_window_always_long_gold_pct": -0.095,
           "source_dow_confirmed_at_utc": "2025-09-08T18:00:00.000Z",
+          "atr_14_at_signal": 25.485700334821427,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -154,6 +156,7 @@
           "raw_direction_gold_change_pct": -0.742,
           "same_trade_window_always_long_gold_pct": -0.742,
           "source_dow_confirmed_at_utc": "2025-09-16T06:00:00.000Z",
+          "atr_14_at_signal": 18.314278738839285,
           "macro_signal_proxy_audit": null,
           "reason": "stop_fill_at_stop_or_worse_gap"
         },
@@ -170,6 +173,7 @@
           "raw_direction_gold_change_pct": 1.735,
           "same_trade_window_always_long_gold_pct": 1.735,
           "source_dow_confirmed_at_utc": "2025-09-29T10:00:00.000Z",
+          "atr_14_at_signal": 21.549996512276785,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -186,6 +190,7 @@
           "raw_direction_gold_change_pct": 0.149,
           "same_trade_window_always_long_gold_pct": 0.149,
           "source_dow_confirmed_at_utc": "2025-10-06T06:00:00.000Z",
+          "atr_14_at_signal": 26.114275251116073,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -202,6 +207,7 @@
           "raw_direction_gold_change_pct": 4.324,
           "same_trade_window_always_long_gold_pct": 4.324,
           "source_dow_confirmed_at_utc": "2025-10-13T18:00:00.000Z",
+          "atr_14_at_signal": 44.63575962611607,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -218,6 +224,7 @@
           "raw_direction_gold_change_pct": -1.458,
           "same_trade_window_always_long_gold_pct": -1.458,
           "source_dow_confirmed_at_utc": "2025-10-17T02:00:00.000Z",
+          "atr_14_at_signal": 42.042794363839285,
           "macro_signal_proxy_audit": null,
           "reason": "stop_fill_at_stop_or_worse_gap"
         },
@@ -234,6 +241,7 @@
           "raw_direction_gold_change_pct": 3.195,
           "same_trade_window_always_long_gold_pct": 3.195,
           "source_dow_confirmed_at_utc": "2025-11-10T07:00:00.000Z",
+          "atr_14_at_signal": 27.192853655133927,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -250,6 +258,7 @@
           "raw_direction_gold_change_pct": 4.176,
           "same_trade_window_always_long_gold_pct": 4.176,
           "source_dow_confirmed_at_utc": "2026-01-20T15:00:00.000Z",
+          "atr_14_at_signal": 34.864327566964285,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -266,6 +275,7 @@
           "raw_direction_gold_change_pct": 10.178,
           "same_trade_window_always_long_gold_pct": 10.178,
           "source_dow_confirmed_at_utc": "2026-01-26T07:00:00.000Z",
+          "atr_14_at_signal": 52.76429966517857,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -282,6 +292,7 @@
           "raw_direction_gold_change_pct": -1.617,
           "same_trade_window_always_long_gold_pct": -1.617,
           "source_dow_confirmed_at_utc": "2026-01-29T07:00:00.000Z",
+          "atr_14_at_signal": 60.28564453125,
           "macro_signal_proxy_audit": null,
           "reason": "stop_fill_at_stop_or_worse_gap"
         }
@@ -300,6 +311,7 @@
           "raw_direction_gold_change_pct": 1.735,
           "same_trade_window_always_long_gold_pct": 1.735,
           "source_dow_confirmed_at_utc": "2025-09-29T10:00:00.000Z",
+          "atr_14_at_signal": 21.549996512276785,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -316,6 +328,7 @@
           "raw_direction_gold_change_pct": 0.149,
           "same_trade_window_always_long_gold_pct": 0.149,
           "source_dow_confirmed_at_utc": "2025-10-06T06:00:00.000Z",
+          "atr_14_at_signal": 26.114275251116073,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -332,6 +345,7 @@
           "raw_direction_gold_change_pct": 4.324,
           "same_trade_window_always_long_gold_pct": 4.324,
           "source_dow_confirmed_at_utc": "2025-10-13T18:00:00.000Z",
+          "atr_14_at_signal": 44.63575962611607,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -348,6 +362,7 @@
           "raw_direction_gold_change_pct": -1.458,
           "same_trade_window_always_long_gold_pct": -1.458,
           "source_dow_confirmed_at_utc": "2025-10-17T02:00:00.000Z",
+          "atr_14_at_signal": 42.042794363839285,
           "macro_signal_proxy_audit": null,
           "reason": "stop_fill_at_stop_or_worse_gap"
         },
@@ -364,6 +379,7 @@
           "raw_direction_gold_change_pct": 3.195,
           "same_trade_window_always_long_gold_pct": 3.195,
           "source_dow_confirmed_at_utc": "2025-11-10T07:00:00.000Z",
+          "atr_14_at_signal": 27.192853655133927,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -380,6 +396,7 @@
           "raw_direction_gold_change_pct": 4.176,
           "same_trade_window_always_long_gold_pct": 4.176,
           "source_dow_confirmed_at_utc": "2026-01-20T15:00:00.000Z",
+          "atr_14_at_signal": 34.864327566964285,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -396,6 +413,7 @@
           "raw_direction_gold_change_pct": 10.178,
           "same_trade_window_always_long_gold_pct": 10.178,
           "source_dow_confirmed_at_utc": "2026-01-26T07:00:00.000Z",
+          "atr_14_at_signal": 52.76429966517857,
           "macro_signal_proxy_audit": null,
           "reason": "time_exit"
         },
@@ -412,6 +430,7 @@
           "raw_direction_gold_change_pct": -1.617,
           "same_trade_window_always_long_gold_pct": -1.617,
           "source_dow_confirmed_at_utc": "2026-01-29T07:00:00.000Z",
+          "atr_14_at_signal": 60.28564453125,
           "macro_signal_proxy_audit": null,
           "reason": "stop_fill_at_stop_or_worse_gap"
         }
