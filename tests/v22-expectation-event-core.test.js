@@ -9,7 +9,7 @@ for(let i=0;i<330;i++){
  candles.push({start_ms:t,close_ms:t+H,open:close,close:close+.02,high:close+.15,low:close-.15});
 }
 const bill={auction_date:'2025-06-05',announcemt_date:'2025-06-04',issue_date:'2025-06-16',maturity_date:'2025-07-16',cusip:'AB1234567',security_type:'Bill',offering_amt:'70000000000',total_accepted:'70000000000'};
-const notKnown={...bill,auction_date:'2025-06-17',announcemt_date:'2025-06-16',issue_date:'2025-06-18',maturity_date:'2025-08-16',cusip:'CD1234567',offering_amt:'120000000000'};
+const notKnown={...bill,auction_date:'2025-06-17',announcemt_date:'2025-06-17',issue_date:'2025-06-18',maturity_date:'2025-08-16',cusip:'CD1234567',offering_amt:'120000000000'};
 const known=normalizeAnnouncements([bill]).events;
 const audit=study({auctionEvents:known,goldCandles:candles,startDate:'2025-06-16',endDate:'2025-06-18',thresholdUsdBillions:50});
 assert(audit.by_horizon['T-3'].bill_only.screened_known_events>=1);
