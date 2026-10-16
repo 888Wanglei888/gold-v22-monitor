@@ -53,10 +53,18 @@ async function main(){
  console.log('SOURCE',JSON.stringify({transactions:transactions.length,tga:tb.days.length,debtdays:debt.coverage.complete_days,auctionEvents:auction.events.length,faults:cb.faults}));
  // Extending training to 2021 replaces unavailable five-year prior-seasonality
  // with available legacy-schema Treasury cashflows; formula is unchanged.
- const model=evaluate(tb.days,cb.days,auction.events,2025,debt.daily,{include_decision_forecasts:true,include_revision_factors:true,past_cashflow_lookback_days:1250});
+ // Exclude only source dates with >$1bn DTS cashflow/TGA identity gap from
+ // forecasting input, preserving them in the audit and observed TGA history.
+ const priorBalance=new Map(tb.days.map((x,i)=>[x.date,i?tb.days[i-1].balance:null]));
+ const balanceMap=new Map(tb.days.map(x=>[x.date,x.balance]));
+ const unusable=cb.days.filter(x=>priorBalance.has(x.date)&&priorBalance.get(x.date)!==null&&
+  Math.abs(balanceMap.get(x.date)-priorBalance.get(x.date)-x.cashflow_net)>1000);
+ const excluded=new Set(unusable.map(x=>x.date));
+ const trustedCashDays=cb.days.filter(x=>!excluded.has(x.date));
+ const model=evaluate(tb.days,trustedCashDays,auction.events,2025,debt.daily,{include_decision_forecasts:true,include_revision_factors:true,past_cashflow_lookback_days:1250});
  const scores=Object.fromEntries(['D+1','D+3','D+5'].map(k=>[k,model.scored[k]?.overall??null]));
  const result={audit_utc:new Date().toISOString(),source:'fiscaldata.treasury.gov official DTS + Treasury auction data',trusted_complete:false,
-   legacy_schema_and_subtotals_corrected:true,training_cashflow_lookback_days:1250,experimental_fiveyear_backtest:true,years:identityYears,total:identity,
+   legacy_schema_and_subtotals_corrected:true,identity_excluded_dates:unusable.map(x=>x.date),training_cashflow_lookback_days:1250,experimental_fiveyear_backtest:true,years:identityYears,total:identity,
    raw_dts_cashflow_rows:transactions.length,verified_tga_days:tb.days.length,auction_events:auction.events.length,
    debt_complete_days:debt.coverage.complete_days,cashflow_faults:cb.faults,
    fiscal_forecast_error_summary:scores,forecast_decision_count:model.research_only_decision_forecasts?.length??null,
