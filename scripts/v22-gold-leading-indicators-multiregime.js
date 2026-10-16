@@ -102,6 +102,8 @@ async function main(){
   const metrics={name:f.name,threshold_abs_calibrated:round(threshold,6),calibration_period:byPeriod.calibration.length>=60?'2019-2022':'2024 partial (CFTC only)',coverage_events:events.length,
    horizons:{}};
   for(const h of [1,3,5])metrics.horizons[h]=Object.fromEntries(periods.map(p=>[p.name,assess(byPeriod[p.name],h,threshold)]));
+  metrics.bullish_3day=Object.fromEntries(periods.map(p=>[p.name,assess(byPeriod[p.name].filter(x=>x.pred===1),3,threshold)]));
+  metrics.bearish_3day=Object.fromEntries(periods.map(p=>[p.name,assess(byPeriod[p.name].filter(x=>x.pred===-1),3,threshold)]));
   metrics.correlation_check=Object.fromEntries(periods.map(p=>{const z=byPeriod[p.name];return [p.name,{lagged_factor_vs_PRIOR_gold5:round(corr(z.map(x=>x.delta*f.sign),z.map(x=>x.past_gold_5d_pct))),lagged_factor_vs_FUTURE_gold3:round(corr(z.filter(x=>x.fwd[3]!=null).map(x=>x.delta*f.sign),z.filter(x=>x.fwd[3]!=null).map(x=>x.fwd[3])))}]}));
   result.indicators[f.id]=metrics;
  }
