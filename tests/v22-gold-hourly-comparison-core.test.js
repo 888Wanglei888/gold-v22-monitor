@@ -17,7 +17,7 @@ assert(Number.isFinite(countedATR1h(base.bars,35)));
 assert.equal(countedATR1h(base.bars,20),null,'Cross-day 4-hour market session gap must invalidate 1h ATR lookback');
 const malicious=prepareHourly([...bars,bars[50],{...bars[51],start_ms:T+130*24*H,high:bars[51].close-100}],T+131*24*H);
 assert(malicious.audit.invalid>0);assert(malicious.audit.duplicates>0);
-const eIdx=90,ev={entry_index:eIdx,entry_utc:new Date(bars[eIdx].start_ms).toISOString(),known_at_ms:base.bars[eIdx-1].close_ms,
+const eIdx=95,ev={entry_index:eIdx,entry_utc:new Date(bars[eIdx].start_ms).toISOString(),known_at_ms:base.bars[eIdx-1].close_ms,
  dir:'long',stop_width:5,atr4:5,atr1:3,signal_type:'fixed_test',market_entry:true,limit_entry:false};
 const sim=simulate(base.bars,[ev],{startMs:bars[80].start_ms,initialCash:10000,costBps:10,maxLeverage:5,riskFraction:.005,stopDurationHours:60});
 assert.equal(sim.trades,1);assert(sim.trade_ledger[0].entry_utc===ev.entry_utc);
