@@ -92,7 +92,7 @@ async function main(){
  }
  // Cost stress test: same signals, 0, 10 and 20 bps round-trip, full recalc.
  const costs={};
- for(const mode of ['no_filter','price_TGA_COT','price_macro1_flow1','price_TGA_or_COT']){
+ for(const mode of ['no_filter','price_GLD','price_two_flows_any','price_TGA_COT','price_macro1_flow1','price_TGA_or_COT']){
   costs[mode]={};
   for(const c of [0,10,20,35]){
    const x=mode==='no_filter'?null:makeGate(mode);
