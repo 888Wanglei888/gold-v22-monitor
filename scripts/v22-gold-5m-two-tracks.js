@@ -109,6 +109,28 @@ async function main(){
    generated_5m_closed_signal_counts:base.generated_signal_counts,
    eligible_5m_NY_session_bars:base.eligible_5m_entry_bars,
    verified_valid_30m_opening_range_dates:base.valid_NY_opening_ranges};
+  // Compare identical historical subrange fingerprints from separate live pulls; do NOT
+  // silently treat quote source revisions as meaningful strategy alpha.
+  const priorReportFile='reports/v22-gold-5m-two-tracks-latest.json';
+  if(fs.existsSync(priorReportFile)){
+   try{
+    const prior=JSON.parse(fs.readFileSync(priorReportFile,'utf8'));
+    const old=prior.data_source?.five_minute_history;
+    const current=report.data_source.five_minute_history;
+    const oldDigest=old?.fingerprint_closed_five_minute_stable_subrange_sha256;
+    const newDigest=current.fingerprint_closed_five_minute_stable_subrange_sha256;
+    report.same_fixed_subrange_repeated_source_integrity={
+     previous_report_utc:prior.created_utc||null,
+     old_SHA256:oldDigest||null,current_SHA256:newDigest,
+     previous_valid_5m_count:old?.stable_subrange_5m_candle_count||null,
+     current_valid_5m_count:current.stable_subrange_5m_candle_count,
+     can_compare_identical_fixed_UTC_boundaries:Boolean(oldDigest),
+     identical_quotes_on_same_historical_UTC_subrange:oldDigest?oldDigest===newDigest:null,
+     implication:oldDigest===newDigest?'Prior completed quote history reproducible across pulls':
+       'Quote source changed or previous identical-date fingerprint not available; treat small performance differences as non-robust'
+    };
+   }catch(e){report.same_fixed_subrange_repeated_source_integrity={error:'Could not validate previous report digest: '+String(e)}}
+  }
   report.track_1_existing_V22_four_hour_to_five_minute_execution={
    samples_10bp:studyRefinement({bars5m:data.bars,bars4h:four.candles,feeBps:10}),
    stress_30bp:studyRefinement({bars5m:data.bars,bars4h:four.candles,feeBps:30}),
