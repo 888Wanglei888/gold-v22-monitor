@@ -1,0 +1,255 @@
+{
+  "checked_at_utc": "2026-10-16T02:50:22.597Z",
+  "github_sha": "850b03c1f2d988d535cc6dc9ef74c97c551acfe6",
+  "source": "Yahoo GC=F continuous Gold futures hourly research proxy",
+  "status": "gold_A_B_benchmarks_completed_C_V22_benchmark_explicitly_blocked",
+  "trade_signals_enabled": false,
+  "input": {
+    "raw_hour_records": 13609,
+    "closed_four_hour_bars": 2314,
+    "quality": {
+      "raw": 13609,
+      "missing_ohlc": 2866,
+      "off_hour": 17,
+      "unclosed": 1,
+      "duplicate_hours": 0,
+      "nonconsecutive_groups": 0,
+      "incomplete_groups": 36
+    }
+  },
+  "comparison": {
+    "status": "gold_A_buyhold_vs_B_dow_four_hour_proxy_comparison_research_only",
+    "measured_genuine_V22_multi_factor_trades": false,
+    "time_window": {
+      "first_4h_start_utc": "2025-06-02T02:00:00.000Z",
+      "last_4h_close_utc": "2026-10-16T02:00:00.000Z",
+      "startDate_predeclared": "2025-06-02",
+      "shared_bars": 1698,
+      "initial_usd": 10000
+    },
+    "common_assumptions": {
+      "gold": "Yahoo continuous GC=F hourly to five-slot 4h New York evening sessions",
+      "cost_bps_roundtrip": 10,
+      "stop_atr": 1.5,
+      "maximum_4h_bars_held_B": 15,
+      "unit_risk_fraction_B": 0.005,
+      "max_leverage_B": 5,
+      "A_exposure": "1x gold long fully invested from start to end (no leverage/rebalancing)",
+      "B_exposure": "Cash unless strict confirmed Dow daily AND weekly swing trend equals 4h breakout; 0.5pct risk / trade, 5x cap"
+    },
+    "dow_higher_timeframe_proxy": {
+      "complete_daily_sessions": 449,
+      "completed_weekly_proxies": 96,
+      "excluded_daily_due_missing_4h_slots": 29,
+      "excluded_incomplete_weeks": 2,
+      "caveat": "Daily uses full five available proxy slots until about NY 14:00, not official COMEX 17:00/settlement; weekly trend uses only prior confirmed pivots"
+    },
+    "pattern_filter_counts": {
+      "price_candidates": 108,
+      "confirmation_missing_entry_bar": 43,
+      "weekly_or_daily_structure_unconfirmed": 52,
+      "trend_opposite_to_4h": 22,
+      "trend_confirmed_same_direction": 34
+    },
+    "A_always_long": {
+      "trade_count": 1,
+      "win_rate_pct": 100,
+      "entry_open_gold": 3326.60009765625,
+      "last_close_gold": 4173.39990234375,
+      "total_return_pct": 25.34,
+      "max_mark_to_market_drawdown_pct": 28.77,
+      "final_equity_usd": 12534.27,
+      "by_year": [
+        {
+          "year": 2025,
+          "begin_equity_usd": 10000,
+          "end_equity_usd": 13015.3,
+          "return_pct": 30.15
+        },
+        {
+          "year": 2026,
+          "begin_equity_usd": 13015.3,
+          "end_equity_usd": 12534.27,
+          "return_pct": -3.7
+        }
+      ]
+    },
+    "B_dow_higher_frames_plus_4h": {
+      "total_patterns_screened": 108,
+      "valid_trend_price_signals": 34,
+      "executed_nonoverlapping_trades": 11,
+      "winning_trades": 7,
+      "win_rate_pct": 63.6,
+      "total_return_pct": 9.83,
+      "max_mark_to_market_drawdown_pct": 2.03,
+      "final_equity_usd": 10983.18,
+      "peak_notional_leverage": 0.77,
+      "same_exact_B_trade_intervals_always_long_raw_win_rate_pct": 63.6,
+      "same_exact_B_trade_intervals_always_long_average_raw_return_pct": 2.084,
+      "by_year": [
+        {
+          "year": 2025,
+          "begin_equity_usd": 10000,
+          "end_equity_usd": 10502.21,
+          "return_pct": 5.02
+        },
+        {
+          "year": 2026,
+          "begin_equity_usd": 10502.21,
+          "end_equity_usd": 10983.18,
+          "return_pct": 4.58
+        }
+      ],
+      "recent_costed_trade_ledger": [
+        {
+          "direction": "long",
+          "entry_at": "2025-09-29T10:00:00.000Z",
+          "exit_at": "2025-10-02T10:00:00.000Z",
+          "entry_price": 3837.7,
+          "exit_price": 3904.3,
+          "equity_before_usd": 10162.75,
+          "equity_after_usd": 10261.36,
+          "pnl_after_costs_usd": 98.61,
+          "risk_fraction": 0.005,
+          "raw_direction_gold_change_pct": 1.735,
+          "same_trade_window_always_long_gold_pct": 1.735,
+          "source_dow_confirmed_at_utc": "2025-09-29T10:00:00.000Z",
+          "reason": "time_exit"
+        },
+        {
+          "direction": "long",
+          "entry_at": "2025-10-06T06:00:00.000Z",
+          "exit_at": "2025-10-09T18:00:00.000Z",
+          "entry_price": 3957.5,
+          "exit_price": 3963.4,
+          "equity_before_usd": 10261.36,
+          "equity_after_usd": 10263.9,
+          "pnl_after_costs_usd": 2.54,
+          "risk_fraction": 0.005,
+          "raw_direction_gold_change_pct": 0.149,
+          "same_trade_window_always_long_gold_pct": 0.149,
+          "source_dow_confirmed_at_utc": "2025-10-06T06:00:00.000Z",
+          "reason": "time_exit"
+        },
+        {
+          "direction": "long",
+          "entry_at": "2025-10-13T22:00:00.000Z",
+          "exit_at": "2025-10-16T18:00:00.000Z",
+          "entry_price": 4130.9,
+          "exit_price": 4309.5,
+          "equity_before_usd": 10263.9,
+          "equity_after_usd": 10397.56,
+          "pnl_after_costs_usd": 133.66,
+          "risk_fraction": 0.005,
+          "raw_direction_gold_change_pct": 4.324,
+          "same_trade_window_always_long_gold_pct": 4.324,
+          "source_dow_confirmed_at_utc": "2025-10-13T18:00:00.000Z",
+          "reason": "time_exit"
+        },
+        {
+          "direction": "long",
+          "entry_at": "2025-10-17T02:00:00.000Z",
+          "exit_at": "2025-10-17T18:00:00.000Z",
+          "entry_price": 4326.1,
+          "exit_price": 4263.036,
+          "equity_before_usd": 10397.56,
+          "equity_after_usd": 10342.03,
+          "pnl_after_costs_usd": -55.53,
+          "risk_fraction": 0.005,
+          "raw_direction_gold_change_pct": -1.458,
+          "same_trade_window_always_long_gold_pct": -1.458,
+          "source_dow_confirmed_at_utc": "2025-10-17T02:00:00.000Z",
+          "reason": "stop_fill_at_stop_or_worse_gap"
+        },
+        {
+          "direction": "long",
+          "entry_at": "2025-11-10T07:00:00.000Z",
+          "exit_at": "2025-11-13T07:00:00.000Z",
+          "entry_price": 4083.9,
+          "exit_price": 4214.4,
+          "equity_before_usd": 10342.03,
+          "equity_after_usd": 10502.21,
+          "pnl_after_costs_usd": 160.18,
+          "risk_fraction": 0.005,
+          "raw_direction_gold_change_pct": 3.195,
+          "same_trade_window_always_long_gold_pct": 3.195,
+          "source_dow_confirmed_at_utc": "2025-11-10T07:00:00.000Z",
+          "reason": "time_exit"
+        },
+        {
+          "direction": "long",
+          "entry_at": "2026-01-20T15:00:00.000Z",
+          "exit_at": "2026-01-23T15:00:00.000Z",
+          "entry_price": 4745.9,
+          "exit_price": 4944.1,
+          "equity_before_usd": 10502.21,
+          "equity_after_usd": 10696.36,
+          "pnl_after_costs_usd": 194.15,
+          "risk_fraction": 0.005,
+          "raw_direction_gold_change_pct": 4.176,
+          "same_trade_window_always_long_gold_pct": 4.176,
+          "source_dow_confirmed_at_utc": "2026-01-20T15:00:00.000Z",
+          "reason": "time_exit"
+        },
+        {
+          "direction": "long",
+          "entry_at": "2026-01-26T07:00:00.000Z",
+          "exit_at": "2026-01-29T07:00:00.000Z",
+          "entry_price": 5074.5,
+          "exit_price": 5591,
+          "equity_before_usd": 10696.36,
+          "equity_after_usd": 11041.77,
+          "pnl_after_costs_usd": 345.41,
+          "risk_fraction": 0.005,
+          "raw_direction_gold_change_pct": 10.178,
+          "same_trade_window_always_long_gold_pct": 10.178,
+          "source_dow_confirmed_at_utc": "2026-01-26T07:00:00.000Z",
+          "reason": "time_exit"
+        },
+        {
+          "direction": "long",
+          "entry_at": "2026-01-29T07:00:00.000Z",
+          "exit_at": "2026-01-29T19:00:00.000Z",
+          "entry_price": 5591,
+          "exit_price": 5500.572,
+          "equity_before_usd": 11041.77,
+          "equity_after_usd": 10983.18,
+          "pnl_after_costs_usd": -58.59,
+          "risk_fraction": 0.005,
+          "raw_direction_gold_change_pct": -1.617,
+          "same_trade_window_always_long_gold_pct": -1.617,
+          "source_dow_confirmed_at_utc": "2026-01-29T07:00:00.000Z",
+          "reason": "stop_fill_at_stop_or_worse_gap"
+        }
+      ]
+    },
+    "C_original_V22": {
+      "status": "blocked_missing_original_full_point_in_time_signal_evidence",
+      "win_rate_pct": null,
+      "total_return_pct": null,
+      "max_drawdown_pct": null,
+      "trade_count": null,
+      "not_zero_trades_but_NOT_EVALUABLE": true,
+      "requirements_not_proven": [
+        "Historical as-published Fiscal D+1/3/5 expectation path and surprise/revision vintage",
+        "DTS announcement tax-spending forecast and TreasuryDirect publicly-held net new cash identity",
+        "Actual available TGA buffers, Fed/SOMA, ON RRP, SRF, reserve and SOFR-IORB regime at every candidate",
+        "Policy vs fiscal-credit reprice split for real rates and DXY",
+        "GLD actual cash creations/redemptions rather than proxy tonnes and COMEX trade-day contract OI volume",
+        "Certified official daily and weekly Dow settles versus partial 4h constructed proxies",
+        "Specific GC futures roll, OHLC intrabar slippage and broker costs",
+        "Untouched holdout including other regimes"
+      ]
+    },
+    "live_trade_signals_enabled": false,
+    "limitations": [
+      "A and B have DIFFERENT leverage/exposure: return and win rate are not risk-matched causal alpha tests",
+      "Gold Yahoo GC=F continuous proxy may have roll jumps and cannot guarantee true traded fills",
+      "4h OHLC conservative stop assumes stop or worse open if market gaps; intrabar order unknown",
+      "Future weekly/daily bar revisions are not archived, prior confirmed pivot timing is enforced",
+      "Sample was already examined in prior V2.2 development, so no true untouched 2025-26 out-of-sample evidence",
+      "B is a fixed Dow-inspired pivot proxy and has NOT been established as the exact original agreed Dow rules",
+      "C is never represented as zero returns or zero trades; genuine V2.2 remains scientifically unmeasured"
+    ]
+  }
+}
