@@ -189,9 +189,9 @@ async function main(){
  fs.mkdirSync('research-data',{recursive:true});
  fs.writeFileSync('research-data/GOLD_V22_CONFLUENCE_DAILY_2019_2026.json',JSON.stringify(result.confluence,null,2));
  const cols=['rule','period','h','n','wins','hit_pct','longs','shorts','mean_net_10bp_pct','same_event_long_net_pct','matched_price_only_hit_pct','matched_price_only_net_pct','nonoverlap_n','nonoverlap_hit_pct','nonoverlap_net_pct'];
- const csv=[cols.join(',')];
- for(const [name,cohorts] of Object.entries(groupResults))for(const [label,all] of Object.entries(cohorts))for(const h of [1,3,5]){const x=all['h'+h];csv.push([name,label,h,...cols.slice(3).map(k=>x[k]??'')].join(','))}
- fs.writeFileSync('research-data/GOLD_V22_CONFLUENCE_DAILY_2019_2026_SUMMARY.csv',csv.join('\n')+'\n');
+ const confluenceCsv=[cols.join(',')];
+ for(const [name,cohorts] of Object.entries(groupResults))for(const [label,all] of Object.entries(cohorts))for(const h of [1,3,5]){const x=all['h'+h];confluenceCsv.push([name,label,h,...cols.slice(3).map(k=>x[k]??'')].join(','))}
+ fs.writeFileSync('research-data/GOLD_V22_CONFLUENCE_DAILY_2019_2026_SUMMARY.csv',confluenceCsv.join('\n')+'\n');
  for(const [name,cohorts] of Object.entries(groupResults)){
   console.log('CONFLUENCE',name,...['early','mid','recent','y2025','y2026'].map(p=>{
   const x=cohorts[p].h3;return p+':'+x.n+'/'+x.hit_pct+'/net'+x.mean_net_10bp_pct+'/long'+x.same_event_long_net_pct+'/price'+x.matched_price_only_net_pct+'/non'+x.nonoverlap_n+'_'+x.nonoverlap_hit_pct;
