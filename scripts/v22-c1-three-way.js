@@ -91,7 +91,7 @@ async function main(){
     const overlay=makeC2({sources:loaded.sources,maxAgeDays:loaded.maxAgeDays,
       decisionForecasts:fiscal.decisionForecasts,revisionRecords:fiscal.revisionRecords,mode});
     const trade=evaluate({...inputs,entryGate:overlay.gate});
-    const bLedger=B.B_dow_four_hour.full_costed_trade_ledger;
+    const bLedger=B.B_dow_higher_frames_plus_4h.full_costed_trade_ledger;
     const replay=makeC2({sources:loaded.sources,maxAgeDays:loaded.maxAgeDays,
       decisionForecasts:fiscal.decisionForecasts,revisionRecords:fiscal.revisionRecords,mode});
     const bComparison=bLedger.map(t=>{
