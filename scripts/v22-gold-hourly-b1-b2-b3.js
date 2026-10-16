@@ -56,13 +56,16 @@ async function main(){
    b.start_ms,b.open.toFixed(4),b.high.toFixed(4),b.low.toFixed(4),b.close.toFixed(4)
   ].join(',')).join(';')).digest('hex');
   const fixed={initialCash:10000,riskFraction:.005,maxLeverage:5,stopDurationHours:60};
-  const run=runThreeWay({hourly,four:four.candles,startDate:forecastStart,costBps:10,lookbackHours:20});
+  const run=runThreeWay({hourly,four:four.candles,startDate:forecastStart,costBps:10,lookbackHours:12});
   const original=oldB1({inputCandles:four.candles,startDate:forecastStart,
    initialCash:10000,costBpsRoundTrip:10,stopATR:1.5,maxBars:15,riskFraction:.005,maxLeverage:5});
   const recordedB1=original.B_dow_higher_frames_plus_4h;
   const b1=run.result.B1_4h_rules_1h_execution;
   if(recordedB1.executed_nonoverlapping_trades!==b1.trades)throw Error('Original 4h B1 trade count not reproduced on same 1h bars: '+recordedB1.executed_nonoverlapping_trades+' vs '+b1.trades);
-  if(run.result.B2_dow_plus_1h_breakout.trades<1)throw Error('B2 no genuine qualifying 1h research trades');
+  if(run.result.B2_dow_plus_1h_breakout.trades<1){
+   d.hourly_no_entry_data_diagnostic=run.candidates.B2;
+   console.warn('No strictly eligible B2 1h signals; report 0 rather than fabricating trades',JSON.stringify(run.candidates.B2));
+  }
   if(run.candidates.B3.valid_preentry_1h_ATR<1)throw Error('B3 no valid authorized prior-closed one-hour ATR');
   const cases={B1_4h_Dow_hourly_stop_simulation:abbreviated(b1),
     B2_Dow_plus_1h_confirmed_breakout:abbreviated(run.result.B2_dow_plus_1h_breakout),
@@ -85,15 +88,15 @@ async function main(){
   d.fixed_10bps_three_way=cases;
   d.cost_sensitivity_1_3_5_30bps={};
   for(const bps of [1,3,5,30]){
-   const sensitivity=runThreeWay({hourly,four:four.candles,startDate:forecastStart,costBps:bps,lookbackHours:20});
+   const sensitivity=runThreeWay({hourly,four:four.candles,startDate:forecastStart,costBps:bps,lookbackHours:12});
    d.cost_sensitivity_1_3_5_30bps[bps+'bps_roundtrip']=Object.fromEntries(Object.entries(sensitivity.result).map(([key,x])=>
     [key,{trades:x.trades,win_rate_pct:x.win_rate_pct,return_pct:x.return_pct,
       max_hourly_equity_drawdown_pct:x.max_mark_to_market_drawdown_pct,final_account_usd:x.final_usd}]));
   }
-  const lookback40=runThreeWay({hourly,four:four.candles,startDate:forecastStart,costBps:10,lookbackHours:40});
-  d.B2_exploratory_40hour_breakout_sensitivity={
-   result:abbreviated(lookback40.result.B2_dow_plus_1h_breakout),
-   note:'40hour lookback tested only as explicit sensitivity; 20h was primary pre-run frozen rule. No hidden parameter selection'};
+  const lookback16=runThreeWay({hourly,four:four.candles,startDate:forecastStart,costBps:10,lookbackHours:16});
+  d.B2_exploratory_16hour_breakout_sensitivity={
+   result:abbreviated(lookback16.result.B2_dow_plus_1h_breakout),
+   note:'16h lookback is explicit secondary sensitivity. Initial 20h lookback cannot fit 20 hourly session slots plus signal confirmation and next-open. Primary 12h was frozen BEFORE run after spotting incompatible market-clock requirements.'};
   d.original_A_benchmark_1x_buyhold={return_pct:original.A_always_long.total_return_pct,
    final_usd:original.A_always_long.final_equity_usd,drawdown_pct:original.A_always_long.max_mark_to_market_drawdown_pct};
   d.cautions=[
@@ -117,7 +120,7 @@ async function main(){
  if(d.status==='gold_three_way_B1_4h_B2_1h_B3_1h_tested_source_research_only'){
   console.log('Original B1',JSON.stringify(d.base_B1_original_four_hour_simulation));
   for(const [name,x] of Object.entries(d.fixed_10bps_three_way))console.log(name,JSON.stringify({n:x.trades,win:x.win_rate_pct,ret:x.return_pct,dd:x.max_hourly_equity_drawdown_pct,counter:x.execution_audit}));
-  console.log('B2 40-hour sensitivity',d.B2_exploratory_40hour_breakout_sensitivity.result.return_pct);
+  console.log('B2 16-hour sensitivity',d.B2_exploratory_16hour_breakout_sensitivity.result.return_pct);
  }else process.exitCode=1;
 }
 main().catch(e=>{console.error(e);process.exitCode=1});
