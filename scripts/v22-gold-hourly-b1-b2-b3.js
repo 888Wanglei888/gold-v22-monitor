@@ -66,7 +66,7 @@ async function main(){
    d.hourly_no_entry_data_diagnostic=run.candidates.B2;
    console.warn('No strictly eligible B2 1h signals; report 0 rather than fabricating trades',JSON.stringify(run.candidates.B2));
   }
-  if(run.candidates.B3.valid_preentry_1h_ATR<1)throw Error('B3 no valid authorized prior-closed one-hour ATR');
+  if(run.candidates.B3.valid_preentry_1h_ATR<1)console.warn('No B3 pre-entry contiguous 14h ATR available in strict original B1 opportunities; report zero retests');
   const cases={B1_4h_Dow_hourly_stop_simulation:abbreviated(b1),
     B2_Dow_plus_1h_confirmed_breakout:abbreviated(run.result.B2_dow_plus_1h_breakout),
     B3_B1_signal_wait_1h_ATR_limit_retest:abbreviated(run.result.B3_confirmed_4h_plus_1h_limit_retest)};
