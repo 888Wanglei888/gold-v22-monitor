@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-16T03:01:46.573Z",
-  "source_commit": "833caa6c67752caf77913c16d163d25b53cfbd1f",
+  "at": "2026-10-16T03:35:02.901Z",
+  "source_commit": "b7910e379501eade4590ada813010e32b9ab7c3e",
   "http_status": 200,
   "status": "v22_lagged_feature_join_research_only",
-  "complete_asof_history": 2201,
-  "closed_4h_candles": 2201,
+  "complete_asof_history": 2019,
+  "closed_4h_candles": 2215,
   "macro_source_errors": {},
   "required_source_coverage": {
     "DFII10": {
@@ -65,14 +65,12 @@
     },
     "COT_NET": {
       "observations": 145,
-      "duplicate_observation_dates_excluded": 0,
       "first_observation_date": "2024-01-02",
       "last_observation_date": "2026-10-06",
       "conservative_lag_calendar_days": 15
     },
     "COT_OI": {
       "observations": 145,
-      "duplicate_observation_dates_excluded": 0,
       "first_observation_date": "2024-01-02",
       "last_observation_date": "2026-10-06",
       "conservative_lag_calendar_days": 15
@@ -95,23 +93,23 @@
   "candidate_macro_crosscheck": {
     "status": "technical_patterns_cross_market_asof_descriptive_only",
     "counts": {
-      "candidates": 145,
-      "complete_asof_12_of_12": 145,
-      "incomplete_asof": 0,
-      "dxy_real_yield_and_gld_direction_aligned": 29,
-      "dxy_and_real_yield_aligned": 51,
-      "cftc_net_direction_aligned": 76,
+      "candidates": 146,
+      "complete_asof_12_of_12": 135,
+      "incomplete_asof": 11,
+      "dxy_real_yield_and_gld_direction_aligned": 28,
+      "dxy_and_real_yield_aligned": 52,
+      "cftc_net_direction_aligned": 74,
       "not_sufficient_source_history_for_change": 0
     },
     "by_year": {
       "2025": {
         "candidates": 93,
-        "complete_asof": 93,
-        "triple_alignment": 15
+        "complete_asof": 82,
+        "triple_alignment": 14
       },
       "2026": {
-        "candidates": 52,
-        "complete_asof": 52,
+        "candidates": 53,
+        "complete_asof": 53,
         "triple_alignment": 14
       }
     },
