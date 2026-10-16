@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T07:26:40.216Z",
-  "github_sha": "2f1928c180c486bbbf9213d610de2b78f528b56d",
+  "checked_at_utc": "2026-10-16T07:28:25.106Z",
+  "github_sha": "d16089c8cc454e126ea002ab0ba155cf82825062",
   "status": "gold_three_way_B1_4h_B2_1h_B3_1h_tested_source_research_only",
   "live_signals_enabled": false,
   "full_V22_gold_macro_study_verified": false,
@@ -12,12 +12,12 @@
     "first_used_hour_utc": "2024-12-01T23:00:00.000Z",
     "last_used_hour_closed_utc": "2026-10-15T18:00:00.000Z",
     "raw_yahoo_hour_bars": 13614,
-    "clean_raw_1h_bars": 10723,
-    "completely_accounted_1h_candles": 9252,
-    "complete_4h_candles": 2313,
-    "market_hours_without_complete_4h_excluded": 1471,
-    "hourly_source_sha256": "bf313d86cae38c5dace784b12ad81930013b18d16ad4fa22bc83064f588adbf2",
-    "stability_2026_Jan_to_Sep_fingerprint_sha256": "c2d4164b7be9bd213b165d01678e943fa7ec05d6bfdd7a7d38184c9a23c6b312",
+    "clean_raw_1h_bars": 10660,
+    "completely_accounted_1h_candles": 9196,
+    "complete_4h_candles": 2299,
+    "market_hours_without_complete_4h_excluded": 1464,
+    "hourly_source_sha256": "e437f9f568b44ebd3bba009eaf73b7741dff17ddba532313a46a5231734db54d",
+    "stability_2026_Jan_to_Sep_fingerprint_sha256": "b42791665461d2cdb8492958b564d4aeb4031ae07465ef8484e29c6ba19517ae",
     "source": {
       "symbol": "GC=F",
       "full_exchange_name": "COMEX",
@@ -26,27 +26,27 @@
       "timezone": "America/New_York",
       "raw_quality": {
         "raw": 13605,
-        "invalid": 2866,
+        "invalid": 2929,
         "unclosed": 0,
         "off_grid": 16,
         "duplicates": 0,
-        "gaps_over_1h": 480
+        "gaps_over_1h": 478
       },
       "four_hour_quality": {
-        "raw": 10723,
+        "raw": 10660,
         "missing_ohlc": 0,
         "off_hour": 0,
         "unclosed": 0,
         "duplicate_hours": 0,
         "nonconsecutive_groups": 0,
-        "incomplete_groups": 37
+        "incomplete_groups": 38
       }
     }
   },
   "rules": {
     "B1": "Original Dow daily+weekly and 4h breakout/confirmation; authorized next 4h open simulated in hourly data",
     "B2": "Same completed Dow daily+weekly structure and 12 PRIOR continuous 1h breakout+next 1h confirmation; enter third 1h OPEN",
-    "B3": "Only B1 authorized 4h entries; fixed 0.35 prior-closed ATR1h limit from next 4h open; expire after four 1h bars without execution",
+    "B3": "Only the EXACT 4h trades executed by B1 matched cohort; fixed 0.35 session-aware PRIOR 14 observed 1h candle ATR retest order from next 4h open; expire after four 1h bars",
     "same_funding": "10000 USD",
     "risk_per_trade_pct": 0.5,
     "stop_distance": "1.5x last completed 4h ATR for ALL three",
@@ -65,24 +65,26 @@
   },
   "measured_technicals": {
     "B1": {
-      "raw_patterns": 151,
-      "not_trending": 74,
+      "raw_patterns": 150,
+      "not_trending": 73,
       "entry_1h_missing": 0,
       "old_signal": 43,
       "accepted": 34
     },
     "B2": {
-      "hourly_breakout_seen": 148,
+      "hourly_breakout_seen": 149,
       "confirmed_1h": 125,
       "confirmed_higher_timeframe": 23,
       "missing_closed_4h_ATR": 0,
-      "weekend_or_hourly_gap": 4810,
+      "weekend_or_hourly_gap": 4774,
       "candidates_after_start": 23
     },
     "B3": {
       "b1_qualified_events": 34,
-      "valid_preentry_1h_ATR": 2,
-      "missing_preentry_ATR": 32
+      "valid_preentry_1h_ATR": 34,
+      "missing_preentry_ATR": 0,
+      "matched_original_B1_executed_trade_count": 11,
+      "all_qualifying_4h_B1_price_signals": 34
     }
   },
   "fixed_10bps_three_way": {
@@ -93,7 +95,7 @@
       "return_pct": 9.83,
       "max_hourly_equity_drawdown_pct": 2.03,
       "final_account_usd": 10983.18,
-      "exposure_hour_pct": 7.88,
+      "exposure_hour_pct": 7.94,
       "average_trade_pnl_usd": 89.38,
       "cost_bps_roundtrip": 10,
       "execution_audit": {
@@ -350,10 +352,10 @@
       "trades": 14,
       "winners": 9,
       "win_rate_pct": 64.3,
-      "return_pct": 8.3,
+      "return_pct": 8.29,
       "max_hourly_equity_drawdown_pct": 2.84,
-      "final_account_usd": 10829.55,
-      "exposure_hour_pct": 9.94,
+      "final_account_usd": 10829.46,
+      "exposure_hour_pct": 10.02,
       "average_trade_pnl_usd": 59.25,
       "cost_bps_roundtrip": 10,
       "execution_audit": {
@@ -379,7 +381,7 @@
         "2026": {
           "trades": 3,
           "wins": 3,
-          "net_pnl_usd": 237.01,
+          "net_pnl_usd": 236.92,
           "win_rate_pct": 100
         }
       },
@@ -650,15 +652,15 @@
           "original_signal_known_utc": "2026-07-23T15:00:00.000Z",
           "entry_utc": "2026-07-23T15:00:00.000Z",
           "exit_utc": "2026-07-28T15:00:00.000Z",
-          "entry_px": 4061.6,
+          "entry_px": 4061.5,
           "exit_px": 4023.8,
-          "stop_at_entry": 4119.864,
+          "stop_at_entry": 4119.764,
           "stop_width_from_prior_complete_4h_ATR": 58.264,
           "prior_4h_ATR": 38.843,
           "prior_1h_ATR": 15.907,
           "entry_mode": "next_1h_market_open",
-          "pnl_after_costs_usd": 31.28,
-          "equity_after_usd": 10829.55,
+          "pnl_after_costs_usd": 31.19,
+          "equity_after_usd": 10829.46,
           "fees_usd": 3.75,
           "why_closed": "max_60_observed_1h_bars",
           "simulated_fractional_oz": 0.9267,
@@ -667,56 +669,162 @@
       ]
     },
     "B3_B1_signal_wait_1h_ATR_limit_retest": {
-      "trades": 1,
-      "winners": 0,
-      "win_rate_pct": 0,
-      "return_pct": -0.53,
-      "max_hourly_equity_drawdown_pct": 2.06,
-      "final_account_usd": 9947.04,
-      "exposure_hour_pct": 0.31,
-      "average_trade_pnl_usd": -52.96,
+      "trades": 6,
+      "winners": 4,
+      "win_rate_pct": 66.7,
+      "return_pct": 5.57,
+      "max_hourly_equity_drawdown_pct": 1.5,
+      "final_account_usd": 10557.06,
+      "exposure_hour_pct": 4.59,
+      "average_trade_pnl_usd": 92.84,
       "cost_bps_roundtrip": 10,
       "execution_audit": {
-        "eligible_signal_events": 2,
-        "scheduled_entries": 2,
+        "eligible_signal_events": 11,
+        "scheduled_entries": 11,
         "rejected_holding": 0,
         "rejected_pending": 0,
         "rejected_bad_entry": 0,
-        "unfilled_limit_expirations": 1,
-        "limit_filled": 1,
+        "unfilled_limit_expirations": 5,
+        "limit_filled": 6,
         "market_filled": 0,
         "forced_end": 0,
         "stop_exits": 1,
-        "time_exits": 0
+        "time_exits": 5
       },
       "by_entry_year": {
+        "2025": {
+          "trades": 4,
+          "wins": 3,
+          "net_pnl_usd": 412.9,
+          "win_rate_pct": 75
+        },
         "2026": {
-          "trades": 1,
-          "wins": 0,
-          "net_pnl_usd": -52.96,
-          "win_rate_pct": 0
+          "trades": 2,
+          "wins": 1,
+          "net_pnl_usd": 144.15,
+          "win_rate_pct": 50
         }
       },
       "trade_ledger": [
         {
           "strategy_event": "B3_4h_confirmed_wait_1h_retest",
           "side": "long",
-          "original_signal_known_utc": "2026-01-28T15:00:00.000Z",
-          "entry_utc": "2026-01-28T15:00:00.000Z",
-          "exit_utc": "2026-01-29T16:00:00.000Z",
-          "entry_px": 5307.393,
-          "exit_px": 5218.604,
-          "stop_at_entry": 5218.604,
-          "stop_width_from_prior_complete_4h_ATR": 88.789,
-          "prior_4h_ATR": 59.193,
-          "prior_1h_ATR": 32.307,
+          "original_signal_known_utc": "2025-08-28T18:00:00.000Z",
+          "entry_utc": "2025-08-29T00:00:00.000Z",
+          "exit_utc": "2025-09-04T08:00:00.000Z",
+          "entry_px": 3474.49,
+          "exit_px": 3599.5,
+          "stop_at_entry": 3452.054,
+          "stop_width_from_prior_complete_4h_ATR": 22.436,
+          "prior_4h_ATR": 14.957,
+          "prior_1h_ATR": 7.743,
           "entry_mode": "precommitted_1h_limit_retest",
-          "pnl_after_costs_usd": -52.96,
-          "equity_after_usd": 9947.04,
-          "fees_usd": 2.96,
+          "pnl_after_costs_usd": 270.71,
+          "equity_after_usd": 10270.71,
+          "fees_usd": 7.88,
+          "why_closed": "max_60_observed_1h_bars",
+          "simulated_fractional_oz": 2.2286,
+          "notional_leverage_at_entry": 0.77
+        },
+        {
+          "strategy_event": "B3_4h_confirmed_wait_1h_retest",
+          "side": "long",
+          "original_signal_known_utc": "2025-09-08T18:00:00.000Z",
+          "entry_utc": "2025-09-08T22:00:00.000Z",
+          "exit_utc": "2025-09-11T18:00:00.000Z",
+          "entry_px": 3673.075,
+          "exit_px": 3673.1,
+          "stop_at_entry": 3634.847,
+          "stop_width_from_prior_complete_4h_ATR": 38.229,
+          "prior_4h_ATR": 25.486,
+          "prior_1h_ATR": 10.071,
+          "entry_mode": "precommitted_1h_limit_retest",
+          "pnl_after_costs_usd": -4.9,
+          "equity_after_usd": 10265.81,
+          "fees_usd": 4.93,
+          "why_closed": "max_60_observed_1h_bars",
+          "simulated_fractional_oz": 1.3433,
+          "notional_leverage_at_entry": 0.48
+        },
+        {
+          "strategy_event": "B3_4h_confirmed_wait_1h_retest",
+          "side": "long",
+          "original_signal_known_utc": "2025-10-06T06:00:00.000Z",
+          "entry_utc": "2025-10-06T06:00:00.000Z",
+          "exit_utc": "2025-10-09T18:00:00.000Z",
+          "entry_px": 3952.127,
+          "exit_px": 3963.4,
+          "stop_at_entry": 3912.956,
+          "stop_width_from_prior_complete_4h_ATR": 39.171,
+          "prior_4h_ATR": 26.114,
+          "prior_1h_ATR": 15.35,
+          "entry_mode": "precommitted_1h_limit_retest",
+          "pnl_after_costs_usd": 9.58,
+          "equity_after_usd": 10275.4,
+          "fees_usd": 5.19,
+          "why_closed": "max_60_observed_1h_bars",
+          "simulated_fractional_oz": 1.3104,
+          "notional_leverage_at_entry": 0.5
+        },
+        {
+          "strategy_event": "B3_4h_confirmed_wait_1h_retest",
+          "side": "long",
+          "original_signal_known_utc": "2025-10-13T18:00:00.000Z",
+          "entry_utc": "2025-10-13T22:00:00.000Z",
+          "exit_utc": "2025-10-16T18:00:00.000Z",
+          "entry_px": 4126.08,
+          "exit_px": 4309.5,
+          "stop_at_entry": 4059.126,
+          "stop_width_from_prior_complete_4h_ATR": 66.954,
+          "prior_4h_ATR": 44.636,
+          "prior_1h_ATR": 13.771,
+          "entry_mode": "precommitted_1h_limit_retest",
+          "pnl_after_costs_usd": 137.51,
+          "equity_after_usd": 10412.91,
+          "fees_usd": 3.24,
+          "why_closed": "max_60_observed_1h_bars",
+          "simulated_fractional_oz": 0.7674,
+          "notional_leverage_at_entry": 0.31
+        },
+        {
+          "strategy_event": "B3_4h_confirmed_wait_1h_retest",
+          "side": "long",
+          "original_signal_known_utc": "2026-01-20T15:00:00.000Z",
+          "entry_utc": "2026-01-20T15:00:00.000Z",
+          "exit_utc": "2026-01-23T15:00:00.000Z",
+          "entry_px": 4737.902,
+          "exit_px": 4944.1,
+          "stop_at_entry": 4685.606,
+          "stop_width_from_prior_complete_4h_ATR": 52.296,
+          "prior_4h_ATR": 34.864,
+          "prior_1h_ATR": 22.85,
+          "entry_mode": "precommitted_1h_limit_retest",
+          "pnl_after_costs_usd": 200.46,
+          "equity_after_usd": 10613.37,
+          "fees_usd": 4.82,
+          "why_closed": "max_60_observed_1h_bars",
+          "simulated_fractional_oz": 0.9956,
+          "notional_leverage_at_entry": 0.45
+        },
+        {
+          "strategy_event": "B3_4h_confirmed_wait_1h_retest",
+          "side": "long",
+          "original_signal_known_utc": "2026-01-29T07:00:00.000Z",
+          "entry_utc": "2026-01-29T07:00:00.000Z",
+          "exit_utc": "2026-01-29T16:00:00.000Z",
+          "entry_px": 5570.54,
+          "exit_px": 5480.112,
+          "stop_at_entry": 5480.112,
+          "stop_width_from_prior_complete_4h_ATR": 90.428,
+          "prior_4h_ATR": 60.286,
+          "prior_1h_ATR": 58.457,
+          "entry_mode": "precommitted_1h_limit_retest",
+          "pnl_after_costs_usd": -56.31,
+          "equity_after_usd": 10557.06,
+          "fees_usd": 3.24,
           "why_closed": "stop_first_touch_or_worse_gap",
-          "simulated_fractional_oz": 0.5631,
-          "notional_leverage_at_entry": 0.3
+          "simulated_fractional_oz": 0.5868,
+          "notional_leverage_at_entry": 0.31
         }
       ]
     }
@@ -735,14 +843,14 @@
         "win_rate_pct": 64.3,
         "return_pct": 8.9,
         "max_hourly_equity_drawdown_pct": 2.76,
-        "final_account_usd": 10890.22
+        "final_account_usd": 10890.12
       },
       "B3_confirmed_4h_plus_1h_limit_retest": {
-        "trades": 1,
-        "win_rate_pct": 0,
-        "return_pct": -0.5,
-        "max_hourly_equity_drawdown_pct": 2.06,
-        "final_account_usd": 9949.7
+        "trades": 6,
+        "win_rate_pct": 66.7,
+        "return_pct": 5.84,
+        "max_hourly_equity_drawdown_pct": 1.47,
+        "final_account_usd": 10583.93
       }
     },
     "3bps_roundtrip": {
@@ -758,14 +866,14 @@
         "win_rate_pct": 64.3,
         "return_pct": 8.77,
         "max_hourly_equity_drawdown_pct": 2.77,
-        "final_account_usd": 10876.71
+        "final_account_usd": 10876.62
       },
       "B3_confirmed_4h_plus_1h_limit_retest": {
-        "trades": 1,
-        "win_rate_pct": 0,
-        "return_pct": -0.51,
-        "max_hourly_equity_drawdown_pct": 2.06,
-        "final_account_usd": 9949.11
+        "trades": 6,
+        "win_rate_pct": 66.7,
+        "return_pct": 5.78,
+        "max_hourly_equity_drawdown_pct": 1.48,
+        "final_account_usd": 10577.96
       }
     },
     "5bps_roundtrip": {
@@ -781,14 +889,14 @@
         "win_rate_pct": 64.3,
         "return_pct": 8.63,
         "max_hourly_equity_drawdown_pct": 2.79,
-        "final_account_usd": 10863.22
+        "final_account_usd": 10863.12
       },
       "B3_confirmed_4h_plus_1h_limit_retest": {
-        "trades": 1,
-        "win_rate_pct": 0,
-        "return_pct": -0.51,
-        "max_hourly_equity_drawdown_pct": 2.06,
-        "final_account_usd": 9948.52
+        "trades": 6,
+        "win_rate_pct": 66.7,
+        "return_pct": 5.72,
+        "max_hourly_equity_drawdown_pct": 1.48,
+        "final_account_usd": 10571.98
       }
     },
     "30bps_roundtrip": {
@@ -804,14 +912,14 @@
         "win_rate_pct": 64.3,
         "return_pct": 6.96,
         "max_hourly_equity_drawdown_pct": 3.01,
-        "final_account_usd": 10695.85
+        "final_account_usd": 10695.76
       },
       "B3_confirmed_4h_plus_1h_limit_retest": {
-        "trades": 1,
-        "win_rate_pct": 0,
-        "return_pct": -0.59,
-        "max_hourly_equity_drawdown_pct": 2.06,
-        "final_account_usd": 9941.11
+        "trades": 6,
+        "win_rate_pct": 50,
+        "return_pct": 4.98,
+        "max_hourly_equity_drawdown_pct": 1.56,
+        "final_account_usd": 10497.56
       }
     }
   },
@@ -823,7 +931,7 @@
       "return_pct": 2.15,
       "max_hourly_equity_drawdown_pct": 2.76,
       "final_account_usd": 10215.36,
-      "exposure_hour_pct": 5.76,
+      "exposure_hour_pct": 5.81,
       "average_trade_pnl_usd": 23.93,
       "cost_bps_roundtrip": 10,
       "execution_audit": {
