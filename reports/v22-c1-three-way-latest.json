@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T03:30:16.232Z",
-  "source_sha": "bb0e3e7a1d8796b56f933861bac3b70738450a6c",
+  "checked_at_utc": "2026-10-16T03:32:16.030Z",
+  "source_sha": "7c545120cacaf1a054a35acc850d59d68b2f4be1",
   "status": "C1_proxy_Three_policy_gold_benchmark_completed_research_only",
   "scope": "C1 exploratory expectation-first fiscal plus macro gold flow filter above existing B actual execution",
   "genuine_full_C2_V22_signals_verified": false,
@@ -11,15 +11,15 @@
     "C1_strict"
   ],
   "gold_source": {
-    "closed_4h_bars": 2201,
+    "closed_4h_bars": 2215,
     "quality": {
       "raw": 13023,
-      "missing_ohlc": 2807,
+      "missing_ohlc": 2744,
       "off_hour": 13,
       "unclosed": 1,
       "duplicate_hours": 0,
       "nonconsecutive_groups": 0,
-      "incomplete_groups": 35
+      "incomplete_groups": 34
     },
     "source": "GC=F Yahoo 1h grouped 4h; previous 2025-2026 research window"
   },
@@ -236,13 +236,14 @@
     "first_4h_start_utc": "2025-06-02T02:00:00.000Z",
     "last_4h_close_utc": "2026-10-16T02:00:00.000Z",
     "startDate_predeclared": "2025-06-02",
-    "shared_bars": 1684,
+    "shared_bars": 1698,
     "initial_usd": 10000
   },
   "shared_risk_and_costs": {
     "gold": "Yahoo continuous GC=F hourly to five-slot 4h New York evening sessions",
     "cost_bps_roundtrip": 10,
     "macro_gate_applied": false,
+    "graded_risk_used": false,
     "stop_atr": 1.5,
     "maximum_4h_bars_held_B": 15,
     "unit_risk_fraction_B": 0.005,
@@ -274,14 +275,14 @@
     ]
   },
   "B_dow_four_hour": {
-    "total_patterns_screened": 107,
+    "total_patterns_screened": 108,
     "valid_trend_price_signals": 34,
     "executed_nonoverlapping_trades": 11,
     "winning_trades": 7,
     "long_trades": 11,
     "short_trades": 0,
-    "percent_4h_bars_in_market": 8.08,
-    "average_4h_bar_notional_exposure_including_cash": 0.041,
+    "percent_4h_bars_in_market": 8.01,
+    "average_4h_bar_notional_exposure_including_cash": 0.04,
     "win_rate_pct": 63.6,
     "total_return_pct": 9.83,
     "max_mark_to_market_drawdown_pct": 2.03,
@@ -976,7 +977,7 @@
         "max_mark_to_market_drawdown_pct": 2.03,
         "final_equity_usd": 10814.13,
         "peak_notional_leverage": 0.77,
-        "percent_4h_bars_in_market": 7.19,
+        "percent_4h_bars_in_market": 7.13,
         "by_year": [
           {
             "year": 2025,
@@ -1572,9 +1573,9 @@
         ],
         "pattern_filter_counts": {
           "macro_evidence_missing_or_conflicted": 9,
-          "price_candidates": 107,
+          "price_candidates": 108,
           "confirmation_missing_entry_bar": 38,
-          "weekly_or_daily_structure_unconfirmed": 51,
+          "weekly_or_daily_structure_unconfirmed": 52,
           "trend_opposite_to_4h": 22,
           "trend_confirmed_same_direction": 34
         }
@@ -1943,7 +1944,7 @@
         "max_mark_to_market_drawdown_pct": 1.8,
         "final_equity_usd": 10515.81,
         "peak_notional_leverage": 0.77,
-        "percent_4h_bars_in_market": 5.4,
+        "percent_4h_bars_in_market": 5.36,
         "by_year": [
           {
             "year": 2025,
@@ -2569,9 +2570,9 @@
         ],
         "pattern_filter_counts": {
           "macro_evidence_missing_or_conflicted": 13,
-          "price_candidates": 107,
+          "price_candidates": 108,
           "confirmation_missing_entry_bar": 38,
-          "weekly_or_daily_structure_unconfirmed": 51,
+          "weekly_or_daily_structure_unconfirmed": 52,
           "trend_opposite_to_4h": 22,
           "trend_confirmed_same_direction": 34
         }
@@ -3496,9 +3497,9 @@
         ],
         "pattern_filter_counts": {
           "macro_evidence_missing_or_conflicted": 32,
-          "price_candidates": 107,
+          "price_candidates": 108,
           "confirmation_missing_entry_bar": 38,
-          "weekly_or_daily_structure_unconfirmed": 51,
+          "weekly_or_daily_structure_unconfirmed": 52,
           "trend_opposite_to_4h": 22,
           "trend_confirmed_same_direction": 34
         }
