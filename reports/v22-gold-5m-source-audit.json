@@ -1,0 +1,65 @@
+{
+  "verified_at_utc": "2026-10-16T06:23:34.927Z",
+  "sha": "1ebc76d164fdad8ced569ceeaac7d8a33423c477",
+  "status": "gold_5m_source_available",
+  "source": "Yahoo GC=F continuous Gold futures, NOT actual CME exchange fills",
+  "availability": {
+    "requested_lookback_days": 58,
+    "requested_start_utc": "2026-08-19T06:23:34.927Z",
+    "raw_candles": 14112,
+    "closed_valid": 11228,
+    "duplicates": false,
+    "first_5m_start_utc": "2026-08-19T06:20:00.000Z",
+    "last_5m_close_utc": "2026-10-16T06:18:20.000Z",
+    "observed_utc_calendar_days": 49,
+    "observed_utc_days_with_over_100_bars": 41,
+    "min_max_per_day": [
+      22,
+      277
+    ],
+    "contiguous_pairs": 11179,
+    "gap_buckets": {
+      "16-120m": 33,
+      ">24h": 8,
+      "6-15m": 7
+    },
+    "gaps_over_15m": 41,
+    "instrument_currency": "USD",
+    "exchange_name": "COMEX",
+    "exchange_timezone": "America/New_York",
+    "regular_market_time": 1792131200,
+    "yahoo_granularity": "5m",
+    "sample_start": [
+      {
+        "start_ms": 1787120400000,
+        "open": 4398.5,
+        "high": 4401.89990234375,
+        "low": 4398,
+        "close": 4399.39990234375
+      },
+      {
+        "start_ms": 1787120700000,
+        "open": 4399.60009765625,
+        "high": 4400.39990234375,
+        "low": 4394.2001953125,
+        "close": 4396.2998046875
+      }
+    ],
+    "sample_end": [
+      {
+        "start_ms": 1792131000000,
+        "open": 4193.7998046875,
+        "high": 4194.10009765625,
+        "low": 4191,
+        "close": 4192
+      },
+      {
+        "start_ms": 1792131200000,
+        "open": 4192.39990234375,
+        "high": 4192.39990234375,
+        "low": 4192.39990234375,
+        "close": 4192.39990234375
+      }
+    ]
+  }
+}
