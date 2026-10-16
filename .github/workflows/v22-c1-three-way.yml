@@ -10,6 +10,8 @@ on:
       - lib/endpoints/v22-c1-fiscal-source.js
       - lib/endpoints/v22-benchmark-core.js
       - lib/endpoints/v22-asof-join.js
+      - lib/endpoints/v22-cot-release.js
+      - tests/v22-cot-release.test.js
       - scripts/v22-c1-three-way.js
       - tests/v22-c1-gate-core.test.js
       - .github/workflows/v22-c1-three-way.yml
@@ -32,6 +34,7 @@ jobs:
           node tests/v22-c1-gate-core.test.js
           node --check lib/endpoints/v22-c2-core.js
           node tests/v22-c2-core.test.js
+          node tests/v22-cot-release.test.js
           node tests/v22-benchmark-core.test.js
           node tests/v22-fiscal-composite-core.test.js
           node tests/v22-execution-core.test.js
