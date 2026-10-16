@@ -1,7 +1,7 @@
 // Frozen 4H Dow baseline (11 trades) CFTC OI point-in-time filter audit.
 // Does not modify original trade execution and does not claim reproducible full V2.2.
 const fs=require('node:fs'),ONE=864e5,day=x=>Date.parse(x+'T00:00:00Z'),iso=x=>new Date(x).toISOString().slice(0,10),add=(x,d)=>iso(day(x)+d*ONE);
-const shutdown={"2025-09-30":"2025-11-19","2025-10-07":"2025-11-21","2025-10-14":"2025-11-25","2025-10-21":"2025-12-02","2025-10-28":"2025-12-05","2025-11-04":"2025-12-09","2025-11-10":"2025-12-10","2025-11-18":"2025-12-12","2025-11-25":"2025-12-15","2025-12-02":"2025-12-17","2025-12-09":"2025-12-19","2025-12-16":"2025-12-23","2025-12-23":"2025-12-29"};
+const shutdown={"2025-09-30":"2025-11-19","2025-10-07":"2025-11-21","2025-10-14":"2025-11-25","2025-10-21":"2025-12-02","2025-10-28":"2025-12-05","2025-11-04":"2025-12-09","2025-11-10":"2025-12-10","2025-11-18":"2025-12-12","2025-11-25":"2025-12-15","2025-12-02":"2025-12-17","2025-12-09":"2025-12-19","2025-12-16":"2025-12-23","2025-12-23":"2025-12-29","2025-12-30":"2026-01-05","2026-01-06":"2026-01-09","2026-01-13":"2026-01-16","2026-01-20":"2026-01-23"};
 async function main(){
  const p=new URLSearchParams({cftc_contract_market_code:'088691','$where':"report_date_as_yyyy_mm_dd >= '2018-01-01T00:00:00'","$order":"report_date_as_yyyy_mm_dd ASC","$limit":"1200"});
  const rows=await (await fetch('https://publicreporting.cftc.gov/resource/72hh-3qpy.json?'+p)).json();
@@ -14,7 +14,7 @@ async function main(){
    const confirm=t.source_dow_confirmed_at_utc.slice(0,10);
    let latest=null;
    for(let i=4;i<cot.length;i++){
-    const r=cot[i];if(r.d>='2025-12-30'&&r.d<='2026-01-20')continue;
+    const r=cot[i];
     let avail=add(r.d,lag);if(shutdown[r.d])avail=avail>add(shutdown[r.d],1)?avail:add(shutdown[r.d],1);
     if(avail>confirm)continue;
     const age=(day(confirm)-day(r.d))/ONE;if(!latest||r.d>latest.report_date)latest={report_date:r.d,availability_date:avail,oi4_delta_contracts:r.oi-cot[i-4].oi,mm4_delta_contracts:r.mm-cot[i-4].mm,age_days:age};
