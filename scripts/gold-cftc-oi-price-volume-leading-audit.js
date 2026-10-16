@@ -64,7 +64,7 @@ function calc(events,strat,h,asset='fut',filter=null){
  const n=picked.length;
  const arr=picked.map(x=>x[asset][h]*x.side-0.1), baseline=picked.map(x=>x[asset][h]-0.1);
  const success=picked.filter(x=>x[asset][h]*x.side>0).length;
- const non=[],last=-1e5;for(const x of picked){if(x.entry_index-last>=h){non.push(x);last=x.entry_index}}
+ const non=[];let last=-1e5;for(const x of picked){if(x.entry_index-last>=h){non.push(x);last=x.entry_index}}
  let win=non.filter(x=>x[asset][h]*x.side>0).length;
  return {n,longs:picked.filter(x=>x.side>0).length,shorts:picked.filter(x=>x.side<0).length,win:n?success:0,
   hit:n?round(100*success/n,1):null,mean_net:round(mean(arr)),same_events_buyhold:round(mean(baseline)),edge_vs_buyhold:round(mean(arr)-mean(baseline)),
