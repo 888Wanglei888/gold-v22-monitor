@@ -10,6 +10,12 @@ assert(atr(x,21,14)>0);
 const signal={known_at_ms:x[22].close_ms-1000,grade:'A',direction:'long',forecast_z:1.2,factor_status:'asof_verified',evidence:{
  fiscal_forecast_asof_verified:true,treasury_components_reconciled:true,dollar_liquidity_confirmed:true,real_yield_and_dxy_regime_confirmed:true,gold_positioning_confirmed:true,dow_weekly_daily_trend_confirmed:true}};
 assert(permittedSignal(signal,x[22].close_ms).ok);
+const beforeSettlement={...signal,mode:'anticipation',forecast_z:0,evidence:{...signal.evidence,
+ future_fiscal_cashflow_path_asof_verified:true,pre_event_pricing_confirmation_verified:true}};
+assert(permittedSignal(beforeSettlement,x[22].close_ms).ok,'Anticipation route must not require an artificial same-day Z shock');
+assert(!permittedSignal({...beforeSettlement,evidence:{...beforeSettlement.evidence,pre_event_pricing_confirmation_verified:false}},x[22].close_ms).ok);
+assert(!permittedSignal({...signal,mode:'revision',forecast_z:0},x[22].close_ms).ok);
+
 const opts={stop_atr:1.5,max_bars:3};
 assert.equal(backtest(x,[signal],opts).trades,1);
 assert.equal(backtest(x,[{...signal,factor_status:'missing'}],opts).trades,0);
