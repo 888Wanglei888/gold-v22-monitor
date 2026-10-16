@@ -1,0 +1,73 @@
+name: Gold V2.2 Fiscal Method Incremental Value Research
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - lib/endpoints/v22-fiscal-composite-core.js
+      - lib/endpoints/v22-fiscal-new-methods-core.js
+      - lib/endpoints/v22-benchmark-core.js
+      - lib/endpoints/v22-c1-fiscal-source.js
+      - scripts/v22-fiscal-methods-audit.js
+      - tests/v22-fiscal-new-methods-core.test.js
+      - .github/workflows/v22-fiscal-methods.yml
+permissions:
+  contents: write
+concurrency:
+  group: gold-fiscal-incremental-value
+  cancel-in-progress: true
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject any future TGA or future 4h data at entry
+        run: |
+          node --check lib/endpoints/v22-fiscal-new-methods-core.js
+          node --check scripts/v22-fiscal-methods-audit.js
+          node tests/v22-fiscal-new-methods-core.test.js
+          node tests/v22-fiscal-composite-core.test.js
+          node tests/v22-fiscal-revision-core.test.js
+          node tests/v22-benchmark-core.test.js
+          node tests/v22-cot-release.test.js
+      - name: Evaluate fixed seven-way fiscal vs Dow controls on fetched genuine historical data
+        run: node scripts/v22-fiscal-methods-audit.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v22-fixed-fiscal-incremental-value-report
+          path: reports/v22-fiscal-methods-latest.json
+          retention-days: 30
+      - name: Fail closed if research missing or incorrectly promoted to live full V2.2
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('reports/v22-fiscal-methods-latest.json'))
+          assert d['status']=='fixed_fiscal_methods_A_B_C2_ablation_research_completed',d.get('error')
+          assert not d['live_trade_signals_enabled'] and not d['full_official_v22_approved']
+          assert d['common_sample']['shared_bars']>=1400
+          assert d['benchmark']['B_dow_four_hour']['trades']>=8
+          required={'fiscal_uncertainty_band','revision_adverse_only','revision_positive_only','reserve_transmission_gap','gold_prepriced_3atr','fiscal_plus_transmission','all_four_combined'}
+          assert set(d['strategies'])==required
+          for key,v in d['strategies'].items():
+              assert isinstance(v['replay_portfolio_result']['total_return_pct'],(int,float))
+              assert v['independent_B_executed_trade_attribution']['B_trade_count']==d['benchmark']['B_dow_four_hour']['trades']
+              assert v['common_start_and_stop_and_costs_unchanged']
+          assert d['fiscal_prediction']['with_past_only_rolling_error']>=300
+          PY
+      - name: Publish research metrics after complete verification
+        run: |
+          cp reports/v22-fiscal-methods-latest.json /tmp/v22-fiscal-methods-latest.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p reports
+            cp /tmp/v22-fiscal-methods-latest.json reports/v22-fiscal-methods-latest.json
+            git add reports/v22-fiscal-methods-latest.json
+            git commit -m 'Store in-sample fixed fiscal-error-band revision liquidity and prepricing comparison' || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 4
+          done
+          exit 1
