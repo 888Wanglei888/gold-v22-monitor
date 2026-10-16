@@ -1,7 +1,7 @@
 {
-  "checked_at_utc": "2026-10-16T03:32:16.030Z",
-  "source_sha": "7c545120cacaf1a054a35acc850d59d68b2f4be1",
-  "status": "C1_proxy_Three_policy_gold_benchmark_completed_research_only",
+  "checked_at_utc": "2026-10-16T03:33:13.515Z",
+  "source_sha": "8344811a5caae94056ccb78414ce1b4dd45ded87",
+  "status": "C1_three_way_research_blocked_by_source_or_implementation",
   "scope": "C1 exploratory expectation-first fiscal plus macro gold flow filter above existing B actual execution",
   "genuine_full_C2_V22_signals_verified": false,
   "live_trade_signals_enabled": false,
@@ -3506,34 +3506,5 @@
       }
     }
   },
-  "C2_full_original_V22": {
-    "status": "blocked_missing_original_full_point_in_time_signal_evidence",
-    "win_rate_pct": null,
-    "total_return_pct": null,
-    "max_drawdown_pct": null,
-    "trade_count": null,
-    "not_zero_trades_but_NOT_EVALUABLE": true,
-    "requirements_not_proven": [
-      "Historical as-published Fiscal D+1/3/5 expectation path and surprise/revision vintage",
-      "DTS announcement tax-spending forecast and TreasuryDirect publicly-held net new cash identity",
-      "Actual available TGA buffers, Fed/SOMA, ON RRP, SRF, reserve and SOFR-IORB regime at every candidate",
-      "Policy vs fiscal-credit reprice split for real rates and DXY",
-      "GLD actual cash creations/redemptions rather than proxy tonnes and COMEX trade-day contract OI volume",
-      "Certified official daily and weekly Dow settles versus partial 4h constructed proxies",
-      "Specific GC futures roll, OHLC intrabar slippage and broker costs",
-      "Untouched holdout including other regimes"
-    ]
-  },
-  "precision_warnings": [
-    "Do not report C1 as measured complete official V2.2 C2 strategy: several factors are proxy and original announcement release vintages missing",
-    "C1 policies were predeclared in code but NOT true untouched preregistration; this development window previously analyzed",
-    "All alternative variants are reported even if some yield zero trades; no cherry-picked winner",
-    "B and C1 use identical A/B simulator, broker proxy 10bps roundtrip, 0.5% risk, ATR stop and next-open entry",
-    "C1 tests filter only B-style confirmed Dow and 4h candidates; original C2 independent macro-led entry opportunities may be missed",
-    "Treasury forecast D+3 is an estimated cashflow path with historical imputed unannounced gross bill sales",
-    "DXY/real yield current-vintage and GLD holdings weekly CFTC proxy lag assumptions not certified as-published",
-    "Missing GLD source or CFTC/monetary source blocks C1 signals rather than treating missing observations as bullish",
-    "11 B trades are a small overlapping in-sample research ledger; no reliable causal lift or next-year forecast",
-    "Live signals remain disabled"
-  ]
+  "error": "TypeError: Cannot read properties of undefined (reading 'full_costed_trade_ledger')\n    at main (/home/runner/work/gold-v22-monitor/gold-v22-monitor/scripts/v22-c1-three-way.js:94:37)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
 }
