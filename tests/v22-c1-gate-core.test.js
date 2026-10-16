@@ -2,13 +2,13 @@ const assert=require('node:assert/strict');
 const {makeGate,makeFiscalLookup,policyCheck}=require('../lib/endpoints/v22-c1-gate-core');
 const {buildAsOf}=require('../lib/endpoints/v22-asof-core');
 const names=['DFII10','DGS10','T10YIE','RRPONTSYD','SOFR','IORB','WRESBAL','DXY','COT_NET','COT_OI','TGA','GLD_TONNES_DELTA'];
-const past=['2025-04-01','2025-04-09','2025-04-15','2025-04-21'];
+const past=['2025-03-20','2025-04-09','2025-04-15','2025-04-21'];
 const sources=Object.fromEntries(names.map((id)=>{
  const values=id==='DXY'?[105,103,102,100]:id==='DFII10'?[1.9,1.8,1.7,1.6]:id==='GLD_TONNES_DELTA'?[1,2,2,3]:id==='COT_NET'?[100,120,130,170]:id==='SOFR'?[4.31,4.3,4.3,4.3]:id==='IORB'?[4.30,4.30,4.30,4.30]:[3,4,5,6];
  return [id,buildAsOf(past.map((date,i)=>({date,value:values[i]})),1)];
 }));
 const maxAgeDays=Object.fromEntries(names.map(x=>[x,60]));
-const fiscal=[{no_earlier_than_utc:'2025-04-16T23:59:59.000Z',forecast_D3_auction_plus_missing_issuance_baseline_tax_usd_millions:-48000,forecast_target_date:'2025-04-22',future_days_without_published_auction_issuance:2}];
+const fiscal=[{no_earlier_than_utc:'2025-04-18T23:59:59.000Z',forecast_D3_auction_plus_missing_issuance_baseline_tax_usd_millions:-48000,forecast_target_date:'2025-04-22',future_days_without_published_auction_issuance:2}];
 const time=Date.parse('2025-04-22T20:00:00Z');
 const f=makeFiscalLookup(fiscal);
 assert(f(time));
