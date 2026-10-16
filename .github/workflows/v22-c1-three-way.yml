@@ -1,0 +1,73 @@
+name: C1 Research Full Source Golden Benchmark
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - lib/endpoints/v22-c1-gate-core.js
+      - lib/endpoints/v22-c1-fiscal-source.js
+      - lib/endpoints/v22-benchmark-core.js
+      - lib/endpoints/v22-asof-join.js
+      - scripts/v22-c1-three-way.js
+      - tests/v22-c1-gate-core.test.js
+      - .github/workflows/v22-c1-three-way.yml
+concurrency:
+  group: v22-c1-historical-source-research
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  historical-c1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deterministic historical as-of and C1 macro anti-future tests
+        run: |
+          node --check lib/endpoints/v22-c1-gate-core.js
+          node --check lib/endpoints/v22-c1-fiscal-source.js
+          node --check scripts/v22-c1-three-way.js
+          node tests/v22-c1-gate-core.test.js
+          node tests/v22-benchmark-core.test.js
+          node tests/v22-fiscal-composite-core.test.js
+          node tests/v22-execution-core.test.js
+      - name: Fetch actual Treasury FRED GLD CFTC DXY and gold source and run all fixed C1 overlays
+        run: node scripts/v22-c1-three-way.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v22-c1-three-way-exploratory-source-evidence
+          path: reports/v22-c1-three-way-latest.json
+          retention-days: 21
+      - name: Archive direct source research and explicitly failed blocker statuses
+        if: ${{ !cancelled() }}
+        run: |
+          test -s reports/v22-c1-three-way-latest.json
+          cp reports/v22-c1-three-way-latest.json /tmp/v22-c1-source-report.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p reports
+            cp /tmp/v22-c1-source-report.json reports/v22-c1-three-way-latest.json
+            git add reports/v22-c1-three-way-latest.json
+            git commit -m "Archive real C1 proxy historical comparison and unavailable full V2.2 C2 signals" || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Gate real comparative C1 research but never full official V2.2
+        run: |
+          python3 - <<'PY'
+          import json
+          x=json.load(open('reports/v22-c1-three-way-latest.json'))
+          assert x['status']=='C1_proxy_Three_policy_gold_benchmark_completed_research_only',x.get('error')
+          assert x['live_trade_signals_enabled'] is False and x['genuine_full_C2_V22_signals_verified'] is False
+          assert x['fixed_fair_comparison_window']['shared_bars']>1000
+          b=x['B_dow_four_hour']
+          assert b['executed_nonoverlapping_trades']>0
+          assert set(x['C1_proxy_sensitivity'])=={'C1_guardrail','C1_confirmed','C1_strict'}
+          for p,d in x['C1_proxy_sensitivity'].items():
+              assert d['B_executed_trade_counterfactual']['B_trades']==b['executed_nonoverlapping_trades']
+              assert isinstance(d['C1_portfolio_recomputed_from_all_gated_candidates']['total_return_pct'],(int,float))
+          PY
