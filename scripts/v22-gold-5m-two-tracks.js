@@ -69,6 +69,8 @@ async function main(){
    maxHoldBars:36,maxTradesPerNYDate:3,cooldownBars:6,stopSlippageATR:.1,forcedExitEtMinute:780};
   const base=evaluateIntraday(data,common),trainResult=evaluateIntraday(trainData,common),validResult=evaluateIntraday(validData,common);
   const highCost=evaluateIntraday(data,{...common,costBpsRoundTrip:30});
+  const feeSweep=Object.fromEntries([0,1,3,5].map(bps=>[bps+'bps_roundtrip',mapResults(evaluateIntraday(data,{...common,costBpsRoundTrip:bps}))]));
+  const validation1bp=mapResults(evaluateIntraday(validData,{...common,costBpsRoundTrip:1}));
   report.track_2_independent_gold_five_minute_trading={
    rules:'US 08:00-13:00 NY time, prior-closed 5-minute EMA/channel/Bollinger/opening-range decisions, NEXT 5-minute open, no overnight holds',
    model_lot_size:'fractional synthetic ounces for comparability, NOT actual COMEX GC/MGC integer contract fills',
@@ -81,6 +83,8 @@ async function main(){
    results_training_earlier_70pct_days:mapResults(trainResult),
    results_later_30pct_days:mapResults(validResult),
    cost_stress_30basis_points_roundtrip:mapResults(highCost),
+   predeclared_fee_sensitivity_0_1_3_5bps_roundtrip:feeSweep,
+   lower_fee_1bps_later_30pct_held_dates:validation1bp,
    benchmark_1x_buyhold_same_window:buyhold1x(data,10),
    generated_5m_closed_signal_counts:base.generated_signal_counts,
    eligible_5m_NY_session_bars:base.eligible_5m_entry_bars,
@@ -94,12 +98,14 @@ async function main(){
    'Short Yahoo retained 5m history cannot replicate 2019-2025 5m entries, no fictional synthetic 5m candles',
    'Source omits null/partial 5m OHLC records; impossible to claim zero price gaps and direct tradable liquidity',
    '5m simulation uses next observed 5m open, OHLC stop-first ambiguity, 10bp assumed roundtrip fees and additional stop slippage',
+   '0bp is a nontradable mathematical reference. 1bp/3bp/5bp/10bp and 30bp are HYPOTHETICAL fee scenarios, not broker-specific live spreads',
    '30bp stress is hypothetical; not an observed retail broker spread, commission or actual gold futures market impact',
    'Fractional futures ounces for risk sizing, no MGC/GC integer 10/100 oz lot, brokerage margin, overnight funding, expiry or contract roll',
    'Dow strict 4h comparison only applies when such a signal occurs during actual 5m data; otherwise no historical evidence of improvement',
    'Price-only 4h control is explicitly NOT actual Dow-and-macro-qualified V2.2 trading setup',
    '60m after 4h breakout limit and 5m confirmation tests select on fill, selection bias; not aggregate strategy portfolio',
    'Training/validation split on latest 58 days is a short contemporary regime, not an untouched long historical out-of-sample',
+   'Low fee sweep added after inspecting 10bp results, hence NOT blind preregistered; compare all costs as sensitivity, not a new out-of-sample win',
    'Signals predeclared in code before this data run, but research design is exploratory and no future profit guarantee',
    'Results must never be silently joined to earlier C2 2025-2026 pnl because the time windows differ'];
  }catch(e){report.status='gold_5m_dual_track_research_blocked';report.error=String(e.stack||e)}
