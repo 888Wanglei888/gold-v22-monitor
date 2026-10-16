@@ -1,6 +1,6 @@
 {
-  "created_utc": "2026-10-16T10:47:03.608Z",
-  "source_sha": "feeb785801e27142fdf06cfb827ab3750e75aaa4",
+  "created_utc": "2026-10-16T10:57:34.343Z",
+  "source_sha": "10a181f8590be69a62b9f224ffb1e2e2a0085ce6",
   "status": "fixed_fiscal_methods_A_B_C2_ablation_research_completed",
   "study_type": "fixed_in_sample_fiscal_methods_comparison",
   "live_trade_signals_enabled": false,
@@ -43,7 +43,7 @@
         "total_return_pct": 7.56,
         "max_drawdown_pct": 2.03,
         "final_equity_usd": 10756.38,
-        "active_4h_market_pct": 7.41,
+        "active_4h_market_pct": 7.35,
         "by_year": [
           {
             "year": 2025,
@@ -966,7 +966,7 @@
         "total_return_pct": 9.83,
         "max_drawdown_pct": 2.03,
         "final_equity_usd": 10983.18,
-        "active_4h_market_pct": 8.07,
+        "active_4h_market_pct": 8,
         "by_year": [
           {
             "year": 2025,
@@ -2342,7 +2342,7 @@
         "total_return_pct": 10.46,
         "max_drawdown_pct": 1.47,
         "final_equity_usd": 11046.12,
-        "active_4h_market_pct": 7.53,
+        "active_4h_market_pct": 7.47,
         "by_year": [
           {
             "year": 2025,
@@ -3224,7 +3224,7 @@
         "total_return_pct": 3.51,
         "max_drawdown_pct": 1.37,
         "final_equity_usd": 10351.09,
-        "active_4h_market_pct": 4.98,
+        "active_4h_market_pct": 4.94,
         "by_year": [
           {
             "year": 2025,
@@ -3934,7 +3934,7 @@
         "total_return_pct": 8.18,
         "max_drawdown_pct": 1.47,
         "final_equity_usd": 10818.02,
-        "active_4h_market_pct": 6.88,
+        "active_4h_market_pct": 6.82,
         "by_year": [
           {
             "year": 2025,
@@ -4816,7 +4816,7 @@
         "total_return_pct": 4.1,
         "max_drawdown_pct": 1.37,
         "final_equity_usd": 10410.41,
-        "active_4h_market_pct": 4.45,
+        "active_4h_market_pct": 4.41,
         "by_year": [
           {
             "year": 2025,
@@ -5461,19 +5461,19 @@
     "first_4h_start_utc": "2025-06-02T02:00:00.000Z",
     "last_4h_close_utc": "2026-10-16T10:00:00.000Z",
     "startDate_predeclared": "2025-06-02",
-    "shared_bars": 1686,
+    "shared_bars": 1700,
     "initial_usd": 10000
   },
   "market_data_coverage": {
-    "gold_bars": 2203,
+    "gold_bars": 2217,
     "gold_quality": {
       "raw": 13030,
-      "missing_ohlc": 2807,
+      "missing_ohlc": 2744,
       "off_hour": 13,
       "unclosed": 1,
       "duplicate_hours": 0,
       "nonconsecutive_groups": 0,
-      "incomplete_groups": 34
+      "incomplete_groups": 33
     },
     "source_status": {
       "DFII10": {
@@ -5602,7 +5602,7 @@
       "total_return_pct": 9.83,
       "max_drawdown_pct": 2.03,
       "final_equity_usd": 10983.18,
-      "active_4h_market_pct": 8.07,
+      "active_4h_market_pct": 8,
       "by_year": [
         {
           "year": 2025,
@@ -5815,7 +5815,7 @@
     "total_return_pct": -2.74,
     "max_drawdown_pct": 3.26,
     "final_equity_usd": 9725.85,
-    "active_4h_market_pct": 2.19,
+    "active_4h_market_pct": 2.18,
     "by_year": [
       {
         "year": 2025,
