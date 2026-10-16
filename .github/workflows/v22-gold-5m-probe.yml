@@ -1,0 +1,35 @@
+name: Verify real 5-minute gold data source
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/v22-gold-5m-probe.js
+      - .github/workflows/v22-gold-5m-probe.yml
+permissions:
+  contents: write
+jobs:
+  audit-5m:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/v22-gold-5m-probe.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gold-5-minute-source-diagnostic
+          path: reports/v22-gold-5m-source-audit.json
+      - name: Save source evidence regardless of market data returned
+        run: |
+          cp reports/v22-gold-5m-source-audit.json /tmp/5m-source-audit.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/5m-source-audit.json reports/v22-gold-5m-source-audit.json
+            git add reports/v22-gold-5m-source-audit.json
+            git commit -m 'Record true available Yahoo GC futures 5-minute historical range' || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 3
+          done
+          exit 1
