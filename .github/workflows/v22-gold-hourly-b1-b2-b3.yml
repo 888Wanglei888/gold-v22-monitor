@@ -1,0 +1,70 @@
+name: Compare gold V22 B1 4h B2 hourly B3 hourly retest
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - lib/endpoints/v22-gold-hourly-comparison-core.js
+      - scripts/v22-gold-hourly-b1-b2-b3.js
+      - tests/v22-gold-hourly-comparison-core.test.js
+      - .github/workflows/v22-gold-hourly-b1-b2-b3.yml
+concurrency:
+  group: gold-hourly-three-methods-research
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check B1 B2 B3 hourly source and model syntax tests
+        run: |
+          node --check lib/endpoints/v22-gold-hourly-comparison-core.js
+          node --check scripts/v22-gold-hourly-b1-b2-b3.js
+          node tests/v22-gold-hourly-comparison-core.test.js
+          node tests/v22-dow-proxy-core.test.js
+          node tests/v22-benchmark-core.test.js
+      - name: Fetch actual GOLD hourly OHLC and evaluate all three fair strategies
+        run: node scripts/v22-gold-hourly-b1-b2-b3.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gold-hourly-B1-B2-B3-actual-data-comparison
+          path: reports/v22-gold-hourly-b1-b2-b3-latest.json
+          retention-days: 28
+      - name: Fail if 4hour baseline cannot be reproduced or trades not timed
+        run: |
+          python3 - <<'PY'
+          import json
+          r=json.load(open('reports/v22-gold-hourly-b1-b2-b3-latest.json'))
+          assert r['status']=='gold_three_way_B1_4h_B2_1h_B3_1h_tested_source_research_only',r.get('error')
+          assert r['live_signals_enabled'] is False and r['full_V22_gold_macro_study_verified'] is False
+          assert r['window']['completely_accounted_1h_candles']>=5000
+          assert r['window']['complete_4h_candles']>=1500
+          assert r['base_B1_original_four_hour_simulation']['trades']==r['fixed_10bps_three_way']['B1_4h_Dow_hourly_stop_simulation']['trades']
+          assert set(r['fixed_10bps_three_way'])=={'B1_4h_Dow_hourly_stop_simulation','B2_Dow_plus_1h_confirmed_breakout','B3_B1_signal_wait_1h_ATR_limit_retest'}
+          assert r['fixed_10bps_three_way']['B2_Dow_plus_1h_confirmed_breakout']['trades']>=1
+          assert len(r['cost_sensitivity_1_3_5_30bps'])==4
+          for name,x in r['fixed_10bps_three_way'].items():
+              assert isinstance(x['return_pct'],(int,float)) and isinstance(x['max_hourly_equity_drawdown_pct'],(int,float))
+              for t in x['trade_ledger']:
+                  assert t['original_signal_known_utc'] <= t['entry_utc']
+                  assert t['entry_utc'] < t['exit_utc']
+          PY
+      - name: Publish all strategies not only winning results
+        run: |
+          cp reports/v22-gold-hourly-b1-b2-b3-latest.json /tmp/1h-result.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p reports
+            cp /tmp/1h-result.json reports/v22-gold-hourly-b1-b2-b3-latest.json
+            git add reports/v22-gold-hourly-b1-b2-b3-latest.json
+            git commit -m 'Archive B1 B2 B3 identical hourly gold backtest with past-only risks and costs' || exit 0
+            git push origin HEAD:main && exit 0
+            sleep 3
+          done
+          exit 1
