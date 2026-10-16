@@ -1,0 +1,4 @@
+horizon,n,MAE_zero_usd_bn,MAE_weekday_usd_bn,MAE_auction_plus_residual_usd_bn,MAE_auction_plus_tax_calendar_usd_bn,MAE_known_maturities_plus_bill_fallback_tax_usd_bn,unannounced_bills_cases
+D+1,430,27.375,23.853,19.06,17.066,18.343,258
+D+3,395,48.202,45.32,40.42,34.031,35.575,395
+D+5,362,58.952,59.224,145.314,134.637,50.52,362
