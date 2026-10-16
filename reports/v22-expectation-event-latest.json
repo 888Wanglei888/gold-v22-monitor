@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T02:27:53.504Z",
-  "github_commit": "87d61781a82d4b9c722e7983d5e413bee282f2d1",
+  "checked_at_utc": "2026-10-16T02:29:35.858Z",
+  "github_commit": "9f54f720bef29c644370876dc298cdf5d0de373b",
   "study": "Gold V2.2: forward-pricing around already-known US Treasury Bill settlements and pre-scheduled US tax dates",
   "status": "pre_event_treasury_expectation_pricing_research_completed",
   "original_full_v22_strategy_tested": false,
@@ -63,6 +63,10 @@
             "pre_event_directional_gold_hit_rate_pct": 55.6,
             "avg_direction_adjusted_pre_event_gold_return_pct": 0.062,
             "avg_direction_adjusted_post_event_three_day_return_pct": -0.518,
+            "known_bill_offering_and_maturity_events": 45,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 3,
             "gold_price_confirmation_before_event": 6
           },
           "bill_only": {
@@ -75,7 +79,43 @@
             "pre_event_directional_gold_hit_rate_pct": 55.6,
             "avg_direction_adjusted_pre_event_gold_return_pct": 0.062,
             "avg_direction_adjusted_post_event_three_day_return_pct": -0.518,
+            "known_bill_offering_and_maturity_events": 45,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
             "gold_price_confirmation_before_event": 6
+          },
+          "bill_only_with_announced_future_offering": {
+            "screened_known_events": 45,
+            "pre_event_price_coverage": 45,
+            "avg_pre_event_gold_return_pct": -0.014,
+            "avg_post_event_next_business_day_gold_return_pct": 0.138,
+            "avg_post_event_three_business_days_gold_return_pct": 0.374,
+            "cashflow_direction_evaluable": 45,
+            "pre_event_directional_gold_hit_rate_pct": 55.6,
+            "avg_direction_adjusted_pre_event_gold_return_pct": 0.062,
+            "avg_direction_adjusted_post_event_three_day_return_pct": -0.518,
+            "known_bill_offering_and_maturity_events": 45,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 6
+          },
+          "maturity_only_without_announced_new_issuance": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
           },
           "scheduled_tax_date": {
             "screened_known_events": 4,
@@ -87,6 +127,10 @@
             "pre_event_directional_gold_hit_rate_pct": 0,
             "avg_direction_adjusted_pre_event_gold_return_pct": -0.974,
             "avg_direction_adjusted_post_event_three_day_return_pct": 1.284,
+            "known_bill_offering_and_maturity_events": 1,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 3,
             "gold_price_confirmation_before_event": 0
           },
           "by_year": {
@@ -100,6 +144,10 @@
               "pre_event_directional_gold_hit_rate_pct": 56,
               "avg_direction_adjusted_pre_event_gold_return_pct": 0.09,
               "avg_direction_adjusted_post_event_three_day_return_pct": 0.021,
+              "known_bill_offering_and_maturity_events": 25,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 1,
               "gold_price_confirmation_before_event": 6
             },
             "2026": {
@@ -112,6 +160,10 @@
               "pre_event_directional_gold_hit_rate_pct": 55,
               "avg_direction_adjusted_pre_event_gold_return_pct": 0.028,
               "avg_direction_adjusted_post_event_three_day_return_pct": -1.192,
+              "known_bill_offering_and_maturity_events": 20,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 2,
               "gold_price_confirmation_before_event": 0
             }
           }
@@ -127,6 +179,10 @@
             "pre_event_directional_gold_hit_rate_pct": 54.5,
             "avg_direction_adjusted_pre_event_gold_return_pct": -0.202,
             "avg_direction_adjusted_post_event_three_day_return_pct": -0.405,
+            "known_bill_offering_and_maturity_events": 44,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 3,
             "gold_price_confirmation_before_event": 9
           },
           "bill_only": {
@@ -139,7 +195,43 @@
             "pre_event_directional_gold_hit_rate_pct": 54.5,
             "avg_direction_adjusted_pre_event_gold_return_pct": -0.202,
             "avg_direction_adjusted_post_event_three_day_return_pct": -0.405,
+            "known_bill_offering_and_maturity_events": 44,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
             "gold_price_confirmation_before_event": 9
+          },
+          "bill_only_with_announced_future_offering": {
+            "screened_known_events": 44,
+            "pre_event_price_coverage": 44,
+            "avg_pre_event_gold_return_pct": 0.174,
+            "avg_post_event_next_business_day_gold_return_pct": 0.152,
+            "avg_post_event_three_business_days_gold_return_pct": 0.258,
+            "cashflow_direction_evaluable": 44,
+            "pre_event_directional_gold_hit_rate_pct": 54.5,
+            "avg_direction_adjusted_pre_event_gold_return_pct": -0.202,
+            "avg_direction_adjusted_post_event_three_day_return_pct": -0.405,
+            "known_bill_offering_and_maturity_events": 44,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 9
+          },
+          "maturity_only_without_announced_new_issuance": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
           },
           "scheduled_tax_date": {
             "screened_known_events": 4,
@@ -151,6 +243,10 @@
             "pre_event_directional_gold_hit_rate_pct": 0,
             "avg_direction_adjusted_pre_event_gold_return_pct": -2.325,
             "avg_direction_adjusted_post_event_three_day_return_pct": 1.284,
+            "known_bill_offering_and_maturity_events": 1,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 3,
             "gold_price_confirmation_before_event": 0
           },
           "by_year": {
@@ -164,6 +260,10 @@
               "pre_event_directional_gold_hit_rate_pct": 62.5,
               "avg_direction_adjusted_pre_event_gold_return_pct": 0.295,
               "avg_direction_adjusted_post_event_three_day_return_pct": 0.251,
+              "known_bill_offering_and_maturity_events": 24,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 1,
               "gold_price_confirmation_before_event": 9
             },
             "2026": {
@@ -176,6 +276,10 @@
               "pre_event_directional_gold_hit_rate_pct": 45,
               "avg_direction_adjusted_pre_event_gold_return_pct": -0.8,
               "avg_direction_adjusted_post_event_three_day_return_pct": -1.192,
+              "known_bill_offering_and_maturity_events": 20,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 2,
               "gold_price_confirmation_before_event": 0
             }
           }
@@ -187,11 +291,15 @@
             "avg_pre_event_gold_return_pct": 0.521,
             "avg_post_event_next_business_day_gold_return_pct": -0.126,
             "avg_post_event_three_business_days_gold_return_pct": 0.114,
-            "cashflow_direction_evaluable": 162,
-            "pre_event_directional_gold_hit_rate_pct": 54.3,
-            "avg_direction_adjusted_pre_event_gold_return_pct": 0.522,
-            "avg_direction_adjusted_post_event_three_day_return_pct": 0.113,
-            "gold_price_confirmation_before_event": 79
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 162,
+            "known_tax_calendar_without_verified_net_direction": 1,
+            "gold_price_confirmation_before_event": 0
           },
           "bill_only": {
             "screened_known_events": 162,
@@ -199,11 +307,47 @@
             "avg_pre_event_gold_return_pct": 0.522,
             "avg_post_event_next_business_day_gold_return_pct": -0.12,
             "avg_post_event_three_business_days_gold_return_pct": 0.113,
-            "cashflow_direction_evaluable": 162,
-            "pre_event_directional_gold_hit_rate_pct": 54.3,
-            "avg_direction_adjusted_pre_event_gold_return_pct": 0.522,
-            "avg_direction_adjusted_post_event_three_day_return_pct": 0.113,
-            "gold_price_confirmation_before_event": 79
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 162,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "bill_only_with_announced_future_offering": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "maturity_only_without_announced_new_issuance": {
+            "screened_known_events": 162,
+            "pre_event_price_coverage": 162,
+            "avg_pre_event_gold_return_pct": 0.522,
+            "avg_post_event_next_business_day_gold_return_pct": -0.12,
+            "avg_post_event_three_business_days_gold_return_pct": 0.113,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 162,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
           },
           "scheduled_tax_date": {
             "screened_known_events": 4,
@@ -211,11 +355,15 @@
             "avg_pre_event_gold_return_pct": 2.346,
             "avg_post_event_next_business_day_gold_return_pct": -0.221,
             "avg_post_event_three_business_days_gold_return_pct": 1.008,
-            "cashflow_direction_evaluable": 3,
-            "pre_event_directional_gold_hit_rate_pct": 66.7,
-            "avg_direction_adjusted_pre_event_gold_return_pct": 2.984,
-            "avg_direction_adjusted_post_event_three_day_return_pct": 1.247,
-            "gold_price_confirmation_before_event": 2
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 3,
+            "known_tax_calendar_without_verified_net_direction": 1,
+            "gold_price_confirmation_before_event": 0
           },
           "by_year": {
             "2025": {
@@ -224,11 +372,15 @@
               "avg_pre_event_gold_return_pct": 0.953,
               "avg_post_event_next_business_day_gold_return_pct": -0.03,
               "avg_post_event_three_business_days_gold_return_pct": 0.44,
-              "cashflow_direction_evaluable": 87,
-              "pre_event_directional_gold_hit_rate_pct": 59.8,
-              "avg_direction_adjusted_pre_event_gold_return_pct": 0.953,
-              "avg_direction_adjusted_post_event_three_day_return_pct": 0.44,
-              "gold_price_confirmation_before_event": 53
+              "cashflow_direction_evaluable": 0,
+              "pre_event_directional_gold_hit_rate_pct": null,
+              "avg_direction_adjusted_pre_event_gold_return_pct": null,
+              "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 87,
+              "known_tax_calendar_without_verified_net_direction": 0,
+              "gold_price_confirmation_before_event": 0
             },
             "2026": {
               "screened_known_events": 76,
@@ -236,11 +388,15 @@
               "avg_pre_event_gold_return_pct": 0.026,
               "avg_post_event_next_business_day_gold_return_pct": -0.234,
               "avg_post_event_three_business_days_gold_return_pct": -0.26,
-              "cashflow_direction_evaluable": 75,
-              "pre_event_directional_gold_hit_rate_pct": 48,
-              "avg_direction_adjusted_pre_event_gold_return_pct": 0.021,
-              "avg_direction_adjusted_post_event_three_day_return_pct": -0.267,
-              "gold_price_confirmation_before_event": 26
+              "cashflow_direction_evaluable": 0,
+              "pre_event_directional_gold_hit_rate_pct": null,
+              "avg_direction_adjusted_pre_event_gold_return_pct": null,
+              "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 75,
+              "known_tax_calendar_without_verified_net_direction": 1,
+              "gold_price_confirmation_before_event": 0
             }
           }
         }
@@ -257,6 +413,7 @@
             "decision_date": "2026-09-16",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -36.168,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": 1.782,
             "post_3business_days_pct": 1.033
@@ -266,6 +423,7 @@
             "decision_date": "2026-09-21",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -47.71,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": -0.747,
             "post_3business_days_pct": -1.949
@@ -275,6 +433,7 @@
             "decision_date": "2026-09-23",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -30.683,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": -1.112,
             "post_3business_days_pct": -3.403
@@ -284,6 +443,7 @@
             "decision_date": "2026-09-28",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -38.694,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": -1.927,
             "post_3business_days_pct": 0.814
@@ -295,6 +455,7 @@
             "decision_date": "2026-09-14",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -36.168,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": 0.105,
             "post_3business_days_pct": 1.033
@@ -304,6 +465,7 @@
             "decision_date": "2026-09-17",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -47.71,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": 1.033,
             "post_3business_days_pct": -1.949
@@ -313,6 +475,7 @@
             "decision_date": "2026-09-21",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -30.683,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": -1.959,
             "post_3business_days_pct": -3.403
@@ -322,6 +485,7 @@
             "decision_date": "2026-09-24",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -38.694,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": -3.403,
             "post_3business_days_pct": 0.814
@@ -333,6 +497,7 @@
             "decision_date": "2026-09-22",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -285.694,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -4.982,
             "post_3business_days_pct": 0.814
@@ -342,6 +507,7 @@
             "decision_date": "2026-09-24",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -334.154,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -3.046,
             "post_3business_days_pct": -0.537
@@ -351,6 +517,7 @@
             "decision_date": "2026-09-29",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -272.751,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -0.07,
             "post_3business_days_pct": 0.01
@@ -360,6 +527,7 @@
             "decision_date": "2026-10-01",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -278.784,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -1.201,
             "post_3business_days_pct": 0.9
@@ -368,6 +536,7 @@
       },
       "limitations": [
         "Known gross Treasury Bill offering less auction-original maturing awarded principal is NOT actual TGA net change",
+        "KNOWN MATURITIES WITHOUT A PUBLICLY ANNOUNCED REPLACEMENT BILL are source-incomplete: no signed gold-direction proxy is calculated for them",
         "Events selected by ex-ante known announcement; never by later actual realized TGA magnitude",
         "Midmonth tax-date calendar is approximate and carries NO implied direction or magnitude",
         "Yahoo continuous GC=F proxy prices are NOT exchange-certified COMEX fills; returns are unlevered raw market changes with no transaction costs",
@@ -405,6 +574,10 @@
             "pre_event_directional_gold_hit_rate_pct": 88.9,
             "avg_direction_adjusted_pre_event_gold_return_pct": 0.78,
             "avg_direction_adjusted_post_event_three_day_return_pct": -0.41,
+            "known_bill_offering_and_maturity_events": 9,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 4,
             "gold_price_confirmation_before_event": 3
           },
           "bill_only": {
@@ -417,7 +590,43 @@
             "pre_event_directional_gold_hit_rate_pct": 88.9,
             "avg_direction_adjusted_pre_event_gold_return_pct": 0.78,
             "avg_direction_adjusted_post_event_three_day_return_pct": -0.41,
+            "known_bill_offering_and_maturity_events": 9,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
             "gold_price_confirmation_before_event": 3
+          },
+          "bill_only_with_announced_future_offering": {
+            "screened_known_events": 9,
+            "pre_event_price_coverage": 9,
+            "avg_pre_event_gold_return_pct": 0.386,
+            "avg_post_event_next_business_day_gold_return_pct": -0.021,
+            "avg_post_event_three_business_days_gold_return_pct": 0.464,
+            "cashflow_direction_evaluable": 9,
+            "pre_event_directional_gold_hit_rate_pct": 88.9,
+            "avg_direction_adjusted_pre_event_gold_return_pct": 0.78,
+            "avg_direction_adjusted_post_event_three_day_return_pct": -0.41,
+            "known_bill_offering_and_maturity_events": 9,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 3
+          },
+          "maturity_only_without_announced_new_issuance": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
           },
           "scheduled_tax_date": {
             "screened_known_events": 4,
@@ -429,6 +638,10 @@
             "pre_event_directional_gold_hit_rate_pct": null,
             "avg_direction_adjusted_pre_event_gold_return_pct": null,
             "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 4,
             "gold_price_confirmation_before_event": 0
           },
           "by_year": {
@@ -442,6 +655,10 @@
               "pre_event_directional_gold_hit_rate_pct": 87.5,
               "avg_direction_adjusted_pre_event_gold_return_pct": 0.774,
               "avg_direction_adjusted_post_event_three_day_return_pct": -0.104,
+              "known_bill_offering_and_maturity_events": 8,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 1,
               "gold_price_confirmation_before_event": 3
             },
             "2026": {
@@ -454,6 +671,10 @@
               "pre_event_directional_gold_hit_rate_pct": 100,
               "avg_direction_adjusted_pre_event_gold_return_pct": 0.827,
               "avg_direction_adjusted_post_event_three_day_return_pct": -2.857,
+              "known_bill_offering_and_maturity_events": 1,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 3,
               "gold_price_confirmation_before_event": 0
             }
           }
@@ -469,6 +690,10 @@
             "pre_event_directional_gold_hit_rate_pct": 88.9,
             "avg_direction_adjusted_pre_event_gold_return_pct": 1.161,
             "avg_direction_adjusted_post_event_three_day_return_pct": -0.41,
+            "known_bill_offering_and_maturity_events": 9,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 4,
             "gold_price_confirmation_before_event": 4
           },
           "bill_only": {
@@ -481,7 +706,43 @@
             "pre_event_directional_gold_hit_rate_pct": 88.9,
             "avg_direction_adjusted_pre_event_gold_return_pct": 1.161,
             "avg_direction_adjusted_post_event_three_day_return_pct": -0.41,
+            "known_bill_offering_and_maturity_events": 9,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
             "gold_price_confirmation_before_event": 4
+          },
+          "bill_only_with_announced_future_offering": {
+            "screened_known_events": 9,
+            "pre_event_price_coverage": 9,
+            "avg_pre_event_gold_return_pct": 0.714,
+            "avg_post_event_next_business_day_gold_return_pct": -0.021,
+            "avg_post_event_three_business_days_gold_return_pct": 0.464,
+            "cashflow_direction_evaluable": 9,
+            "pre_event_directional_gold_hit_rate_pct": 88.9,
+            "avg_direction_adjusted_pre_event_gold_return_pct": 1.161,
+            "avg_direction_adjusted_post_event_three_day_return_pct": -0.41,
+            "known_bill_offering_and_maturity_events": 9,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 4
+          },
+          "maturity_only_without_announced_new_issuance": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
           },
           "scheduled_tax_date": {
             "screened_known_events": 4,
@@ -493,6 +754,10 @@
             "pre_event_directional_gold_hit_rate_pct": null,
             "avg_direction_adjusted_pre_event_gold_return_pct": null,
             "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 4,
             "gold_price_confirmation_before_event": 0
           },
           "by_year": {
@@ -506,6 +771,10 @@
               "pre_event_directional_gold_hit_rate_pct": 87.5,
               "avg_direction_adjusted_pre_event_gold_return_pct": 1.177,
               "avg_direction_adjusted_post_event_three_day_return_pct": -0.104,
+              "known_bill_offering_and_maturity_events": 8,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 1,
               "gold_price_confirmation_before_event": 4
             },
             "2026": {
@@ -518,6 +787,10 @@
               "pre_event_directional_gold_hit_rate_pct": 100,
               "avg_direction_adjusted_pre_event_gold_return_pct": 1.027,
               "avg_direction_adjusted_post_event_three_day_return_pct": -2.857,
+              "known_bill_offering_and_maturity_events": 1,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 3,
               "gold_price_confirmation_before_event": 0
             }
           }
@@ -529,11 +802,15 @@
             "avg_pre_event_gold_return_pct": 0.521,
             "avg_post_event_next_business_day_gold_return_pct": -0.126,
             "avg_post_event_three_business_days_gold_return_pct": 0.114,
-            "cashflow_direction_evaluable": 162,
-            "pre_event_directional_gold_hit_rate_pct": 54.3,
-            "avg_direction_adjusted_pre_event_gold_return_pct": 0.522,
-            "avg_direction_adjusted_post_event_three_day_return_pct": 0.113,
-            "gold_price_confirmation_before_event": 79
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 162,
+            "known_tax_calendar_without_verified_net_direction": 1,
+            "gold_price_confirmation_before_event": 0
           },
           "bill_only": {
             "screened_known_events": 162,
@@ -541,11 +818,47 @@
             "avg_pre_event_gold_return_pct": 0.522,
             "avg_post_event_next_business_day_gold_return_pct": -0.12,
             "avg_post_event_three_business_days_gold_return_pct": 0.113,
-            "cashflow_direction_evaluable": 162,
-            "pre_event_directional_gold_hit_rate_pct": 54.3,
-            "avg_direction_adjusted_pre_event_gold_return_pct": 0.522,
-            "avg_direction_adjusted_post_event_three_day_return_pct": 0.113,
-            "gold_price_confirmation_before_event": 79
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 162,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "bill_only_with_announced_future_offering": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "maturity_only_without_announced_new_issuance": {
+            "screened_known_events": 162,
+            "pre_event_price_coverage": 162,
+            "avg_pre_event_gold_return_pct": 0.522,
+            "avg_post_event_next_business_day_gold_return_pct": -0.12,
+            "avg_post_event_three_business_days_gold_return_pct": 0.113,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 162,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
           },
           "scheduled_tax_date": {
             "screened_known_events": 4,
@@ -553,11 +866,15 @@
             "avg_pre_event_gold_return_pct": 2.346,
             "avg_post_event_next_business_day_gold_return_pct": -0.221,
             "avg_post_event_three_business_days_gold_return_pct": 1.008,
-            "cashflow_direction_evaluable": 3,
-            "pre_event_directional_gold_hit_rate_pct": 66.7,
-            "avg_direction_adjusted_pre_event_gold_return_pct": 2.984,
-            "avg_direction_adjusted_post_event_three_day_return_pct": 1.247,
-            "gold_price_confirmation_before_event": 2
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 3,
+            "known_tax_calendar_without_verified_net_direction": 1,
+            "gold_price_confirmation_before_event": 0
           },
           "by_year": {
             "2025": {
@@ -566,11 +883,15 @@
               "avg_pre_event_gold_return_pct": 0.953,
               "avg_post_event_next_business_day_gold_return_pct": -0.03,
               "avg_post_event_three_business_days_gold_return_pct": 0.44,
-              "cashflow_direction_evaluable": 87,
-              "pre_event_directional_gold_hit_rate_pct": 59.8,
-              "avg_direction_adjusted_pre_event_gold_return_pct": 0.953,
-              "avg_direction_adjusted_post_event_three_day_return_pct": 0.44,
-              "gold_price_confirmation_before_event": 53
+              "cashflow_direction_evaluable": 0,
+              "pre_event_directional_gold_hit_rate_pct": null,
+              "avg_direction_adjusted_pre_event_gold_return_pct": null,
+              "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 87,
+              "known_tax_calendar_without_verified_net_direction": 0,
+              "gold_price_confirmation_before_event": 0
             },
             "2026": {
               "screened_known_events": 76,
@@ -578,11 +899,15 @@
               "avg_pre_event_gold_return_pct": 0.026,
               "avg_post_event_next_business_day_gold_return_pct": -0.234,
               "avg_post_event_three_business_days_gold_return_pct": -0.26,
-              "cashflow_direction_evaluable": 75,
-              "pre_event_directional_gold_hit_rate_pct": 48,
-              "avg_direction_adjusted_pre_event_gold_return_pct": 0.021,
-              "avg_direction_adjusted_post_event_three_day_return_pct": -0.267,
-              "gold_price_confirmation_before_event": 26
+              "cashflow_direction_evaluable": 0,
+              "pre_event_directional_gold_hit_rate_pct": null,
+              "avg_direction_adjusted_pre_event_gold_return_pct": null,
+              "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 75,
+              "known_tax_calendar_without_verified_net_direction": 1,
+              "gold_price_confirmation_before_event": 0
             }
           }
         }
@@ -599,6 +924,7 @@
             "decision_date": "2026-01-14",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -3.797,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": 0.296,
             "post_3business_days_pct": -0.406
@@ -608,6 +934,7 @@
             "decision_date": "2026-04-14",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": 0,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": 1.512,
             "post_3business_days_pct": 0.294
@@ -617,6 +944,7 @@
             "decision_date": "2026-07-27",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": 53.641,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": -0.827,
             "post_3business_days_pct": 2.857
@@ -626,6 +954,7 @@
             "decision_date": "2026-09-14",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -48.929,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": -0.974,
             "post_3business_days_pct": 1.284
@@ -637,6 +966,7 @@
             "decision_date": "2026-01-12",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -3.797,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": 1.155,
             "post_3business_days_pct": -0.406
@@ -646,6 +976,7 @@
             "decision_date": "2026-04-10",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": 0,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": 1.504,
             "post_3business_days_pct": 0.294
@@ -655,6 +986,7 @@
             "decision_date": "2026-07-23",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": 53.641,
+            "knowledge_type": "offering_and_maturity_known",
             "price_confirmation_count": 0,
             "pre_gold_pct": -1.027,
             "post_3business_days_pct": 2.857
@@ -664,6 +996,7 @@
             "decision_date": "2026-09-10",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -48.929,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": -2.325,
             "post_3business_days_pct": 1.284
@@ -675,6 +1008,7 @@
             "decision_date": "2026-09-22",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -285.694,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -4.982,
             "post_3business_days_pct": 0.814
@@ -684,6 +1018,7 @@
             "decision_date": "2026-09-24",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -334.154,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -3.046,
             "post_3business_days_pct": -0.537
@@ -693,6 +1028,7 @@
             "decision_date": "2026-09-29",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -272.751,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -0.07,
             "post_3business_days_pct": 0.01
@@ -702,6 +1038,7 @@
             "decision_date": "2026-10-01",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -278.784,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -1.201,
             "post_3business_days_pct": 0.9
@@ -710,6 +1047,7 @@
       },
       "limitations": [
         "Known gross Treasury Bill offering less auction-original maturing awarded principal is NOT actual TGA net change",
+        "KNOWN MATURITIES WITHOUT A PUBLICLY ANNOUNCED REPLACEMENT BILL are source-incomplete: no signed gold-direction proxy is calculated for them",
         "Events selected by ex-ante known announcement; never by later actual realized TGA magnitude",
         "Midmonth tax-date calendar is approximate and carries NO implied direction or magnitude",
         "Yahoo continuous GC=F proxy prices are NOT exchange-certified COMEX fills; returns are unlevered raw market changes with no transaction costs",
@@ -747,6 +1085,10 @@
             "pre_event_directional_gold_hit_rate_pct": null,
             "avg_direction_adjusted_pre_event_gold_return_pct": null,
             "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 4,
             "gold_price_confirmation_before_event": 0
           },
           "bill_only": {
@@ -759,6 +1101,42 @@
             "pre_event_directional_gold_hit_rate_pct": null,
             "avg_direction_adjusted_pre_event_gold_return_pct": null,
             "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "bill_only_with_announced_future_offering": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "maturity_only_without_announced_new_issuance": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
             "gold_price_confirmation_before_event": 0
           },
           "scheduled_tax_date": {
@@ -771,6 +1149,10 @@
             "pre_event_directional_gold_hit_rate_pct": null,
             "avg_direction_adjusted_pre_event_gold_return_pct": null,
             "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 4,
             "gold_price_confirmation_before_event": 0
           },
           "by_year": {
@@ -784,6 +1166,10 @@
               "pre_event_directional_gold_hit_rate_pct": null,
               "avg_direction_adjusted_pre_event_gold_return_pct": null,
               "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 1,
               "gold_price_confirmation_before_event": 0
             },
             "2026": {
@@ -796,6 +1182,10 @@
               "pre_event_directional_gold_hit_rate_pct": null,
               "avg_direction_adjusted_pre_event_gold_return_pct": null,
               "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 3,
               "gold_price_confirmation_before_event": 0
             }
           }
@@ -811,6 +1201,10 @@
             "pre_event_directional_gold_hit_rate_pct": null,
             "avg_direction_adjusted_pre_event_gold_return_pct": null,
             "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 4,
             "gold_price_confirmation_before_event": 0
           },
           "bill_only": {
@@ -823,6 +1217,42 @@
             "pre_event_directional_gold_hit_rate_pct": null,
             "avg_direction_adjusted_pre_event_gold_return_pct": null,
             "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "bill_only_with_announced_future_offering": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "maturity_only_without_announced_new_issuance": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
             "gold_price_confirmation_before_event": 0
           },
           "scheduled_tax_date": {
@@ -835,6 +1265,10 @@
             "pre_event_directional_gold_hit_rate_pct": null,
             "avg_direction_adjusted_pre_event_gold_return_pct": null,
             "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 4,
             "gold_price_confirmation_before_event": 0
           },
           "by_year": {
@@ -848,6 +1282,10 @@
               "pre_event_directional_gold_hit_rate_pct": null,
               "avg_direction_adjusted_pre_event_gold_return_pct": null,
               "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 1,
               "gold_price_confirmation_before_event": 0
             },
             "2026": {
@@ -860,6 +1298,10 @@
               "pre_event_directional_gold_hit_rate_pct": null,
               "avg_direction_adjusted_pre_event_gold_return_pct": null,
               "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 0,
+              "known_tax_calendar_without_verified_net_direction": 3,
               "gold_price_confirmation_before_event": 0
             }
           }
@@ -871,11 +1313,15 @@
             "avg_pre_event_gold_return_pct": 0.521,
             "avg_post_event_next_business_day_gold_return_pct": -0.126,
             "avg_post_event_three_business_days_gold_return_pct": 0.114,
-            "cashflow_direction_evaluable": 162,
-            "pre_event_directional_gold_hit_rate_pct": 54.3,
-            "avg_direction_adjusted_pre_event_gold_return_pct": 0.522,
-            "avg_direction_adjusted_post_event_three_day_return_pct": 0.113,
-            "gold_price_confirmation_before_event": 79
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 162,
+            "known_tax_calendar_without_verified_net_direction": 1,
+            "gold_price_confirmation_before_event": 0
           },
           "bill_only": {
             "screened_known_events": 162,
@@ -883,11 +1329,47 @@
             "avg_pre_event_gold_return_pct": 0.522,
             "avg_post_event_next_business_day_gold_return_pct": -0.12,
             "avg_post_event_three_business_days_gold_return_pct": 0.113,
-            "cashflow_direction_evaluable": 162,
-            "pre_event_directional_gold_hit_rate_pct": 54.3,
-            "avg_direction_adjusted_pre_event_gold_return_pct": 0.522,
-            "avg_direction_adjusted_post_event_three_day_return_pct": 0.113,
-            "gold_price_confirmation_before_event": 79
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 162,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "bill_only_with_announced_future_offering": {
+            "screened_known_events": 0,
+            "pre_event_price_coverage": 0,
+            "avg_pre_event_gold_return_pct": null,
+            "avg_post_event_next_business_day_gold_return_pct": null,
+            "avg_post_event_three_business_days_gold_return_pct": null,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 0,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
+          },
+          "maturity_only_without_announced_new_issuance": {
+            "screened_known_events": 162,
+            "pre_event_price_coverage": 162,
+            "avg_pre_event_gold_return_pct": 0.522,
+            "avg_post_event_next_business_day_gold_return_pct": -0.12,
+            "avg_post_event_three_business_days_gold_return_pct": 0.113,
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 162,
+            "known_tax_calendar_without_verified_net_direction": 0,
+            "gold_price_confirmation_before_event": 0
           },
           "scheduled_tax_date": {
             "screened_known_events": 4,
@@ -895,11 +1377,15 @@
             "avg_pre_event_gold_return_pct": 2.346,
             "avg_post_event_next_business_day_gold_return_pct": -0.221,
             "avg_post_event_three_business_days_gold_return_pct": 1.008,
-            "cashflow_direction_evaluable": 3,
-            "pre_event_directional_gold_hit_rate_pct": 66.7,
-            "avg_direction_adjusted_pre_event_gold_return_pct": 2.984,
-            "avg_direction_adjusted_post_event_three_day_return_pct": 1.247,
-            "gold_price_confirmation_before_event": 2
+            "cashflow_direction_evaluable": 0,
+            "pre_event_directional_gold_hit_rate_pct": null,
+            "avg_direction_adjusted_pre_event_gold_return_pct": null,
+            "avg_direction_adjusted_post_event_three_day_return_pct": null,
+            "known_bill_offering_and_maturity_events": 0,
+            "known_bill_offering_only_events": 0,
+            "known_bill_maturities_with_no_published_future_offering": 3,
+            "known_tax_calendar_without_verified_net_direction": 1,
+            "gold_price_confirmation_before_event": 0
           },
           "by_year": {
             "2025": {
@@ -908,11 +1394,15 @@
               "avg_pre_event_gold_return_pct": 0.953,
               "avg_post_event_next_business_day_gold_return_pct": -0.03,
               "avg_post_event_three_business_days_gold_return_pct": 0.44,
-              "cashflow_direction_evaluable": 87,
-              "pre_event_directional_gold_hit_rate_pct": 59.8,
-              "avg_direction_adjusted_pre_event_gold_return_pct": 0.953,
-              "avg_direction_adjusted_post_event_three_day_return_pct": 0.44,
-              "gold_price_confirmation_before_event": 53
+              "cashflow_direction_evaluable": 0,
+              "pre_event_directional_gold_hit_rate_pct": null,
+              "avg_direction_adjusted_pre_event_gold_return_pct": null,
+              "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 87,
+              "known_tax_calendar_without_verified_net_direction": 0,
+              "gold_price_confirmation_before_event": 0
             },
             "2026": {
               "screened_known_events": 76,
@@ -920,11 +1410,15 @@
               "avg_pre_event_gold_return_pct": 0.026,
               "avg_post_event_next_business_day_gold_return_pct": -0.234,
               "avg_post_event_three_business_days_gold_return_pct": -0.26,
-              "cashflow_direction_evaluable": 75,
-              "pre_event_directional_gold_hit_rate_pct": 48,
-              "avg_direction_adjusted_pre_event_gold_return_pct": 0.021,
-              "avg_direction_adjusted_post_event_three_day_return_pct": -0.267,
-              "gold_price_confirmation_before_event": 26
+              "cashflow_direction_evaluable": 0,
+              "pre_event_directional_gold_hit_rate_pct": null,
+              "avg_direction_adjusted_pre_event_gold_return_pct": null,
+              "avg_direction_adjusted_post_event_three_day_return_pct": null,
+              "known_bill_offering_and_maturity_events": 0,
+              "known_bill_offering_only_events": 0,
+              "known_bill_maturities_with_no_published_future_offering": 75,
+              "known_tax_calendar_without_verified_net_direction": 1,
+              "gold_price_confirmation_before_event": 0
             }
           }
         }
@@ -941,6 +1435,7 @@
             "decision_date": "2025-04-14",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -4.728,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": -0.811,
             "post_3business_days_pct": 2.861
@@ -950,6 +1445,7 @@
             "decision_date": "2026-01-14",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -3.797,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": 0.296,
             "post_3business_days_pct": -0.406
@@ -959,6 +1455,7 @@
             "decision_date": "2026-04-14",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": 0,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": 1.512,
             "post_3business_days_pct": 0.294
@@ -968,6 +1465,7 @@
             "decision_date": "2026-09-14",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -48.929,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": -0.974,
             "post_3business_days_pct": 1.284
@@ -979,6 +1477,7 @@
             "decision_date": "2025-04-10",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -4.728,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": 3.846,
             "post_3business_days_pct": 2.861
@@ -988,6 +1487,7 @@
             "decision_date": "2026-01-12",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -3.797,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": 1.155,
             "post_3business_days_pct": -0.406
@@ -997,6 +1497,7 @@
             "decision_date": "2026-04-10",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": 0,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": 1.504,
             "post_3business_days_pct": 0.294
@@ -1006,6 +1507,7 @@
             "decision_date": "2026-09-10",
             "kind": "tax_calendar_only",
             "exante_known_bill_net_usd_billions": -48.929,
+            "knowledge_type": "tax_date_only_no_cash_amount",
             "price_confirmation_count": 0,
             "pre_gold_pct": -2.325,
             "post_3business_days_pct": 1.284
@@ -1017,6 +1519,7 @@
             "decision_date": "2026-09-22",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -285.694,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -4.982,
             "post_3business_days_pct": 0.814
@@ -1026,6 +1529,7 @@
             "decision_date": "2026-09-24",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -334.154,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -3.046,
             "post_3business_days_pct": -0.537
@@ -1035,6 +1539,7 @@
             "decision_date": "2026-09-29",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -272.751,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -0.07,
             "post_3business_days_pct": 0.01
@@ -1044,6 +1549,7 @@
             "decision_date": "2026-10-01",
             "kind": "known_bill_net",
             "exante_known_bill_net_usd_billions": -278.784,
+            "knowledge_type": "maturity_only_future_issuance_unknown",
             "price_confirmation_count": 0,
             "pre_gold_pct": -1.201,
             "post_3business_days_pct": 0.9
@@ -1052,6 +1558,7 @@
       },
       "limitations": [
         "Known gross Treasury Bill offering less auction-original maturing awarded principal is NOT actual TGA net change",
+        "KNOWN MATURITIES WITHOUT A PUBLICLY ANNOUNCED REPLACEMENT BILL are source-incomplete: no signed gold-direction proxy is calculated for them",
         "Events selected by ex-ante known announcement; never by later actual realized TGA magnitude",
         "Midmonth tax-date calendar is approximate and carries NO implied direction or magnitude",
         "Yahoo continuous GC=F proxy prices are NOT exchange-certified COMEX fills; returns are unlevered raw market changes with no transaction costs",
