@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - lib/endpoints/v22-c1-gate-core.js
+      - lib/endpoints/v22-c2-core.js
+      - tests/v22-c2-core.test.js
+      - lib/endpoints/v22-c1-fiscal-source.js
       - lib/endpoints/v22-c1-fiscal-source.js
       - lib/endpoints/v22-benchmark-core.js
       - lib/endpoints/v22-asof-join.js
@@ -27,6 +30,8 @@ jobs:
           node --check lib/endpoints/v22-c1-fiscal-source.js
           node --check scripts/v22-c1-three-way.js
           node tests/v22-c1-gate-core.test.js
+          node --check lib/endpoints/v22-c2-core.js
+          node tests/v22-c2-core.test.js
           node tests/v22-benchmark-core.test.js
           node tests/v22-fiscal-composite-core.test.js
           node tests/v22-execution-core.test.js
@@ -36,13 +41,17 @@ jobs:
         if: always()
         with:
           name: v22-c1-three-way-exploratory-source-evidence
-          path: reports/v22-c1-three-way-latest.json
+          path: |
+            reports/v22-c1-three-way-latest.json
+            reports/v22-c2-proxy-latest.json
           retention-days: 21
       - name: Archive direct source research and explicitly failed blocker statuses
         if: ${{ !cancelled() }}
         run: |
           test -s reports/v22-c1-three-way-latest.json
           cp reports/v22-c1-three-way-latest.json /tmp/v22-c1-source-report.json
+          test -s reports/v22-c2-proxy-latest.json
+          cp reports/v22-c2-proxy-latest.json /tmp/v22-c2-source-report.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for i in 1 2 3; do
@@ -50,7 +59,8 @@ jobs:
             git reset --hard origin/main
             mkdir -p reports
             cp /tmp/v22-c1-source-report.json reports/v22-c1-three-way-latest.json
-            git add reports/v22-c1-three-way-latest.json
+            cp /tmp/v22-c2-source-report.json reports/v22-c2-proxy-latest.json
+            git add reports/v22-c1-three-way-latest.json reports/v22-c2-proxy-latest.json
             git commit -m "Archive real C1 proxy historical comparison and unavailable full V2.2 C2 signals" || exit 0
             git push origin HEAD:main && exit 0
             sleep 4
@@ -70,4 +80,13 @@ jobs:
           for p,d in x['C1_proxy_sensitivity'].items():
               assert d['B_executed_trade_counterfactual']['B_trades']==b['executed_nonoverlapping_trades']
               assert isinstance(d['C1_portfolio_recomputed_from_all_gated_candidates']['total_return_pct'],(int,float))
+          y=json.load(open('reports/v22-c2-proxy-latest.json'))
+          assert y.get('status')=='C2_dual_mode_gold_v22_proxy_backtest_completed_research_not_official'
+          assert y['live_trade_signals_enabled'] is False
+          assert set(y['variants'])=={'anticipation','credit_exception','revision','combined'}
+          assert y['same_window_B_baseline']['trades']==b['executed_nonoverlapping_trades']
+          for key,v in y['variants'].items():
+              assert v['b_trade_effect']['B_trades']==b['executed_nonoverlapping_trades']
+              assert isinstance(v['full_portfolio']['return_pct'],(int,float))
+          assert y['combined_research_grade_risk_sensitivity']['trades']>=0
           PY
