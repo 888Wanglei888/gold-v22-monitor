@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-16T04:05:53.812Z",
-  "github_sha": "682b7ea8f26d8434a1f5fec8b6694187b38d4c65",
+  "checked_at_utc": "2026-10-16T10:44:32.422Z",
+  "github_sha": "475bca0d99313ebb0efedbe7f467eb6aef0ccf76",
   "source": "US Treasury DTS II operating cash transactions + Table I TGA close",
   "months_requested": 46,
   "full_v22_fiscal_prediction_ready": false,
@@ -49,7 +49,7 @@
     "non_tga_ignored": 0,
     "non_table_ii_ignored": 0,
     "duplicate_line_key": 0,
-    "unlabeled_possible_total_rows_excluded": 1898
+    "unlabeled_possible_total_rows_excluded": 2274
   },
   "tga_duplicate_dates": 0,
   "identity": {
@@ -94,9 +94,9 @@
   },
   "identity_all_2023_present": {
     "count": 948,
-    "average_absolute_identity_gap_usd_millions": 3414.812,
-    "max_absolute_identity_gap_usd_millions": 116507,
-    "within_one_billion_pct": 80.8,
+    "average_absolute_identity_gap_usd_millions": 2.809,
+    "max_absolute_identity_gap_usd_millions": 11,
+    "within_one_billion_pct": 100,
     "recent_examples": [
       {
         "date": "2026-10-08",
@@ -138,9 +138,9 @@
       "tga_days": 250,
       "identity": {
         "count": 249,
-        "average_absolute_identity_gap_usd_millions": 12992.884,
-        "max_absolute_identity_gap_usd_millions": 116507,
-        "within_one_billion_pct": 26.9,
+        "average_absolute_identity_gap_usd_millions": 2.606,
+        "max_absolute_identity_gap_usd_millions": 10,
+        "within_one_billion_pct": 100,
         "recent_examples": [
           {
             "date": "2023-12-26",
@@ -179,9 +179,9 @@
       "explicit_named_tax_net_proxy_usd_billions": 3780.52,
       "public_debt_cash_issues_usd_billions": 23066.959,
       "public_debt_cash_redemptions_usd_billions": 20999.161,
-      "non_debt_receipts_usd_billions": 9471.511,
-      "non_debt_withdrawals_usd_billions": 12569.748,
-      "non_debt_net_usd_billions": -3098.237
+      "non_debt_receipts_usd_billions": 5377.022,
+      "non_debt_withdrawals_usd_billions": 7122.967,
+      "non_debt_net_usd_billions": -1745.945
     },
     "2024": {
       "cashflow_days": 251,
@@ -1163,7 +1163,7 @@
       "Gold price patterns are non-independent and may represent repeats during one trend",
       "Does NOT imply market profit or combine with full factor and risk rules"
     ],
-    "gold_4h_closed_bars": 2196,
+    "gold_4h_closed_bars": 2203,
     "fiscal_decision_dates_with_research_only_forecasts": 448,
     "limited_research_only": true
   },
@@ -1389,10 +1389,10 @@
               "same_dates_always_long_avg_gold_return_pct": 0.349,
               "forecast_vs_always_long_hit_rate_difference_percentage_points": -8.197,
               "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.133,
-              "avg_raw_gold_after_event_3_business_days_pct": 0.186,
+              "avg_raw_gold_after_event_3_business_days_pct": 0.192,
               "pre_event_gold_up_count": 34,
               "forecast_alignment_positive_days": 29,
-              "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": 0.11,
+              "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": 0.115,
               "gold_4h_price_confirmation_before_event": 25,
               "predicted_tga_rise_events": 9,
               "predicted_tga_decline_events": 52
@@ -1424,10 +1424,10 @@
                 "same_dates_always_long_avg_gold_return_pct": -0.856,
                 "forecast_vs_always_long_hit_rate_difference_percentage_points": -3.449,
                 "avg_hypothesis_direction_adjusted_pre_event_return_pct": -0.868,
-                "avg_raw_gold_after_event_3_business_days_pct": 0.008,
+                "avg_raw_gold_after_event_3_business_days_pct": 0.02,
                 "pre_event_gold_up_count": 13,
                 "forecast_alignment_positive_days": 12,
-                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.097,
+                "avg_hypothesis_direction_adjusted_after_event_3_business_days_pct": -0.086,
                 "gold_4h_price_confirmation_before_event": 6,
                 "predicted_tga_rise_events": 3,
                 "predicted_tga_decline_events": 26
@@ -1471,7 +1471,7 @@
                 "known_fiscal_decision": "2026-10-05",
                 "forecasted_daily_tga_change_usd_billions": -38.795,
                 "pre_event_gold_pct": 0.89,
-                "post_event_3_business_days_gold_pct": -0.669,
+                "post_event_3_business_days_gold_pct": -0.332,
                 "prior_confirmed_gold_4h_pattern": true
               }
             ]
