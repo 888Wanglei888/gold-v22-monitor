@@ -53,6 +53,7 @@ function assess(xs,h,threshold){
   nonoverlap_n:non.length,nonoverlap_hit_pct:non.length?round(100*non.filter(x=>x.pred*x.fwd[h]>0).length/non.length,1):null,
   nonoverlap_avg_net_pct:round(average(non.map(x=>x.pred*x.fwd[h]-.1)))};
 }
+function corr(a,b){if(a.length<5||a.length!==b.length)return null;let ma=average(a),mb=average(b),num=0,aa=0,bb=0;for(let i=0;i<a.length;i++){let x=a[i]-ma,y=b[i]-mb;num+=x*y;aa+=x*x;bb+=y*y}return aa>0&&bb>0?num/Math.sqrt(aa*bb):null}
 async function main(){
  const [prices,etfprices,fx,...rates]=await Promise.all([yahoo('GC=F'),yahoo('GLD'),yahoo('DX-Y.NYB'),...['DFII10','DGS2','DGS10','T10YIE','THREEFYTP10','VIXCLS'].map(fred)]);
  const src=await loadResearchInputs();
@@ -68,6 +69,7 @@ async function main(){
  const periods=[{name:'calibration',start:'2019-01-01',end:'2022-12-31'},
   {name:'validation',start:'2023-01-01',end:'2024-12-31'},
   {name:'later_evaluation',start:'2025-01-01',end:'2026-10-16'}];
+ const eventsByFactor={};
  const result={created_utc:new Date().toISOString(),status:'expanded_daily_gold_oos_macro_lead_experiment_research_only',
   sources:{gold:'Yahoo GC=F continuous front futures daily 2018-2026',confirm_gold:'Yahoo GLD ETF US equity daily 2018-2026',
    dollar:'Yahoo DX-Y.NYB daily with 2-calendar-day conservative delay',
@@ -90,8 +92,9 @@ async function main(){
    if(!Number.isFinite(delta)||sg(delta)===0)continue;
    let pred=sg(delta)*f.sign,fwd={};
    for(const h of [1,3,5])fwd[h]=prices[i+h]&&prices[i+1]?100*(prices[i+h].close/prices[i+1].open-1):null;
-   events.push({date:r.date,index:i,delta,pred,fwd});
+   events.push({date:r.date,index:i,delta,pred,fwd,past_gold_5d_pct:100*(r.close/prices[i-5].close-1)});
   }
+  eventsByFactor[f.id]=events;
   const byPeriod={};for(const p of periods)byPeriod[p.name]=events.filter(x=>x.date>=p.start&&x.date<=p.end);
   // CFTC series begins in 2024 due source range; do NOT pretend threshold comes from 2019-2022.
   const thresholdSource=byPeriod.calibration.length>=60?byPeriod.calibration:events.filter(x=>x.date<'2025-01-01');
@@ -99,8 +102,26 @@ async function main(){
   const metrics={name:f.name,threshold_abs_calibrated:round(threshold,6),calibration_period:byPeriod.calibration.length>=60?'2019-2022':'2024 partial (CFTC only)',coverage_events:events.length,
    horizons:{}};
   for(const h of [1,3,5])metrics.horizons[h]=Object.fromEntries(periods.map(p=>[p.name,assess(byPeriod[p.name],h,threshold)]));
+  metrics.correlation_check=Object.fromEntries(periods.map(p=>{const z=byPeriod[p.name];return [p.name,{lagged_factor_vs_PRIOR_gold5:round(corr(z.map(x=>x.delta*f.sign),z.map(x=>x.past_gold_5d_pct))),lagged_factor_vs_FUTURE_gold3:round(corr(z.filter(x=>x.fwd[3]!=null).map(x=>x.delta*f.sign),z.filter(x=>x.fwd[3]!=null).map(x=>x.fwd[3])))}]}));
   result.indicators[f.id]=metrics;
  }
+ const gldByDate=new Map(etfprices.map((x,i)=>[x.date,i]));
+ result.crosscheck_gld_stock_price={};
+ for(const id of ['COT_OI','COT_NET','DXY','DFII10','THREEFYTP10','TGA','GLD_TONNES_DELTA','GOLD_MOM20']){
+  const threshold=result.indicators[id].threshold_abs_calibrated;
+  const ee=(eventsByFactor[id]||[]).filter(x=>x.date>='2025-01-01'&&gldByDate.has(x.date)).map(x=>{
+   const i=gldByDate.get(x.date),fwd={};for(const h of [1,3,5])fwd[h]=etfprices[i+h]&&etfprices[i+1]?100*(etfprices[i+h].close/etfprices[i+1].open-1):null;
+   return {...x,fwd,index:i};
+  });
+  result.crosscheck_gld_stock_price[id]={three_days:assess(ee,3,threshold),five_days:assess(ee,5,threshold)};
+ }
+ const oe=eventsByFactor.COT_OI||[];
+ const oiCohorts={};for(const type of ['OI_UP_PRICE_UP','OI_UP_PRICE_DOWN','OI_DOWN_PRICE_UP','OI_DOWN_PRICE_DOWN']){
+  const positiveOI=type.startsWith('OI_UP'),positivePrice=type.endsWith('PRICE_UP');
+  const base=oe.filter(e=>e.date>='2025-01-01'&&(e.delta>0)===positiveOI&&(e.past_gold_5d_pct>0)===positivePrice);
+  oiCohorts[type]={gold_3days_follow_PRICE_TREND:assess(base.map(e=>({...e,pred:sg(e.past_gold_5d_pct),delta:e.past_gold_5d_pct})),3,0),gold_3days_follow_OI_SIGN:assess(base,3,0)};
+ }
+ result.oi_price_four_quadrants=oiCohorts;
  fs.mkdirSync('reports',{recursive:true});
  fs.writeFileSync('reports/v22-gold-leading-indicators-multiregime-latest.json',JSON.stringify(result,null,2));
  let rows=[['id','indicator','threshold','2019_2022_n','2019_2022_hit3d','2023_2024_n','2023_2024_hit3d','2025_2026_n','2025_2026_hit3d','2025_2026_PnL3d_pct','2025_2026_matched_long_PnL3d_pct','2025_2026_nonoverlap_n','2025_2026_nonoverlap_hit']];
