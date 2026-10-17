@@ -147,7 +147,7 @@ function backtest(bars,dayLevels,shadow,config){
  }
  function eligiblePlans(i,lvl){
   const b=bars[i],plans=[];
-  const breakDirection=(n)=>{const buy=b.ah>=lvl.up[n]+.1,short=b.l<=lvl.down[n]-.1;return buy===short?0:buy?1:-1};
+  const breakDirection=(n)=>{const buy=b.h>=lvl.up[n]+.1,short=b.l<=lvl.down[n]-.1;return buy===short?0:buy?1:-1};
   if(config.strategy==='S1'||config.strategy==='MIX'){
    if(!active('S1').length){
     // Source of truth: shadow breakout event, including those not executed.
@@ -219,6 +219,19 @@ function backtest(bars,dayLevels,shadow,config){
       closeUnit(i,x,fillExit(b,x.stop,x.side),'same_5m_entry_then_stop');
       closedOnThisBar.add(plan.sys);
      }
+    }
+    // Original rules allow multiple additional units in one session or even in one
+    // sufficiently wide 5m bar. If first entry survived its own bar, allow adds
+    // against only contemporaneous OHLC; pessimistically stop after a same-bar add.
+    let count=0;
+    while(!closedOnThisBar.has(plan.sys)&&active(plan.sys).length&&units.length<limitUnit&&count<3){
+     const live=campaign(plan.sys),level=live.nextAdd,side=plan.side;
+     if(!(side===1?b.ah>=level:b.l<=level))break;
+     if(!addUnit(i,plan.sys,side,level,lvl.atr20,sz,'add'))break;
+     count++;
+     const hit=active(plan.sys).filter(u=>u.side===1?b.l<=u.stop:b.ah>=u.stop);
+     for(const u of hit)closeUnit(i,u,fillExit(b,u.stop,u.side),'same_5m_entry_add_stop');
+     if(hit.length)closedOnThisBar.add(plan.sys);
     }
    }
   }
