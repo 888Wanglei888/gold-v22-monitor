@@ -205,7 +205,7 @@ async function main(){
  const output={run_at_utc:new Date().toISOString(),
   status:'XAUUSD_2016_REAL_BID_ASK_5MIN_TURTLE_RESEARCH',
   source:{url_2015:DATA+'2015.json.gz',url_2016:DATA+'2016.json.gz',original_ticks:'Dukascopy historical spot XAUUSD, resampled OHLC bid and ask by EV Trading Labs',
-   only_2016_traded:true,2015_bars_warmup_only:true,bars_2015:a.rows.length,bars_2016:b.rows.length,
+   only_2016_traded:true,bars_2015_warmup_only:true,bars_2015:a.rows.length,bars_2016:b.rows.length,
    compressed_2015:a.compressed_bytes,compressed_2016:b.compressed_bytes,quality_2016:q,daily_coverage:qd},
   methodology:{starting_usd:10000,per_trade_risk:.005,leverage_cap:5,entry_on_five_minute_breakout:true,
    daily_session:'UTC calendar date of quote, NOT official CME gold session / NY 17:00',
