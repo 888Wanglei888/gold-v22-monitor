@@ -1,0 +1,11 @@
+variant,starting_usd,units_start,trades,unit_entries,added_units,wins,hit_pct,ending_usd,return_pct,maxdd_pct,profit_factor,max_leverage,unit_cap_reject,minimum_lot_unfilled
+S1_20day_filter_failsafe_4units_10k_fractional,10000,fractional,54,163,109,15,27.8,15149.49,51.49,43.75,1.526,4.335,0,0
+S2_55day_4units_10k_fractional,10000,fractional,27,99,72,9,33.3,24582.14,145.82,48.78,3.011,4.881,0,0
+S1_20day_filter_failsafe_NO_ADD_10k_fractional,10000,fractional,53,53,0,22,41.5,12141.67,21.42,16.14,1.471,1.249,0,0
+S2_55day_NO_ADD_10k_fractional,10000,fractional,24,24,0,12,50,15079.27,50.79,13.04,3.885,1.24,0,0
+MIX_50_50_market_cap4_10k_fractional,10000,fractional,62,169,107,19,30.6,15912.4,59.12,34.83,1.921,2.665,5196,0
+S1_20day_filter_failsafe_4units_1m_standard_GC,1000000,100,54,163,109,15,27.8,1475198.4,47.52,38.66,1.586,4,0,0
+S2_55day_4units_1m_standard_GC,1000000,100,27,99,72,9,33.3,2221786.8,122.18,45.38,2.883,5.146,0,0
+S1_20day_filter_failsafe_NO_ADD_1m_GC,1000000,100,53,53,0,22,41.5,1226932.1,22.69,14.4,1.595,1.12,0,0
+S2_55day_NO_ADD_1m_GC,1000000,100,24,24,0,12,50,1439718.9,43.97,12.62,3.87,1.221,0,0
+MIX_50_50_market_cap4_1m_standard_GC,1000000,100,59,161,102,19,32.2,1476194.42,47.62,29.65,2.098,2.403,5196,12682
