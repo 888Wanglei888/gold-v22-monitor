@@ -161,7 +161,8 @@ function simulate(p,ind,macro,kind,period,cost=10){
   bar_exposure_pct:round(100*barsIn/(end-start+1),1),entries:entryEvents,ambiguous_or_invalid_skips:rejected,annual,ledger:trades};
 }
 async function main(){
- const [p,real,dollar,gld]=await Promise.all([prices('GC=F'),fred('DFII10'),prices('DX-Y.NYB'),prices('GLD')]);
+ const goldSymbol=process.env.GOLD_SYMBOL==='GLD'?'GLD':'GC=F';
+ const [p,real,dollar,gld]=await Promise.all([prices(goldSymbol),fred('DFII10'),prices('DX-Y.NYB'),prices('GLD')]);
  const ind=indicators(p),macro=buildMacro(p,real,dollar,ind);
  const periods=[{label:'full_2019_2026',from:'2019-01-02',to:'2026-10-16'},
   {label:'early_2019_2022',from:'2019-01-02',to:'2022-12-30'},
@@ -174,7 +175,7 @@ async function main(){
  let first=p.findIndex(x=>x.date>=periods[0].from),last=p.findLastIndex(x=>x.date<=periods[0].to);
  const hold=100*(p[last].c/p[first].o-1)-.1;
  const output={created_at:new Date().toISOString(),status:'educational_three_schools_gold_daily_research_only',
-  data:{gold:'Yahoo GC=F continuous nearest gold futures 2018-2026 daily OHLC',macro_real_yield:'FRED DFII10 observed daily, delayed 3 calendar days',macro_dxy:'Yahoo DX-Y.NYB delayed 2 calendar days',
+  data:{gold:goldSymbol==='GLD'?'Yahoo GLD ETF daily OHLC 2018-2026 (independent price sensitivity)':'Yahoo GC=F continuous nearest gold futures 2018-2026 daily OHLC',macro_real_yield:'FRED DFII10 observed daily, delayed 3 calendar days',macro_dxy:'Yahoo DX-Y.NYB delayed 2 calendar days',
     gld_cross_price_available:gld.length,gold_rows:p.length,first_gold:p[0].date,last_gold:p.at(-1).date,real_rows:real.length,dxy_rows:dollar.length,
     yahoo_2018_2019_roll_volume_quality_warning:true},
   design:{same_initial_cash_usd:10000,same_risk_fraction_per_entry:.005,same_max_nominal_leverage:5,
@@ -186,16 +187,17 @@ async function main(){
     raschke:'Holy Grail approximation: ADX14>30 and rising at least once past10 bars, EMA20 slope+DI direction, prior bar touches EMA, next bar penetrates setup high/low, stop setup bar beyond 0.1 ATR, target previous20day extreme or at least 1R, max12 trading days; one setup day next day only',
     macro:'Educational macro regime proxy, NOT Druckenmiller: 10Y real yield and DXY each past20 available observations trend same direction; price aligned with EMA100; enter next open, initial 2ATR20 stop, exit if macro price regime loses alignment at following open or max35 days'},
   buy_and_hold_gold_2019_2026_pct:round(hold,2),results,cost_sensitivity_summary:Object.fromEntries(Object.entries(sensitivity).map(([k,v])=>[k,Object.fromEntries(Object.entries(v).map(([fee,z])=>[fee,{return_pct:z.total_return_pct,trades:z.trades,max_drawdown_pct:z.max_drawdown_pct}]))]))};
+ const tag=goldSymbol==='GLD'?'_GLD_CROSSCHECK':'';
  fs.mkdirSync('research-data',{recursive:true});
- fs.writeFileSync('research-data/GOLD_THREE_SCHOOLS_2019_2026_RESEARCH.json',JSON.stringify(output,null,2));
+ fs.writeFileSync('research-data/GOLD_THREE_SCHOOLS_2019_2026_RESEARCH'+tag+'.json',JSON.stringify(output,null,2));
  const col=['method','window','trades','wins','win_rate_pct','longs','shorts','final_usd','net_return_pct','max_drawdown_pct','profit_factor','avg_win_usd','avg_loss_usd','avg_hold_days','time_exposure_pct'];
  const csv=[col.join(',')];for(const [k,v] of Object.entries(results))for(const [period,x] of Object.entries(v))
  csv.push([k,period,x.trades,x.wins,x.win_rate_pct,x.longs,x.shorts,x.final_usd,x.total_return_pct,x.max_drawdown_pct,x.profit_factor,x.avg_win_usd,x.avg_loss_usd,x.avg_holding_days,x.bar_exposure_pct].join(','));
- fs.writeFileSync('research-data/GOLD_THREE_SCHOOLS_2019_2026_RESULTS.csv',csv.join('\n')+'\n');
+ fs.writeFileSync('research-data/GOLD_THREE_SCHOOLS_2019_2026_RESULTS'+tag+'.csv',csv.join('\n')+'\n');
  let trades=['method,window,entry_date,exit_date,side,entry_price,exit_price,pnl_usd,equity_after_usd,holding_days,reason'];
  for(const [k,v] of Object.entries(results))for(const period of ['full_2019_2026','year_2025','year_2026'])for(const x of v[period].ledger)
  trades.push([k,period,x.entry_date,x.exit_date,x.side,x.entry,x.exit,x.pnl_usd,x.equity_after_usd,x.bars_held,x.reason].join(','));
- fs.writeFileSync('research-data/GOLD_THREE_SCHOOLS_TRADE_LEDGER.csv',trades.join('\n')+'\n');
+ fs.writeFileSync('research-data/GOLD_THREE_SCHOOLS_TRADE_LEDGER'+tag+'.csv',trades.join('\n')+'\n');
  console.log('COVERAGE',JSON.stringify(output.data),'HOLD',hold);
  for(const [k,v] of Object.entries(results))for(const [period,x] of Object.entries(v))console.log('RESULT',k,period,x.trades,x.wins,x.win_rate_pct,x.total_return_pct,x.final_usd,x.max_drawdown_pct,x.profit_factor,x.longs,x.shorts,'annual',JSON.stringify(x.annual));
  console.log('COST',JSON.stringify(output.cost_sensitivity_summary));
