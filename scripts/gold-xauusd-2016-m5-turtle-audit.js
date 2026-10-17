@@ -238,4 +238,5 @@ async function main(){
  console.log('SENS',JSON.stringify(sensitivity));
  console.log('DONE',Object.values(variants).map(x=>({name:x.code,trades:x.trades,net:x.return_pct})));
 }
-main().catch(e=>{console.error('FATAL',e);process.exitCode=1});
+if(require.main===module)main().catch(e=>{console.error('FATAL',e);process.exitCode=1});
+module.exports={getYear,quality,dailyBars,getDailyLevels,session};
