@@ -5,6 +5,9 @@ const fs=require('node:fs');
 const zlib=require('node:zlib');
 const DAY=864e5;
 const fmt=ts=>new Date(ts*1000).toISOString().slice(0,10);
+const ny=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'});
+const session=ts=>{const v=Object.fromEntries(ny.formatToParts(ts*1000).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
+ const local=v.year+'-'+v.month+'-'+v.day;return Number(v.hour)>=17?new Date(Date.parse(local+'T00:00:00Z')+DAY).toISOString().slice(0,10):local};
 const rd=(x,n=2)=>Number.isFinite(x)?+x.toFixed(n):null;
 const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:null;
 const DATA='https://evtradelabs.com/api/simulator/data/XAUUSD/M5/';
@@ -12,7 +15,7 @@ async function getYear(y){
  const r=await fetch(DATA+y+'.json.gz',{signal:AbortSignal.timeout(70000)});
  if(!r.ok)throw Error('Unable to download '+y+' http '+r.status);
  const buf=Buffer.from(await r.arrayBuffer()),s=zlib.gunzipSync(buf).toString();
- const a=JSON.parse(s).map(x=>({...x,date:fmt(x.ts)})).sort((x,y)=>x.ts-y.ts);
+ const a=JSON.parse(s).map(x=>({...x,date:fmt(x.ts),session:session(x.ts)})).sort((x,y)=>x.ts-y.ts);
  return {rows:a,compressed_bytes:buf.length,plain_bytes:s.length};
 }
 function quality(bars){
@@ -36,8 +39,8 @@ function quality(bars){
 function dailyBars(bars){
  const days=[],index=new Map();
  for(const b of bars){
-  let d=index.get(b.date);
-  if(!d){d={date:b.date,open:b.o,high:b.h,low:b.l,close:b.c,ask_high:b.ah,ask_low:b.al,n:0};index.set(b.date,d);days.push(d)}
+  let d=index.get(b.session);
+  if(!d){d={date:b.session,open:b.o,high:b.h,low:b.l,close:b.c,ask_high:b.ah,ask_low:b.al,n:0};index.set(b.session,d);days.push(d)}
   d.high=Math.max(d.high,b.h);d.low=Math.min(d.low,b.l);d.ask_high=Math.max(d.ask_high,b.ah);
   d.ask_low=Math.min(d.ask_low,b.al);d.close=b.c;d.n++;
  }
@@ -108,9 +111,9 @@ function run(bars,days,flavor,config){
   pos=null;lastExitIdx=i;
  }
  const threshold=i=>{
-  let b=bars[i],d=flavor.frame==='daily'?dailyLevels.get(b.date):intraday[i];
+  let b=bars[i],d=flavor.frame==='daily'?dailyLevels.get(b.session):intraday[i];
   if(!d)return null;
-  if(flavor.frame==='daily'&&!(Number.isFinite(d.atr20)&&d.prior_completed_day<b.date))return null;
+  if(flavor.frame==='daily'&&!(Number.isFinite(d.atr20)&&d.prior_completed_day<b.session))return null;
   return d;
  };
  function open(i,b,lev,side,atr){
@@ -208,7 +211,7 @@ async function main(){
    only_2016_traded:true,bars_2015_warmup_only:true,bars_2015:a.rows.length,bars_2016:b.rows.length,
    compressed_2015:a.compressed_bytes,compressed_2016:b.compressed_bytes,quality_2016:q,daily_coverage:qd},
   methodology:{starting_usd:10000,per_trade_risk:.005,leverage_cap:5,entry_on_five_minute_breakout:true,
-   daily_session:'UTC calendar date of quote, NOT official CME gold session / NY 17:00',
+   daily_session:'America/New_York 17:00 FX session close, Sunday FX evening grouped with following Monday, NOT certified CME settlement session',
    first_20_or_55_sessions_previous_completed_only:true,
    intraday_20_or_55_candles_previous_complete_only:true,
    N:'Wilder 20-period daily or 5m ATR based on BID OHLC',
