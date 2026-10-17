@@ -45,7 +45,7 @@ function prepShadow(bars,levels){
 }
 function backtest(bars,dayLevels,shadow,config){
  const begin=bars.findIndex(b=>b.date>='2016-01-01'),end=bars.findLastIndex(b=>b.date<='2016-12-31');
- const initial=config.initial,integer=config.integer,system=config.strategy,fee=config.slip??.05,limitUnit=4;
+ const initial=config.initial,integer=config.integer,system=config.strategy,fee=config.slip??.05,limitUnit=config.pyramid===false?1:4;
  const units=[],campaigns=[],activities=[];
  let cash=initial,cycle=0,tradeId=0,adds=0,exits=0,skips=0,rejections=0,unfilled=0;
  let notional=initial,reductionSteps=0,thresholdDrop=initial*.1,peak=initial,maxDd=0,marginPeak=0,leverPeak=0,markEqs=[],lastCloseIndex=-Infinity;
@@ -259,9 +259,13 @@ async function main(){
  const configs=[
   {name:'S1_20day_filter_failsafe_4units_10k_fractional',initial:10000,strategy:'S1',integer:false},
   {name:'S2_55day_4units_10k_fractional',initial:10000,strategy:'S2',integer:false},
+  {name:'S1_20day_filter_failsafe_NO_ADD_10k_fractional',initial:10000,strategy:'S1',integer:false,pyramid:false},
+  {name:'S2_55day_NO_ADD_10k_fractional',initial:10000,strategy:'S2',integer:false,pyramid:false},
   {name:'MIX_50_50_market_cap4_10k_fractional',initial:10000,strategy:'MIX',integer:false},
   {name:'S1_20day_filter_failsafe_4units_1m_standard_GC',initial:1000000,strategy:'S1',integer:true},
   {name:'S2_55day_4units_1m_standard_GC',initial:1000000,strategy:'S2',integer:true},
+  {name:'S1_20day_filter_failsafe_NO_ADD_1m_GC',initial:1000000,strategy:'S1',integer:true,pyramid:false},
+  {name:'S2_55day_NO_ADD_1m_GC',initial:1000000,strategy:'S2',integer:true,pyramid:false},
   {name:'MIX_50_50_market_cap4_1m_standard_GC',initial:1000000,strategy:'MIX',integer:true}
  ];
  const all={};
