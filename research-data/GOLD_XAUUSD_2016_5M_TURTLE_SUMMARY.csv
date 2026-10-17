@@ -1,0 +1,5 @@
+code,trades,wins,hit_pct,longs,shorts,ending_cash_usd,return_pct,max_drawdown_pct,profit_factor,max_consecutive_losses,excluded_wide_spread,ambiguous_entry_stop
+daily_55_S2_5m_execution,7,4,57.1,4,3,10160.87,1.61,2.76,2.062,3,0,0
+daily_20_S1_like_5m_execution,10,4,40,5,5,10228.57,2.29,2.36,2.158,4,0,0
+m5_55_20_experiment,2143,361,16.8,1107,1036,87.24,-99.13,99.21,0.479,27,0,600
+m5_20_10_experiment,3872,834,21.5,1961,1911,11.92,-99.88,99.88,0.531,38,0,698
