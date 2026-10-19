@@ -8,6 +8,8 @@ const fs=require('node:fs');
 const dayMs=d=>Date.parse(d+'T00:00:00Z');
 const DAY=86400000,round=(v,n=3)=>Number.isFinite(v)?+v.toFixed(n):null;
 const START='2026-01-01',END='2026-10-16';
+const RISK_PER_N=Number(process.env.TURTLE_RISK_PER_N??'0.01');
+if(!(RISK_PER_N>0&&RISK_PER_N<=.02))throw Error('Risk per N out of allowed range');
 const SYMBOLS=[
  {s:'GC=F',name:'黄金',group:'precious',category:'贵金属'},
  {s:'SI=F',name:'白银',group:'precious',category:'贵金属'},
@@ -105,7 +107,7 @@ function study(data,selected,variant,start=START,end=END){
   const mark=equity(),price=side===1?Math.max(b.o,level):Math.min(b.o,level);
   if(mark<=0)return false;
   const entry=fill(price,side);
-  const desiredQty=(mark*.01)/n; // 1 N price move = 1% of current portfolio equity.
+  const desiredQty=(mark*RISK_PER_N)/n; // 1 N price move = 1% of current portfolio equity.
   const free=Math.max(0,mark*maxGrossLeverage-gross());
   if(free/entry < desiredQty*.25){attemptsBlocked.leverage++;return false}
   const qty=Math.min(desiredQty,free/entry);
@@ -230,12 +232,12 @@ async function main(){
  const final={generated_utc:new Date().toISOString(),
   status:'exploratory multiasset 2026 hourly continuous futures proxy; original Turtle not fully replicated',
   period:'2026-01-01 to 2026-10-16 completed sessions, plus separate 2025-04 carry scenario',
-  symbols:SYMBOLS,quality,sourceErrors:errors,
+  symbols:SYMBOLS,quality,sourceErrors:errors,riskPerN:RISK_PER_N,
   rules:{entry:'55 fully completed NY17 sessions high/low',
    exit:'20 fully completed NY17 sessions reverse high/low',
    N:'20 session Wilder ATR last completed NY17 session, initialized via 20 session simple mean',
    pyramids:'0.5N additions up to four lifetime units per campaign, each 2N individual stop ratchets by 0.5N when adds',
-   sizing:'Synthetic fractional futures-equivalent units; N*qty=1% current account equity; 2N nominal initial stop=2% of account per first unit',
+   sizing:'Synthetic fractional futures-equivalent units; N*qty=RISK_PER_N fraction current account equity; 2N nominal stop=2*RISK_PER_N of equity; run 0.0025, 0.005 and 0.01',
    correlationLimits:'Market 4 units; metals GC SI share group limit 6, energy CL HO group limit 6, bonds ZN ZB 6, equities ES NQ 6, FX 6E 6J 6, HG and KC separate; each side portfolio <=12',
    grossLimit:'Gross quote-notional <=5x current mark-to-market equity AT unit entry; not a real margin model',
    fees:'5bps per side + 1bp simulated price slippage per side; NOT market-specific ticks/spreads or brokers',
