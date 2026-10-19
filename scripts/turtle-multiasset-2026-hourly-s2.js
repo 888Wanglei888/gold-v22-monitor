@@ -72,7 +72,8 @@ function study(data,selected,variant,start=START,end=END){
  let cash=1000000,positions=new Map(),lastPrice=new Map(),peak=1000000,minEq=1000000,maxDD=0,
  entryCount=0,addCount=0,closedCampaigns=[],unitExitCount=0,attemptsBlocked={group:0,direction:0,leverage:0},
  history=[],riskLevels=[];
- const bpsFee=.0005,bpsSlip=.0001,maxGrossLeverage=5;
+ const bpsFee=Number(process.env.TURTLE_FEE_BPS_SIDE??5)/10000,bpsSlip=Number(process.env.TURTLE_SLIP_BPS_SIDE??1)/10000,maxGrossLeverage=5;
+ if(!Number.isFinite(bpsFee)||!Number.isFinite(bpsSlip)||bpsFee<0||bpsSlip<0)throw Error('Invalid cost assumptions');
  const cashBeforeClose=()=>cash;
  function equity(){let total=cash;for(const p of positions.values())for(const u of p.units){
   const price=lastPrice.get(p.symbol)??u.entry;
@@ -232,7 +233,7 @@ async function main(){
  const final={generated_utc:new Date().toISOString(),
   status:'exploratory multiasset 2026 hourly continuous futures proxy; original Turtle not fully replicated',
   period:'2026-01-01 to 2026-10-16 completed sessions, plus separate 2025-04 carry scenario',
-  symbols:SYMBOLS,quality,sourceErrors:errors,riskPerN:RISK_PER_N,
+  symbols:SYMBOLS,quality,sourceErrors:errors,riskPerN:RISK_PER_N,costBpsEachSide:Number(process.env.TURTLE_FEE_BPS_SIDE??5),slippageBpsEachSide:Number(process.env.TURTLE_SLIP_BPS_SIDE??1),
   rules:{entry:'55 fully completed NY17 sessions high/low',
    exit:'20 fully completed NY17 sessions reverse high/low',
    N:'20 session Wilder ATR last completed NY17 session, initialized via 20 session simple mean',
@@ -240,7 +241,7 @@ async function main(){
    sizing:'Synthetic fractional futures-equivalent units; N*qty=RISK_PER_N fraction current account equity; 2N nominal stop=2*RISK_PER_N of equity; run 0.0025, 0.005 and 0.01',
    correlationLimits:'Market 4 units; metals GC SI share group limit 6, energy CL HO group limit 6, bonds ZN ZB 6, equities ES NQ 6, FX 6E 6J 6, HG and KC separate; each side portfolio <=12',
    grossLimit:'Gross quote-notional <=5x current mark-to-market equity AT unit entry; not a real margin model',
-   fees:'5bps per side + 1bp simulated price slippage per side; NOT market-specific ticks/spreads or brokers',
+   fees:'Cost sensitivity: environment-variable fee and slip bps each side; defaults 5bps fee plus 1bp simulated slip; not actual market-specific fills',
    trading:'Hourly OHLC breakout/stop; stop-first on same-hour ambiguity; pessimistic intrabar assumptions; keep existing open positions at final mark, no forced exit',
    universe:'12 predeclared markets not selected by historical return; if price insufficient, exclude with reason',
    caveats:['Yahoo front continuous futures rolling and date mapping can generate artificial price jumps; futures expiry rollover not executed',
