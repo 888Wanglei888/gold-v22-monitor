@@ -107,6 +107,7 @@ function simulate(bars,levels,loaded,kind,from,to,{initial=10000,forceClose=true
   const maxQty=Math.max(0,(e*notionalLimit-currentNotional)/at);
   const qty=Math.min(qtyByRisk,maxQty);
   if(!(qty>0)){return false}
+  if(reason==='add'&&pos&&pos.totalUnits>=4)return false;
   if(pos)for(const u of pos.legs)u.stop+=side*.5*n;
   else pos={side,legs:[],entry_time:new Date(b.t).toISOString(),entry_session:b.s,firstEntry:round(at,2),adds:0,totalUnits:0,realizedPnl:0,entryFees:0,exits:[]};
   const u={side,entry:at,n,stop:at-side*2*n,qty};
@@ -158,7 +159,7 @@ function simulate(bars,levels,loaded,kind,from,to,{initial=10000,forceClose=true
   // Pyramid at next 0.5N threshold; use prior closed day's ATR.
   if(pos&&!exitedThisBar){
    let step=0;
-   while(pos&&pos.legs.length<4&&step<3){
+   while(pos&&pos.legs.length<4&&pos.totalUnits<4&&step<3){
     const side=pos.side,next=pos.nextAdd,hit=side===1?b.h>=next:b.l<=next;
     if(!hit)break;
     const m=macro(b,side);
@@ -204,6 +205,9 @@ async function main(){
    bar2026=s.filter(x=>x.session<='2026-10-16').at(-1);
   v.continuous2025_to2026.prior_year_end_equity=round(bar2025?.equity,2);
   v.continuous2025_to2026.year2026_return_pct=bar2025?round(100*(bar2026.equity/bar2025.equity-1),2):null;
+  let high2026=bar2025?.equity||10000,maxDD2026=0;
+  for(const point of s){if(point.session<'2026-01-01')continue;high2026=Math.max(high2026,point.equity);maxDD2026=Math.max(maxDD2026,100*(1-point.equity/high2026));}
+  v.continuous2025_to2026.year2026_max_drawdown_pct=round(maxDD2026,2);
  }
  const result={run_utc:new Date().toISOString(),
   status:'exploratory_2026_macro_turtle_55_day_hourly_proxy_not_verified_original_turtle_or_V22',
