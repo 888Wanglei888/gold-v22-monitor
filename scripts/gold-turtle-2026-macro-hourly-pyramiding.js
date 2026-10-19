@@ -75,19 +75,31 @@ function simulate(bars,levels,loaded,kind,from,to,{initial=10000,forceClose=true
    if(!v){v=fundamentals(loaded,b.t,side);fcache.set(key,v)}return v};
  function eq(b){const mid=b.c;return cash+(pos?pos.legs.reduce((s,u)=>s+u.side*u.qty*(mid-u.entry)-u.qty*mid*fee,0):0)}
  function mark(b){const e=eq(b);peak=Math.max(peak,e);dd=Math.max(dd,100*(1-e/peak));
-  if(b.s>='2026-01-01'){snapshots.push({session:b.s,time:new Date(b.t).toISOString(),equity:e,position:pos?.side||0});
+  snapshots.push({session:b.s,time:new Date(b.t).toISOString(),equity:e,position:pos?.side||0});
+  if(b.s>='2026-01-01'){
     const m=b.s.slice(0,7);if(!month[m])month[m]={first:e,last:e,peak:e,trough:e};
-    const z=month[m];z.last=e;z.peak=Math.max(z.peak,e);z.trough=Math.min(z.trough,e);}}
- function close(b,px,reason){
-  if(!pos)return;const p=pos,closePx=px-p.side*slippage,allQty=p.legs.reduce((s,u)=>s+u.qty,0);
-  let sum=0;
-  for(const u of p.legs){const profit=u.side*u.qty*(closePx-u.entry)-u.qty*closePx*fee;cash+=profit;sum+=profit}
-  trades.push({entry:p.entry_time,exit:new Date(b.t).toISOString(),entry_session:p.entry_session,exit_session:b.s,
-   side:p.side,units:p.legs.length,adds:p.adds,exit_reason:reason,pnl_usd:round(sum,2),
-   final_equity_usd:round(cash,2),entry_quote:p.firstEntry,exit_quote:round(closePx,2)});
-  events.push({kind:'exit',time:new Date(b.t).toISOString(),reason,side:p.side,qty:round(allQty,4),pnl:round(sum,2)});
-  closed++;pos=null;
+    const z=month[m];z.last=e;z.peak=Math.max(z.peak,e);z.trough=Math.min(z.trough,e);}
  }
+ // Each unit has a separate 2N stop; shared 20-day exit applies to all.
+ function closeSelected(b,items){
+  if(!pos||!items.length)return;
+  const p=pos;
+  for(const item of items){
+   const u=item.leg,px=item.quote-u.side*slippage;
+   const exitFee=u.qty*px*fee,profit=u.side*u.qty*(px-u.entry)-exitFee;
+   cash+=profit;p.realizedPnl+=profit;
+   p.exits.push({time:new Date(b.t).toISOString(),reason:item.reason,price:round(px,2),pnl_usd:round(profit,2)});
+   p.legs.splice(p.legs.indexOf(u),1);
+   events.push({kind:'unit_exit',time:new Date(b.t).toISOString(),reason:item.reason,side:u.side,qty:round(u.qty,4),pnl:round(profit,2)});
+  }
+  if(p.legs.length===0){
+   trades.push({entry:p.entry_time,exit:new Date(b.t).toISOString(),entry_session:p.entry_session,exit_session:b.s,
+    side:p.side,units:p.totalUnits,adds:p.adds,exit_reason:items.at(-1).reason,pnl_usd:round(p.realizedPnl-p.entryFees,2),
+    final_equity_usd:round(cash,2),entry_quote:p.firstEntry,exit_quote:p.exits.at(-1).price,unit_exits:p.exits});
+   closed++;pos=null;
+  }
+ }
+ function close(b,px,reason){if(pos)closeSelected(b,pos.legs.map(leg=>({leg,quote:px,reason})));}
  function newUnit(b,side,level,n,m,reason,half){
   const at=side===1?Math.max(b.o,level)+slippage:Math.min(b.o,level)-slippage;
   const e=Math.max(1,eq(b)),qtyByRisk=initial*.01*(half?.5:1)/n;
@@ -96,10 +108,11 @@ function simulate(bars,levels,loaded,kind,from,to,{initial=10000,forceClose=true
   const qty=Math.min(qtyByRisk,maxQty);
   if(!(qty>0)){return false}
   if(pos)for(const u of pos.legs)u.stop+=side*.5*n;
-  else pos={side,legs:[],entry_time:new Date(b.t).toISOString(),entry_session:b.s,firstEntry:round(at,2),adds:0};
+  else pos={side,legs:[],entry_time:new Date(b.t).toISOString(),entry_session:b.s,firstEntry:round(at,2),adds:0,totalUnits:0,realizedPnl:0,entryFees:0,exits:[]};
   const u={side,entry:at,n,stop:at-side*2*n,qty};
-  cash-=qty*at*fee;
-  pos.legs.push(u);if(reason==='add')pos.adds++;
+  const entryFee=qty*at*fee;
+  cash-=entryFee;pos.entryFees+=entryFee;
+  pos.legs.push(u);pos.totalUnits++;if(reason==='add')pos.adds++;
   pos.nextAdd=at+side*.5*n;
   if(reason==='entry')entries++;else adds++;
   events.push({kind:reason,time:new Date(b.t).toISOString(),side,entry:round(at,2),stop:round(u.stop,2),qty:round(qty,4),
@@ -113,16 +126,16 @@ function simulate(bars,levels,loaded,kind,from,to,{initial=10000,forceClose=true
   if(!(l.prev<b.s&&Number.isFinite(l.n)))throw Error('Lookahead N '+b.s);
   let exitedThisBar=false;
   if(pos){
-   const s=pos.side;
-   const stops=pos.legs.map(u=>u.stop);
-   const protective=s===1?Math.max(...stops):Math.min(...stops);
-   const trail=s===1?l.lo20:l.hi20;
-   // Two competing exits: first price crossing on downside/upside, worst same-hour
-   // ambiguous intra-hour rebounds are not resolvable with OHLC.
-   const boundary=s===1?Math.max(protective,trail):Math.min(protective,trail);
-   const hit=s===1?b.l<=boundary:b.h>=boundary;
-   if(hit){const quote=s===1?Math.min(b.o,boundary):Math.max(b.o,boundary);
-    close(b,quote,(s===1?trail>=protective:trail<=protective)?'20_day_channel':'unit_2N_protective');exitedThisBar=true;}
+   const side=pos.side,trail=side===1?l.lo20:l.hi20;
+   const exiting=[];
+   for(const leg of [...pos.legs]){
+    const boundary=side===1?Math.max(leg.stop,trail):Math.min(leg.stop,trail);
+    const hit=side===1?b.l<=boundary:b.h>=boundary;
+    if(!hit)continue;
+    exiting.push({leg,quote:side===1?Math.min(b.o,boundary):Math.max(b.o,boundary),
+     reason:(side===1?trail>=leg.stop:trail<=leg.stop)?'20_day_channel':'unit_2N_protective'});
+   }
+   if(exiting.length){closeSelected(b,exiting);exitedThisBar=true;}
   }
   if(!pos&&!exitedThisBar){
    const hitL=b.h>=l.hi55,hitS=b.l<=l.lo55;
