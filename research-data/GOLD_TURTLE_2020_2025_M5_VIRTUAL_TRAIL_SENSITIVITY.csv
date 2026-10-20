@@ -1,0 +1,11 @@
+scenario,variant,continuous_return_pct,continuous_maxdd_pct,trades,wins,virtual_steps,maxgrossleverage
+25bpsRisk_5bpsFee,S2_4original,36.77,18.77,26,8,0,1.28
+25bpsRisk_5bpsFee,S2_4virtualtrail,38.64,6.84,44,21,179,1.23
+50bpsRisk_5bpsFee,S2_4original,73.53,33.63,26,8,0,2.71
+50bpsRisk_5bpsFee,S2_4virtualtrail,77.29,12.03,44,21,179,2.44
+100bpsRisk_5bpsFee,S2_4original,144.65,55.12,26,8,0,5.5
+100bpsRisk_5bpsFee,S2_4virtualtrail,154.57,19.39,44,21,179,4.85
+50bpsRisk_0bpsFee,S2_4original,77.52,31.28,26,8,0,2.63
+50bpsRisk_0bpsFee,S2_4virtualtrail,83.29,11.2,44,21,179,2.44
+50bpsRisk_10bpsFee,S2_4original,69.55,36.03,26,8,0,2.79
+50bpsRisk_10bpsFee,S2_4virtualtrail,71.28,12.9,44,21,179,2.45
