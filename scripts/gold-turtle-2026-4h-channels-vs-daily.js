@@ -4,7 +4,8 @@
 // GC=F Yahoo continuous near-month hourly, synthetic fractional ounces, NOT CME execution.
 const fs=require('node:fs');
 const FROM='2026-01-01',TO='2026-10-16',WARMUP='2025-01-01';
-const INIT=10000,FEE_BP=5,SLIP_USD=.20,CAP=5;
+const INIT=10000,FEE_BP=Number(process.env.TURTLE_4H_FEE_BP??5),SLIP_USD=Number(process.env.TURTLE_4H_SLIP_USD??.20),CAP=5;
+if(!(FEE_BP>=0&&SLIP_USD>=0))throw Error('Invalid costs');
 const NY=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'});
 const MS=d=>Date.parse(d+'T00:00:00Z');
 const RD=(x,n=2)=>Number.isFinite(x)?+x.toFixed(n):null;
@@ -184,6 +185,7 @@ async function main(){
  const risk=Number(process.env.TURTLE_4H_RISK??.005);if(!(risk>0&&risk<=.02))throw Error('Bad risk');
  const out={meta:{generatedUtc:new Date().toISOString(),start:FROM,end:TO,source:'Yahoo GC=F continuous nearest futures 1h OHLC',
   quality:gold.stats,bar4hCount:four.length,dailyCount:daily.length,
+  bar4hPeriodCompleteness:Object.fromEntries([1,2,3,4].map(x=>[String(x),four.filter(b=>b.count===x).length])),
   periods:frameworks.map(z=>({id:z.id,description:z.description,initialized:z.levels.periods})),
   assumptions:{riskPerN:risk,account:INIT,feeBpsPerSide:FEE_BP,slippagePerOzPerSide:SLIP_USD,leverageEntryLimit:CAP,
    initialUnits:1,maxUnits:4,stop:'2N per unit; older units 0.5N ratchet on adding or post-cap virtual step',
