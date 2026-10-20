@@ -10,6 +10,8 @@ const {loadResearchInputs}=require('../lib/endpoints/v22-asof-join');
 const {delta,sumWindow}=require('../lib/endpoints/v22-cross-market-core');
 const ms=d=>Date.parse(d+'T00:00:00Z');
 const DAY=86400000,round=(x,n=3)=>Number.isFinite(x)?+x.toFixed(n):null;
+const RISK_PER_N=Number(process.env.GOLD_TURTLE_RISK_PER_N||'0.01');
+if(!(RISK_PER_N>0&&RISK_PER_N<=.02))throw Error('Invalid risk per N');
 const ny=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'});
 function session(t){const v=Object.fromEntries(ny.formatToParts(new Date(t)).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
  const day=v.year+'-'+v.month+'-'+v.day;return Number(v.hour)>=17?new Date(ms(day)+DAY).toISOString().slice(0,10):day}
@@ -107,7 +109,7 @@ function simulate(bars,levels,loaded,kind,from,to,{initial=10000,forceClose=true
  function close(b,px,reason){if(pos)closeSelected(b,pos.legs.map(leg=>({leg,quote:px,reason})));}
  function newUnit(b,side,level,n,m,reason,half){
   const at=side===1?Math.max(b.o,level)+slippage:Math.min(b.o,level)-slippage;
-  const e=eqAt(b.o),qtyByRisk=initial*.01*(half?.5:1)/n; // size uses OPEN, never hour CLOSE
+  const e=eqAt(b.o),qtyByRisk=initial*RISK_PER_N*(half?.5:1)/n; // size uses OPEN, never hour CLOSE
   if(e<=0||!(n>0))return false;
   const currentNotional=pos?pos.legs.reduce((s,u)=>s+u.qty*at,0):0;
   const maxQty=Math.max(0,(e*notionalLimit-currentNotional)/at);
@@ -227,14 +229,14 @@ async function main(){
     results[o.label][key]=z;
    }
  }
- const meta={generated_utc:new Date().toISOString(),
+ const meta={generated_utc:new Date().toISOString(),riskPerN:RISK_PER_N,
   price_source:'Yahoo GC=F front continuous gold futures hourly OHLC; valid completed through 2026-10-16',
   sample:{first:g.first,last:g.last,bars:g.bars.length,excluded:g.bad,periods:['2026-01-01 flat','2025-04-01 carry to 2026-10-16']},
   rules:{s2entry:'55 completed days channel',s2exit:'20 completed days opposite channel',N:'20 Wilder ATR prior completed day',
    add:'0.5 times prior day N from prior actual add fill, same size each unit 1 percent initial capital/N',
    unitStops:'each unit initial 2N; old units move 0.5N after each add; 20 day channel exit unchanged',
    costs:'0.2 USD/oz each side slip plus 5bp each side fee',
-   sizing:'initial equity USD 10000; synthetic fractional gold ounce; fixed qty 1 percent initial account / N of entry/add day',
+   sizing:'initial equity USD 10000; synthetic fractional gold ounce; fixed qty GOLD_TURTLE_RISK_PER_N * initial account / N of entry/add day (default 0.01)',
    leverage:'cap tests 5x,10x, uncapped. Max allowed computed using beginning hourly OPEN instead of same hour CLOSE; excludes exchange margin/carry',
    execution:'same-hour uncertain stop assumed adverse; 2026 end forced close to compare complete campaigns'},
   limitations:[
