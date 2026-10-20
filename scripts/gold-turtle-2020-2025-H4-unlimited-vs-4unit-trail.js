@@ -34,9 +34,9 @@ function getFourHourLevels(bars){
   for(let i=0;i<periods.length;i++){
     const p=periods[i],prev=periods[i-1];
     const tr=prev?Math.max(p.h-p.l,Math.abs(p.h-prev.c),Math.abs(p.l-prev.c)):p.h-p.l;
-    if(i===19)p.atr20=periods.slice(0,20).reduce((sum,x)=>sum+x.tr,0)/20; // tr defined per prior candle
-    else if(i>19)p.atr20=(19*prev.atr20+tr)/20;
     p.tr=tr;
+    if(i===19)p.atr20=periods.slice(0,20).reduce((sum,x)=>sum+x.tr,0)/20;
+    else if(i>19)p.atr20=(19*prev.atr20+tr)/20;
     if(i>=55){
       const r=periods.slice(i-55,i),ex=r.slice(-20);
       levels.set(p.key,{up:{55:Math.max(...r.map(x=>x.h))},
