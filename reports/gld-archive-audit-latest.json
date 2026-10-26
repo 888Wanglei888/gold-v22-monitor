@@ -1,12 +1,12 @@
 {
   "source": "SPDR GLD Historical Archive (official)",
   "url": "https://api.spdrgoldshares.com/api/v1/historical-archive?exchange=NYSE&lang=en&product=gld",
-  "checked_at_utc": "2026-10-19T16:37:27.647745+00:00",
+  "checked_at_utc": "2026-10-26T16:17:55.273910+00:00",
   "raw_archive_redistributed": false,
   "actual_etf_flow_calculated": false,
   "verified_trade_time_release": false,
   "status": "official_gld_archive_readable",
-  "size_bytes": 541921,
+  "size_bytes": 542449,
   "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
   "worksheets": [
     {
@@ -61,16 +61,16 @@
     },
     {
       "xml_file": "xl/worksheets/sheet2.xml",
-      "row_count": 5717,
+      "row_count": 5722,
       "date_header_row": 1,
       "first_column_a_debug": {
-        "cells": 5717,
-        "nonempty": 5717,
+        "cells": 5722,
+        "nonempty": 5722,
         "types": {
-          "s": 5717
+          "s": 5722
         },
         "first_nonempty_row": 1,
-        "last_nonempty_row": 5717,
+        "last_nonempty_row": 5722,
         "masked_examples": [
           "##-Dec-####",
           "##-Feb-####",
@@ -86,10 +86,10 @@
         "gold_tonnes": "J"
       },
       "gold_tonnes_change_coverage": {
-        "valid_date_tonnes_pairs": 5511,
+        "valid_date_tonnes_pairs": 5516,
         "first_date": "2004-11-18",
-        "last_date": "2026-10-16",
-        "historical_daily_change_samples": 5510,
+        "last_date": "2026-10-23",
+        "historical_daily_change_samples": 5515,
         "counts_by_year": {
           "2024": {
             "sample_days": 252,
@@ -104,9 +104,9 @@
             "holdings_unchanged_days": 45
           },
           "2026": {
-            "sample_days": 199,
-            "holdings_increased_days": 78,
-            "holdings_decreased_days": 87,
+            "sample_days": 204,
+            "holdings_increased_days": 79,
+            "holdings_decreased_days": 91,
             "holdings_unchanged_days": 34
           }
         },
@@ -117,13 +117,13 @@
       ],
       "date_column_candidates": {
         "A": {
-          "count": 5716,
+          "count": 5721,
           "first": "2004-11-18",
-          "last": "2026-10-16"
+          "last": "2026-10-23"
         }
       },
       "date_cell_storage_types": {
-        "s": 5716
+        "s": 5721
       },
       "unparsed_date_shapes": [],
       "header_topics": [
