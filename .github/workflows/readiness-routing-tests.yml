@@ -1,0 +1,22 @@
+name: Readiness routing regression
+on:
+  pull_request:
+    paths:
+      - lib/endpoints/readiness.js
+      - tests/readiness.test.js
+      - .github/workflows/readiness-routing-tests.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Node.js syntax
+        run: |
+          node --check lib/endpoints/readiness.js
+          node --check tests/readiness.test.js
+      - name: Test production origin and separate routing/data failures
+        run: node tests/readiness.test.js
