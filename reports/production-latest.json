@@ -1,6 +1,9 @@
 {
-  "checked_at_utc": "2026-11-01T14:18:38.978437+00:00",
-  "commit": "391fe59771ebbd64ebab52951b702bfe63162747",
+  "checked_at_utc": "2026-11-01T22:36:19.137563+00:00",
+  "commit": "dffa1f82c814e8810466593845d2fb93c436f7a6",
+  "commit_role": "workflow_trigger_commit_not_report_publication_commit",
+  "workflow_run_id": "41357785629",
+  "checked_production_origin": "https://gold-v22-real-data-v1.vercel.app",
   "endpoints": {
     "tga-2026": {
       "status": "year_source_ok",
@@ -221,8 +224,9 @@
       "last_date": null,
       "data": {
         "status": "research_only",
-        "baseline_data_checks_passed": false,
-        "research_source_coverage_passed": false,
+        "audit_scope": "public_production_api",
+        "baseline_data_checks_passed": true,
+        "research_source_coverage_passed": true,
         "research_source_checks": [
           "v22-source-audit",
           "v22-dxy-audit",
@@ -230,41 +234,68 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
+          "v22-dxy-audit": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": null,
+            "error": null
+          },
           "treasury": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "forecast": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-source-audit": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-10-29",
+            "error": null
           },
           "v22-ohlc-integrity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "robustness-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-          },
-          "v22-dxy-audit": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-01T22:36:09.000Z",
+            "error": null
           },
           "v22-cot-audit": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": null,
+            "error": null
           },
-          "holdout-backtest": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+          "v22-source-audit": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-01T22:36:09.669Z",
+            "error": null
+          },
+          "forecast": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-10-29",
+            "error": null
           },
           "tga-identity": {
-            "valid": false,
-            "error": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-10-29",
+            "error": null
+          },
+          "robustness-backtest": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-10-29",
+            "error": null
+          },
+          "holdout-backtest": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": null,
+            "error": null
           }
         },
         "missing_for_trade_ready": [
@@ -2119,7 +2150,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-11-01T14:18:35.260Z",
+        "as_of": "2026-11-01T22:36:15.045Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -6078,7 +6109,7 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-11-01T14:18:33.000Z",
+        "as_of": "2026-11-01T22:36:13.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
@@ -6288,7 +6319,7 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-11-01T14:18:33.004Z",
+        "as_of": "2026-11-01T22:36:12.624Z",
         "fred": [
           {
             "series": "DFII10",
