@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-07T14:05:22.553409+00:00",
-  "commit": "2749258cdea6e1d2c7c5fd72e158c75ba9d9e3cf",
+  "checked_at_utc": "2026-11-08T14:19:55.631901+00:00",
+  "commit": "c7b542f124540f816d263a35ba4d5057999ced29",
   "commit_role": "workflow_trigger_commit_not_report_publication_commit",
-  "workflow_run_id": "42379765980",
+  "workflow_run_id": "42489098685",
   "checked_production_origin": "https://gold-v22-real-data-v1.vercel.app",
   "endpoints": {
     "v22-auction-source-audit": {
@@ -293,7 +293,7 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-11-07T14:05:16.091Z",
+        "as_of": "2026-11-08T14:19:48.276Z",
         "fred": [
           {
             "series": "DFII10",
@@ -391,15 +391,15 @@
           {
             "symbol": "GC=F",
             "status": "available",
-            "bars": 12861,
-            "valid_ohlc_bars": 10163,
-            "invalid_or_missing_ohlc_bars": 2698,
+            "bars": 12855,
+            "valid_ohlc_bars": 10164,
+            "invalid_or_missing_ohlc_bars": 2691,
             "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-11-06T21:00:00.000Z",
+            "last_date": "2026-11-06T21:59:59.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 5281,
-              "2026": 4882
+              "2026": 4883
             },
             "complete_utc_four_hour_buckets": 2202,
             "complete_utc_four_hour_per_year": {
@@ -2154,35 +2154,7 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
-          "v22-dxy-audit": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": null,
-            "error": null
-          },
-          "v22-ohlc-integrity": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-07T14:05:11.000Z",
-            "error": null
-          },
           "treasury": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-05",
-            "error": null
-          },
-          "v22-cot-audit": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": null,
-            "error": null
-          },
-          "tga-identity": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
@@ -2196,14 +2168,35 @@
             "source_as_of": "2026-11-05",
             "error": null
           },
+          "v22-dxy-audit": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": null,
+            "error": null
+          },
+          "v22-cot-audit": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": null,
+            "error": null
+          },
+          "v22-ohlc-integrity": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-08T14:19:47.000Z",
+            "error": null
+          },
           "v22-source-audit": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
-            "source_as_of": "2026-11-07T14:05:13.485Z",
+            "source_as_of": "2026-11-08T14:19:48.276Z",
             "error": null
           },
-          "robustness-backtest": {
+          "tga-identity": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
@@ -2215,6 +2208,13 @@
             "valid": true,
             "failure_type": null,
             "source_as_of": null,
+            "error": null
+          },
+          "robustness-backtest": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-05",
             "error": null
           }
         },
@@ -2242,7 +2242,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-11-07T14:05:19.077Z",
+        "as_of": "2026-11-08T14:19:51.967Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -2359,9 +2359,9 @@
           }
         },
         "ohlc_quality": {
-          "raw": 13479,
-          "missing_ohlc": 2839,
-          "off_hour": 12,
+          "raw": 13473,
+          "missing_ohlc": 2832,
+          "off_hour": 13,
           "unclosed": 0,
           "duplicate_hours": 0,
           "nonconsecutive_groups": 0,
@@ -2921,9 +2921,9 @@
         "status": "dxy_daily_source_access_ok",
         "source": "Yahoo chart DX-Y.NYB (ICE US Dollar Index)",
         "symbol": "DX-Y.NYB",
-        "raw_bars": 868,
+        "raw_bars": 869,
         "usable_unique_trading_days": 718,
-        "invalid_ohlc_bars": 150,
+        "invalid_ohlc_bars": 151,
         "duplicate_exchange_dates_excluded": 0,
         "first_date": "2024-01-02",
         "last_date": "2026-11-06",
@@ -6326,16 +6326,16 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-11-07T14:05:17.000Z",
+        "as_of": "2026-11-08T14:19:47.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
         "counts": {
-          "raw_hours": 12861,
-          "distinct_raw_timestamps": 12861,
+          "raw_hours": 12855,
+          "distinct_raw_timestamps": 12855,
           "valid_ohlc_on_hour_nonduplicated": 10151,
-          "missing_or_invalid_ohlc": 2698,
-          "not_exact_utc_hour": 12,
+          "missing_or_invalid_ohlc": 2691,
+          "not_exact_utc_hour": 13,
           "unclosed_current_hour": 0,
           "duplicate_hour": 0,
           "duplicate_timestamp": 0,
