@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-08T14:19:55.631901+00:00",
-  "commit": "c7b542f124540f816d263a35ba4d5057999ced29",
+  "checked_at_utc": "2026-11-09T17:32:10.138979+00:00",
+  "commit": "2d2642543e020d5c4798d72753c51addf52ca78a",
   "commit_role": "workflow_trigger_commit_not_report_publication_commit",
-  "workflow_run_id": "42489098685",
+  "workflow_run_id": "42665182049",
   "checked_production_origin": "https://gold-v22-real-data-v1.vercel.app",
   "endpoints": {
     "v22-auction-source-audit": {
@@ -293,7 +293,7 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-11-08T14:19:48.276Z",
+        "as_of": "2026-11-09T17:32:04.120Z",
         "fred": [
           {
             "series": "DFII10",
@@ -350,13 +350,13 @@
           {
             "series": "SOFR",
             "status": "source_access_ok",
-            "observations": 711,
+            "observations": 712,
             "first_date": "2024-01-02",
-            "last_date": "2026-11-05",
+            "last_date": "2026-11-06",
             "coverage": {
               "2024": 250,
               "2025": 249,
-              "2026": 212
+              "2026": 213
             },
             "frequency": "daily_or_business_daily"
           },
@@ -391,36 +391,36 @@
           {
             "symbol": "GC=F",
             "status": "available",
-            "bars": 12855,
-            "valid_ohlc_bars": 10164,
-            "invalid_or_missing_ohlc_bars": 2691,
+            "bars": 12899,
+            "valid_ohlc_bars": 10183,
+            "invalid_or_missing_ohlc_bars": 2716,
             "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-11-06T21:59:59.000Z",
+            "last_date": "2026-11-09T17:22:03.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 5281,
-              "2026": 4883
+              "2026": 4902
             },
-            "complete_utc_four_hour_buckets": 2202,
+            "complete_utc_four_hour_buckets": 2206,
             "complete_utc_four_hour_per_year": {
               "2024": 0,
               "2025": 1144,
-              "2026": 1058
+              "2026": 1062
             },
             "exchange_session_aligned_4h_verified": false
           },
           {
             "symbol": "GLD",
             "status": "available",
-            "bars": 3103,
-            "valid_ohlc_bars": 3090,
+            "bars": 3107,
+            "valid_ohlc_bars": 3094,
             "invalid_or_missing_ohlc_bars": 13,
             "first_date": "2025-02-03T14:30:00.000Z",
-            "last_date": "2026-11-06T21:00:00.000Z",
+            "last_date": "2026-11-09T17:31:37.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 1601,
-              "2026": 1489
+              "2026": 1493
             },
             "complete_utc_four_hour_buckets": 439,
             "complete_utc_four_hour_per_year": {
@@ -2154,13 +2154,6 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
-          "treasury": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-05",
-            "error": null
-          },
           "forecast": {
             "http_status": 200,
             "valid": true,
@@ -2175,6 +2168,13 @@
             "source_as_of": null,
             "error": null
           },
+          "v22-ohlc-integrity": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-09T17:32:00.000Z",
+            "error": null
+          },
           "v22-cot-audit": {
             "http_status": 200,
             "valid": true,
@@ -2182,21 +2182,28 @@
             "source_as_of": null,
             "error": null
           },
-          "v22-ohlc-integrity": {
+          "treasury": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
-            "source_as_of": "2026-11-08T14:19:47.000Z",
+            "source_as_of": "2026-11-05",
+            "error": null
+          },
+          "tga-identity": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-05",
             "error": null
           },
           "v22-source-audit": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
-            "source_as_of": "2026-11-08T14:19:48.276Z",
+            "source_as_of": "2026-11-09T17:32:01.252Z",
             "error": null
           },
-          "tga-identity": {
+          "robustness-backtest": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
@@ -2208,13 +2215,6 @@
             "valid": true,
             "failure_type": null,
             "source_as_of": null,
-            "error": null
-          },
-          "robustness-backtest": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-05",
             "error": null
           }
         },
@@ -2242,7 +2242,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-11-08T14:19:51.967Z",
+        "as_of": "2026-11-09T17:32:06.659Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -2304,10 +2304,10 @@
             "conservative_lag_calendar_days": 3
           },
           "SOFR": {
-            "observations": 711,
+            "observations": 712,
             "duplicate_observation_dates_excluded": 0,
             "first_observation_date": "2024-01-02",
-            "last_observation_date": "2026-11-05",
+            "last_observation_date": "2026-11-06",
             "conservative_lag_calendar_days": 3
           },
           "IORB": {
@@ -2325,10 +2325,10 @@
             "conservative_lag_calendar_days": 9
           },
           "DXY": {
-            "observations": 718,
+            "observations": 719,
             "duplicate_observation_dates_excluded": 0,
             "first_observation_date": "2024-01-02",
-            "last_observation_date": "2026-11-06",
+            "last_observation_date": "2026-11-09",
             "conservative_lag_calendar_days": 2
           },
           "COT_NET": {
@@ -2351,29 +2351,29 @@
             "conservative_lag_calendar_days": 3
           },
           "GLD_TONNES_DELTA": {
-            "observations": 5524,
+            "observations": 5525,
             "duplicate_observation_dates_excluded": 0,
             "first_observation_date": "2004-11-19",
-            "last_observation_date": "2026-11-05",
+            "last_observation_date": "2026-11-06",
             "conservative_lag_calendar_days": 3
           }
         },
         "ohlc_quality": {
-          "raw": 13473,
-          "missing_ohlc": 2832,
+          "raw": 13517,
+          "missing_ohlc": 2857,
           "off_hour": 13,
-          "unclosed": 0,
+          "unclosed": 1,
           "duplicate_hours": 0,
           "nonconsecutive_groups": 0,
-          "incomplete_groups": 33
+          "incomplete_groups": 34
         },
         "gld_official_holdings_source_coverage": {
           "source": "SPDR GLD official XLSX",
-          "rows_with_date": 5730,
-          "rows_with_date_and_tonnes": 5525,
+          "rows_with_date": 5731,
+          "rows_with_date_and_tonnes": 5526,
           "missing_tonnes_rows": 205,
           "first_date": "2004-11-18",
-          "last_date": "2026-11-05",
+          "last_date": "2026-11-06",
           "annual": {
             "2024": {
               "change_days": 252
@@ -2382,74 +2382,74 @@
               "change_days": 250
             },
             "2026": {
-              "change_days": 213
+              "change_days": 214
             }
           },
           "holds_gold_tonnes_not_investor_net_flow": true,
           "real_historical_archive_vintage_verified": false
         },
         "joined_feature_audit": {
-          "candle_count": 2294,
-          "complete": 2098,
+          "candle_count": 2298,
+          "complete": 2102,
           "complete_pct": 91.5,
           "source_coverage": {
             "DFII10": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "DGS10": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "T10YIE": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "RRPONTSYD": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "SOFR": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "IORB": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "WRESBAL": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "DXY": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "COT_NET": {
-              "joined_candles": 2098,
+              "joined_candles": 2102,
               "stale_rejected_candles": 196,
               "pct": 91.5
             },
             "COT_OI": {
-              "joined_candles": 2098,
+              "joined_candles": 2102,
               "stale_rejected_candles": 196,
               "pct": 91.5
             },
             "TGA": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "GLD_TONNES_DELTA": {
-              "joined_candles": 2294,
+              "joined_candles": 2298,
               "stale_rejected_candles": 0,
               "pct": 100
             }
@@ -2475,21 +2475,21 @@
               }
             },
             {
-              "close_utc": "2026-11-06T19:00:00.000Z",
+              "close_utc": "2026-11-09T15:00:00.000Z",
               "all_required_available": true,
               "asof_dates": {
-                "DFII10": "2026-11-03",
-                "DGS10": "2026-11-03",
-                "T10YIE": "2026-11-03",
-                "RRPONTSYD": "2026-11-03",
-                "SOFR": "2026-11-03",
-                "IORB": "2026-11-03",
+                "DFII10": "2026-11-05",
+                "DGS10": "2026-11-05",
+                "T10YIE": "2026-11-06",
+                "RRPONTSYD": "2026-11-06",
+                "SOFR": "2026-11-06",
+                "IORB": "2026-11-06",
                 "WRESBAL": "2026-10-28",
-                "DXY": "2026-11-04",
+                "DXY": "2026-11-06",
                 "COT_NET": "2026-10-20",
                 "COT_OI": "2026-10-20",
-                "TGA": "2026-11-03",
-                "GLD_TONNES_DELTA": "2026-11-03"
+                "TGA": "2026-11-05",
+                "GLD_TONNES_DELTA": "2026-11-06"
               }
             }
           ]
@@ -2603,68 +2603,68 @@
             ]
           },
           "2026": {
-            "candles": 1054,
-            "candle_count": 1054,
-            "complete": 1054,
+            "candles": 1058,
+            "candle_count": 1058,
+            "complete": 1058,
             "complete_pct": 100,
             "source_coverage": {
               "DFII10": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "DGS10": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "T10YIE": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "RRPONTSYD": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "SOFR": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "IORB": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "WRESBAL": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "DXY": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "COT_NET": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "COT_OI": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "TGA": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "GLD_TONNES_DELTA": {
-                "joined_candles": 1054,
+                "joined_candles": 1058,
                 "stale_rejected_candles": 0,
                 "pct": 100
               }
@@ -2690,21 +2690,21 @@
                 }
               },
               {
-                "close_utc": "2026-11-06T19:00:00.000Z",
+                "close_utc": "2026-11-09T15:00:00.000Z",
                 "all_required_available": true,
                 "asof_dates": {
-                  "DFII10": "2026-11-03",
-                  "DGS10": "2026-11-03",
-                  "T10YIE": "2026-11-03",
-                  "RRPONTSYD": "2026-11-03",
-                  "SOFR": "2026-11-03",
-                  "IORB": "2026-11-03",
+                  "DFII10": "2026-11-05",
+                  "DGS10": "2026-11-05",
+                  "T10YIE": "2026-11-06",
+                  "RRPONTSYD": "2026-11-06",
+                  "SOFR": "2026-11-06",
+                  "IORB": "2026-11-06",
                   "WRESBAL": "2026-10-28",
-                  "DXY": "2026-11-04",
+                  "DXY": "2026-11-06",
                   "COT_NET": "2026-10-20",
                   "COT_OI": "2026-10-20",
-                  "TGA": "2026-11-03",
-                  "GLD_TONNES_DELTA": "2026-11-03"
+                  "TGA": "2026-11-05",
+                  "GLD_TONNES_DELTA": "2026-11-06"
                 }
               }
             ]
@@ -2916,27 +2916,23 @@
       "error": null,
       "observations": null,
       "first_date": "2024-01-02",
-      "last_date": "2026-11-06",
+      "last_date": "2026-11-09",
       "data": {
         "status": "dxy_daily_source_access_ok",
         "source": "Yahoo chart DX-Y.NYB (ICE US Dollar Index)",
         "symbol": "DX-Y.NYB",
-        "raw_bars": 869,
-        "usable_unique_trading_days": 718,
+        "raw_bars": 870,
+        "usable_unique_trading_days": 719,
         "invalid_ohlc_bars": 151,
         "duplicate_exchange_dates_excluded": 0,
         "first_date": "2024-01-02",
-        "last_date": "2026-11-06",
+        "last_date": "2026-11-09",
         "by_year": {
           "2024": 252,
           "2025": 252,
-          "2026": 214
+          "2026": 215
         },
         "recent": [
-          {
-            "date": "2026-11-04",
-            "close": 101.51000213623047
-          },
           {
             "date": "2026-11-05",
             "close": 101.55000305175781
@@ -2944,6 +2940,10 @@
           {
             "date": "2026-11-06",
             "close": 102.30000305175781
+          },
+          {
+            "date": "2026-11-09",
+            "close": 101.7979965209961
           }
         ],
         "usable_for_full_v22_point_in_time": false,
@@ -6326,28 +6326,28 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-11-08T14:19:47.000Z",
+        "as_of": "2026-11-09T17:32:05.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
         "counts": {
-          "raw_hours": 12855,
-          "distinct_raw_timestamps": 12855,
-          "valid_ohlc_on_hour_nonduplicated": 10151,
-          "missing_or_invalid_ohlc": 2691,
+          "raw_hours": 12899,
+          "distinct_raw_timestamps": 12899,
+          "valid_ohlc_on_hour_nonduplicated": 10169,
+          "missing_or_invalid_ohlc": 2716,
           "not_exact_utc_hour": 13,
-          "unclosed_current_hour": 0,
+          "unclosed_current_hour": 1,
           "duplicate_hour": 0,
           "duplicate_timestamp": 0,
-          "candidate_buckets": 2222,
-          "closed_session_aligned_4h": 2192,
-          "excluded_incomplete_buckets": 30,
+          "candidate_buckets": 2227,
+          "closed_session_aligned_4h": 2196,
+          "excluded_incomplete_buckets": 31,
           "excluded_nonconsecutive_buckets": 0,
           "excluded_unclosed_buckets": 0
         },
         "closed_4h_by_year": {
           "2025": 1138,
-          "2026": 1054
+          "2026": 1058
         },
         "closed_4h_by_month": [
           {
@@ -6436,7 +6436,7 @@
           },
           {
             "month": "2026-11",
-            "closed_4h_candles": 25
+            "closed_4h_candles": 29
           }
         ],
         "first_accepted_candle": {
@@ -6450,14 +6450,14 @@
           "close": 2811.5
         },
         "last_accepted_candle": {
-          "session_date": "2026-11-05",
-          "session_slot": 4,
-          "first_hour_utc": "2026-11-06T15:00:00.000Z",
-          "close_time_utc": "2026-11-06T19:00:00.000Z",
-          "open": 4058,
-          "high": 4087.39990234375,
-          "low": 4052.5,
-          "close": 4087.199951171875
+          "session_date": "2026-11-08",
+          "session_slot": 3,
+          "first_hour_utc": "2026-11-09T11:00:00.000Z",
+          "close_time_utc": "2026-11-09T15:00:00.000Z",
+          "open": 4107.60009765625,
+          "high": 4139.39990234375,
+          "low": 4074.89990234375,
+          "close": 4129.7998046875
         },
         "latest_month": "2026-11",
         "data_quality_gate_passed_for_live_execution": false,
