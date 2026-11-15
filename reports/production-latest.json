@@ -1,752 +1,458 @@
 {
-  "checked_at_utc": "2026-11-14T14:11:38.766019+00:00",
-  "commit": "c6f7ee52fb49a16fa789f58b6ee3ed79c1f386fb",
+  "checked_at_utc": "2026-11-15T14:47:52.599526+00:00",
+  "commit": "f066bfd0dc6d1e7f7aab5505c21660a9ed670f08",
   "commit_role": "workflow_trigger_commit_not_report_publication_commit",
-  "workflow_run_id": "43603380913",
+  "workflow_run_id": "43726099323",
   "checked_production_origin": "https://gold-v22-real-data-v1.vercel.app",
   "endpoints": {
-    "v22-auction-source-audit": {
-      "status": "auction_historical_source_access_ok",
+    "v22-tga-cashflow-identity": {
+      "status": "tga_operating_cashflows_identity_verified_in_two_months",
       "error": null,
       "observations": null,
       "first_date": null,
       "last_date": null,
       "data": {
-        "status": "auction_historical_source_access_ok",
-        "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
-        "per_year": {
-          "2023": {
-            "auction_rows": 428,
-            "type_counts": {
-              "Bill": 320,
-              "Note": 82,
-              "Bond": 26
-            },
-            "accepted_amount_rows": 428,
-            "first_auction": "2023-01-03",
-            "last_auction": "2023-12-28"
-          },
-          "2024": {
-            "auction_rows": 440,
-            "type_counts": {
-              "Bill": 332,
-              "Note": 82,
-              "Bond": 26
-            },
-            "accepted_amount_rows": 440,
-            "first_auction": "2024-01-02",
-            "last_auction": "2024-12-30"
-          },
+        "status": "tga_operating_cashflows_identity_verified_in_two_months",
+        "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/",
+        "years": {
           "2025": {
-            "auction_rows": 444,
-            "type_counts": {
-              "Bill": 336,
-              "Note": 82,
-              "Bond": 26
+            "raw_cashflow_rows": 3843,
+            "raw_tga_rows": 29,
+            "classified_cashflow_report_days": 21,
+            "closing_tga_report_days": 29,
+            "cashflow_faults": {
+              "invalid_today_amount": 0,
+              "bad_transaction_type": 0,
+              "non_tga_ignored": 0,
+              "non_table_ii_ignored": 0,
+              "duplicate_line_key": 0,
+              "unlabeled_possible_total_rows_excluded": 42
             },
-            "accepted_amount_rows": 444,
-            "first_auction": "2025-01-02",
-            "last_auction": "2025-12-31"
+            "duplicate_tga_dates": 0,
+            "identity": {
+              "count": 21,
+              "average_absolute_identity_gap_usd_millions": 3.476,
+              "max_absolute_identity_gap_usd_millions": 9,
+              "within_one_billion_pct": 100,
+              "recent_examples": [
+                {
+                  "date": "2025-09-25",
+                  "reported_tga_delta": 3117,
+                  "reported_net_deposits_minus_withdrawals": 3117,
+                  "difference": 0,
+                  "tax_net_proxy": 10245,
+                  "customs_deposits": 310
+                },
+                {
+                  "date": "2025-09-26",
+                  "reported_tga_delta": 25250,
+                  "reported_net_deposits_minus_withdrawals": 25243,
+                  "difference": 7,
+                  "tax_net_proxy": 14495,
+                  "customs_deposits": 419
+                },
+                {
+                  "date": "2025-09-29",
+                  "reported_tga_delta": 19337,
+                  "reported_net_deposits_minus_withdrawals": 19336,
+                  "difference": 1,
+                  "tax_net_proxy": 32769,
+                  "customs_deposits": 516
+                },
+                {
+                  "date": "2025-09-30",
+                  "reported_tga_delta": 85151,
+                  "reported_net_deposits_minus_withdrawals": 85152,
+                  "difference": -1,
+                  "tax_net_proxy": 11097,
+                  "customs_deposits": 381
+                }
+              ]
+            },
+            "identity_reconciled": true,
+            "illustrative_month_tax_withheld_and_other_explicit_tax_deposits_less_named_refunds_usd_billions": 504.584,
+            "customs_duties_tax_fee_deposits_usd_billions": 31.676,
+            "disclaimer": "Named tax categories are a partial proxy, not a certified full IRS receipt/spending forecast"
           },
           "2026": {
-            "auction_rows": 346,
-            "type_counts": {
-              "Bill": 260,
-              "Note": 64,
-              "Bond": 22
+            "raw_cashflow_rows": 3780,
+            "raw_tga_rows": 29,
+            "classified_cashflow_report_days": 21,
+            "closing_tga_report_days": 29,
+            "cashflow_faults": {
+              "invalid_today_amount": 0,
+              "bad_transaction_type": 0,
+              "non_tga_ignored": 0,
+              "non_table_ii_ignored": 0,
+              "duplicate_line_key": 0,
+              "unlabeled_possible_total_rows_excluded": 42
             },
-            "accepted_amount_rows": 341,
-            "first_auction": "2026-01-05",
-            "last_auction": "2026-10-22"
+            "duplicate_tga_dates": 0,
+            "identity": {
+              "count": 21,
+              "average_absolute_identity_gap_usd_millions": 2.857,
+              "max_absolute_identity_gap_usd_millions": 9,
+              "within_one_billion_pct": 100,
+              "recent_examples": [
+                {
+                  "date": "2026-09-25",
+                  "reported_tga_delta": 20663,
+                  "reported_net_deposits_minus_withdrawals": 20665,
+                  "difference": -2,
+                  "tax_net_proxy": 13031,
+                  "customs_deposits": 398
+                },
+                {
+                  "date": "2026-09-28",
+                  "reported_tga_delta": 14282,
+                  "reported_net_deposits_minus_withdrawals": 14285,
+                  "difference": -3,
+                  "tax_net_proxy": 30595,
+                  "customs_deposits": 373
+                },
+                {
+                  "date": "2026-09-29",
+                  "reported_tga_delta": -22972,
+                  "reported_net_deposits_minus_withdrawals": -22975,
+                  "difference": 3,
+                  "tax_net_proxy": 9786,
+                  "customs_deposits": 457
+                },
+                {
+                  "date": "2026-09-30",
+                  "reported_tga_delta": 47446,
+                  "reported_net_deposits_minus_withdrawals": 47451,
+                  "difference": -5,
+                  "tax_net_proxy": 16709,
+                  "customs_deposits": 278
+                }
+              ]
+            },
+            "identity_reconciled": true,
+            "illustrative_month_tax_withheld_and_other_explicit_tax_deposits_less_named_refunds_usd_billions": 538.138,
+            "customs_duties_tax_fee_deposits_usd_billions": 26.611,
+            "disclaimer": "Named tax categories are a partial proxy, not a certified full IRS receipt/spending forecast"
           }
         },
-        "raw_record_count": 1658,
-        "columns": [
-          "record_date",
-          "cusip",
-          "security_type",
-          "security_term",
-          "auction_date",
-          "issue_date",
-          "maturity_date",
-          "price_per100",
-          "accrued_int_per100",
-          "accrued_int_per1000",
-          "adj_accrued_int_per1000",
-          "adj_price",
-          "allocation_pctage",
-          "allocation_pctage_decimals",
-          "announcemtd_cusip",
-          "announcemt_date",
-          "auction_format",
-          "avg_med_discnt_rate",
-          "avg_med_investment_rate",
-          "avg_med_price",
-          "avg_med_discnt_margin",
-          "avg_med_yield",
-          "back_dated",
-          "back_dated_date",
-          "bid_to_cover_ratio",
-          "callable",
-          "call_date",
-          "called_date",
-          "cash_management_bill_cmb",
-          "closing_time_comp",
-          "closing_time_noncomp",
-          "comp_accepted",
-          "comp_bid_decimals",
-          "comp_tendered",
-          "comp_tenders_accepted",
-          "corpus_cusip",
-          "cpi_base_reference_period",
-          "currently_outstanding",
-          "dated_date",
-          "direct_bidder_accepted",
-          "direct_bidder_tendered",
-          "est_pub_held_mat_by_type_amt",
-          "fima_included",
-          "fima_noncomp_accepted",
-          "fima_noncomp_tendered",
-          "first_int_period",
-          "first_int_payment_date",
-          "floating_rate",
-          "frn_index_determination_date",
-          "frn_index_determination_rate",
-          "high_discnt_rate",
-          "high_investment_rate",
-          "high_price",
-          "high_discnt_margin",
-          "high_yield",
-          "index_ratio_on_issue_date",
-          "indirect_bidder_accepted",
-          "indirect_bidder_tendered",
-          "int_payment_frequency",
-          "int_rate",
-          "low_discnt_rate",
-          "low_investment_rate",
-          "low_price",
-          "low_discnt_margin",
-          "low_yield",
-          "mat_date",
-          "max_comp_award",
-          "max_noncomp_award",
-          "max_single_bid",
-          "min_bid_amt",
-          "min_strip_amt",
-          "min_to_issue",
-          "multiples_to_bid",
-          "multiples_to_issue",
-          "nlp_exclusion_amt",
-          "nlp_reporting_threshold",
-          "noncomp_accepted",
-          "noncomp_tenders_accepted",
-          "offering_amt",
-          "original_cusip",
-          "original_dated_date",
-          "original_issue_date",
-          "original_security_term",
-          "pdf_filenm_announcemt",
-          "pdf_filenm_comp_results",
-          "pdf_filenm_noncomp_results",
-          "primary_dealer_accepted",
-          "primary_dealer_tendered",
-          "ref_cpi_on_dated_date",
-          "ref_cpi_on_issue_date",
-          "reopening",
-          "security_term_day_month",
-          "security_term_week_year",
-          "series",
-          "soma_accepted",
-          "soma_holdings",
-          "soma_included",
-          "soma_tendered",
-          "spread",
-          "std_int_payment_per1000",
-          "strippable",
-          "tiin_conversion_factor_per1000",
-          "total_accepted",
-          "total_tendered",
-          "treas_retail_accepted",
-          "treas_retail_tenders_accepted",
-          "unadj_accrued_int_per1000",
-          "unadj_price",
-          "xml_filenm_announcemt",
-          "xml_filenm_comp_results",
-          "inflation_index_security",
-          "tint_cusip_1",
-          "tint_cusip_2",
-          "pdf_filenm_spec_announcemt"
-        ],
-        "missing_required_fields": [],
-        "announcement_fields_present": true,
-        "duplicate_cusip_auction_issue_keys": 0,
-        "bad_data": {
-          "unparseable_amount": 5,
-          "invalid_dates": 0,
-          "auction_after_issue": 0,
-          "issue_after_maturity": 0,
-          "missing_announcement_date": 0,
-          "announcement_after_auction": 0,
-          "missing_offering_amount": 0
-        },
-        "recent_source_samples": [
-          {
-            "announcemt_date": "2026-10-15",
-            "auction_date": "2026-10-19",
-            "issue_date": "2026-10-22",
-            "maturity_date": "2027-01-21",
-            "security_type": "Bill",
-            "security_term": "13-Week",
-            "total_accepted": "null",
-            "offering_amt": "95000000000",
-            "record_date": "2026-10-22",
-            "reopening": "Yes",
-            "cusip": "912797TM9"
-          },
-          {
-            "announcemt_date": "2026-10-15",
-            "auction_date": "2026-10-19",
-            "issue_date": "2026-10-22",
-            "maturity_date": "2027-04-22",
-            "security_type": "Bill",
-            "security_term": "26-Week",
-            "total_accepted": "null",
-            "offering_amt": "82000000000",
-            "record_date": "2026-10-22",
-            "reopening": "No",
-            "cusip": "912797WV5"
-          },
-          {
-            "announcemt_date": "2026-10-15",
-            "auction_date": "2026-10-20",
-            "issue_date": "2026-10-22",
-            "maturity_date": "2026-12-03",
-            "security_type": "Bill",
-            "security_term": "6-Week",
-            "total_accepted": "null",
-            "offering_amt": "95000000000",
-            "record_date": "2026-10-22",
-            "reopening": "Yes",
-            "cusip": "912797VA2"
-          },
-          {
-            "announcemt_date": "2026-10-15",
-            "auction_date": "2026-10-21",
-            "issue_date": "2026-10-23",
-            "maturity_date": "2046-08-15",
-            "security_type": "Bond",
-            "security_term": "19-Year 10-Month",
-            "total_accepted": "null",
-            "offering_amt": "13000000000",
-            "record_date": "2026-10-23",
-            "reopening": "Yes",
-            "cusip": "912810UX4"
-          },
-          {
-            "announcemt_date": "2026-10-15",
-            "auction_date": "2026-10-22",
-            "issue_date": "2026-10-30",
-            "maturity_date": "2031-10-15",
-            "security_type": "Note",
-            "security_term": "5-Year",
-            "total_accepted": "null",
-            "offering_amt": "26000000000",
-            "record_date": "2026-10-30",
-            "reopening": "No",
-            "cusip": "91282CRR4"
-          }
-        ],
-        "announcement_time_verified": false,
-        "issue_date_equals_cash_settlement_verified": false,
-        "total_accepted_is_net_new_cash": false,
-        "full_v22_fiscal_forecast_ready": false,
+        "ready_for_historical_tax_spend_forecast": false,
+        "trade_signals_enabled": false,
         "limitations": [
-          "Auction results are only knowable after the auction results are made public; use conservative next-day delay until timestamps independently certified",
-          "Maturity cash payout cannot be inferred from auctions in the same year alone",
-          "total_accepted includes gross awards and is not directly equivalent to public-market cash proceeds",
-          "Need compare per-day inferred issuance and redeemed maturities against DTS IIIA line-item cash amounts",
-          "Release/publication record_date semantics require empirical verification; never assume they equal auction_date"
+          "Two September samples cannot certify all months, structural changes or complete tax classification",
+          "Named Taxes - deposit/refund categories exclude other government cashflow and customs are shown separately to avoid ambiguous overlaps",
+          "TGA balance delta identity is an EX-POST bookkeeping check, not a market-available preannouncement",
+          "A complete 2024-2026 historically lagged tax/spend model is still required",
+          "Do not turn these realized cashflows directly into trade or future TGA forecast signals"
         ]
       }
     },
-    "tga-2026": {
-      "status": "year_source_ok",
-      "error": null,
-      "observations": 218,
-      "first_date": "2026-01-02",
-      "last_date": "2026-11-12",
-      "data": null
-    },
-    "source-coverage": {
-      "status": "source_coverage_incomplete_or_unverified",
-      "error": null,
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": null
-    },
-    "v22-source-audit": {
-      "status": "v22_source_feasibility_audit",
+    "v22-spec": {
+      "status": "v2_2_spec_frozen_research_only",
       "error": null,
       "observations": null,
       "first_date": null,
       "last_date": null,
       "data": {
-        "status": "v22_source_feasibility_audit",
-        "as_of": "2026-11-14T14:11:32.472Z",
-        "fred": [
-          {
-            "series": "DFII10",
-            "status": "source_access_ok",
-            "observations": 716,
-            "first_date": "2024-01-02",
-            "last_date": "2026-11-12",
-            "coverage": {
-              "2024": 250,
-              "2025": 249,
-              "2026": 217
-            },
-            "frequency": "daily_or_business_daily"
+        "status": "v2_2_spec_frozen_research_only",
+        "strategy": "US Treasury expected future net liquidity and/or forecast revisions -> dollar liquidity -> DXY and real yields -> gold flows -> Dow/4H price confirmation",
+        "rules": {
+          "fiscal": {
+            "required": [
+              "Treasury Bills/Coupons net-new-cash by settlement date",
+              "DTS tax/spend calendar seasonality",
+              "D+1/D+3/D+5 TGA forecast revisions",
+              "252-day historical revision z-score"
+            ],
+            "z_thresholds": {
+              "candidate": 0.75,
+              "strong": 1,
+              "extreme": 1.5
+            }
           },
-          {
-            "series": "DGS10",
-            "status": "source_access_ok",
-            "observations": 716,
-            "first_date": "2024-01-02",
-            "last_date": "2026-11-12",
-            "coverage": {
-              "2024": 250,
-              "2025": 249,
-              "2026": 217
-            },
-            "frequency": "daily_or_business_daily"
+          "liquidity": {
+            "required": [
+              "bank reserves",
+              "ON RRP release buffer",
+              "Fed/SOMA liquidity contribution",
+              "SOFR-IORB",
+              "SRF"
+            ],
+            "regimes": [
+              "Cushioned",
+              "Neutral",
+              "Sensitive",
+              "Stressed"
+            ]
           },
-          {
-            "series": "T10YIE",
-            "status": "source_access_ok",
-            "observations": 717,
-            "first_date": "2024-01-02",
-            "last_date": "2026-11-13",
-            "coverage": {
-              "2024": 250,
-              "2025": 249,
-              "2026": 218
-            },
-            "frequency": "daily_or_business_daily"
+          "macro": {
+            "required": [
+              "DXY",
+              "10Y TIPS real yield",
+              "10Y nominal yield and breakeven",
+              "Fed expectations"
+            ],
+            "classification": [
+              "monetary tightening",
+              "fiscal-credit repricing",
+              "liquidity squeeze",
+              "easing"
+            ]
           },
-          {
-            "series": "RRPONTSYD",
-            "status": "source_access_ok",
-            "observations": 716,
-            "first_date": "2024-01-02",
-            "last_date": "2026-11-13",
-            "coverage": {
-              "2024": 250,
-              "2025": 249,
-              "2026": 217
-            },
-            "frequency": "daily_or_business_daily"
+          "flow": {
+            "required": [
+              "gold ETF flows",
+              "COMEX open interest and volume",
+              "CFTC managed money COT"
+            ],
+            "supplemental": [
+              "GVZ",
+              "MOVE",
+              "VIX",
+              "AI credit stress",
+              "ENSO inflation shock"
+            ]
           },
-          {
-            "series": "SOFR",
-            "status": "source_access_ok",
-            "observations": 715,
-            "first_date": "2024-01-02",
-            "last_date": "2026-11-12",
-            "coverage": {
-              "2024": 250,
-              "2025": 249,
-              "2026": 216
-            },
-            "frequency": "daily_or_business_daily"
+          "price": {
+            "required": [
+              "weekly/daily Dow trend",
+              "4-hour closed candle",
+              "breakout >= 0.25 ATR",
+              "next 4-hour candle confirmation",
+              "execution strictly after confirmation"
+            ],
+            "optional": [
+              "15-minute entry optimization"
+            ]
           },
-          {
-            "series": "IORB",
-            "status": "source_access_ok",
-            "observations": 1051,
-            "first_date": "2024-01-01",
-            "last_date": "2026-11-16",
-            "coverage": {
-              "2024": 366,
-              "2025": 365,
-              "2026": 320
+          "risk": {
+            "risk_per_trade_pct": {
+              "A": 0.5,
+              "A+": 0.75,
+              "A++": 1
             },
-            "frequency": "daily_or_business_daily"
-          },
-          {
-            "series": "WRESBAL",
-            "status": "source_access_ok",
-            "observations": 150,
-            "first_date": "2024-01-03",
-            "last_date": "2026-11-11",
-            "coverage": {
-              "2024": 52,
-              "2025": 53,
-              "2026": 45
-            },
-            "frequency": "weekly"
+            "max_open_risk_pct": 2,
+            "max_leverage": 5,
+            "add_only_after_favorable_move_atr": 0.5,
+            "required": [
+              "stop distance and contract sizing",
+              "transaction costs and slippage",
+              "no-lookahead event timestamps",
+              "portfolio drawdown and yearly holdout"
+            ]
           }
-        ],
-        "intraday": [
-          {
-            "symbol": "GC=F",
-            "status": "available",
-            "bars": 13005,
-            "valid_ohlc_bars": 10279,
-            "invalid_or_missing_ohlc_bars": 2726,
-            "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-11-13T21:00:00.000Z",
-            "hourly_per_year": {
-              "2024": 0,
-              "2025": 5281,
-              "2026": 4998
-            },
-            "complete_utc_four_hour_buckets": 2228,
-            "complete_utc_four_hour_per_year": {
-              "2024": 0,
-              "2025": 1144,
-              "2026": 1084
-            },
-            "exchange_session_aligned_4h_verified": false
+        },
+        "opportunity_modes": {
+          "anticipation": {
+            "interpretation": "Trade market revaluation of known FUTURE D+1/D+3/D+5 fiscal cash path before cash actually settles",
+            "z_score_mandatory": false,
+            "requires": [
+              "historically as-of verified future net cash expectations",
+              "market pre-event pricing and non-exhaustion confirmation",
+              "normal V2.2 liquidity macro gold flow and trend evidence"
+            ]
           },
-          {
-            "symbol": "GLD",
-            "status": "available",
-            "bars": 3138,
-            "valid_ohlc_bars": 3125,
-            "invalid_or_missing_ohlc_bars": 13,
-            "first_date": "2025-02-03T14:30:00.000Z",
-            "last_date": "2026-11-13T21:00:00.000Z",
-            "hourly_per_year": {
-              "2024": 0,
-              "2025": 1601,
-              "2026": 1524
-            },
-            "complete_utc_four_hour_buckets": 444,
-            "complete_utc_four_hour_per_year": {
-              "2024": 0,
-              "2025": 227,
-              "2026": 217
-            },
-            "exchange_session_aligned_4h_verified": false
+          "revision": {
+            "interpretation": "Trade material change in expectation about same future settlement dates",
+            "z_score_mandatory": true,
+            "requires": [
+              "same-target point-in-time forecast revision",
+              "rolling past only Z-score",
+              "normal V2.2 liquidity macro gold flow and trend evidence"
+            ]
           }
+        },
+        "implementation_verified": {
+          "fiscal": false,
+          "liquidity": false,
+          "macro": false,
+          "flow": false,
+          "price": false,
+          "risk": false
+        },
+        "full_v22_backtest_ready": false,
+        "live_trade_signals_enabled": false,
+        "excluded_as_v22": [
+          "TGA-only direction strategy",
+          "unconfirmed daily OHLC proxy as 4H execution",
+          "fitted results without point-in-time inputs"
         ],
-        "complete_v22_backtest": false,
-        "limitations": [
-          "FRED CSV is current-vintage, not historical release-time archive",
-          "WRESBAL weekly frequency cannot be interpreted as daily bank reserves",
-          "UTC 4h counts are coverage diagnostics, not verified exchange-session aligned or trade-executable 4-hour candles",
-          "CFTC weekly report must be lagged to actual release, not Tuesday observation date",
-          "No missing inputs may be treated as passing signal filters"
-        ]
+        "next_required": "Complete real-publication-vintage Treasury future-net-cash plus gold positioning and CME contract information; then independently validate both anticipation and revision trade modes with official daily/weekly trends"
       }
     },
-    "debt-taxonomy": {
-      "status": "debt_taxonomy_audit_not_net_new_cash",
+    "readiness": {
+      "status": "research_only",
       "error": null,
       "observations": null,
       "first_date": null,
       "last_date": null,
       "data": {
-        "status": "debt_taxonomy_audit_not_net_new_cash",
-        "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/public_debt_transactions?sort=-record_date&page%5Bsize%5D=10000",
-        "rows": 10000,
-        "unique_report_dates": 435,
-        "fields": [
-          "record_date",
-          "transaction_type",
-          "security_market",
-          "security_type",
-          "security_type_desc",
-          "transaction_today_amt",
-          "transaction_mtd_amt",
-          "transaction_fytd_amt",
-          "table_nbr",
-          "table_nm",
-          "src_line_nbr",
-          "record_fiscal_year",
-          "record_fiscal_quarter",
-          "record_calendar_year",
-          "record_calendar_quarter",
-          "record_calendar_month",
-          "record_calendar_day"
+        "status": "research_only",
+        "audit_scope": "public_production_api",
+        "baseline_data_checks_passed": true,
+        "research_source_coverage_passed": true,
+        "research_source_checks": [
+          "v22-source-audit",
+          "v22-dxy-audit",
+          "v22-cot-audit",
+          "v22-ohlc-integrity"
         ],
-        "label_fields": [
-          "transaction_type",
-          "security_market",
-          "security_type",
-          "security_type_desc",
-          "table_nbr",
-          "table_nm",
-          "src_line_nbr"
+        "checks": {
+          "v22-dxy-audit": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": null,
+            "error": null
+          },
+          "forecast": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-12",
+            "error": null
+          },
+          "v22-ohlc-integrity": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-15T14:47:38.000Z",
+            "error": null
+          },
+          "treasury": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-12",
+            "error": null
+          },
+          "tga-identity": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-12",
+            "error": null
+          },
+          "v22-source-audit": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-15T14:47:39.064Z",
+            "error": null
+          },
+          "v22-cot-audit": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": null,
+            "error": null
+          },
+          "robustness-backtest": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-12",
+            "error": null
+          },
+          "holdout-backtest": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": null,
+            "error": null
+          }
+        },
+        "missing_for_trade_ready": [
+          "point_in_time_vintage_archive",
+          "treasury_net_new_cash_reconciled",
+          "tax_and_spending_event_model",
+          "gold_etf_historical_creation_redemption_flows",
+          "COMEX_specific_contract_roll_adjustment_and_tradable_execution",
+          "intraday_macro_release_time_joins",
+          "complete_v22_A_Aplus_Aplusplus_portfolio_backtest",
+          "risk_adjusted_signal_validation",
+          "alert_delivery_end_to_end"
         ],
-        "amount_fields": [
-          "transaction_today_amt",
-          "transaction_mtd_amt",
-          "transaction_fytd_amt"
-        ],
-        "categories": [
+        "trade_signals_enabled": false,
+        "automatic_trade_alerts_enabled": false,
+        "warning": "Passing TGA model validation is not evidence of a profitable gold strategy. No A/A+/A++ live trading signals."
+      }
+    },
+    "forecast": {
+      "status": "experimental_baseline_not_trade_signal",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "v22-cot-audit": {
+      "status": "cot_source_access_ok",
+      "error": null,
+      "observations": 149,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "cot_source_access_ok",
+        "source": "CFTC Disaggregated Futures Only (72hh-3qpy)",
+        "contract_market_code": "088691",
+        "observations": 149,
+        "first_observation_date": "2024-01-02",
+        "last_observation_date": "2026-11-03",
+        "coverage_by_year": {
+          "2024": 53,
+          "2025": 52,
+          "2026": 44
+        },
+        "recent_reports_observation_date_only": [
           {
-            "category": "Redemptions | Marketable | Bills | null | IIIA | Public Debt Transactions | 15",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "272525",
-              "transaction_mtd_amt": "1116090",
-              "transaction_fytd_amt": "3668697"
-            }
+            "date": "2026-10-13",
+            "long": 124747,
+            "short": 17658,
+            "net": 107089,
+            "open_interest": 396345,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
           },
           {
-            "category": "Redemptions | Marketable | Notes | null | IIIA | Public Debt Transactions | 16",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "258072",
-              "transaction_fytd_amt": "349395"
-            }
+            "date": "2026-10-20",
+            "long": 120970,
+            "short": 16764,
+            "net": 104206,
+            "open_interest": 402279,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
           },
           {
-            "category": "Redemptions | Marketable | Bonds | null | IIIA | Public Debt Transactions | 17",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "6000",
-              "transaction_fytd_amt": "30117"
-            }
+            "date": "2026-10-27",
+            "long": 122508,
+            "short": 16946,
+            "net": 105562,
+            "open_interest": 396810,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
           },
           {
-            "category": "Issues | Nonmarketable | Other | null | IIIA | Public Debt Transactions | 13",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "2388",
-              "transaction_mtd_amt": "19208",
-              "transaction_fytd_amt": "64623"
-            }
-          },
-          {
-            "category": "Issues | Marketable | Bills | Regular Series | IIIA | Public Debt Transactions | 1",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "295522",
-              "transaction_mtd_amt": "1226680",
-              "transaction_fytd_amt": "4017812"
-            }
-          },
-          {
-            "category": "Issues | Marketable | Bills | Cash Management Series | IIIA | Public Debt Transactions | 2",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "0",
-              "transaction_fytd_amt": "25000"
-            }
-          },
-          {
-            "category": "Issues | Marketable | Notes | null | IIIA | Public Debt Transactions | 3",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "236648",
-              "transaction_fytd_amt": "361935"
-            }
-          },
-          {
-            "category": "Issues | Marketable | Bonds | null | IIIA | Public Debt Transactions | 4",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "0",
-              "transaction_fytd_amt": "35522"
-            }
-          },
-          {
-            "category": "Issues | Marketable | Inflation-Protected Securities Increment | null | IIIA | Public Debt Transactions | 5",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "841",
-              "transaction_mtd_amt": "5072",
-              "transaction_fytd_amt": "11489"
-            }
-          },
-          {
-            "category": "Issues | Marketable | Federal Financing Bank | null | IIIA | Public Debt Transactions | 6",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "0",
-              "transaction_fytd_amt": "0"
-            }
-          },
-          {
-            "category": "Issues | Nonmarketable | United States Savings Securities | Cash Issue Price | IIIA | Public Debt Transactions | 7",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "30",
-              "transaction_mtd_amt": "225",
-              "transaction_fytd_amt": "311"
-            }
-          },
-          {
-            "category": "Issues | Nonmarketable | United States Savings Securities | Interest Increment | IIIA | Public Debt Transactions | 8",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "3",
-              "transaction_mtd_amt": "402",
-              "transaction_fytd_amt": "822"
-            }
-          },
-          {
-            "category": "Issues | Nonmarketable | Government Account Series | null | IIIA | Public Debt Transactions | 9",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "788688",
-              "transaction_mtd_amt": "5880540",
-              "transaction_fytd_amt": "21241077"
-            }
-          },
-          {
-            "category": "Issues | Nonmarketable | Domestic Series | null | IIIA | Public Debt Transactions | 10",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "0",
-              "transaction_fytd_amt": "1"
-            }
-          },
-          {
-            "category": "Issues | Nonmarketable | Foreign Series | null | IIIA | Public Debt Transactions | 11",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "0",
-              "transaction_fytd_amt": "0"
-            }
-          },
-          {
-            "category": "Issues | Nonmarketable | State and Local Series | null | IIIA | Public Debt Transactions | 12",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "644",
-              "transaction_mtd_amt": "3591",
-              "transaction_fytd_amt": "15377"
-            }
-          },
-          {
-            "category": "Redemptions | Marketable | Federal Financing Bank | null | IIIA | Public Debt Transactions | 18",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "0",
-              "transaction_fytd_amt": "0"
-            }
-          },
-          {
-            "category": "Redemptions | Nonmarketable | United States Savings Securities | null | IIIA | Public Debt Transactions | 19",
-            "count": 435,
-            "first_date": "2025-02-20",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "36",
-              "transaction_mtd_amt": "824",
-              "transaction_fytd_amt": "2419"
-            }
-          },
-          {
-            "category": "Redemptions | Nonmarketable | Government Account Series | null | IIIA | Public Debt Transactions | 20",
-            "count": 434,
-            "first_date": "2025-02-21",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "788565",
-              "transaction_mtd_amt": "5883003",
-              "transaction_fytd_amt": "21203303"
-            }
-          },
-          {
-            "category": "Redemptions | Nonmarketable | Domestic Series | null | IIIA | Public Debt Transactions | 21",
-            "count": 434,
-            "first_date": "2025-02-21",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "0",
-              "transaction_fytd_amt": "0"
-            }
-          },
-          {
-            "category": "Redemptions | Nonmarketable | Foreign Series | null | IIIA | Public Debt Transactions | 22",
-            "count": 434,
-            "first_date": "2025-02-21",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "0",
-              "transaction_fytd_amt": "0"
-            }
-          },
-          {
-            "category": "Redemptions | Nonmarketable | State and Local Series | null | IIIA | Public Debt Transactions | 23",
-            "count": 434,
-            "first_date": "2025-02-21",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "231",
-              "transaction_mtd_amt": "5176",
-              "transaction_fytd_amt": "18809"
-            }
-          },
-          {
-            "category": "Redemptions | Nonmarketable | Other | null | IIIA | Public Debt Transactions | 24",
-            "count": 434,
-            "first_date": "2025-02-21",
-            "last_date": "2026-11-12",
-            "example_amounts": {
-              "transaction_today_amt": "2382",
-              "transaction_mtd_amt": "19204",
-              "transaction_fytd_amt": "64547"
-            }
+            "date": "2026-11-03",
+            "long": 122283,
+            "short": 18669,
+            "net": 103614,
+            "open_interest": 399169,
+            "market": "GOLD - COMMODITY EXCHANGE INC."
           }
         ],
+        "release_timestamp_aligned": false,
+        "usable_as_v22_trade_filter": false,
         "limitations": [
-          "Gross issuance and redemptions must be separated by instrument and timing",
-          "Subtotals may overlap components",
-          "SOMA rollovers and reopening treatment must be verified",
-          "No net financing prediction claimed"
+          "Tuesday position report date is NOT publication date; official release calendar required before use in trading",
+          "Futures-only series must not be mixed with futures-and-options combined series",
+          "This source audit neither proves ETF fund flows nor licensed intraday execution",
+          "Current data may include revisions; point-in-time historical snapshots are not validated"
         ]
       }
+    },
+    "gold-source-audit": {
+      "status": "gold_proxy_candidate_available",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
     },
     "cashflow-taxonomy": {
       "status": "taxonomy_audit_not_net_financing",
@@ -2120,6 +1826,162 @@
         ]
       }
     },
+    "v22-source-audit": {
+      "status": "v22_source_feasibility_audit",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "v22_source_feasibility_audit",
+        "as_of": "2026-11-15T14:47:41.748Z",
+        "fred": [
+          {
+            "series": "DFII10",
+            "status": "source_access_ok",
+            "observations": 716,
+            "first_date": "2024-01-02",
+            "last_date": "2026-11-12",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 217
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "DGS10",
+            "status": "source_access_ok",
+            "observations": 716,
+            "first_date": "2024-01-02",
+            "last_date": "2026-11-12",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 217
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "T10YIE",
+            "status": "source_access_ok",
+            "observations": 717,
+            "first_date": "2024-01-02",
+            "last_date": "2026-11-13",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 218
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "RRPONTSYD",
+            "status": "source_access_ok",
+            "observations": 716,
+            "first_date": "2024-01-02",
+            "last_date": "2026-11-13",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 217
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "SOFR",
+            "status": "source_access_ok",
+            "observations": 715,
+            "first_date": "2024-01-02",
+            "last_date": "2026-11-12",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 216
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "IORB",
+            "status": "source_access_ok",
+            "observations": 1051,
+            "first_date": "2024-01-01",
+            "last_date": "2026-11-16",
+            "coverage": {
+              "2024": 366,
+              "2025": 365,
+              "2026": 320
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "WRESBAL",
+            "status": "source_access_ok",
+            "observations": 150,
+            "first_date": "2024-01-03",
+            "last_date": "2026-11-11",
+            "coverage": {
+              "2024": 52,
+              "2025": 53,
+              "2026": 45
+            },
+            "frequency": "weekly"
+          }
+        ],
+        "intraday": [
+          {
+            "symbol": "GC=F",
+            "status": "available",
+            "bars": 12999,
+            "valid_ohlc_bars": 10280,
+            "invalid_or_missing_ohlc_bars": 2719,
+            "first_date": "2025-02-02T23:00:00.000Z",
+            "last_date": "2026-11-13T21:59:59.000Z",
+            "hourly_per_year": {
+              "2024": 0,
+              "2025": 5281,
+              "2026": 4999
+            },
+            "complete_utc_four_hour_buckets": 2228,
+            "complete_utc_four_hour_per_year": {
+              "2024": 0,
+              "2025": 1144,
+              "2026": 1084
+            },
+            "exchange_session_aligned_4h_verified": false
+          },
+          {
+            "symbol": "GLD",
+            "status": "available",
+            "bars": 3138,
+            "valid_ohlc_bars": 3125,
+            "invalid_or_missing_ohlc_bars": 13,
+            "first_date": "2025-02-03T14:30:00.000Z",
+            "last_date": "2026-11-13T21:00:00.000Z",
+            "hourly_per_year": {
+              "2024": 0,
+              "2025": 1601,
+              "2026": 1524
+            },
+            "complete_utc_four_hour_buckets": 444,
+            "complete_utc_four_hour_per_year": {
+              "2024": 0,
+              "2025": 227,
+              "2026": 217
+            },
+            "exchange_session_aligned_4h_verified": false
+          }
+        ],
+        "complete_v22_backtest": false,
+        "limitations": [
+          "FRED CSV is current-vintage, not historical release-time archive",
+          "WRESBAL weekly frequency cannot be interpreted as daily bank reserves",
+          "UTC 4h counts are coverage diagnostics, not verified exchange-session aligned or trade-executable 4-hour candles",
+          "CFTC weekly report must be lagged to actual release, not Tuesday observation date",
+          "No missing inputs may be treated as passing signal filters"
+        ]
+      }
+    },
     "horizon-backtest": {
       "status": "historical_walk_forward_baselines_only",
       "error": null,
@@ -2136,102 +1998,531 @@
       "last_date": "2025-12-31",
       "data": null
     },
-    "readiness": {
-      "status": "research_only",
+    "historical-coverage": {
+      "status": "year_by_year_tga_source_coverage",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "tga-2026": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 218,
+      "first_date": "2026-01-02",
+      "last_date": "2026-11-12",
+      "data": null
+    },
+    "full-history-backtest": {
+      "status": "historical_2023_plus_walk_forward_research",
+      "error": null,
+      "observations": 969,
+      "first_date": "2023-01-03",
+      "last_date": "2026-11-12",
+      "data": {
+        "status": "historical_2023_plus_walk_forward_research",
+        "first_date": "2023-01-03",
+        "last_date": "2026-11-12",
+        "observations": 969,
+        "results": {
+          "D+1": {
+            "2023": {
+              "zero": {
+                "samples": 100,
+                "mae_usd_billions": 22.57,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 100,
+                "mae_usd_billions": 18.538,
+                "direction_accuracy_pct": 74,
+                "predicted_nonzero": 100
+              },
+              "calendar": {
+                "samples": 100,
+                "mae_usd_billions": 18.602,
+                "direction_accuracy_pct": 78,
+                "predicted_nonzero": 100
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 251,
+                "mae_usd_billions": 23.094,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 251,
+                "mae_usd_billions": 19.7,
+                "direction_accuracy_pct": 64.9,
+                "predicted_nonzero": 251
+              },
+              "calendar": {
+                "samples": 251,
+                "mae_usd_billions": 20.189,
+                "direction_accuracy_pct": 68.1,
+                "predicted_nonzero": 251
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 250,
+                "mae_usd_billions": 28.365,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 250,
+                "mae_usd_billions": 24.765,
+                "direction_accuracy_pct": 64,
+                "predicted_nonzero": 250
+              },
+              "calendar": {
+                "samples": 250,
+                "mae_usd_billions": 25.526,
+                "direction_accuracy_pct": 68,
+                "predicted_nonzero": 250
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 217,
+                "mae_usd_billions": 26.838,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 217,
+                "mae_usd_billions": 23.507,
+                "direction_accuracy_pct": 65.9,
+                "predicted_nonzero": 217
+              },
+              "calendar": {
+                "samples": 217,
+                "mae_usd_billions": 23.943,
+                "direction_accuracy_pct": 67.3,
+                "predicted_nonzero": 217
+              }
+            }
+          },
+          "D+3": {
+            "2023": {
+              "zero": {
+                "samples": 100,
+                "mae_usd_billions": 38.364,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 100,
+                "mae_usd_billions": 36.742,
+                "direction_accuracy_pct": 60,
+                "predicted_nonzero": 100
+              },
+              "calendar": {
+                "samples": 100,
+                "mae_usd_billions": 36.452,
+                "direction_accuracy_pct": 60,
+                "predicted_nonzero": 100
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 251,
+                "mae_usd_billions": 38.533,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 251,
+                "mae_usd_billions": 35.976,
+                "direction_accuracy_pct": 63.7,
+                "predicted_nonzero": 251
+              },
+              "calendar": {
+                "samples": 251,
+                "mae_usd_billions": 35.294,
+                "direction_accuracy_pct": 67.7,
+                "predicted_nonzero": 251
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 250,
+                "mae_usd_billions": 47.704,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 250,
+                "mae_usd_billions": 45.577,
+                "direction_accuracy_pct": 60.4,
+                "predicted_nonzero": 250
+              },
+              "calendar": {
+                "samples": 250,
+                "mae_usd_billions": 44.805,
+                "direction_accuracy_pct": 66,
+                "predicted_nonzero": 250
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 215,
+                "mae_usd_billions": 47.511,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 215,
+                "mae_usd_billions": 44.864,
+                "direction_accuracy_pct": 61.4,
+                "predicted_nonzero": 215
+              },
+              "calendar": {
+                "samples": 215,
+                "mae_usd_billions": 43.189,
+                "direction_accuracy_pct": 67.9,
+                "predicted_nonzero": 215
+              }
+            }
+          },
+          "D+5": {
+            "2023": {
+              "zero": {
+                "samples": 100,
+                "mae_usd_billions": 48.709,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 100,
+                "mae_usd_billions": 49.606,
+                "direction_accuracy_pct": 49,
+                "predicted_nonzero": 100
+              },
+              "calendar": {
+                "samples": 100,
+                "mae_usd_billions": 48.65,
+                "direction_accuracy_pct": 52,
+                "predicted_nonzero": 100
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 251,
+                "mae_usd_billions": 45.347,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 251,
+                "mae_usd_billions": 46.625,
+                "direction_accuracy_pct": 43.4,
+                "predicted_nonzero": 251
+              },
+              "calendar": {
+                "samples": 251,
+                "mae_usd_billions": 44.999,
+                "direction_accuracy_pct": 53.8,
+                "predicted_nonzero": 251
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 250,
+                "mae_usd_billions": 58.77,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 250,
+                "mae_usd_billions": 59.699,
+                "direction_accuracy_pct": 49.6,
+                "predicted_nonzero": 250
+              },
+              "calendar": {
+                "samples": 250,
+                "mae_usd_billions": 58.397,
+                "direction_accuracy_pct": 54.8,
+                "predicted_nonzero": 250
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 213,
+                "mae_usd_billions": 60.651,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 213,
+                "mae_usd_billions": 60.576,
+                "direction_accuracy_pct": 56.8,
+                "predicted_nonzero": 213
+              },
+              "calendar": {
+                "samples": 213,
+                "mae_usd_billions": 58.045,
+                "direction_accuracy_pct": 64.3,
+                "predicted_nonzero": 213
+              }
+            }
+          }
+        },
+        "validation": {
+          "D+1": {
+            "selection_based_on_years": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "holdout_year": "2026",
+            "selected_model": "weekday",
+            "training_mae_usd_billions": 21.614,
+            "holdout": {
+              "zero": {
+                "samples": 217,
+                "mae_usd_billions": 26.838,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 217,
+                "mae_usd_billions": 23.507,
+                "direction_accuracy_pct": 65.9,
+                "predicted_nonzero": 217
+              },
+              "calendar": {
+                "samples": 217,
+                "mae_usd_billions": 23.943,
+                "direction_accuracy_pct": 67.3,
+                "predicted_nonzero": 217
+              }
+            },
+            "selected_vs_zero_holdout_mae_improvement_pct": 12.4,
+            "holdout_passes_mae": true
+          },
+          "D+3": {
+            "selection_based_on_years": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "holdout_year": "2026",
+            "selected_model": "calendar",
+            "training_mae_usd_billions": 39.443,
+            "holdout": {
+              "zero": {
+                "samples": 215,
+                "mae_usd_billions": 47.511,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 215,
+                "mae_usd_billions": 44.864,
+                "direction_accuracy_pct": 61.4,
+                "predicted_nonzero": 215
+              },
+              "calendar": {
+                "samples": 215,
+                "mae_usd_billions": 43.189,
+                "direction_accuracy_pct": 67.9,
+                "predicted_nonzero": 215
+              }
+            },
+            "selected_vs_zero_holdout_mae_improvement_pct": 9.1,
+            "holdout_passes_mae": true
+          },
+          "D+5": {
+            "selection_based_on_years": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "holdout_year": "2026",
+            "selected_model": "calendar",
+            "training_mae_usd_billions": 51.18,
+            "holdout": {
+              "zero": {
+                "samples": 213,
+                "mae_usd_billions": 60.651,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 213,
+                "mae_usd_billions": 60.576,
+                "direction_accuracy_pct": 56.8,
+                "predicted_nonzero": 213
+              },
+              "calendar": {
+                "samples": 213,
+                "mae_usd_billions": 58.045,
+                "direction_accuracy_pct": 64.3,
+                "predicted_nonzero": 213
+              }
+            },
+            "selected_vs_zero_holdout_mae_improvement_pct": 4.3,
+            "holdout_passes_mae": true
+          }
+        },
+        "strict_d1_weekday_only": {
+          "method": "calendar_weekday_next_only_no_observed_future_date",
+          "excluded_holidays_and_weekends": true,
+          "excluded_nonconsecutive_reporting_days": true,
+          "years": {
+            "2023": {
+              "zero": {
+                "samples": 95,
+                "mae_usd_billions": 22.222,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 95,
+                "mae_usd_billions": 18.163,
+                "direction_accuracy_pct": 74.7,
+                "predicted_nonzero": 95
+              },
+              "calendar": {
+                "samples": 95,
+                "mae_usd_billions": 18.291,
+                "direction_accuracy_pct": 77.9,
+                "predicted_nonzero": 95
+              }
+            },
+            "2024": {
+              "zero": {
+                "samples": 240,
+                "mae_usd_billions": 22.511,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 240,
+                "mae_usd_billions": 19.215,
+                "direction_accuracy_pct": 64.6,
+                "predicted_nonzero": 240
+              },
+              "calendar": {
+                "samples": 240,
+                "mae_usd_billions": 19.698,
+                "direction_accuracy_pct": 67.9,
+                "predicted_nonzero": 240
+              }
+            },
+            "2025": {
+              "zero": {
+                "samples": 239,
+                "mae_usd_billions": 27.631,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 239,
+                "mae_usd_billions": 24.081,
+                "direction_accuracy_pct": 63.6,
+                "predicted_nonzero": 239
+              },
+              "calendar": {
+                "samples": 239,
+                "mae_usd_billions": 24.829,
+                "direction_accuracy_pct": 67.8,
+                "predicted_nonzero": 239
+              }
+            },
+            "2026": {
+              "zero": {
+                "samples": 210,
+                "mae_usd_billions": 26.762,
+                "direction_accuracy_pct": 0,
+                "predicted_nonzero": 0
+              },
+              "weekday": {
+                "samples": 210,
+                "mae_usd_billions": 23.464,
+                "direction_accuracy_pct": 65.7,
+                "predicted_nonzero": 210
+              },
+              "calendar": {
+                "samples": 210,
+                "mae_usd_billions": 23.859,
+                "direction_accuracy_pct": 67.1,
+                "predicted_nonzero": 210
+              }
+            }
+          },
+          "paired_mae_improvement_usd_billions": {
+            "observed": 3.298,
+            "moving_block_95pct_ci": [
+              1.678,
+              4.904
+            ],
+            "block_length": 10,
+            "bootstrap_draws": 1200,
+            "statistically_positive_at_95pct": true
+          },
+          "selected_model": "weekday",
+          "holdout_year": "2026",
+          "holdout": {
+            "zero": {
+              "samples": 210,
+              "mae_usd_billions": 26.762,
+              "direction_accuracy_pct": 0,
+              "predicted_nonzero": 0
+            },
+            "weekday": {
+              "samples": 210,
+              "mae_usd_billions": 23.464,
+              "direction_accuracy_pct": 65.7,
+              "predicted_nonzero": 210
+            },
+            "calendar": {
+              "samples": 210,
+              "mae_usd_billions": 23.859,
+              "direction_accuracy_pct": 67.1,
+              "predicted_nonzero": 210
+            }
+          },
+          "selected_vs_zero_holdout_mae_improvement_pct": 12.3
+        },
+        "limitations": [
+          "Current-version FiscalData is not archived point-in-time vintage",
+          "Main D+1/3/5 validation uses observed future reporting-day calendar; strict_d1_weekday_only instead predicts next calendar weekday and excludes holidays and reporting gaps, without using observed future reporting dates",
+          "No explicit tax or Treasury auction settlement features",
+          "No gold trades, profits or win rates"
+        ]
+      }
+    },
+    "v22-etf-audit": {
+      "status": "official_gld_archive_binary_access_ok",
       "error": null,
       "observations": null,
       "first_date": null,
       "last_date": null,
       "data": {
-        "status": "research_only",
-        "audit_scope": "public_production_api",
-        "baseline_data_checks_passed": true,
-        "research_source_coverage_passed": true,
-        "research_source_checks": [
-          "v22-source-audit",
-          "v22-dxy-audit",
-          "v22-cot-audit",
-          "v22-ohlc-integrity"
-        ],
-        "checks": {
-          "tga-identity": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-12",
-            "error": null
-          },
-          "v22-dxy-audit": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": null,
-            "error": null
-          },
-          "v22-cot-audit": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": null,
-            "error": null
-          },
-          "v22-ohlc-integrity": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-14T14:11:29.000Z",
-            "error": null
-          },
-          "treasury": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-12",
-            "error": null
-          },
-          "forecast": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-12",
-            "error": null
-          },
-          "v22-source-audit": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-14T14:11:30.143Z",
-            "error": null
-          },
-          "holdout-backtest": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": null,
-            "error": null
-          },
-          "robustness-backtest": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-12",
-            "error": null
-          }
-        },
-        "missing_for_trade_ready": [
-          "point_in_time_vintage_archive",
-          "treasury_net_new_cash_reconciled",
-          "tax_and_spending_event_model",
-          "gold_etf_historical_creation_redemption_flows",
-          "COMEX_specific_contract_roll_adjustment_and_tradable_execution",
-          "intraday_macro_release_time_joins",
-          "complete_v22_A_Aplus_Aplusplus_portfolio_backtest",
-          "risk_adjusted_signal_validation",
-          "alert_delivery_end_to_end"
-        ],
-        "trade_signals_enabled": false,
-        "automatic_trade_alerts_enabled": false,
-        "warning": "Passing TGA model validation is not evidence of a profitable gold strategy. No A/A+/A++ live trading signals."
+        "status": "official_gld_archive_binary_access_ok",
+        "source": "World Gold Trust Services / SPDR Gold Shares official historical archive",
+        "archive_url": "https://api.spdrgoldshares.com/api/v1/historical-archive?exchange=NYSE&lang=en&product=gld",
+        "http_status": 200,
+        "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "content_length_bytes": 0,
+        "source_binary_access_ok": true,
+        "historical_holdings_parsed": false,
+        "historical_etf_flows_validated": false,
+        "usable_as_v22_trade_filter": false,
+        "limitations": [
+          "An official XLSX download exists; row-level holdings and date coverage are NOT validated yet",
+          "Gold tonnes change is not identical to net-investor-dollar flow; accounting for fees/sales and NAV needed",
+          "Raw source may prohibit reproduction/redistribution; verify license before exporting or hosting workbook contents",
+          "Historical publication clock and original data revisions are not audited",
+          "GLD is a major ETF but not the entire global gold ETF universe"
+        ]
       }
     },
     "v22-asof-join": {
@@ -2242,7 +2533,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-11-14T14:11:34.815Z",
+        "as_of": "2026-11-15T14:47:48.175Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -2359,9 +2650,9 @@
           }
         },
         "ohlc_quality": {
-          "raw": 13623,
-          "missing_ohlc": 2867,
-          "off_hour": 12,
+          "raw": 13617,
+          "missing_ohlc": 2860,
+          "off_hour": 13,
           "unclosed": 0,
           "duplicate_hours": 0,
           "nonconsecutive_groups": 0,
@@ -2895,137 +3186,6 @@
         ]
       }
     },
-    "historical-coverage": {
-      "status": "year_by_year_tga_source_coverage",
-      "error": null,
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": null
-    },
-    "tga-2024": {
-      "status": "year_source_ok",
-      "error": null,
-      "observations": 251,
-      "first_date": "2024-01-02",
-      "last_date": "2024-12-31",
-      "data": null
-    },
-    "v22-dxy-audit": {
-      "status": "dxy_daily_source_access_ok",
-      "error": null,
-      "observations": null,
-      "first_date": "2024-01-02",
-      "last_date": "2026-11-13",
-      "data": {
-        "status": "dxy_daily_source_access_ok",
-        "source": "Yahoo chart DX-Y.NYB (ICE US Dollar Index)",
-        "symbol": "DX-Y.NYB",
-        "raw_bars": 874,
-        "usable_unique_trading_days": 723,
-        "invalid_ohlc_bars": 151,
-        "duplicate_exchange_dates_excluded": 0,
-        "first_date": "2024-01-02",
-        "last_date": "2026-11-13",
-        "by_year": {
-          "2024": 252,
-          "2025": 252,
-          "2026": 219
-        },
-        "recent": [
-          {
-            "date": "2026-11-11",
-            "close": 102.91000366210938
-          },
-          {
-            "date": "2026-11-12",
-            "close": 103.16999816894531
-          },
-          {
-            "date": "2026-11-13",
-            "close": 103.41000366210938
-          }
-        ],
-        "usable_for_full_v22_point_in_time": false,
-        "limitations": [
-          "Yahoo is an unlicensed research proxy, not a contracted production ICE DXY feed",
-          "Duplicate daily dates are quarantined, not silently averaged or chosen",
-          "Market daily close is not information available before that session closes",
-          "FRED broad trade-weighted US dollar index must not be silently relabeled as ICE DXY",
-          "Historical data-vintage, publication release timestamps and gold trade-time joins not verified"
-        ]
-      }
-    },
-    "gold-source-audit": {
-      "status": "gold_proxy_candidate_available",
-      "error": null,
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": null
-    },
-    "v22-cot-audit": {
-      "status": "cot_source_access_ok",
-      "error": null,
-      "observations": 149,
-      "first_date": null,
-      "last_date": null,
-      "data": {
-        "status": "cot_source_access_ok",
-        "source": "CFTC Disaggregated Futures Only (72hh-3qpy)",
-        "contract_market_code": "088691",
-        "observations": 149,
-        "first_observation_date": "2024-01-02",
-        "last_observation_date": "2026-11-03",
-        "coverage_by_year": {
-          "2024": 53,
-          "2025": 52,
-          "2026": 44
-        },
-        "recent_reports_observation_date_only": [
-          {
-            "date": "2026-10-13",
-            "long": 124747,
-            "short": 17658,
-            "net": 107089,
-            "open_interest": 396345,
-            "market": "GOLD - COMMODITY EXCHANGE INC."
-          },
-          {
-            "date": "2026-10-20",
-            "long": 120970,
-            "short": 16764,
-            "net": 104206,
-            "open_interest": 402279,
-            "market": "GOLD - COMMODITY EXCHANGE INC."
-          },
-          {
-            "date": "2026-10-27",
-            "long": 122508,
-            "short": 16946,
-            "net": 105562,
-            "open_interest": 396810,
-            "market": "GOLD - COMMODITY EXCHANGE INC."
-          },
-          {
-            "date": "2026-11-03",
-            "long": 122283,
-            "short": 18669,
-            "net": 103614,
-            "open_interest": 399169,
-            "market": "GOLD - COMMODITY EXCHANGE INC."
-          }
-        ],
-        "release_timestamp_aligned": false,
-        "usable_as_v22_trade_filter": false,
-        "limitations": [
-          "Tuesday position report date is NOT publication date; official release calendar required before use in trading",
-          "Futures-only series must not be mixed with futures-and-options combined series",
-          "This source audit neither proves ETF fund flows nor licensed intraday execution",
-          "Current data may include revisions; point-in-time historical snapshots are not validated"
-        ]
-      }
-    },
     "v22-auction-known-forecast": {
       "status": "auction_known_bill_component_backtest_research_only",
       "error": null,
@@ -3312,330 +3472,6 @@
           "Model is diagnostic; no parameters optimized on 2026 outcomes and no claim of tradable profit"
         ]
       }
-    },
-    "v22-debt-realized-audit": {
-      "status": "realized_marketable_debt_ledger_research_only",
-      "error": null,
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": {
-        "status": "realized_marketable_debt_ledger_research_only",
-        "source": "US Treasury FiscalData Daily Treasury Statement Table IIIA",
-        "source_field": "transaction_today_amt",
-        "units": "USD millions (yearly sums converted to USD billions)",
-        "classification": {
-          "bills_issue_lines": [
-            1,
-            2
-          ],
-          "bills_redemption_lines": [
-            15
-          ],
-          "coupon_notes_bonds_issue_lines": [
-            3,
-            4
-          ],
-          "coupon_notes_bonds_redemption_lines": [
-            16,
-            17
-          ],
-          "excluded_lines": [
-            5,
-            6,
-            7,
-            8,
-            9,
-            10,
-            11,
-            12,
-            13,
-            18,
-            19,
-            20,
-            21,
-            22,
-            23,
-            24
-          ]
-        },
-        "coverage": {
-          "rows_in_source": 16537,
-          "report_dates_seen": 719,
-          "complete_days": 719,
-          "first_date": "2024-01-02",
-          "last_date": "2026-11-12",
-          "per_year": {
-            "2024": {
-              "report_days": 251,
-              "total_market_bills_net_usd_billions": 511.102,
-              "total_market_notes_bonds_net_usd_billions": 1346.373,
-              "subtotal_net_usd_billions": 1857.475,
-              "days_net_positive": 87,
-              "days_net_negative": 164
-            },
-            "2025": {
-              "report_days": 250,
-              "total_market_bills_net_usd_billions": 360.378,
-              "total_market_notes_bonds_net_usd_billions": 1566.002,
-              "subtotal_net_usd_billions": 1926.38,
-              "days_net_positive": 84,
-              "days_net_negative": 166
-            },
-            "2026": {
-              "report_days": 218,
-              "total_market_bills_net_usd_billions": 945.004,
-              "total_market_notes_bonds_net_usd_billions": 956.594,
-              "subtotal_net_usd_billions": 1901.598,
-              "days_net_positive": 88,
-              "days_net_negative": 130
-            }
-          },
-          "faults": {
-            "other_ignored": 11504,
-            "bad_market": 0,
-            "bad_category": 0,
-            "missing_amount": 0,
-            "duplicate_line_date": 0,
-            "missing_expected_lines": 0
-          }
-        },
-        "recent_realized_ledger": [
-          {
-            "record_date": "2026-11-02",
-            "realized_bills_net_usd_billions": -0.012,
-            "realized_notes_bonds_net_usd_billions": -17.405,
-            "realized_subtotal_usd_billions": -17.417
-          },
-          {
-            "record_date": "2026-11-03",
-            "realized_bills_net_usd_billions": 45.42,
-            "realized_notes_bonds_net_usd_billions": -0.016,
-            "realized_subtotal_usd_billions": 45.404
-          },
-          {
-            "record_date": "2026-11-04",
-            "realized_bills_net_usd_billions": -0.008,
-            "realized_notes_bonds_net_usd_billions": -0.003,
-            "realized_subtotal_usd_billions": -0.011
-          },
-          {
-            "record_date": "2026-11-05",
-            "realized_bills_net_usd_billions": 8.016,
-            "realized_notes_bonds_net_usd_billions": -6,
-            "realized_subtotal_usd_billions": 2.016
-          },
-          {
-            "record_date": "2026-11-06",
-            "realized_bills_net_usd_billions": -0.006,
-            "realized_notes_bonds_net_usd_billions": -4,
-            "realized_subtotal_usd_billions": -4.006
-          },
-          {
-            "record_date": "2026-11-09",
-            "realized_bills_net_usd_billions": -0.01,
-            "realized_notes_bonds_net_usd_billions": 0,
-            "realized_subtotal_usd_billions": -0.01
-          },
-          {
-            "record_date": "2026-11-10",
-            "realized_bills_net_usd_billions": 34.193,
-            "realized_notes_bonds_net_usd_billions": 0,
-            "realized_subtotal_usd_billions": 34.193
-          },
-          {
-            "record_date": "2026-11-12",
-            "realized_bills_net_usd_billions": 22.997,
-            "realized_notes_bonds_net_usd_billions": 0,
-            "realized_subtotal_usd_billions": 22.997
-          }
-        ],
-        "full_v22_fiscal_forecast_ready": false,
-        "trade_signals_enabled": false,
-        "limitations": [
-          "EX-POST DTS realized transaction amounts: using these values as a future-day forecast would be direct lookahead",
-          "Does not incorporate separate cash-basis adjustments, TIPS principal inflation adjustments, SOMA auction rollovers or Treasury buybacks",
-          "Bonds and Notes represent a partial coupon bucket, not yet complete TIPS/FRN funding",
-          "Tax receipts and government outlays must be classified separately without overlapping categories",
-          "TreasuryDirect announcement date, auction date, issue date and publicly held maturing amounts need historical point-in-time reconciliation before forecasting net new cash",
-          "Daily realized debt subtotals are not the change in TGA or net dollar liquidity"
-        ]
-      }
-    },
-    "v22-etf-audit": {
-      "status": "official_gld_archive_binary_access_ok",
-      "error": null,
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": {
-        "status": "official_gld_archive_binary_access_ok",
-        "source": "World Gold Trust Services / SPDR Gold Shares official historical archive",
-        "archive_url": "https://api.spdrgoldshares.com/api/v1/historical-archive?exchange=NYSE&lang=en&product=gld",
-        "http_status": 200,
-        "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        "content_length_bytes": 0,
-        "source_binary_access_ok": true,
-        "historical_holdings_parsed": false,
-        "historical_etf_flows_validated": false,
-        "usable_as_v22_trade_filter": false,
-        "limitations": [
-          "An official XLSX download exists; row-level holdings and date coverage are NOT validated yet",
-          "Gold tonnes change is not identical to net-investor-dollar flow; accounting for fees/sales and NAV needed",
-          "Raw source may prohibit reproduction/redistribution; verify license before exporting or hosting workbook contents",
-          "Historical publication clock and original data revisions are not audited",
-          "GLD is a major ETF but not the entire global gold ETF universe"
-        ]
-      }
-    },
-    "v22-spec": {
-      "status": "v2_2_spec_frozen_research_only",
-      "error": null,
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": {
-        "status": "v2_2_spec_frozen_research_only",
-        "strategy": "US Treasury expected future net liquidity and/or forecast revisions -> dollar liquidity -> DXY and real yields -> gold flows -> Dow/4H price confirmation",
-        "rules": {
-          "fiscal": {
-            "required": [
-              "Treasury Bills/Coupons net-new-cash by settlement date",
-              "DTS tax/spend calendar seasonality",
-              "D+1/D+3/D+5 TGA forecast revisions",
-              "252-day historical revision z-score"
-            ],
-            "z_thresholds": {
-              "candidate": 0.75,
-              "strong": 1,
-              "extreme": 1.5
-            }
-          },
-          "liquidity": {
-            "required": [
-              "bank reserves",
-              "ON RRP release buffer",
-              "Fed/SOMA liquidity contribution",
-              "SOFR-IORB",
-              "SRF"
-            ],
-            "regimes": [
-              "Cushioned",
-              "Neutral",
-              "Sensitive",
-              "Stressed"
-            ]
-          },
-          "macro": {
-            "required": [
-              "DXY",
-              "10Y TIPS real yield",
-              "10Y nominal yield and breakeven",
-              "Fed expectations"
-            ],
-            "classification": [
-              "monetary tightening",
-              "fiscal-credit repricing",
-              "liquidity squeeze",
-              "easing"
-            ]
-          },
-          "flow": {
-            "required": [
-              "gold ETF flows",
-              "COMEX open interest and volume",
-              "CFTC managed money COT"
-            ],
-            "supplemental": [
-              "GVZ",
-              "MOVE",
-              "VIX",
-              "AI credit stress",
-              "ENSO inflation shock"
-            ]
-          },
-          "price": {
-            "required": [
-              "weekly/daily Dow trend",
-              "4-hour closed candle",
-              "breakout >= 0.25 ATR",
-              "next 4-hour candle confirmation",
-              "execution strictly after confirmation"
-            ],
-            "optional": [
-              "15-minute entry optimization"
-            ]
-          },
-          "risk": {
-            "risk_per_trade_pct": {
-              "A": 0.5,
-              "A+": 0.75,
-              "A++": 1
-            },
-            "max_open_risk_pct": 2,
-            "max_leverage": 5,
-            "add_only_after_favorable_move_atr": 0.5,
-            "required": [
-              "stop distance and contract sizing",
-              "transaction costs and slippage",
-              "no-lookahead event timestamps",
-              "portfolio drawdown and yearly holdout"
-            ]
-          }
-        },
-        "opportunity_modes": {
-          "anticipation": {
-            "interpretation": "Trade market revaluation of known FUTURE D+1/D+3/D+5 fiscal cash path before cash actually settles",
-            "z_score_mandatory": false,
-            "requires": [
-              "historically as-of verified future net cash expectations",
-              "market pre-event pricing and non-exhaustion confirmation",
-              "normal V2.2 liquidity macro gold flow and trend evidence"
-            ]
-          },
-          "revision": {
-            "interpretation": "Trade material change in expectation about same future settlement dates",
-            "z_score_mandatory": true,
-            "requires": [
-              "same-target point-in-time forecast revision",
-              "rolling past only Z-score",
-              "normal V2.2 liquidity macro gold flow and trend evidence"
-            ]
-          }
-        },
-        "implementation_verified": {
-          "fiscal": false,
-          "liquidity": false,
-          "macro": false,
-          "flow": false,
-          "price": false,
-          "risk": false
-        },
-        "full_v22_backtest_ready": false,
-        "live_trade_signals_enabled": false,
-        "excluded_as_v22": [
-          "TGA-only direction strategy",
-          "unconfirmed daily OHLC proxy as 4H execution",
-          "fitted results without point-in-time inputs"
-        ],
-        "next_required": "Complete real-publication-vintage Treasury future-net-cash plus gold positioning and CME contract information; then independently validate both anticipation and revision trade modes with official daily/weekly trends"
-      }
-    },
-    "forecast": {
-      "status": "experimental_baseline_not_trade_signal",
-      "error": null,
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": null
-    },
-    "treasury": {
-      "status": null,
-      "error": null,
-      "observations": null,
-      "first_date": null,
-      "last_date": null,
-      "data": null
     },
     "v22-cashflow-line-audit": {
       "status": "dts_cashflow_category_inventory_research_only",
@@ -5531,145 +5367,320 @@
         ]
       }
     },
-    "v22-tga-cashflow-identity": {
-      "status": "tga_operating_cashflows_identity_verified_in_two_months",
+    "debt-taxonomy": {
+      "status": "debt_taxonomy_audit_not_net_new_cash",
       "error": null,
       "observations": null,
       "first_date": null,
       "last_date": null,
       "data": {
-        "status": "tga_operating_cashflows_identity_verified_in_two_months",
-        "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/",
-        "years": {
-          "2025": {
-            "raw_cashflow_rows": 3843,
-            "raw_tga_rows": 29,
-            "classified_cashflow_report_days": 21,
-            "closing_tga_report_days": 29,
-            "cashflow_faults": {
-              "invalid_today_amount": 0,
-              "bad_transaction_type": 0,
-              "non_tga_ignored": 0,
-              "non_table_ii_ignored": 0,
-              "duplicate_line_key": 0,
-              "unlabeled_possible_total_rows_excluded": 42
-            },
-            "duplicate_tga_dates": 0,
-            "identity": {
-              "count": 21,
-              "average_absolute_identity_gap_usd_millions": 3.476,
-              "max_absolute_identity_gap_usd_millions": 9,
-              "within_one_billion_pct": 100,
-              "recent_examples": [
-                {
-                  "date": "2025-09-25",
-                  "reported_tga_delta": 3117,
-                  "reported_net_deposits_minus_withdrawals": 3117,
-                  "difference": 0,
-                  "tax_net_proxy": 10245,
-                  "customs_deposits": 310
-                },
-                {
-                  "date": "2025-09-26",
-                  "reported_tga_delta": 25250,
-                  "reported_net_deposits_minus_withdrawals": 25243,
-                  "difference": 7,
-                  "tax_net_proxy": 14495,
-                  "customs_deposits": 419
-                },
-                {
-                  "date": "2025-09-29",
-                  "reported_tga_delta": 19337,
-                  "reported_net_deposits_minus_withdrawals": 19336,
-                  "difference": 1,
-                  "tax_net_proxy": 32769,
-                  "customs_deposits": 516
-                },
-                {
-                  "date": "2025-09-30",
-                  "reported_tga_delta": 85151,
-                  "reported_net_deposits_minus_withdrawals": 85152,
-                  "difference": -1,
-                  "tax_net_proxy": 11097,
-                  "customs_deposits": 381
-                }
-              ]
-            },
-            "identity_reconciled": true,
-            "illustrative_month_tax_withheld_and_other_explicit_tax_deposits_less_named_refunds_usd_billions": 504.584,
-            "customs_duties_tax_fee_deposits_usd_billions": 31.676,
-            "disclaimer": "Named tax categories are a partial proxy, not a certified full IRS receipt/spending forecast"
+        "status": "debt_taxonomy_audit_not_net_new_cash",
+        "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/public_debt_transactions?sort=-record_date&page%5Bsize%5D=10000",
+        "rows": 10000,
+        "unique_report_dates": 435,
+        "fields": [
+          "record_date",
+          "transaction_type",
+          "security_market",
+          "security_type",
+          "security_type_desc",
+          "transaction_today_amt",
+          "transaction_mtd_amt",
+          "transaction_fytd_amt",
+          "table_nbr",
+          "table_nm",
+          "src_line_nbr",
+          "record_fiscal_year",
+          "record_fiscal_quarter",
+          "record_calendar_year",
+          "record_calendar_quarter",
+          "record_calendar_month",
+          "record_calendar_day"
+        ],
+        "label_fields": [
+          "transaction_type",
+          "security_market",
+          "security_type",
+          "security_type_desc",
+          "table_nbr",
+          "table_nm",
+          "src_line_nbr"
+        ],
+        "amount_fields": [
+          "transaction_today_amt",
+          "transaction_mtd_amt",
+          "transaction_fytd_amt"
+        ],
+        "categories": [
+          {
+            "category": "Redemptions | Marketable | Bills | null | IIIA | Public Debt Transactions | 15",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "272525",
+              "transaction_mtd_amt": "1116090",
+              "transaction_fytd_amt": "3668697"
+            }
           },
-          "2026": {
-            "raw_cashflow_rows": 3780,
-            "raw_tga_rows": 29,
-            "classified_cashflow_report_days": 21,
-            "closing_tga_report_days": 29,
-            "cashflow_faults": {
-              "invalid_today_amount": 0,
-              "bad_transaction_type": 0,
-              "non_tga_ignored": 0,
-              "non_table_ii_ignored": 0,
-              "duplicate_line_key": 0,
-              "unlabeled_possible_total_rows_excluded": 42
-            },
-            "duplicate_tga_dates": 0,
-            "identity": {
-              "count": 21,
-              "average_absolute_identity_gap_usd_millions": 2.857,
-              "max_absolute_identity_gap_usd_millions": 9,
-              "within_one_billion_pct": 100,
-              "recent_examples": [
-                {
-                  "date": "2026-09-25",
-                  "reported_tga_delta": 20663,
-                  "reported_net_deposits_minus_withdrawals": 20665,
-                  "difference": -2,
-                  "tax_net_proxy": 13031,
-                  "customs_deposits": 398
-                },
-                {
-                  "date": "2026-09-28",
-                  "reported_tga_delta": 14282,
-                  "reported_net_deposits_minus_withdrawals": 14285,
-                  "difference": -3,
-                  "tax_net_proxy": 30595,
-                  "customs_deposits": 373
-                },
-                {
-                  "date": "2026-09-29",
-                  "reported_tga_delta": -22972,
-                  "reported_net_deposits_minus_withdrawals": -22975,
-                  "difference": 3,
-                  "tax_net_proxy": 9786,
-                  "customs_deposits": 457
-                },
-                {
-                  "date": "2026-09-30",
-                  "reported_tga_delta": 47446,
-                  "reported_net_deposits_minus_withdrawals": 47451,
-                  "difference": -5,
-                  "tax_net_proxy": 16709,
-                  "customs_deposits": 278
-                }
-              ]
-            },
-            "identity_reconciled": true,
-            "illustrative_month_tax_withheld_and_other_explicit_tax_deposits_less_named_refunds_usd_billions": 538.138,
-            "customs_duties_tax_fee_deposits_usd_billions": 26.611,
-            "disclaimer": "Named tax categories are a partial proxy, not a certified full IRS receipt/spending forecast"
+          {
+            "category": "Redemptions | Marketable | Notes | null | IIIA | Public Debt Transactions | 16",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "258072",
+              "transaction_fytd_amt": "349395"
+            }
+          },
+          {
+            "category": "Redemptions | Marketable | Bonds | null | IIIA | Public Debt Transactions | 17",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "6000",
+              "transaction_fytd_amt": "30117"
+            }
+          },
+          {
+            "category": "Issues | Nonmarketable | Other | null | IIIA | Public Debt Transactions | 13",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "2388",
+              "transaction_mtd_amt": "19208",
+              "transaction_fytd_amt": "64623"
+            }
+          },
+          {
+            "category": "Issues | Marketable | Bills | Regular Series | IIIA | Public Debt Transactions | 1",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "295522",
+              "transaction_mtd_amt": "1226680",
+              "transaction_fytd_amt": "4017812"
+            }
+          },
+          {
+            "category": "Issues | Marketable | Bills | Cash Management Series | IIIA | Public Debt Transactions | 2",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "0",
+              "transaction_fytd_amt": "25000"
+            }
+          },
+          {
+            "category": "Issues | Marketable | Notes | null | IIIA | Public Debt Transactions | 3",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "236648",
+              "transaction_fytd_amt": "361935"
+            }
+          },
+          {
+            "category": "Issues | Marketable | Bonds | null | IIIA | Public Debt Transactions | 4",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "0",
+              "transaction_fytd_amt": "35522"
+            }
+          },
+          {
+            "category": "Issues | Marketable | Inflation-Protected Securities Increment | null | IIIA | Public Debt Transactions | 5",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "841",
+              "transaction_mtd_amt": "5072",
+              "transaction_fytd_amt": "11489"
+            }
+          },
+          {
+            "category": "Issues | Marketable | Federal Financing Bank | null | IIIA | Public Debt Transactions | 6",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "0",
+              "transaction_fytd_amt": "0"
+            }
+          },
+          {
+            "category": "Issues | Nonmarketable | United States Savings Securities | Cash Issue Price | IIIA | Public Debt Transactions | 7",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "30",
+              "transaction_mtd_amt": "225",
+              "transaction_fytd_amt": "311"
+            }
+          },
+          {
+            "category": "Issues | Nonmarketable | United States Savings Securities | Interest Increment | IIIA | Public Debt Transactions | 8",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "3",
+              "transaction_mtd_amt": "402",
+              "transaction_fytd_amt": "822"
+            }
+          },
+          {
+            "category": "Issues | Nonmarketable | Government Account Series | null | IIIA | Public Debt Transactions | 9",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "788688",
+              "transaction_mtd_amt": "5880540",
+              "transaction_fytd_amt": "21241077"
+            }
+          },
+          {
+            "category": "Issues | Nonmarketable | Domestic Series | null | IIIA | Public Debt Transactions | 10",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "0",
+              "transaction_fytd_amt": "1"
+            }
+          },
+          {
+            "category": "Issues | Nonmarketable | Foreign Series | null | IIIA | Public Debt Transactions | 11",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "0",
+              "transaction_fytd_amt": "0"
+            }
+          },
+          {
+            "category": "Issues | Nonmarketable | State and Local Series | null | IIIA | Public Debt Transactions | 12",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "644",
+              "transaction_mtd_amt": "3591",
+              "transaction_fytd_amt": "15377"
+            }
+          },
+          {
+            "category": "Redemptions | Marketable | Federal Financing Bank | null | IIIA | Public Debt Transactions | 18",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "0",
+              "transaction_fytd_amt": "0"
+            }
+          },
+          {
+            "category": "Redemptions | Nonmarketable | United States Savings Securities | null | IIIA | Public Debt Transactions | 19",
+            "count": 435,
+            "first_date": "2025-02-20",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "36",
+              "transaction_mtd_amt": "824",
+              "transaction_fytd_amt": "2419"
+            }
+          },
+          {
+            "category": "Redemptions | Nonmarketable | Government Account Series | null | IIIA | Public Debt Transactions | 20",
+            "count": 434,
+            "first_date": "2025-02-21",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "788565",
+              "transaction_mtd_amt": "5883003",
+              "transaction_fytd_amt": "21203303"
+            }
+          },
+          {
+            "category": "Redemptions | Nonmarketable | Domestic Series | null | IIIA | Public Debt Transactions | 21",
+            "count": 434,
+            "first_date": "2025-02-21",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "0",
+              "transaction_fytd_amt": "0"
+            }
+          },
+          {
+            "category": "Redemptions | Nonmarketable | Foreign Series | null | IIIA | Public Debt Transactions | 22",
+            "count": 434,
+            "first_date": "2025-02-21",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "0",
+              "transaction_fytd_amt": "0"
+            }
+          },
+          {
+            "category": "Redemptions | Nonmarketable | State and Local Series | null | IIIA | Public Debt Transactions | 23",
+            "count": 434,
+            "first_date": "2025-02-21",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "231",
+              "transaction_mtd_amt": "5176",
+              "transaction_fytd_amt": "18809"
+            }
+          },
+          {
+            "category": "Redemptions | Nonmarketable | Other | null | IIIA | Public Debt Transactions | 24",
+            "count": 434,
+            "first_date": "2025-02-21",
+            "last_date": "2026-11-12",
+            "example_amounts": {
+              "transaction_today_amt": "2382",
+              "transaction_mtd_amt": "19204",
+              "transaction_fytd_amt": "64547"
+            }
           }
-        },
-        "ready_for_historical_tax_spend_forecast": false,
-        "trade_signals_enabled": false,
+        ],
         "limitations": [
-          "Two September samples cannot certify all months, structural changes or complete tax classification",
-          "Named Taxes - deposit/refund categories exclude other government cashflow and customs are shown separately to avoid ambiguous overlaps",
-          "TGA balance delta identity is an EX-POST bookkeeping check, not a market-available preannouncement",
-          "A complete 2024-2026 historically lagged tax/spend model is still required",
-          "Do not turn these realized cashflows directly into trade or future TGA forecast signals"
+          "Gross issuance and redemptions must be separated by instrument and timing",
+          "Subtotals may overlap components",
+          "SOMA rollovers and reopening treatment must be verified",
+          "No net financing prediction claimed"
         ]
       }
+    },
+    "source-coverage": {
+      "status": "source_coverage_incomplete_or_unverified",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
     },
     "tga-2023": {
       "status": "year_source_ok",
@@ -5833,491 +5844,6 @@
         ]
       }
     },
-    "full-history-backtest": {
-      "status": "historical_2023_plus_walk_forward_research",
-      "error": null,
-      "observations": 969,
-      "first_date": "2023-01-03",
-      "last_date": "2026-11-12",
-      "data": {
-        "status": "historical_2023_plus_walk_forward_research",
-        "first_date": "2023-01-03",
-        "last_date": "2026-11-12",
-        "observations": 969,
-        "results": {
-          "D+1": {
-            "2023": {
-              "zero": {
-                "samples": 100,
-                "mae_usd_billions": 22.57,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 100,
-                "mae_usd_billions": 18.538,
-                "direction_accuracy_pct": 74,
-                "predicted_nonzero": 100
-              },
-              "calendar": {
-                "samples": 100,
-                "mae_usd_billions": 18.602,
-                "direction_accuracy_pct": 78,
-                "predicted_nonzero": 100
-              }
-            },
-            "2024": {
-              "zero": {
-                "samples": 251,
-                "mae_usd_billions": 23.094,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 251,
-                "mae_usd_billions": 19.7,
-                "direction_accuracy_pct": 64.9,
-                "predicted_nonzero": 251
-              },
-              "calendar": {
-                "samples": 251,
-                "mae_usd_billions": 20.189,
-                "direction_accuracy_pct": 68.1,
-                "predicted_nonzero": 251
-              }
-            },
-            "2025": {
-              "zero": {
-                "samples": 250,
-                "mae_usd_billions": 28.365,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 250,
-                "mae_usd_billions": 24.765,
-                "direction_accuracy_pct": 64,
-                "predicted_nonzero": 250
-              },
-              "calendar": {
-                "samples": 250,
-                "mae_usd_billions": 25.526,
-                "direction_accuracy_pct": 68,
-                "predicted_nonzero": 250
-              }
-            },
-            "2026": {
-              "zero": {
-                "samples": 217,
-                "mae_usd_billions": 26.838,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 217,
-                "mae_usd_billions": 23.507,
-                "direction_accuracy_pct": 65.9,
-                "predicted_nonzero": 217
-              },
-              "calendar": {
-                "samples": 217,
-                "mae_usd_billions": 23.943,
-                "direction_accuracy_pct": 67.3,
-                "predicted_nonzero": 217
-              }
-            }
-          },
-          "D+3": {
-            "2023": {
-              "zero": {
-                "samples": 100,
-                "mae_usd_billions": 38.364,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 100,
-                "mae_usd_billions": 36.742,
-                "direction_accuracy_pct": 60,
-                "predicted_nonzero": 100
-              },
-              "calendar": {
-                "samples": 100,
-                "mae_usd_billions": 36.452,
-                "direction_accuracy_pct": 60,
-                "predicted_nonzero": 100
-              }
-            },
-            "2024": {
-              "zero": {
-                "samples": 251,
-                "mae_usd_billions": 38.533,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 251,
-                "mae_usd_billions": 35.976,
-                "direction_accuracy_pct": 63.7,
-                "predicted_nonzero": 251
-              },
-              "calendar": {
-                "samples": 251,
-                "mae_usd_billions": 35.294,
-                "direction_accuracy_pct": 67.7,
-                "predicted_nonzero": 251
-              }
-            },
-            "2025": {
-              "zero": {
-                "samples": 250,
-                "mae_usd_billions": 47.704,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 250,
-                "mae_usd_billions": 45.577,
-                "direction_accuracy_pct": 60.4,
-                "predicted_nonzero": 250
-              },
-              "calendar": {
-                "samples": 250,
-                "mae_usd_billions": 44.805,
-                "direction_accuracy_pct": 66,
-                "predicted_nonzero": 250
-              }
-            },
-            "2026": {
-              "zero": {
-                "samples": 215,
-                "mae_usd_billions": 47.511,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 215,
-                "mae_usd_billions": 44.864,
-                "direction_accuracy_pct": 61.4,
-                "predicted_nonzero": 215
-              },
-              "calendar": {
-                "samples": 215,
-                "mae_usd_billions": 43.189,
-                "direction_accuracy_pct": 67.9,
-                "predicted_nonzero": 215
-              }
-            }
-          },
-          "D+5": {
-            "2023": {
-              "zero": {
-                "samples": 100,
-                "mae_usd_billions": 48.709,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 100,
-                "mae_usd_billions": 49.606,
-                "direction_accuracy_pct": 49,
-                "predicted_nonzero": 100
-              },
-              "calendar": {
-                "samples": 100,
-                "mae_usd_billions": 48.65,
-                "direction_accuracy_pct": 52,
-                "predicted_nonzero": 100
-              }
-            },
-            "2024": {
-              "zero": {
-                "samples": 251,
-                "mae_usd_billions": 45.347,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 251,
-                "mae_usd_billions": 46.625,
-                "direction_accuracy_pct": 43.4,
-                "predicted_nonzero": 251
-              },
-              "calendar": {
-                "samples": 251,
-                "mae_usd_billions": 44.999,
-                "direction_accuracy_pct": 53.8,
-                "predicted_nonzero": 251
-              }
-            },
-            "2025": {
-              "zero": {
-                "samples": 250,
-                "mae_usd_billions": 58.77,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 250,
-                "mae_usd_billions": 59.699,
-                "direction_accuracy_pct": 49.6,
-                "predicted_nonzero": 250
-              },
-              "calendar": {
-                "samples": 250,
-                "mae_usd_billions": 58.397,
-                "direction_accuracy_pct": 54.8,
-                "predicted_nonzero": 250
-              }
-            },
-            "2026": {
-              "zero": {
-                "samples": 213,
-                "mae_usd_billions": 60.651,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 213,
-                "mae_usd_billions": 60.576,
-                "direction_accuracy_pct": 56.8,
-                "predicted_nonzero": 213
-              },
-              "calendar": {
-                "samples": 213,
-                "mae_usd_billions": 58.045,
-                "direction_accuracy_pct": 64.3,
-                "predicted_nonzero": 213
-              }
-            }
-          }
-        },
-        "validation": {
-          "D+1": {
-            "selection_based_on_years": [
-              "2023",
-              "2024",
-              "2025"
-            ],
-            "holdout_year": "2026",
-            "selected_model": "weekday",
-            "training_mae_usd_billions": 21.614,
-            "holdout": {
-              "zero": {
-                "samples": 217,
-                "mae_usd_billions": 26.838,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 217,
-                "mae_usd_billions": 23.507,
-                "direction_accuracy_pct": 65.9,
-                "predicted_nonzero": 217
-              },
-              "calendar": {
-                "samples": 217,
-                "mae_usd_billions": 23.943,
-                "direction_accuracy_pct": 67.3,
-                "predicted_nonzero": 217
-              }
-            },
-            "selected_vs_zero_holdout_mae_improvement_pct": 12.4,
-            "holdout_passes_mae": true
-          },
-          "D+3": {
-            "selection_based_on_years": [
-              "2023",
-              "2024",
-              "2025"
-            ],
-            "holdout_year": "2026",
-            "selected_model": "calendar",
-            "training_mae_usd_billions": 39.443,
-            "holdout": {
-              "zero": {
-                "samples": 215,
-                "mae_usd_billions": 47.511,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 215,
-                "mae_usd_billions": 44.864,
-                "direction_accuracy_pct": 61.4,
-                "predicted_nonzero": 215
-              },
-              "calendar": {
-                "samples": 215,
-                "mae_usd_billions": 43.189,
-                "direction_accuracy_pct": 67.9,
-                "predicted_nonzero": 215
-              }
-            },
-            "selected_vs_zero_holdout_mae_improvement_pct": 9.1,
-            "holdout_passes_mae": true
-          },
-          "D+5": {
-            "selection_based_on_years": [
-              "2023",
-              "2024",
-              "2025"
-            ],
-            "holdout_year": "2026",
-            "selected_model": "calendar",
-            "training_mae_usd_billions": 51.18,
-            "holdout": {
-              "zero": {
-                "samples": 213,
-                "mae_usd_billions": 60.651,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 213,
-                "mae_usd_billions": 60.576,
-                "direction_accuracy_pct": 56.8,
-                "predicted_nonzero": 213
-              },
-              "calendar": {
-                "samples": 213,
-                "mae_usd_billions": 58.045,
-                "direction_accuracy_pct": 64.3,
-                "predicted_nonzero": 213
-              }
-            },
-            "selected_vs_zero_holdout_mae_improvement_pct": 4.3,
-            "holdout_passes_mae": true
-          }
-        },
-        "strict_d1_weekday_only": {
-          "method": "calendar_weekday_next_only_no_observed_future_date",
-          "excluded_holidays_and_weekends": true,
-          "excluded_nonconsecutive_reporting_days": true,
-          "years": {
-            "2023": {
-              "zero": {
-                "samples": 95,
-                "mae_usd_billions": 22.222,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 95,
-                "mae_usd_billions": 18.163,
-                "direction_accuracy_pct": 74.7,
-                "predicted_nonzero": 95
-              },
-              "calendar": {
-                "samples": 95,
-                "mae_usd_billions": 18.291,
-                "direction_accuracy_pct": 77.9,
-                "predicted_nonzero": 95
-              }
-            },
-            "2024": {
-              "zero": {
-                "samples": 240,
-                "mae_usd_billions": 22.511,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 240,
-                "mae_usd_billions": 19.215,
-                "direction_accuracy_pct": 64.6,
-                "predicted_nonzero": 240
-              },
-              "calendar": {
-                "samples": 240,
-                "mae_usd_billions": 19.698,
-                "direction_accuracy_pct": 67.9,
-                "predicted_nonzero": 240
-              }
-            },
-            "2025": {
-              "zero": {
-                "samples": 239,
-                "mae_usd_billions": 27.631,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 239,
-                "mae_usd_billions": 24.081,
-                "direction_accuracy_pct": 63.6,
-                "predicted_nonzero": 239
-              },
-              "calendar": {
-                "samples": 239,
-                "mae_usd_billions": 24.829,
-                "direction_accuracy_pct": 67.8,
-                "predicted_nonzero": 239
-              }
-            },
-            "2026": {
-              "zero": {
-                "samples": 210,
-                "mae_usd_billions": 26.762,
-                "direction_accuracy_pct": 0,
-                "predicted_nonzero": 0
-              },
-              "weekday": {
-                "samples": 210,
-                "mae_usd_billions": 23.464,
-                "direction_accuracy_pct": 65.7,
-                "predicted_nonzero": 210
-              },
-              "calendar": {
-                "samples": 210,
-                "mae_usd_billions": 23.859,
-                "direction_accuracy_pct": 67.1,
-                "predicted_nonzero": 210
-              }
-            }
-          },
-          "paired_mae_improvement_usd_billions": {
-            "observed": 3.298,
-            "moving_block_95pct_ci": [
-              1.678,
-              4.904
-            ],
-            "block_length": 10,
-            "bootstrap_draws": 1200,
-            "statistically_positive_at_95pct": true
-          },
-          "selected_model": "weekday",
-          "holdout_year": "2026",
-          "holdout": {
-            "zero": {
-              "samples": 210,
-              "mae_usd_billions": 26.762,
-              "direction_accuracy_pct": 0,
-              "predicted_nonzero": 0
-            },
-            "weekday": {
-              "samples": 210,
-              "mae_usd_billions": 23.464,
-              "direction_accuracy_pct": 65.7,
-              "predicted_nonzero": 210
-            },
-            "calendar": {
-              "samples": 210,
-              "mae_usd_billions": 23.859,
-              "direction_accuracy_pct": 67.1,
-              "predicted_nonzero": 210
-            }
-          },
-          "selected_vs_zero_holdout_mae_improvement_pct": 12.3
-        },
-        "limitations": [
-          "Current-version FiscalData is not archived point-in-time vintage",
-          "Main D+1/3/5 validation uses observed future reporting-day calendar; strict_d1_weekday_only instead predicts next calendar weekday and excludes holidays and reporting gaps, without using observed future reporting dates",
-          "No explicit tax or Treasury auction settlement features",
-          "No gold trades, profits or win rates"
-        ]
-      }
-    },
     "v22-ohlc-integrity": {
       "status": "research_cme_session_hour_integrity_audited",
       "error": null,
@@ -6326,16 +5852,16 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-11-14T14:11:33.000Z",
+        "as_of": "2026-11-15T14:47:46.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
         "counts": {
-          "raw_hours": 13005,
-          "distinct_raw_timestamps": 13005,
+          "raw_hours": 12999,
+          "distinct_raw_timestamps": 12999,
           "valid_ohlc_on_hour_nonduplicated": 10267,
-          "missing_or_invalid_ohlc": 2726,
-          "not_exact_utc_hour": 12,
+          "missing_or_invalid_ohlc": 2719,
+          "not_exact_utc_hour": 13,
           "unclosed_current_hour": 0,
           "duplicate_hour": 0,
           "duplicate_timestamp": 0,
@@ -6468,6 +5994,480 @@
           "Calendar holidays, exchange session irregularities, source revisions and broker exchange time-stamps are not independently certified",
           "4h candles are closed only when all four distinct consecutive hourly intervals are validated",
           "No signal is generated; Treasury, DXY, real yields, reserves, gold ETF and CFTC as-of joins are still required"
+        ]
+      }
+    },
+    "v22-dxy-audit": {
+      "status": "dxy_daily_source_access_ok",
+      "error": null,
+      "observations": null,
+      "first_date": "2024-01-02",
+      "last_date": "2026-11-13",
+      "data": {
+        "status": "dxy_daily_source_access_ok",
+        "source": "Yahoo chart DX-Y.NYB (ICE US Dollar Index)",
+        "symbol": "DX-Y.NYB",
+        "raw_bars": 875,
+        "usable_unique_trading_days": 723,
+        "invalid_ohlc_bars": 152,
+        "duplicate_exchange_dates_excluded": 0,
+        "first_date": "2024-01-02",
+        "last_date": "2026-11-13",
+        "by_year": {
+          "2024": 252,
+          "2025": 252,
+          "2026": 219
+        },
+        "recent": [
+          {
+            "date": "2026-11-11",
+            "close": 102.91000366210938
+          },
+          {
+            "date": "2026-11-12",
+            "close": 103.16999816894531
+          },
+          {
+            "date": "2026-11-13",
+            "close": 103.41000366210938
+          }
+        ],
+        "usable_for_full_v22_point_in_time": false,
+        "limitations": [
+          "Yahoo is an unlicensed research proxy, not a contracted production ICE DXY feed",
+          "Duplicate daily dates are quarantined, not silently averaged or chosen",
+          "Market daily close is not information available before that session closes",
+          "FRED broad trade-weighted US dollar index must not be silently relabeled as ICE DXY",
+          "Historical data-vintage, publication release timestamps and gold trade-time joins not verified"
+        ]
+      }
+    },
+    "v22-debt-realized-audit": {
+      "status": "realized_marketable_debt_ledger_research_only",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "realized_marketable_debt_ledger_research_only",
+        "source": "US Treasury FiscalData Daily Treasury Statement Table IIIA",
+        "source_field": "transaction_today_amt",
+        "units": "USD millions (yearly sums converted to USD billions)",
+        "classification": {
+          "bills_issue_lines": [
+            1,
+            2
+          ],
+          "bills_redemption_lines": [
+            15
+          ],
+          "coupon_notes_bonds_issue_lines": [
+            3,
+            4
+          ],
+          "coupon_notes_bonds_redemption_lines": [
+            16,
+            17
+          ],
+          "excluded_lines": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "coverage": {
+          "rows_in_source": 16537,
+          "report_dates_seen": 719,
+          "complete_days": 719,
+          "first_date": "2024-01-02",
+          "last_date": "2026-11-12",
+          "per_year": {
+            "2024": {
+              "report_days": 251,
+              "total_market_bills_net_usd_billions": 511.102,
+              "total_market_notes_bonds_net_usd_billions": 1346.373,
+              "subtotal_net_usd_billions": 1857.475,
+              "days_net_positive": 87,
+              "days_net_negative": 164
+            },
+            "2025": {
+              "report_days": 250,
+              "total_market_bills_net_usd_billions": 360.378,
+              "total_market_notes_bonds_net_usd_billions": 1566.002,
+              "subtotal_net_usd_billions": 1926.38,
+              "days_net_positive": 84,
+              "days_net_negative": 166
+            },
+            "2026": {
+              "report_days": 218,
+              "total_market_bills_net_usd_billions": 945.004,
+              "total_market_notes_bonds_net_usd_billions": 956.594,
+              "subtotal_net_usd_billions": 1901.598,
+              "days_net_positive": 88,
+              "days_net_negative": 130
+            }
+          },
+          "faults": {
+            "other_ignored": 11504,
+            "bad_market": 0,
+            "bad_category": 0,
+            "missing_amount": 0,
+            "duplicate_line_date": 0,
+            "missing_expected_lines": 0
+          }
+        },
+        "recent_realized_ledger": [
+          {
+            "record_date": "2026-11-02",
+            "realized_bills_net_usd_billions": -0.012,
+            "realized_notes_bonds_net_usd_billions": -17.405,
+            "realized_subtotal_usd_billions": -17.417
+          },
+          {
+            "record_date": "2026-11-03",
+            "realized_bills_net_usd_billions": 45.42,
+            "realized_notes_bonds_net_usd_billions": -0.016,
+            "realized_subtotal_usd_billions": 45.404
+          },
+          {
+            "record_date": "2026-11-04",
+            "realized_bills_net_usd_billions": -0.008,
+            "realized_notes_bonds_net_usd_billions": -0.003,
+            "realized_subtotal_usd_billions": -0.011
+          },
+          {
+            "record_date": "2026-11-05",
+            "realized_bills_net_usd_billions": 8.016,
+            "realized_notes_bonds_net_usd_billions": -6,
+            "realized_subtotal_usd_billions": 2.016
+          },
+          {
+            "record_date": "2026-11-06",
+            "realized_bills_net_usd_billions": -0.006,
+            "realized_notes_bonds_net_usd_billions": -4,
+            "realized_subtotal_usd_billions": -4.006
+          },
+          {
+            "record_date": "2026-11-09",
+            "realized_bills_net_usd_billions": -0.01,
+            "realized_notes_bonds_net_usd_billions": 0,
+            "realized_subtotal_usd_billions": -0.01
+          },
+          {
+            "record_date": "2026-11-10",
+            "realized_bills_net_usd_billions": 34.193,
+            "realized_notes_bonds_net_usd_billions": 0,
+            "realized_subtotal_usd_billions": 34.193
+          },
+          {
+            "record_date": "2026-11-12",
+            "realized_bills_net_usd_billions": 22.997,
+            "realized_notes_bonds_net_usd_billions": 0,
+            "realized_subtotal_usd_billions": 22.997
+          }
+        ],
+        "full_v22_fiscal_forecast_ready": false,
+        "trade_signals_enabled": false,
+        "limitations": [
+          "EX-POST DTS realized transaction amounts: using these values as a future-day forecast would be direct lookahead",
+          "Does not incorporate separate cash-basis adjustments, TIPS principal inflation adjustments, SOMA auction rollovers or Treasury buybacks",
+          "Bonds and Notes represent a partial coupon bucket, not yet complete TIPS/FRN funding",
+          "Tax receipts and government outlays must be classified separately without overlapping categories",
+          "TreasuryDirect announcement date, auction date, issue date and publicly held maturing amounts need historical point-in-time reconciliation before forecasting net new cash",
+          "Daily realized debt subtotals are not the change in TGA or net dollar liquidity"
+        ]
+      }
+    },
+    "tga-2024": {
+      "status": "year_source_ok",
+      "error": null,
+      "observations": 251,
+      "first_date": "2024-01-02",
+      "last_date": "2024-12-31",
+      "data": null
+    },
+    "treasury": {
+      "status": null,
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": null
+    },
+    "v22-auction-source-audit": {
+      "status": "auction_historical_source_access_ok",
+      "error": null,
+      "observations": null,
+      "first_date": null,
+      "last_date": null,
+      "data": {
+        "status": "auction_historical_source_access_ok",
+        "source": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
+        "per_year": {
+          "2023": {
+            "auction_rows": 428,
+            "type_counts": {
+              "Bill": 320,
+              "Note": 82,
+              "Bond": 26
+            },
+            "accepted_amount_rows": 428,
+            "first_auction": "2023-01-03",
+            "last_auction": "2023-12-28"
+          },
+          "2024": {
+            "auction_rows": 440,
+            "type_counts": {
+              "Bill": 332,
+              "Note": 82,
+              "Bond": 26
+            },
+            "accepted_amount_rows": 440,
+            "first_auction": "2024-01-02",
+            "last_auction": "2024-12-30"
+          },
+          "2025": {
+            "auction_rows": 444,
+            "type_counts": {
+              "Bill": 336,
+              "Note": 82,
+              "Bond": 26
+            },
+            "accepted_amount_rows": 444,
+            "first_auction": "2025-01-02",
+            "last_auction": "2025-12-31"
+          },
+          "2026": {
+            "auction_rows": 346,
+            "type_counts": {
+              "Bill": 260,
+              "Note": 64,
+              "Bond": 22
+            },
+            "accepted_amount_rows": 341,
+            "first_auction": "2026-01-05",
+            "last_auction": "2026-10-22"
+          }
+        },
+        "raw_record_count": 1658,
+        "columns": [
+          "record_date",
+          "cusip",
+          "security_type",
+          "security_term",
+          "auction_date",
+          "issue_date",
+          "maturity_date",
+          "price_per100",
+          "accrued_int_per100",
+          "accrued_int_per1000",
+          "adj_accrued_int_per1000",
+          "adj_price",
+          "allocation_pctage",
+          "allocation_pctage_decimals",
+          "announcemtd_cusip",
+          "announcemt_date",
+          "auction_format",
+          "avg_med_discnt_rate",
+          "avg_med_investment_rate",
+          "avg_med_price",
+          "avg_med_discnt_margin",
+          "avg_med_yield",
+          "back_dated",
+          "back_dated_date",
+          "bid_to_cover_ratio",
+          "callable",
+          "call_date",
+          "called_date",
+          "cash_management_bill_cmb",
+          "closing_time_comp",
+          "closing_time_noncomp",
+          "comp_accepted",
+          "comp_bid_decimals",
+          "comp_tendered",
+          "comp_tenders_accepted",
+          "corpus_cusip",
+          "cpi_base_reference_period",
+          "currently_outstanding",
+          "dated_date",
+          "direct_bidder_accepted",
+          "direct_bidder_tendered",
+          "est_pub_held_mat_by_type_amt",
+          "fima_included",
+          "fima_noncomp_accepted",
+          "fima_noncomp_tendered",
+          "first_int_period",
+          "first_int_payment_date",
+          "floating_rate",
+          "frn_index_determination_date",
+          "frn_index_determination_rate",
+          "high_discnt_rate",
+          "high_investment_rate",
+          "high_price",
+          "high_discnt_margin",
+          "high_yield",
+          "index_ratio_on_issue_date",
+          "indirect_bidder_accepted",
+          "indirect_bidder_tendered",
+          "int_payment_frequency",
+          "int_rate",
+          "low_discnt_rate",
+          "low_investment_rate",
+          "low_price",
+          "low_discnt_margin",
+          "low_yield",
+          "mat_date",
+          "max_comp_award",
+          "max_noncomp_award",
+          "max_single_bid",
+          "min_bid_amt",
+          "min_strip_amt",
+          "min_to_issue",
+          "multiples_to_bid",
+          "multiples_to_issue",
+          "nlp_exclusion_amt",
+          "nlp_reporting_threshold",
+          "noncomp_accepted",
+          "noncomp_tenders_accepted",
+          "offering_amt",
+          "original_cusip",
+          "original_dated_date",
+          "original_issue_date",
+          "original_security_term",
+          "pdf_filenm_announcemt",
+          "pdf_filenm_comp_results",
+          "pdf_filenm_noncomp_results",
+          "primary_dealer_accepted",
+          "primary_dealer_tendered",
+          "ref_cpi_on_dated_date",
+          "ref_cpi_on_issue_date",
+          "reopening",
+          "security_term_day_month",
+          "security_term_week_year",
+          "series",
+          "soma_accepted",
+          "soma_holdings",
+          "soma_included",
+          "soma_tendered",
+          "spread",
+          "std_int_payment_per1000",
+          "strippable",
+          "tiin_conversion_factor_per1000",
+          "total_accepted",
+          "total_tendered",
+          "treas_retail_accepted",
+          "treas_retail_tenders_accepted",
+          "unadj_accrued_int_per1000",
+          "unadj_price",
+          "xml_filenm_announcemt",
+          "xml_filenm_comp_results",
+          "inflation_index_security",
+          "tint_cusip_1",
+          "tint_cusip_2",
+          "pdf_filenm_spec_announcemt"
+        ],
+        "missing_required_fields": [],
+        "announcement_fields_present": true,
+        "duplicate_cusip_auction_issue_keys": 0,
+        "bad_data": {
+          "unparseable_amount": 5,
+          "invalid_dates": 0,
+          "auction_after_issue": 0,
+          "issue_after_maturity": 0,
+          "missing_announcement_date": 0,
+          "announcement_after_auction": 0,
+          "missing_offering_amount": 0
+        },
+        "recent_source_samples": [
+          {
+            "announcemt_date": "2026-10-15",
+            "auction_date": "2026-10-19",
+            "issue_date": "2026-10-22",
+            "maturity_date": "2027-01-21",
+            "security_type": "Bill",
+            "security_term": "13-Week",
+            "total_accepted": "null",
+            "offering_amt": "95000000000",
+            "record_date": "2026-10-22",
+            "reopening": "Yes",
+            "cusip": "912797TM9"
+          },
+          {
+            "announcemt_date": "2026-10-15",
+            "auction_date": "2026-10-19",
+            "issue_date": "2026-10-22",
+            "maturity_date": "2027-04-22",
+            "security_type": "Bill",
+            "security_term": "26-Week",
+            "total_accepted": "null",
+            "offering_amt": "82000000000",
+            "record_date": "2026-10-22",
+            "reopening": "No",
+            "cusip": "912797WV5"
+          },
+          {
+            "announcemt_date": "2026-10-15",
+            "auction_date": "2026-10-20",
+            "issue_date": "2026-10-22",
+            "maturity_date": "2026-12-03",
+            "security_type": "Bill",
+            "security_term": "6-Week",
+            "total_accepted": "null",
+            "offering_amt": "95000000000",
+            "record_date": "2026-10-22",
+            "reopening": "Yes",
+            "cusip": "912797VA2"
+          },
+          {
+            "announcemt_date": "2026-10-15",
+            "auction_date": "2026-10-21",
+            "issue_date": "2026-10-23",
+            "maturity_date": "2046-08-15",
+            "security_type": "Bond",
+            "security_term": "19-Year 10-Month",
+            "total_accepted": "null",
+            "offering_amt": "13000000000",
+            "record_date": "2026-10-23",
+            "reopening": "Yes",
+            "cusip": "912810UX4"
+          },
+          {
+            "announcemt_date": "2026-10-15",
+            "auction_date": "2026-10-22",
+            "issue_date": "2026-10-30",
+            "maturity_date": "2031-10-15",
+            "security_type": "Note",
+            "security_term": "5-Year",
+            "total_accepted": "null",
+            "offering_amt": "26000000000",
+            "record_date": "2026-10-30",
+            "reopening": "No",
+            "cusip": "91282CRR4"
+          }
+        ],
+        "announcement_time_verified": false,
+        "issue_date_equals_cash_settlement_verified": false,
+        "total_accepted_is_net_new_cash": false,
+        "full_v22_fiscal_forecast_ready": false,
+        "limitations": [
+          "Auction results are only knowable after the auction results are made public; use conservative next-day delay until timestamps independently certified",
+          "Maturity cash payout cannot be inferred from auctions in the same year alone",
+          "total_accepted includes gross awards and is not directly equivalent to public-market cash proceeds",
+          "Need compare per-day inferred issuance and redeemed maturities against DTS IIIA line-item cash amounts",
+          "Release/publication record_date semantics require empirical verification; never assume they equal auction_date"
         ]
       }
     }
