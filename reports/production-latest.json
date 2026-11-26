@@ -1,16 +1,16 @@
 {
-  "checked_at_utc": "2026-11-25T18:01:26.917444+00:00",
-  "commit": "a154c64851236c77dffe9fd9f4eb034955df83eb",
+  "checked_at_utc": "2026-11-26T17:45:37.355518+00:00",
+  "commit": "481826e6b833e2f39e9b17629fdca67b10d63e74",
   "commit_role": "workflow_trigger_commit_not_report_publication_commit",
-  "workflow_run_id": "45670246701",
+  "workflow_run_id": "45870123556",
   "checked_production_origin": "https://gold-v22-real-data-v1.vercel.app",
   "endpoints": {
     "tga-2026": {
       "status": "year_source_ok",
       "error": null,
-      "observations": 225,
+      "observations": 226,
       "first_date": "2026-01-02",
-      "last_date": "2026-11-23",
+      "last_date": "2026-11-24",
       "data": null
     },
     "v22-source-audit": {
@@ -21,36 +21,10 @@
       "last_date": null,
       "data": {
         "status": "v22_source_feasibility_audit",
-        "as_of": "2026-11-25T18:01:10.832Z",
+        "as_of": "2026-11-26T17:45:30.313Z",
         "fred": [
           {
             "series": "DFII10",
-            "status": "source_access_ok",
-            "observations": 723,
-            "first_date": "2024-01-02",
-            "last_date": "2026-11-23",
-            "coverage": {
-              "2024": 250,
-              "2025": 249,
-              "2026": 224
-            },
-            "frequency": "daily_or_business_daily"
-          },
-          {
-            "series": "DGS10",
-            "status": "source_access_ok",
-            "observations": 723,
-            "first_date": "2024-01-02",
-            "last_date": "2026-11-23",
-            "coverage": {
-              "2024": 250,
-              "2025": 249,
-              "2026": 224
-            },
-            "frequency": "daily_or_business_daily"
-          },
-          {
-            "series": "T10YIE",
             "status": "source_access_ok",
             "observations": 724,
             "first_date": "2024-01-02",
@@ -63,15 +37,41 @@
             "frequency": "daily_or_business_daily"
           },
           {
-            "series": "RRPONTSYD",
+            "series": "DGS10",
             "status": "source_access_ok",
-            "observations": 723,
+            "observations": 724,
             "first_date": "2024-01-02",
             "last_date": "2026-11-24",
             "coverage": {
               "2024": 250,
               "2025": 249,
-              "2026": 224
+              "2026": 225
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "T10YIE",
+            "status": "source_access_ok",
+            "observations": 725,
+            "first_date": "2024-01-02",
+            "last_date": "2026-11-25",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 226
+            },
+            "frequency": "daily_or_business_daily"
+          },
+          {
+            "series": "RRPONTSYD",
+            "status": "source_access_ok",
+            "observations": 724,
+            "first_date": "2024-01-02",
+            "last_date": "2026-11-25",
+            "coverage": {
+              "2024": 250,
+              "2025": 249,
+              "2026": 225
             },
             "frequency": "daily_or_business_daily"
           },
@@ -91,13 +91,13 @@
           {
             "series": "IORB",
             "status": "source_access_ok",
-            "observations": 1060,
+            "observations": 1062,
             "first_date": "2024-01-01",
-            "last_date": "2026-11-25",
+            "last_date": "2026-11-27",
             "coverage": {
               "2024": 366,
               "2025": 365,
-              "2026": 329
+              "2026": 331
             },
             "frequency": "daily_or_business_daily"
           },
@@ -119,42 +119,42 @@
           {
             "symbol": "GC=F",
             "status": "available",
-            "bars": 13235,
-            "valid_ohlc_bars": 10461,
-            "invalid_or_missing_ohlc_bars": 2774,
+            "bars": 13245,
+            "valid_ohlc_bars": 10470,
+            "invalid_or_missing_ohlc_bars": 2775,
             "first_date": "2025-02-02T23:00:00.000Z",
-            "last_date": "2026-11-25T17:51:09.000Z",
+            "last_date": "2026-11-26T04:00:00.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 5281,
-              "2026": 5180
+              "2026": 5189
             },
-            "complete_utc_four_hour_buckets": 2268,
+            "complete_utc_four_hour_buckets": 2270,
             "complete_utc_four_hour_per_year": {
               "2024": 0,
               "2025": 1144,
-              "2026": 1124
+              "2026": 1126
             },
             "exchange_session_aligned_4h_verified": false
           },
           {
             "symbol": "GLD",
             "status": "available",
-            "bars": 3191,
-            "valid_ohlc_bars": 3178,
+            "bars": 3194,
+            "valid_ohlc_bars": 3181,
             "invalid_or_missing_ohlc_bars": 13,
             "first_date": "2025-02-03T14:30:00.000Z",
-            "last_date": "2026-11-25T18:01:09.000Z",
+            "last_date": "2026-11-25T21:00:00.000Z",
             "hourly_per_year": {
               "2024": 0,
               "2025": 1601,
-              "2026": 1577
+              "2026": 1580
             },
-            "complete_utc_four_hour_buckets": 451,
+            "complete_utc_four_hour_buckets": 452,
             "complete_utc_four_hour_per_year": {
               "2024": 0,
               "2025": 227,
-              "2026": 224
+              "2026": 225
             },
             "exchange_session_aligned_4h_verified": false
           }
@@ -273,27 +273,27 @@
             "duplicate_auction_identity": 0,
             "bad_date_order": 0
           },
-          "realized_dts": 726
+          "realized_dts": 727
         },
         "by_horizon": {
           "D+1": {
             "earlier_results_only_proxy": {
-              "samples": 456,
-              "known_event_samples": 181,
-              "known_event_coverage_pct": 39.7,
-              "auction_known_proxy_mae_usd_billions": 28.306,
-              "zero_baseline_mae_usd_billions": 9.552,
-              "mae_vs_zero_improvement_pct": -196.3,
-              "direction_match_all_samples_pct": 25.9
+              "samples": 457,
+              "known_event_samples": 182,
+              "known_event_coverage_pct": 39.8,
+              "auction_known_proxy_mae_usd_billions": 28.724,
+              "zero_baseline_mae_usd_billions": 9.643,
+              "mae_vs_zero_improvement_pct": -197.9,
+              "direction_match_all_samples_pct": 25.8
             },
             "announced_offerings_proxy": {
-              "samples": 456,
-              "known_event_samples": 183,
-              "known_event_coverage_pct": 40.1,
-              "auction_known_proxy_mae_usd_billions": 8.326,
-              "zero_baseline_mae_usd_billions": 9.552,
-              "mae_vs_zero_improvement_pct": 12.8,
-              "direction_match_all_samples_pct": 35.1
+              "samples": 457,
+              "known_event_samples": 184,
+              "known_event_coverage_pct": 40.3,
+              "auction_known_proxy_mae_usd_billions": 8.789,
+              "zero_baseline_mae_usd_billions": 9.643,
+              "mae_vs_zero_improvement_pct": 8.9,
+              "direction_match_all_samples_pct": 35
             },
             "by_year": {
               "2025": {
@@ -318,44 +318,44 @@
               },
               "2026": {
                 "earlier_results_only_proxy": {
-                  "samples": 217,
-                  "known_event_samples": 86,
-                  "known_event_coverage_pct": 39.6,
-                  "auction_known_proxy_mae_usd_billions": 34.873,
-                  "zero_baseline_mae_usd_billions": 8.978,
-                  "mae_vs_zero_improvement_pct": -288.4,
-                  "direction_match_all_samples_pct": 23
+                  "samples": 218,
+                  "known_event_samples": 87,
+                  "known_event_coverage_pct": 39.9,
+                  "auction_known_proxy_mae_usd_billions": 35.721,
+                  "zero_baseline_mae_usd_billions": 9.173,
+                  "mae_vs_zero_improvement_pct": -289.4,
+                  "direction_match_all_samples_pct": 22.9
                 },
                 "announced_offerings_proxy": {
-                  "samples": 217,
-                  "known_event_samples": 87,
-                  "known_event_coverage_pct": 40.1,
-                  "auction_known_proxy_mae_usd_billions": 14.924,
-                  "zero_baseline_mae_usd_billions": 8.978,
-                  "mae_vs_zero_improvement_pct": -66.2,
-                  "direction_match_all_samples_pct": 30
+                  "samples": 218,
+                  "known_event_samples": 88,
+                  "known_event_coverage_pct": 40.4,
+                  "auction_known_proxy_mae_usd_billions": 15.863,
+                  "zero_baseline_mae_usd_billions": 9.173,
+                  "mae_vs_zero_improvement_pct": -72.9,
+                  "direction_match_all_samples_pct": 29.8
                 }
               }
             }
           },
           "D+3": {
             "earlier_results_only_proxy": {
-              "samples": 418,
-              "known_event_samples": 418,
+              "samples": 419,
+              "known_event_samples": 419,
               "known_event_coverage_pct": 100,
-              "auction_known_proxy_mae_usd_billions": 222.203,
-              "zero_baseline_mae_usd_billions": 28.173,
-              "mae_vs_zero_improvement_pct": -688.7,
-              "direction_match_all_samples_pct": 40.2
+              "auction_known_proxy_mae_usd_billions": 222.197,
+              "zero_baseline_mae_usd_billions": 28.228,
+              "mae_vs_zero_improvement_pct": -687.1,
+              "direction_match_all_samples_pct": 40.1
             },
             "announced_offerings_proxy": {
-              "samples": 418,
-              "known_event_samples": 418,
+              "samples": 419,
+              "known_event_samples": 419,
               "known_event_coverage_pct": 100,
-              "auction_known_proxy_mae_usd_billions": 24.923,
-              "zero_baseline_mae_usd_billions": 28.173,
-              "mae_vs_zero_improvement_pct": 11.5,
-              "direction_match_all_samples_pct": 86.8
+              "auction_known_proxy_mae_usd_billions": 25.388,
+              "zero_baseline_mae_usd_billions": 28.228,
+              "mae_vs_zero_improvement_pct": 10.1,
+              "direction_match_all_samples_pct": 86.6
             },
             "by_year": {
               "2025": {
@@ -380,44 +380,44 @@
               },
               "2026": {
                 "earlier_results_only_proxy": {
-                  "samples": 201,
-                  "known_event_samples": 201,
+                  "samples": 202,
+                  "known_event_samples": 202,
                   "known_event_coverage_pct": 100,
-                  "auction_known_proxy_mae_usd_billions": 240.785,
-                  "zero_baseline_mae_usd_billions": 26.88,
-                  "mae_vs_zero_improvement_pct": -795.8,
-                  "direction_match_all_samples_pct": 35.3
+                  "auction_known_proxy_mae_usd_billions": 240.681,
+                  "zero_baseline_mae_usd_billions": 27.001,
+                  "mae_vs_zero_improvement_pct": -791.4,
+                  "direction_match_all_samples_pct": 35.1
                 },
                 "announced_offerings_proxy": {
-                  "samples": 201,
-                  "known_event_samples": 201,
+                  "samples": 202,
+                  "known_event_samples": 202,
                   "known_event_coverage_pct": 100,
-                  "auction_known_proxy_mae_usd_billions": 44.165,
-                  "zero_baseline_mae_usd_billions": 26.88,
-                  "mae_vs_zero_improvement_pct": -64.3,
-                  "direction_match_all_samples_pct": 76.6
+                  "auction_known_proxy_mae_usd_billions": 45.034,
+                  "zero_baseline_mae_usd_billions": 27.001,
+                  "mae_vs_zero_improvement_pct": -66.8,
+                  "direction_match_all_samples_pct": 76.2
                 }
               }
             }
           },
           "D+5": {
             "earlier_results_only_proxy": {
-              "samples": 381,
-              "known_event_samples": 381,
+              "samples": 382,
+              "known_event_samples": 382,
               "known_event_coverage_pct": 100,
-              "auction_known_proxy_mae_usd_billions": 432.052,
-              "zero_baseline_mae_usd_billions": 45.617,
-              "mae_vs_zero_improvement_pct": -847.1,
-              "direction_match_all_samples_pct": 41.2
+              "auction_known_proxy_mae_usd_billions": 432.273,
+              "zero_baseline_mae_usd_billions": 45.669,
+              "mae_vs_zero_improvement_pct": -846.5,
+              "direction_match_all_samples_pct": 41.1
             },
             "announced_offerings_proxy": {
-              "samples": 381,
-              "known_event_samples": 381,
+              "samples": 382,
+              "known_event_samples": 382,
               "known_event_coverage_pct": 100,
-              "auction_known_proxy_mae_usd_billions": 136.406,
-              "zero_baseline_mae_usd_billions": 45.617,
-              "mae_vs_zero_improvement_pct": -199,
-              "direction_match_all_samples_pct": 67.2
+              "auction_known_proxy_mae_usd_billions": 137.4,
+              "zero_baseline_mae_usd_billions": 45.669,
+              "mae_vs_zero_improvement_pct": -200.9,
+              "direction_match_all_samples_pct": 67
             },
             "by_year": {
               "2025": {
@@ -442,37 +442,28 @@
               },
               "2026": {
                 "earlier_results_only_proxy": {
-                  "samples": 185,
-                  "known_event_samples": 185,
+                  "samples": 186,
+                  "known_event_samples": 186,
                   "known_event_coverage_pct": 100,
-                  "auction_known_proxy_mae_usd_billions": 461.975,
-                  "zero_baseline_mae_usd_billions": 44.56,
-                  "mae_vs_zero_improvement_pct": -936.7,
-                  "direction_match_all_samples_pct": 36.8
+                  "auction_known_proxy_mae_usd_billions": 462.268,
+                  "zero_baseline_mae_usd_billions": 44.673,
+                  "mae_vs_zero_improvement_pct": -934.8,
+                  "direction_match_all_samples_pct": 36.6
                 },
                 "announced_offerings_proxy": {
-                  "samples": 185,
-                  "known_event_samples": 185,
+                  "samples": 186,
+                  "known_event_samples": 186,
                   "known_event_coverage_pct": 100,
-                  "auction_known_proxy_mae_usd_billions": 166.531,
-                  "zero_baseline_mae_usd_billions": 44.56,
-                  "mae_vs_zero_improvement_pct": -273.7,
-                  "direction_match_all_samples_pct": 62.7
+                  "auction_known_proxy_mae_usd_billions": 168.412,
+                  "zero_baseline_mae_usd_billions": 44.673,
+                  "mae_vs_zero_improvement_pct": -277,
+                  "direction_match_all_samples_pct": 62.4
                 }
               }
             }
           }
         },
         "recent_historical_comparisons": [
-          {
-            "asof": "2026-11-13",
-            "target": "2026-11-16",
-            "known_auction_bill_proxy_usd_billions": 0,
-            "realized_dts_bill_net_usd_billions": -0.007,
-            "known_event_count": 0,
-            "announced_issuance_bill_proxy_usd_billions": 0,
-            "announced_event_count": 0
-          },
           {
             "asof": "2026-11-16",
             "target": "2026-11-17",
@@ -517,6 +508,15 @@
             "known_event_count": 0,
             "announced_issuance_bill_proxy_usd_billions": 0,
             "announced_event_count": 0
+          },
+          {
+            "asof": "2026-11-23",
+            "target": "2026-11-24",
+            "known_auction_bill_proxy_usd_billions": -168.34,
+            "realized_dts_bill_net_usd_billions": 51.305,
+            "known_event_count": 2,
+            "announced_issuance_bill_proxy_usd_billions": -168.34,
+            "announced_event_count": 2
           }
         ],
         "full_TGA_forecast_validated": false,
@@ -547,34 +547,34 @@
       "error": null,
       "observations": null,
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-26",
       "data": {
         "status": "dxy_daily_source_access_ok",
         "source": "Yahoo chart DX-Y.NYB (ICE US Dollar Index)",
         "symbol": "DX-Y.NYB",
-        "raw_bars": 884,
-        "usable_unique_trading_days": 731,
+        "raw_bars": 885,
+        "usable_unique_trading_days": 732,
         "invalid_ohlc_bars": 153,
         "duplicate_exchange_dates_excluded": 0,
         "first_date": "2024-01-02",
-        "last_date": "2026-11-25",
+        "last_date": "2026-11-26",
         "by_year": {
           "2024": 252,
           "2025": 252,
-          "2026": 227
+          "2026": 228
         },
         "recent": [
-          {
-            "date": "2026-11-23",
-            "close": 104.31999969482422
-          },
           {
             "date": "2026-11-24",
             "close": 103.80999755859375
           },
           {
             "date": "2026-11-25",
-            "close": 103.62100219726562
+            "close": 103.66999816894531
+          },
+          {
+            "date": "2026-11-26",
+            "close": 103.77999877929688
           }
         ],
         "usable_for_full_v22_point_in_time": false,
@@ -1037,30 +1037,30 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 1",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "12",
-              "transaction_mtd_amt": "241",
-              "transaction_fytd_amt": "579"
+              "transaction_today_amt": "13",
+              "transaction_mtd_amt": "254",
+              "transaction_fytd_amt": "592"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 2",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "10",
-              "transaction_mtd_amt": "311",
-              "transaction_fytd_amt": "819"
+              "transaction_today_amt": "15",
+              "transaction_mtd_amt": "326",
+              "transaction_fytd_amt": "834"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 3",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -1070,87 +1070,87 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 4",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "42",
-              "transaction_mtd_amt": "295",
-              "transaction_fytd_amt": "848"
+              "transaction_today_amt": "20",
+              "transaction_mtd_amt": "315",
+              "transaction_fytd_amt": "869"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 5",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "25",
-              "transaction_mtd_amt": "363",
-              "transaction_fytd_amt": "842"
+              "transaction_today_amt": "21",
+              "transaction_mtd_amt": "383",
+              "transaction_fytd_amt": "862"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 6",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "88",
-              "transaction_mtd_amt": "1464",
-              "transaction_fytd_amt": "3826"
+              "transaction_today_amt": "115",
+              "transaction_mtd_amt": "1578",
+              "transaction_fytd_amt": "3940"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 7",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "4",
-              "transaction_mtd_amt": "628",
-              "transaction_fytd_amt": "737"
+              "transaction_today_amt": "2",
+              "transaction_mtd_amt": "630",
+              "transaction_fytd_amt": "739"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 8",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "300",
-              "transaction_mtd_amt": "4417",
-              "transaction_fytd_amt": "10575"
+              "transaction_today_amt": "362",
+              "transaction_mtd_amt": "4778",
+              "transaction_fytd_amt": "10936"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 9",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "87",
-              "transaction_mtd_amt": "508",
-              "transaction_fytd_amt": "1402"
+              "transaction_today_amt": "63",
+              "transaction_mtd_amt": "571",
+              "transaction_fytd_amt": "1465"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 10",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "19",
-              "transaction_mtd_amt": "358",
-              "transaction_fytd_amt": "1320"
+              "transaction_today_amt": "24",
+              "transaction_mtd_amt": "382",
+              "transaction_fytd_amt": "1344"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 11",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1",
+              "transaction_today_amt": "0",
               "transaction_mtd_amt": "15",
               "transaction_fytd_amt": "335"
             }
@@ -1158,173 +1158,173 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 12",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1096",
-              "transaction_mtd_amt": "4501",
-              "transaction_fytd_amt": "12266"
+              "transaction_today_amt": "293",
+              "transaction_mtd_amt": "4794",
+              "transaction_fytd_amt": "12559"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 13",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "37",
-              "transaction_mtd_amt": "506",
-              "transaction_fytd_amt": "1130"
+              "transaction_today_amt": "32",
+              "transaction_mtd_amt": "539",
+              "transaction_fytd_amt": "1162"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 14",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "611",
-              "transaction_mtd_amt": "6179",
-              "transaction_fytd_amt": "33273"
+              "transaction_today_amt": "19655",
+              "transaction_mtd_amt": "25834",
+              "transaction_fytd_amt": "52928"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 15",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "13",
-              "transaction_mtd_amt": "212",
-              "transaction_fytd_amt": "568"
+              "transaction_today_amt": "15",
+              "transaction_mtd_amt": "227",
+              "transaction_fytd_amt": "583"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 16",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "5",
-              "transaction_mtd_amt": "71",
-              "transaction_fytd_amt": "145"
+              "transaction_today_amt": "15",
+              "transaction_mtd_amt": "86",
+              "transaction_fytd_amt": "159"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 17",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "3",
-              "transaction_mtd_amt": "55",
-              "transaction_fytd_amt": "464"
+              "transaction_today_amt": "14",
+              "transaction_mtd_amt": "69",
+              "transaction_fytd_amt": "478"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 18",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "4",
-              "transaction_mtd_amt": "385",
-              "transaction_fytd_amt": "785"
+              "transaction_today_amt": "3",
+              "transaction_mtd_amt": "388",
+              "transaction_fytd_amt": "788"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 19",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "49",
-              "transaction_mtd_amt": "1664",
-              "transaction_fytd_amt": "3762"
+              "transaction_today_amt": "44",
+              "transaction_mtd_amt": "1708",
+              "transaction_fytd_amt": "3806"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 20",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "-3",
-              "transaction_mtd_amt": "103",
-              "transaction_fytd_amt": "174"
+              "transaction_today_amt": "3",
+              "transaction_mtd_amt": "106",
+              "transaction_fytd_amt": "177"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 21",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "3",
-              "transaction_mtd_amt": "41",
-              "transaction_fytd_amt": "108"
+              "transaction_today_amt": "1",
+              "transaction_mtd_amt": "42",
+              "transaction_fytd_amt": "109"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 22",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "3",
-              "transaction_mtd_amt": "521",
-              "transaction_fytd_amt": "2012"
+              "transaction_today_amt": "15",
+              "transaction_mtd_amt": "537",
+              "transaction_fytd_amt": "2027"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 23",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "2",
-              "transaction_mtd_amt": "75",
-              "transaction_fytd_amt": "202"
+              "transaction_today_amt": "1",
+              "transaction_mtd_amt": "76",
+              "transaction_fytd_amt": "203"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 24",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1",
-              "transaction_mtd_amt": "23",
-              "transaction_fytd_amt": "74"
+              "transaction_today_amt": "4",
+              "transaction_mtd_amt": "27",
+              "transaction_fytd_amt": "79"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 25",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "14",
-              "transaction_mtd_amt": "355",
-              "transaction_fytd_amt": "1209"
+              "transaction_today_amt": "55",
+              "transaction_mtd_amt": "410",
+              "transaction_fytd_amt": "1264"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 26",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1",
-              "transaction_mtd_amt": "23",
-              "transaction_fytd_amt": "60"
+              "transaction_today_amt": "2",
+              "transaction_mtd_amt": "25",
+              "transaction_fytd_amt": "61"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 27",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "22",
@@ -1334,41 +1334,41 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 28",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "15",
-              "transaction_mtd_amt": "938",
-              "transaction_fytd_amt": "4263"
+              "transaction_today_amt": "158",
+              "transaction_mtd_amt": "1095",
+              "transaction_fytd_amt": "4421"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 29",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "2",
-              "transaction_mtd_amt": "53",
-              "transaction_fytd_amt": "191"
+              "transaction_today_amt": "6",
+              "transaction_mtd_amt": "59",
+              "transaction_fytd_amt": "197"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 30",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "2",
-              "transaction_mtd_amt": "487",
-              "transaction_fytd_amt": "1176"
+              "transaction_mtd_amt": "488",
+              "transaction_fytd_amt": "1177"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 31",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "81",
@@ -1378,8 +1378,8 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 32",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -1389,8 +1389,8 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 33",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "1171",
@@ -1400,8 +1400,8 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 34",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -1411,195 +1411,195 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 35",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "64",
-              "transaction_mtd_amt": "554",
-              "transaction_fytd_amt": "968"
+              "transaction_today_amt": "15",
+              "transaction_mtd_amt": "570",
+              "transaction_fytd_amt": "984"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 36",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "139",
-              "transaction_mtd_amt": "4089",
-              "transaction_fytd_amt": "25892"
+              "transaction_today_amt": "119",
+              "transaction_mtd_amt": "4208",
+              "transaction_fytd_amt": "26012"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 37",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "23",
-              "transaction_mtd_amt": "1311",
-              "transaction_fytd_amt": "2954"
+              "transaction_today_amt": "101",
+              "transaction_mtd_amt": "1411",
+              "transaction_fytd_amt": "3055"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 38",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "1",
               "transaction_mtd_amt": "508",
-              "transaction_fytd_amt": "695"
+              "transaction_fytd_amt": "696"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 39",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "48",
-              "transaction_mtd_amt": "851",
-              "transaction_fytd_amt": "1877"
+              "transaction_today_amt": "80",
+              "transaction_mtd_amt": "931",
+              "transaction_fytd_amt": "1957"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 40",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "61",
-              "transaction_mtd_amt": "5168",
-              "transaction_fytd_amt": "11180"
+              "transaction_today_amt": "387",
+              "transaction_mtd_amt": "5555",
+              "transaction_fytd_amt": "11567"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 41",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "696",
-              "transaction_mtd_amt": "9162",
-              "transaction_fytd_amt": "46659"
+              "transaction_today_amt": "524",
+              "transaction_mtd_amt": "9686",
+              "transaction_fytd_amt": "47182"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 42",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "119",
-              "transaction_mtd_amt": "3490",
-              "transaction_fytd_amt": "18439"
+              "transaction_today_amt": "135",
+              "transaction_mtd_amt": "3624",
+              "transaction_fytd_amt": "18574"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 43",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "59",
-              "transaction_mtd_amt": "418",
-              "transaction_fytd_amt": "1014"
+              "transaction_today_amt": "2",
+              "transaction_mtd_amt": "420",
+              "transaction_fytd_amt": "1017"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 44",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "30373",
-              "transaction_mtd_amt": "247736",
-              "transaction_fytd_amt": "521072"
+              "transaction_today_amt": "4044",
+              "transaction_mtd_amt": "251780",
+              "transaction_fytd_amt": "525116"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 45",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "39",
-              "transaction_mtd_amt": "605",
-              "transaction_fytd_amt": "1522"
+              "transaction_today_amt": "49",
+              "transaction_mtd_amt": "654",
+              "transaction_fytd_amt": "1570"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 46",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "1",
-              "transaction_fytd_amt": "42"
+              "transaction_today_amt": "4",
+              "transaction_mtd_amt": "5",
+              "transaction_fytd_amt": "45"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 47",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1",
-              "transaction_mtd_amt": "195",
-              "transaction_fytd_amt": "246"
+              "transaction_today_amt": "3",
+              "transaction_mtd_amt": "198",
+              "transaction_fytd_amt": "248"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 48",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "17",
-              "transaction_fytd_amt": "153"
+              "transaction_fytd_amt": "154"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 49",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "2",
-              "transaction_mtd_amt": "112",
-              "transaction_fytd_amt": "223"
+              "transaction_today_amt": "1",
+              "transaction_mtd_amt": "114",
+              "transaction_fytd_amt": "225"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 50",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1",
-              "transaction_mtd_amt": "665",
-              "transaction_fytd_amt": "1286"
+              "transaction_today_amt": "4",
+              "transaction_mtd_amt": "669",
+              "transaction_fytd_amt": "1290"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 51",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "3",
+              "transaction_today_amt": "1",
+              "transaction_mtd_amt": "4",
               "transaction_fytd_amt": "9"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 52",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "834",
@@ -1609,52 +1609,52 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 53",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "46",
-              "transaction_mtd_amt": "5897",
-              "transaction_fytd_amt": "13315"
+              "transaction_today_amt": "21",
+              "transaction_mtd_amt": "5918",
+              "transaction_fytd_amt": "13337"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 54",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "5",
-              "transaction_mtd_amt": "81",
-              "transaction_fytd_amt": "375"
+              "transaction_today_amt": "3",
+              "transaction_mtd_amt": "84",
+              "transaction_fytd_amt": "378"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 55",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "12",
-              "transaction_mtd_amt": "135",
-              "transaction_fytd_amt": "430"
+              "transaction_today_amt": "8",
+              "transaction_mtd_amt": "143",
+              "transaction_fytd_amt": "438"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 56",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "2",
-              "transaction_mtd_amt": "137",
-              "transaction_fytd_amt": "497"
+              "transaction_today_amt": "3",
+              "transaction_mtd_amt": "140",
+              "transaction_fytd_amt": "500"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 57",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "972",
@@ -1664,8 +1664,8 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 58",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -1675,41 +1675,41 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 59",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "69",
-              "transaction_mtd_amt": "4746",
-              "transaction_fytd_amt": "6540"
+              "transaction_today_amt": "398",
+              "transaction_mtd_amt": "5145",
+              "transaction_fytd_amt": "6939"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 60",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "145",
-              "transaction_fytd_amt": "380"
+              "transaction_today_amt": "2",
+              "transaction_mtd_amt": "147",
+              "transaction_fytd_amt": "382"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 61",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "12",
-              "transaction_mtd_amt": "111",
-              "transaction_fytd_amt": "277"
+              "transaction_today_amt": "5",
+              "transaction_mtd_amt": "116",
+              "transaction_fytd_amt": "282"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 62",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "6",
@@ -1719,8 +1719,8 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 63",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "6",
@@ -1730,8 +1730,8 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 64",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "3",
@@ -1741,8 +1741,8 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 65",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "2",
@@ -1752,8 +1752,8 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 66",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -1763,19 +1763,19 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 67",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "56",
-              "transaction_mtd_amt": "219",
-              "transaction_fytd_amt": "407"
+              "transaction_today_amt": "1",
+              "transaction_mtd_amt": "220",
+              "transaction_fytd_amt": "408"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 68",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -1785,8 +1785,8 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 69",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "4",
@@ -1796,41 +1796,41 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 70",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1",
-              "transaction_mtd_amt": "115",
-              "transaction_fytd_amt": "175"
+              "transaction_today_amt": "15",
+              "transaction_mtd_amt": "129",
+              "transaction_fytd_amt": "189"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 71",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "122",
-              "transaction_mtd_amt": "1500",
-              "transaction_fytd_amt": "3404"
+              "transaction_today_amt": "67",
+              "transaction_mtd_amt": "1567",
+              "transaction_fytd_amt": "3471"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 72",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "4",
-              "transaction_mtd_amt": "72",
-              "transaction_fytd_amt": "171"
+              "transaction_today_amt": "5",
+              "transaction_mtd_amt": "77",
+              "transaction_fytd_amt": "177"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 73",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "3",
@@ -1840,120 +1840,120 @@
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 74",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "30",
-              "transaction_mtd_amt": "3960",
-              "transaction_fytd_amt": "5970"
+              "transaction_today_amt": "19",
+              "transaction_mtd_amt": "3980",
+              "transaction_fytd_amt": "5990"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 75",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "401",
-              "transaction_mtd_amt": "6452",
-              "transaction_fytd_amt": "15558"
+              "transaction_today_amt": "562",
+              "transaction_mtd_amt": "7014",
+              "transaction_fytd_amt": "16120"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 76",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "7",
-              "transaction_mtd_amt": "48",
-              "transaction_fytd_amt": "215"
+              "transaction_today_amt": "6",
+              "transaction_mtd_amt": "55",
+              "transaction_fytd_amt": "221"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 77",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "8",
-              "transaction_mtd_amt": "191",
-              "transaction_fytd_amt": "467"
+              "transaction_today_amt": "18",
+              "transaction_mtd_amt": "209",
+              "transaction_fytd_amt": "485"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Deposits | II | Deposits and Withdrawals of Operating Cash | 79",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1071",
-              "transaction_mtd_amt": "2252936",
-              "transaction_fytd_amt": "5252009"
+              "transaction_today_amt": "340938",
+              "transaction_mtd_amt": "2593874",
+              "transaction_fytd_amt": "5592947"
             }
           },
           {
             "label": "Treasury General Account Total Deposits | Deposits | II | Deposits and Withdrawals of Operating Cash | 80",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "35919",
-              "transaction_mtd_amt": "2579526",
-              "transaction_fytd_amt": "6026850"
+              "transaction_today_amt": "368494",
+              "transaction_mtd_amt": "2948019",
+              "transaction_fytd_amt": "6395343"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 81",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "122",
-              "transaction_mtd_amt": "2049",
-              "transaction_fytd_amt": "4930"
+              "transaction_today_amt": "245",
+              "transaction_mtd_amt": "2294",
+              "transaction_fytd_amt": "5175"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 82",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "216",
-              "transaction_mtd_amt": "2385",
-              "transaction_fytd_amt": "5088"
+              "transaction_today_amt": "76",
+              "transaction_mtd_amt": "2460",
+              "transaction_fytd_amt": "5163"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 83",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "185",
-              "transaction_mtd_amt": "1916",
-              "transaction_fytd_amt": "13746"
+              "transaction_today_amt": "130",
+              "transaction_mtd_amt": "2046",
+              "transaction_fytd_amt": "13876"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 84",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "253",
-              "transaction_mtd_amt": "3327",
-              "transaction_fytd_amt": "7315"
+              "transaction_today_amt": "111",
+              "transaction_mtd_amt": "3438",
+              "transaction_fytd_amt": "7425"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 85",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "6",
+              "transaction_today_amt": "0",
               "transaction_mtd_amt": "133",
               "transaction_fytd_amt": "403"
             }
@@ -1961,195 +1961,195 @@
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 86",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "40",
-              "transaction_mtd_amt": "713",
-              "transaction_fytd_amt": "1787"
+              "transaction_today_amt": "80",
+              "transaction_mtd_amt": "793",
+              "transaction_fytd_amt": "1867"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 87",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "721",
-              "transaction_mtd_amt": "6307",
-              "transaction_fytd_amt": "13734"
+              "transaction_today_amt": "224",
+              "transaction_mtd_amt": "6531",
+              "transaction_fytd_amt": "13958"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 88",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "31",
-              "transaction_mtd_amt": "530",
-              "transaction_fytd_amt": "1167"
+              "transaction_today_amt": "28",
+              "transaction_mtd_amt": "558",
+              "transaction_fytd_amt": "1195"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 89",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "54",
-              "transaction_mtd_amt": "866",
-              "transaction_fytd_amt": "1675"
+              "transaction_today_amt": "32",
+              "transaction_mtd_amt": "898",
+              "transaction_fytd_amt": "1708"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 90",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "3210",
-              "transaction_mtd_amt": "39110",
-              "transaction_fytd_amt": "81261"
+              "transaction_today_amt": "3377",
+              "transaction_mtd_amt": "42487",
+              "transaction_fytd_amt": "84638"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 91",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "116",
-              "transaction_mtd_amt": "2127",
-              "transaction_fytd_amt": "5391"
+              "transaction_today_amt": "94",
+              "transaction_mtd_amt": "2221",
+              "transaction_fytd_amt": "5485"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 92",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "9",
-              "transaction_mtd_amt": "4479",
-              "transaction_fytd_amt": "19085"
+              "transaction_today_amt": "14",
+              "transaction_mtd_amt": "4493",
+              "transaction_fytd_amt": "19100"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 93",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "475",
-              "transaction_fytd_amt": "12429"
+              "transaction_today_amt": "1",
+              "transaction_mtd_amt": "476",
+              "transaction_fytd_amt": "12430"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 94",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "570",
-              "transaction_mtd_amt": "7503",
-              "transaction_fytd_amt": "22141"
+              "transaction_today_amt": "660",
+              "transaction_mtd_amt": "8163",
+              "transaction_fytd_amt": "22801"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 95",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "186",
-              "transaction_mtd_amt": "3839",
-              "transaction_fytd_amt": "9940"
+              "transaction_today_amt": "188",
+              "transaction_mtd_amt": "4026",
+              "transaction_fytd_amt": "10128"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 96",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "28",
-              "transaction_mtd_amt": "432",
-              "transaction_fytd_amt": "1030"
+              "transaction_today_amt": "105",
+              "transaction_mtd_amt": "537",
+              "transaction_fytd_amt": "1135"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 97",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "38",
-              "transaction_mtd_amt": "556",
-              "transaction_fytd_amt": "1490"
+              "transaction_today_amt": "52",
+              "transaction_mtd_amt": "608",
+              "transaction_fytd_amt": "1542"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 98",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1221",
-              "transaction_mtd_amt": "15025",
-              "transaction_fytd_amt": "71932"
+              "transaction_today_amt": "1308",
+              "transaction_mtd_amt": "16334",
+              "transaction_fytd_amt": "73241"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 99",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1339",
-              "transaction_mtd_amt": "18198",
-              "transaction_fytd_amt": "99866"
+              "transaction_today_amt": "1212",
+              "transaction_mtd_amt": "19410",
+              "transaction_fytd_amt": "101078"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 100",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "616",
-              "transaction_mtd_amt": "44254",
-              "transaction_fytd_amt": "106919"
+              "transaction_today_amt": "1695",
+              "transaction_mtd_amt": "45949",
+              "transaction_fytd_amt": "108614"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 101",
             "count": 56,
-            "first_date": "2026-09-02",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-03",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "67",
-              "transaction_mtd_amt": "900",
-              "transaction_fytd_amt": "1900"
+              "transaction_today_amt": "65",
+              "transaction_mtd_amt": "964",
+              "transaction_fytd_amt": "1965"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 102",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "46",
-              "transaction_mtd_amt": "422",
-              "transaction_fytd_amt": "3942"
+              "transaction_today_amt": "14",
+              "transaction_mtd_amt": "436",
+              "transaction_fytd_amt": "3956"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 103",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "11719",
@@ -2159,8 +2159,8 @@
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 104",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "17",
@@ -2170,188 +2170,188 @@
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 105",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "217",
-              "transaction_mtd_amt": "2699",
-              "transaction_fytd_amt": "5918"
+              "transaction_today_amt": "64",
+              "transaction_mtd_amt": "2763",
+              "transaction_fytd_amt": "5981"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 106",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "44",
-              "transaction_mtd_amt": "532",
-              "transaction_fytd_amt": "1192"
+              "transaction_today_amt": "42",
+              "transaction_mtd_amt": "574",
+              "transaction_fytd_amt": "1234"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 107",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "101",
-              "transaction_mtd_amt": "1598",
-              "transaction_fytd_amt": "3483"
+              "transaction_today_amt": "127",
+              "transaction_mtd_amt": "1725",
+              "transaction_fytd_amt": "3611"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 108",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "101",
-              "transaction_mtd_amt": "3096",
-              "transaction_fytd_amt": "7091"
+              "transaction_today_amt": "92",
+              "transaction_mtd_amt": "3188",
+              "transaction_fytd_amt": "7183"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 109",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "136",
-              "transaction_mtd_amt": "1704",
-              "transaction_fytd_amt": "4024"
+              "transaction_today_amt": "125",
+              "transaction_mtd_amt": "1829",
+              "transaction_fytd_amt": "4150"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 110",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "25",
-              "transaction_mtd_amt": "1152",
-              "transaction_fytd_amt": "2374"
+              "transaction_today_amt": "17",
+              "transaction_mtd_amt": "1168",
+              "transaction_fytd_amt": "2390"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 111",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "161",
-              "transaction_mtd_amt": "1321",
-              "transaction_fytd_amt": "3226"
+              "transaction_today_amt": "90",
+              "transaction_mtd_amt": "1411",
+              "transaction_fytd_amt": "3316"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 112",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "118",
-              "transaction_mtd_amt": "6442",
-              "transaction_fytd_amt": "15207"
+              "transaction_today_amt": "93",
+              "transaction_mtd_amt": "6535",
+              "transaction_fytd_amt": "15300"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 113",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "214",
-              "transaction_mtd_amt": "1584",
-              "transaction_fytd_amt": "3848"
+              "transaction_today_amt": "101",
+              "transaction_mtd_amt": "1685",
+              "transaction_fytd_amt": "3949"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 114",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "28",
-              "transaction_mtd_amt": "157",
-              "transaction_fytd_amt": "428"
+              "transaction_today_amt": "6",
+              "transaction_mtd_amt": "163",
+              "transaction_fytd_amt": "434"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 115",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "82",
-              "transaction_mtd_amt": "6703",
-              "transaction_fytd_amt": "13908"
+              "transaction_today_amt": "181",
+              "transaction_mtd_amt": "6884",
+              "transaction_fytd_amt": "14088"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 116",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "61",
-              "transaction_mtd_amt": "1165",
-              "transaction_fytd_amt": "2624"
+              "transaction_today_amt": "54",
+              "transaction_mtd_amt": "1219",
+              "transaction_fytd_amt": "2678"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 117",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "154",
-              "transaction_mtd_amt": "892",
-              "transaction_fytd_amt": "2888"
+              "transaction_today_amt": "37",
+              "transaction_mtd_amt": "928",
+              "transaction_fytd_amt": "2925"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 118",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "17",
-              "transaction_mtd_amt": "352",
-              "transaction_fytd_amt": "798"
+              "transaction_today_amt": "45",
+              "transaction_mtd_amt": "397",
+              "transaction_fytd_amt": "843"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 119",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "5",
-              "transaction_mtd_amt": "206",
-              "transaction_fytd_amt": "401"
+              "transaction_today_amt": "7",
+              "transaction_mtd_amt": "213",
+              "transaction_fytd_amt": "408"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 120",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "33",
-              "transaction_mtd_amt": "412",
-              "transaction_fytd_amt": "647"
+              "transaction_today_amt": "15",
+              "transaction_mtd_amt": "426",
+              "transaction_fytd_amt": "662"
             }
           },
           {
             "label": "Treasury General Account (TGA) | Withdrawals | II | Deposits and Withdrawals of Operating Cash | 121",
             "count": 55,
-            "first_date": "2026-09-03",
-            "last_date": "2026-11-23",
+            "first_date": "2026-09-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "97",
-              "transaction_mtd_amt": "1924",
-              "transaction_fytd_amt": "3745"
+              "transaction_today_amt": "122",
+              "transaction_mtd_amt": "2046",
+              "transaction_fytd_amt": "3867"
             }
           }
         ],
@@ -2409,43 +2409,65 @@
         ],
         "categories": [
           {
-            "category": "Redemptions | Nonmarketable | United States Savings Securities | null | IIIA | Public Debt Transactions | 19",
+            "category": "Redemptions | Marketable | Bills | null | IIIA | Public Debt Transactions | 15",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "35",
-              "transaction_mtd_amt": "1106",
-              "transaction_fytd_amt": "2701"
+              "transaction_today_amt": "286249",
+              "transaction_mtd_amt": "1970689",
+              "transaction_fytd_amt": "4523295"
+            }
+          },
+          {
+            "category": "Redemptions | Marketable | Notes | null | IIIA | Public Debt Transactions | 16",
+            "count": 435,
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
+            "example_amounts": {
+              "transaction_today_amt": "0",
+              "transaction_mtd_amt": "370481",
+              "transaction_fytd_amt": "461804"
+            }
+          },
+          {
+            "category": "Issues | Nonmarketable | Other | null | IIIA | Public Debt Transactions | 13",
+            "count": 435,
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
+            "example_amounts": {
+              "transaction_today_amt": "5186",
+              "transaction_mtd_amt": "37049",
+              "transaction_fytd_amt": "82464"
             }
           },
           {
             "category": "Issues | Marketable | Bills | Regular Series | IIIA | Public Debt Transactions | 1",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "-5",
-              "transaction_mtd_amt": "1843432",
-              "transaction_fytd_amt": "4634564"
+              "transaction_today_amt": "322554",
+              "transaction_mtd_amt": "2165986",
+              "transaction_fytd_amt": "4957118"
             }
           },
           {
             "category": "Issues | Marketable | Bills | Cash Management Series | IIIA | Public Debt Transactions | 2",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "0",
-              "transaction_fytd_amt": "25000"
+              "transaction_today_amt": "15000",
+              "transaction_mtd_amt": "15000",
+              "transaction_fytd_amt": "40000"
             }
           },
           {
             "category": "Issues | Marketable | Notes | null | IIIA | Public Debt Transactions | 3",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "356931",
@@ -2455,8 +2477,8 @@
           {
             "category": "Issues | Marketable | Bonds | null | IIIA | Public Debt Transactions | 4",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "30071",
@@ -2466,19 +2488,19 @@
           {
             "category": "Issues | Marketable | Inflation-Protected Securities Increment | null | IIIA | Public Debt Transactions | 5",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1262",
-              "transaction_mtd_amt": "9701",
-              "transaction_fytd_amt": "16118"
+              "transaction_today_amt": "420",
+              "transaction_mtd_amt": "10121",
+              "transaction_fytd_amt": "16538"
             }
           },
           {
             "category": "Issues | Marketable | Federal Financing Bank | null | IIIA | Public Debt Transactions | 6",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -2488,41 +2510,41 @@
           {
             "category": "Issues | Nonmarketable | United States Savings Securities | Cash Issue Price | IIIA | Public Debt Transactions | 7",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "28",
-              "transaction_mtd_amt": "355",
-              "transaction_fytd_amt": "441"
+              "transaction_mtd_amt": "384",
+              "transaction_fytd_amt": "469"
             }
           },
           {
             "category": "Issues | Nonmarketable | United States Savings Securities | Interest Increment | IIIA | Public Debt Transactions | 8",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "2",
-              "transaction_mtd_amt": "418",
-              "transaction_fytd_amt": "838"
+              "transaction_mtd_amt": "420",
+              "transaction_fytd_amt": "840"
             }
           },
           {
             "category": "Issues | Nonmarketable | Government Account Series | null | IIIA | Public Debt Transactions | 9",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "687892",
-              "transaction_mtd_amt": "10888370",
-              "transaction_fytd_amt": "26248908"
+              "transaction_today_amt": "782066",
+              "transaction_mtd_amt": "11670437",
+              "transaction_fytd_amt": "27030974"
             }
           },
           {
             "category": "Issues | Nonmarketable | Domestic Series | null | IIIA | Public Debt Transactions | 10",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -2532,8 +2554,8 @@
           {
             "category": "Issues | Nonmarketable | Foreign Series | null | IIIA | Public Debt Transactions | 11",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -2543,52 +2565,19 @@
           {
             "category": "Issues | Nonmarketable | State and Local Series | null | IIIA | Public Debt Transactions | 12",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "29",
-              "transaction_mtd_amt": "7961",
-              "transaction_fytd_amt": "19747"
-            }
-          },
-          {
-            "category": "Issues | Nonmarketable | Other | null | IIIA | Public Debt Transactions | 13",
-            "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
-            "example_amounts": {
-              "transaction_today_amt": "1020",
-              "transaction_mtd_amt": "31863",
-              "transaction_fytd_amt": "77278"
-            }
-          },
-          {
-            "category": "Redemptions | Marketable | Bills | null | IIIA | Public Debt Transactions | 15",
-            "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "1684440",
-              "transaction_fytd_amt": "4237046"
-            }
-          },
-          {
-            "category": "Redemptions | Marketable | Notes | null | IIIA | Public Debt Transactions | 16",
-            "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
-            "example_amounts": {
-              "transaction_today_amt": "0",
-              "transaction_mtd_amt": "370481",
-              "transaction_fytd_amt": "461804"
+              "transaction_today_amt": "457",
+              "transaction_mtd_amt": "8418",
+              "transaction_fytd_amt": "20204"
             }
           },
           {
             "category": "Redemptions | Marketable | Bonds | null | IIIA | Public Debt Transactions | 17",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "18043",
@@ -2598,8 +2587,8 @@
           {
             "category": "Redemptions | Marketable | Federal Financing Bank | null | IIIA | Public Debt Transactions | 18",
             "count": 435,
-            "first_date": "2025-03-03",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -2607,21 +2596,32 @@
             }
           },
           {
+            "category": "Redemptions | Nonmarketable | United States Savings Securities | null | IIIA | Public Debt Transactions | 19",
+            "count": 435,
+            "first_date": "2025-03-04",
+            "last_date": "2026-11-24",
+            "example_amounts": {
+              "transaction_today_amt": "38",
+              "transaction_mtd_amt": "1144",
+              "transaction_fytd_amt": "2740"
+            }
+          },
+          {
             "category": "Redemptions | Nonmarketable | Government Account Series | null | IIIA | Public Debt Transactions | 20",
             "count": 434,
-            "first_date": "2025-03-04",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-05",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "672218",
-              "transaction_mtd_amt": "10850491",
-              "transaction_fytd_amt": "26170791"
+              "transaction_today_amt": "768013",
+              "transaction_mtd_amt": "11618504",
+              "transaction_fytd_amt": "26938804"
             }
           },
           {
             "category": "Redemptions | Nonmarketable | Domestic Series | null | IIIA | Public Debt Transactions | 21",
             "count": 434,
-            "first_date": "2025-03-04",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-05",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -2631,8 +2631,8 @@
           {
             "category": "Redemptions | Nonmarketable | Foreign Series | null | IIIA | Public Debt Transactions | 22",
             "count": 434,
-            "first_date": "2025-03-04",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-05",
+            "last_date": "2026-11-24",
             "example_amounts": {
               "transaction_today_amt": "0",
               "transaction_mtd_amt": "0",
@@ -2642,23 +2642,23 @@
           {
             "category": "Redemptions | Nonmarketable | State and Local Series | null | IIIA | Public Debt Transactions | 23",
             "count": 434,
-            "first_date": "2025-03-04",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-05",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "17",
-              "transaction_mtd_amt": "9834",
-              "transaction_fytd_amt": "23467"
+              "transaction_today_amt": "281",
+              "transaction_mtd_amt": "10115",
+              "transaction_fytd_amt": "23748"
             }
           },
           {
             "category": "Redemptions | Nonmarketable | Other | null | IIIA | Public Debt Transactions | 24",
             "count": 434,
-            "first_date": "2025-03-04",
-            "last_date": "2026-11-23",
+            "first_date": "2025-03-05",
+            "last_date": "2026-11-24",
             "example_amounts": {
-              "transaction_today_amt": "1020",
-              "transaction_mtd_amt": "31865",
-              "transaction_fytd_amt": "77208"
+              "transaction_today_amt": "5181",
+              "transaction_mtd_amt": "37046",
+              "transaction_fytd_amt": "82389"
             }
           }
         ],
@@ -2832,28 +2832,28 @@
       "last_date": null,
       "data": {
         "status": "research_cme_session_hour_integrity_audited",
-        "as_of": "2026-11-25T18:01:15.000Z",
+        "as_of": "2026-11-26T17:45:31.000Z",
         "source": "Yahoo GC=F 1h proxy",
         "new_york_session_anchor": "18:00 America/New_York (17:00 CT) daily CME Globex re-open, DST aware",
         "four_hour_slots": "18-22,22-02,02-06,06-10,10-14 New York local; 14-18 session-break overlap explicitly excluded",
         "counts": {
-          "raw_hours": 13235,
-          "distinct_raw_timestamps": 13235,
-          "valid_ohlc_on_hour_nonduplicated": 10448,
-          "missing_or_invalid_ohlc": 2774,
-          "not_exact_utc_hour": 13,
+          "raw_hours": 13245,
+          "distinct_raw_timestamps": 13245,
+          "valid_ohlc_on_hour_nonduplicated": 10458,
+          "missing_or_invalid_ohlc": 2775,
+          "not_exact_utc_hour": 12,
           "unclosed_current_hour": 0,
           "duplicate_hour": 0,
           "duplicate_timestamp": 0,
-          "candidate_buckets": 2287,
-          "closed_session_aligned_4h": 2256,
+          "candidate_buckets": 2289,
+          "closed_session_aligned_4h": 2258,
           "excluded_incomplete_buckets": 31,
           "excluded_nonconsecutive_buckets": 0,
           "excluded_unclosed_buckets": 0
         },
         "closed_4h_by_year": {
           "2025": 1138,
-          "2026": 1118
+          "2026": 1120
         },
         "closed_4h_by_month": [
           {
@@ -2942,7 +2942,7 @@
           },
           {
             "month": "2026-11",
-            "closed_4h_candles": 89
+            "closed_4h_candles": 91
           }
         ],
         "first_accepted_candle": {
@@ -2956,14 +2956,14 @@
           "close": 2811.5
         },
         "last_accepted_candle": {
-          "session_date": "2026-11-24",
-          "session_slot": 3,
-          "first_hour_utc": "2026-11-25T11:00:00.000Z",
-          "close_time_utc": "2026-11-25T15:00:00.000Z",
-          "open": 3559.60009765625,
-          "high": 3560,
-          "low": 3481.10009765625,
-          "close": 3499.800048828125
+          "session_date": "2026-11-25",
+          "session_slot": 0,
+          "first_hour_utc": "2026-11-25T23:00:00.000Z",
+          "close_time_utc": "2026-11-26T03:00:00.000Z",
+          "open": 3618.5,
+          "high": 3634.699951171875,
+          "low": 3578.800048828125,
+          "close": 3615.39990234375
         },
         "latest_month": "2026-11",
         "data_quality_gate_passed_for_live_execution": false,
@@ -3019,7 +3019,7 @@
       "last_date": null,
       "data": {
         "status": "v22_lagged_feature_join_research_only",
-        "as_of": "2026-11-25T18:01:18.070Z",
+        "as_of": "2026-11-26T17:45:33.021Z",
         "gold_proxy": "Yahoo GC=F hourly to New-York-session 4h, validated closed candles",
         "asof_policy": "Conservative calendar-day delays only. Not a verified source release calendar or historical vintage archive.",
         "assumed_not_before_lags_calendar_days": {
@@ -3053,31 +3053,31 @@
         "source_errors": {},
         "source_coverage": {
           "DFII10": {
-            "observations": 723,
-            "duplicate_observation_dates_excluded": 0,
-            "first_observation_date": "2024-01-02",
-            "last_observation_date": "2026-11-23",
-            "conservative_lag_calendar_days": 3
-          },
-          "DGS10": {
-            "observations": 723,
-            "duplicate_observation_dates_excluded": 0,
-            "first_observation_date": "2024-01-02",
-            "last_observation_date": "2026-11-23",
-            "conservative_lag_calendar_days": 3
-          },
-          "T10YIE": {
             "observations": 724,
             "duplicate_observation_dates_excluded": 0,
             "first_observation_date": "2024-01-02",
             "last_observation_date": "2026-11-24",
             "conservative_lag_calendar_days": 3
           },
-          "RRPONTSYD": {
-            "observations": 723,
+          "DGS10": {
+            "observations": 724,
             "duplicate_observation_dates_excluded": 0,
             "first_observation_date": "2024-01-02",
             "last_observation_date": "2026-11-24",
+            "conservative_lag_calendar_days": 3
+          },
+          "T10YIE": {
+            "observations": 725,
+            "duplicate_observation_dates_excluded": 0,
+            "first_observation_date": "2024-01-02",
+            "last_observation_date": "2026-11-25",
+            "conservative_lag_calendar_days": 3
+          },
+          "RRPONTSYD": {
+            "observations": 724,
+            "duplicate_observation_dates_excluded": 0,
+            "first_observation_date": "2024-01-02",
+            "last_observation_date": "2026-11-25",
             "conservative_lag_calendar_days": 3
           },
           "SOFR": {
@@ -3088,10 +3088,10 @@
             "conservative_lag_calendar_days": 3
           },
           "IORB": {
-            "observations": 1060,
+            "observations": 1062,
             "duplicate_observation_dates_excluded": 0,
             "first_observation_date": "2024-01-01",
-            "last_observation_date": "2026-11-25",
+            "last_observation_date": "2026-11-27",
             "conservative_lag_calendar_days": 3
           },
           "WRESBAL": {
@@ -3102,10 +3102,10 @@
             "conservative_lag_calendar_days": 9
           },
           "DXY": {
-            "observations": 731,
+            "observations": 732,
             "duplicate_observation_dates_excluded": 0,
             "first_observation_date": "2024-01-02",
-            "last_observation_date": "2026-11-25",
+            "last_observation_date": "2026-11-26",
             "conservative_lag_calendar_days": 2
           },
           "COT_NET": {
@@ -3121,24 +3121,24 @@
             "conservative_lag_calendar_days": 15
           },
           "TGA": {
-            "observations": 726,
+            "observations": 727,
             "duplicate_observation_dates_excluded": 0,
             "first_observation_date": "2024-01-02",
-            "last_observation_date": "2026-11-23",
+            "last_observation_date": "2026-11-24",
             "conservative_lag_calendar_days": 3
           },
           "GLD_TONNES_DELTA": {
-            "observations": 5537,
+            "observations": 5538,
             "duplicate_observation_dates_excluded": 0,
             "first_observation_date": "2004-11-19",
-            "last_observation_date": "2026-11-24",
+            "last_observation_date": "2026-11-25",
             "conservative_lag_calendar_days": 3
           }
         },
         "ohlc_quality": {
-          "raw": 13853,
-          "missing_ohlc": 2915,
-          "off_hour": 13,
+          "raw": 13863,
+          "missing_ohlc": 2916,
+          "off_hour": 12,
           "unclosed": 0,
           "duplicate_hours": 0,
           "nonconsecutive_groups": 0,
@@ -3146,11 +3146,11 @@
         },
         "gld_official_holdings_source_coverage": {
           "source": "SPDR GLD official XLSX",
-          "rows_with_date": 5743,
-          "rows_with_date_and_tonnes": 5538,
+          "rows_with_date": 5744,
+          "rows_with_date_and_tonnes": 5539,
           "missing_tonnes_rows": 205,
           "first_date": "2004-11-18",
-          "last_date": "2026-11-24",
+          "last_date": "2026-11-25",
           "annual": {
             "2024": {
               "change_days": 252
@@ -3159,74 +3159,74 @@
               "change_days": 250
             },
             "2026": {
-              "change_days": 226
+              "change_days": 227
             }
           },
           "holds_gold_tonnes_not_investor_net_flow": true,
           "real_historical_archive_vintage_verified": false
         },
         "joined_feature_audit": {
-          "candle_count": 2358,
-          "complete": 2162,
+          "candle_count": 2360,
+          "complete": 2164,
           "complete_pct": 91.7,
           "source_coverage": {
             "DFII10": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "DGS10": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "T10YIE": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "RRPONTSYD": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "SOFR": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "IORB": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "WRESBAL": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "DXY": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "COT_NET": {
-              "joined_candles": 2162,
+              "joined_candles": 2164,
               "stale_rejected_candles": 196,
               "pct": 91.7
             },
             "COT_OI": {
-              "joined_candles": 2162,
+              "joined_candles": 2164,
               "stale_rejected_candles": 196,
               "pct": 91.7
             },
             "TGA": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             },
             "GLD_TONNES_DELTA": {
-              "joined_candles": 2358,
+              "joined_candles": 2360,
               "stale_rejected_candles": 0,
               "pct": 100
             }
@@ -3252,21 +3252,21 @@
               }
             },
             {
-              "close_utc": "2026-11-25T15:00:00.000Z",
+              "close_utc": "2026-11-26T03:00:00.000Z",
               "all_required_available": true,
               "asof_dates": {
-                "DFII10": "2026-11-20",
-                "DGS10": "2026-11-20",
-                "T10YIE": "2026-11-20",
-                "RRPONTSYD": "2026-11-20",
-                "SOFR": "2026-11-20",
-                "IORB": "2026-11-22",
+                "DFII10": "2026-11-23",
+                "DGS10": "2026-11-23",
+                "T10YIE": "2026-11-23",
+                "RRPONTSYD": "2026-11-23",
+                "SOFR": "2026-11-23",
+                "IORB": "2026-11-23",
                 "WRESBAL": "2026-11-11",
-                "DXY": "2026-11-23",
+                "DXY": "2026-11-24",
                 "COT_NET": "2026-11-10",
                 "COT_OI": "2026-11-10",
-                "TGA": "2026-11-20",
-                "GLD_TONNES_DELTA": "2026-11-20"
+                "TGA": "2026-11-23",
+                "GLD_TONNES_DELTA": "2026-11-23"
               }
             }
           ]
@@ -3380,68 +3380,68 @@
             ]
           },
           "2026": {
-            "candles": 1118,
-            "candle_count": 1118,
-            "complete": 1118,
+            "candles": 1120,
+            "candle_count": 1120,
+            "complete": 1120,
             "complete_pct": 100,
             "source_coverage": {
               "DFII10": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "DGS10": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "T10YIE": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "RRPONTSYD": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "SOFR": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "IORB": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "WRESBAL": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "DXY": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "COT_NET": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "COT_OI": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "TGA": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               },
               "GLD_TONNES_DELTA": {
-                "joined_candles": 1118,
+                "joined_candles": 1120,
                 "stale_rejected_candles": 0,
                 "pct": 100
               }
@@ -3467,21 +3467,21 @@
                 }
               },
               {
-                "close_utc": "2026-11-25T15:00:00.000Z",
+                "close_utc": "2026-11-26T03:00:00.000Z",
                 "all_required_available": true,
                 "asof_dates": {
-                  "DFII10": "2026-11-20",
-                  "DGS10": "2026-11-20",
-                  "T10YIE": "2026-11-20",
-                  "RRPONTSYD": "2026-11-20",
-                  "SOFR": "2026-11-20",
-                  "IORB": "2026-11-22",
+                  "DFII10": "2026-11-23",
+                  "DGS10": "2026-11-23",
+                  "T10YIE": "2026-11-23",
+                  "RRPONTSYD": "2026-11-23",
+                  "SOFR": "2026-11-23",
+                  "IORB": "2026-11-23",
                   "WRESBAL": "2026-11-11",
-                  "DXY": "2026-11-23",
+                  "DXY": "2026-11-24",
                   "COT_NET": "2026-11-10",
                   "COT_OI": "2026-11-10",
-                  "TGA": "2026-11-20",
-                  "GLD_TONNES_DELTA": "2026-11-20"
+                  "TGA": "2026-11-23",
+                  "GLD_TONNES_DELTA": "2026-11-23"
                 }
               }
             ]
@@ -3719,11 +3719,11 @@
           ]
         },
         "coverage": {
-          "rows_in_source": 16698,
-          "report_dates_seen": 726,
-          "complete_days": 726,
+          "rows_in_source": 16721,
+          "report_dates_seen": 727,
+          "complete_days": 727,
           "first_date": "2024-01-02",
-          "last_date": "2026-11-23",
+          "last_date": "2026-11-24",
           "per_year": {
             "2024": {
               "report_days": 251,
@@ -3742,16 +3742,16 @@
               "days_net_negative": 166
             },
             "2026": {
-              "report_days": 225,
-              "total_market_bills_net_usd_billions": 993.406,
+              "report_days": 226,
+              "total_market_bills_net_usd_billions": 1044.711,
               "total_market_notes_bonds_net_usd_billions": 982.496,
-              "subtotal_net_usd_billions": 1975.902,
-              "days_net_positive": 91,
+              "subtotal_net_usd_billions": 2027.207,
+              "days_net_positive": 92,
               "days_net_negative": 134
             }
           },
           "faults": {
-            "other_ignored": 11616,
+            "other_ignored": 11632,
             "bad_market": 0,
             "bad_category": 0,
             "missing_amount": 0,
@@ -3760,12 +3760,6 @@
           }
         },
         "recent_realized_ledger": [
-          {
-            "record_date": "2026-11-12",
-            "realized_bills_net_usd_billions": 22.997,
-            "realized_notes_bonds_net_usd_billions": 0,
-            "realized_subtotal_usd_billions": 22.997
-          },
           {
             "record_date": "2026-11-13",
             "realized_bills_net_usd_billions": -0.024,
@@ -3807,6 +3801,12 @@
             "realized_bills_net_usd_billions": -0.005,
             "realized_notes_bonds_net_usd_billions": 0,
             "realized_subtotal_usd_billions": -0.005
+          },
+          {
+            "record_date": "2026-11-24",
+            "realized_bills_net_usd_billions": 51.305,
+            "realized_notes_bonds_net_usd_billions": 0,
+            "realized_subtotal_usd_billions": 51.305
           }
         ],
         "full_v22_fiscal_forecast_ready": false,
@@ -3847,6 +3847,13 @@
           "v22-ohlc-integrity"
         ],
         "checks": {
+          "tga-identity": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-24",
+            "error": null
+          },
           "v22-dxy-audit": {
             "http_status": 200,
             "valid": true,
@@ -3854,46 +3861,39 @@
             "source_as_of": null,
             "error": null
           },
+          "treasury": {
+            "http_status": 200,
+            "valid": true,
+            "failure_type": null,
+            "source_as_of": "2026-11-24",
+            "error": null
+          },
           "v22-ohlc-integrity": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
-            "source_as_of": "2026-11-25T18:00:57.000Z",
-            "error": null
-          },
-          "v22-cot-audit": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": null,
+            "source_as_of": "2026-11-26T17:45:26.000Z",
             "error": null
           },
           "v22-source-audit": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
-            "source_as_of": "2026-11-25T18:00:58.532Z",
+            "source_as_of": "2026-11-26T17:45:27.049Z",
             "error": null
           },
           "forecast": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
-            "source_as_of": "2026-11-23",
+            "source_as_of": "2026-11-24",
             "error": null
           },
-          "tga-identity": {
+          "robustness-backtest": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
-            "source_as_of": "2026-11-23",
-            "error": null
-          },
-          "treasury": {
-            "http_status": 200,
-            "valid": true,
-            "failure_type": null,
-            "source_as_of": "2026-11-23",
+            "source_as_of": "2026-11-24",
             "error": null
           },
           "holdout-backtest": {
@@ -3903,11 +3903,11 @@
             "source_as_of": null,
             "error": null
           },
-          "robustness-backtest": {
+          "v22-cot-audit": {
             "http_status": 200,
             "valid": true,
             "failure_type": null,
-            "source_as_of": "2026-11-23",
+            "source_as_of": null,
             "error": null
           }
         },
@@ -3938,14 +3938,14 @@
     "full-history-backtest": {
       "status": "historical_2023_plus_walk_forward_research",
       "error": null,
-      "observations": 976,
+      "observations": 977,
       "first_date": "2023-01-03",
-      "last_date": "2026-11-23",
+      "last_date": "2026-11-24",
       "data": {
         "status": "historical_2023_plus_walk_forward_research",
         "first_date": "2023-01-03",
-        "last_date": "2026-11-23",
-        "observations": 976,
+        "last_date": "2026-11-24",
+        "observations": 977,
         "results": {
           "D+1": {
             "2023": {
@@ -4010,22 +4010,22 @@
             },
             "2026": {
               "zero": {
-                "samples": 224,
-                "mae_usd_billions": 26.541,
+                "samples": 225,
+                "mae_usd_billions": 26.688,
                 "direction_accuracy_pct": 0,
                 "predicted_nonzero": 0
               },
               "weekday": {
-                "samples": 224,
-                "mae_usd_billions": 23.139,
-                "direction_accuracy_pct": 66.5,
-                "predicted_nonzero": 224
+                "samples": 225,
+                "mae_usd_billions": 23.27,
+                "direction_accuracy_pct": 66.7,
+                "predicted_nonzero": 225
               },
               "calendar": {
-                "samples": 224,
-                "mae_usd_billions": 23.667,
-                "direction_accuracy_pct": 67.4,
-                "predicted_nonzero": 224
+                "samples": 225,
+                "mae_usd_billions": 23.814,
+                "direction_accuracy_pct": 67.6,
+                "predicted_nonzero": 225
               }
             }
           },
@@ -4092,22 +4092,22 @@
             },
             "2026": {
               "zero": {
-                "samples": 222,
-                "mae_usd_billions": 46.527,
+                "samples": 223,
+                "mae_usd_billions": 46.619,
                 "direction_accuracy_pct": 0,
                 "predicted_nonzero": 0
               },
               "weekday": {
-                "samples": 222,
-                "mae_usd_billions": 44.041,
-                "direction_accuracy_pct": 61.7,
-                "predicted_nonzero": 222
+                "samples": 223,
+                "mae_usd_billions": 44.046,
+                "direction_accuracy_pct": 61.9,
+                "predicted_nonzero": 223
               },
               "calendar": {
-                "samples": 222,
-                "mae_usd_billions": 42.417,
-                "direction_accuracy_pct": 67.6,
-                "predicted_nonzero": 222
+                "samples": 223,
+                "mae_usd_billions": 42.488,
+                "direction_accuracy_pct": 67.7,
+                "predicted_nonzero": 223
               }
             }
           },
@@ -4174,22 +4174,22 @@
             },
             "2026": {
               "zero": {
-                "samples": 220,
-                "mae_usd_billions": 59.296,
+                "samples": 221,
+                "mae_usd_billions": 59.196,
                 "direction_accuracy_pct": 0,
                 "predicted_nonzero": 0
               },
               "weekday": {
-                "samples": 220,
-                "mae_usd_billions": 59.565,
-                "direction_accuracy_pct": 56.8,
-                "predicted_nonzero": 220
+                "samples": 221,
+                "mae_usd_billions": 59.483,
+                "direction_accuracy_pct": 56.6,
+                "predicted_nonzero": 221
               },
               "calendar": {
-                "samples": 220,
-                "mae_usd_billions": 57.065,
-                "direction_accuracy_pct": 63.2,
-                "predicted_nonzero": 220
+                "samples": 221,
+                "mae_usd_billions": 57.012,
+                "direction_accuracy_pct": 62.9,
+                "predicted_nonzero": 221
               }
             }
           }
@@ -4206,22 +4206,22 @@
             "training_mae_usd_billions": 21.614,
             "holdout": {
               "zero": {
-                "samples": 224,
-                "mae_usd_billions": 26.541,
+                "samples": 225,
+                "mae_usd_billions": 26.688,
                 "direction_accuracy_pct": 0,
                 "predicted_nonzero": 0
               },
               "weekday": {
-                "samples": 224,
-                "mae_usd_billions": 23.139,
-                "direction_accuracy_pct": 66.5,
-                "predicted_nonzero": 224
+                "samples": 225,
+                "mae_usd_billions": 23.27,
+                "direction_accuracy_pct": 66.7,
+                "predicted_nonzero": 225
               },
               "calendar": {
-                "samples": 224,
-                "mae_usd_billions": 23.667,
-                "direction_accuracy_pct": 67.4,
-                "predicted_nonzero": 224
+                "samples": 225,
+                "mae_usd_billions": 23.814,
+                "direction_accuracy_pct": 67.6,
+                "predicted_nonzero": 225
               }
             },
             "selected_vs_zero_holdout_mae_improvement_pct": 12.8,
@@ -4238,25 +4238,25 @@
             "training_mae_usd_billions": 39.443,
             "holdout": {
               "zero": {
-                "samples": 222,
-                "mae_usd_billions": 46.527,
+                "samples": 223,
+                "mae_usd_billions": 46.619,
                 "direction_accuracy_pct": 0,
                 "predicted_nonzero": 0
               },
               "weekday": {
-                "samples": 222,
-                "mae_usd_billions": 44.041,
-                "direction_accuracy_pct": 61.7,
-                "predicted_nonzero": 222
+                "samples": 223,
+                "mae_usd_billions": 44.046,
+                "direction_accuracy_pct": 61.9,
+                "predicted_nonzero": 223
               },
               "calendar": {
-                "samples": 222,
-                "mae_usd_billions": 42.417,
-                "direction_accuracy_pct": 67.6,
-                "predicted_nonzero": 222
+                "samples": 223,
+                "mae_usd_billions": 42.488,
+                "direction_accuracy_pct": 67.7,
+                "predicted_nonzero": 223
               }
             },
-            "selected_vs_zero_holdout_mae_improvement_pct": 8.8,
+            "selected_vs_zero_holdout_mae_improvement_pct": 8.9,
             "holdout_passes_mae": true
           },
           "D+5": {
@@ -4270,25 +4270,25 @@
             "training_mae_usd_billions": 51.18,
             "holdout": {
               "zero": {
-                "samples": 220,
-                "mae_usd_billions": 59.296,
+                "samples": 221,
+                "mae_usd_billions": 59.196,
                 "direction_accuracy_pct": 0,
                 "predicted_nonzero": 0
               },
               "weekday": {
-                "samples": 220,
-                "mae_usd_billions": 59.565,
-                "direction_accuracy_pct": 56.8,
-                "predicted_nonzero": 220
+                "samples": 221,
+                "mae_usd_billions": 59.483,
+                "direction_accuracy_pct": 56.6,
+                "predicted_nonzero": 221
               },
               "calendar": {
-                "samples": 220,
-                "mae_usd_billions": 57.065,
-                "direction_accuracy_pct": 63.2,
-                "predicted_nonzero": 220
+                "samples": 221,
+                "mae_usd_billions": 57.012,
+                "direction_accuracy_pct": 62.9,
+                "predicted_nonzero": 221
               }
             },
-            "selected_vs_zero_holdout_mae_improvement_pct": 3.8,
+            "selected_vs_zero_holdout_mae_improvement_pct": 3.7,
             "holdout_passes_mae": true
           }
         },
@@ -4359,30 +4359,30 @@
             },
             "2026": {
               "zero": {
-                "samples": 217,
-                "mae_usd_billions": 26.458,
+                "samples": 218,
+                "mae_usd_billions": 26.61,
                 "direction_accuracy_pct": 0,
                 "predicted_nonzero": 0
               },
               "weekday": {
-                "samples": 217,
-                "mae_usd_billions": 23.086,
-                "direction_accuracy_pct": 66.4,
-                "predicted_nonzero": 217
+                "samples": 218,
+                "mae_usd_billions": 23.222,
+                "direction_accuracy_pct": 66.5,
+                "predicted_nonzero": 218
               },
               "calendar": {
-                "samples": 217,
-                "mae_usd_billions": 23.577,
-                "direction_accuracy_pct": 67.3,
-                "predicted_nonzero": 217
+                "samples": 218,
+                "mae_usd_billions": 23.73,
+                "direction_accuracy_pct": 67.4,
+                "predicted_nonzero": 218
               }
             }
           },
           "paired_mae_improvement_usd_billions": {
-            "observed": 3.372,
+            "observed": 3.388,
             "moving_block_95pct_ci": [
-              1.936,
-              4.859
+              1.888,
+              4.822
             ],
             "block_length": 10,
             "bootstrap_draws": 1200,
@@ -4392,22 +4392,22 @@
           "holdout_year": "2026",
           "holdout": {
             "zero": {
-              "samples": 217,
-              "mae_usd_billions": 26.458,
+              "samples": 218,
+              "mae_usd_billions": 26.61,
               "direction_accuracy_pct": 0,
               "predicted_nonzero": 0
             },
             "weekday": {
-              "samples": 217,
-              "mae_usd_billions": 23.086,
-              "direction_accuracy_pct": 66.4,
-              "predicted_nonzero": 217
+              "samples": 218,
+              "mae_usd_billions": 23.222,
+              "direction_accuracy_pct": 66.5,
+              "predicted_nonzero": 218
             },
             "calendar": {
-              "samples": 217,
-              "mae_usd_billions": 23.577,
-              "direction_accuracy_pct": 67.3,
-              "predicted_nonzero": 217
+              "samples": 218,
+              "mae_usd_billions": 23.73,
+              "direction_accuracy_pct": 67.4,
+              "predicted_nonzero": 218
             }
           },
           "selected_vs_zero_holdout_mae_improvement_pct": 12.7
@@ -6466,7 +6466,7 @@
     "horizon-backtest": {
       "status": "historical_walk_forward_baselines_only",
       "error": null,
-      "observations": 1153,
+      "observations": 1154,
       "first_date": null,
       "last_date": null,
       "data": null
